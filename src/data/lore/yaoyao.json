@@ -2,20 +2,50 @@
   "id": "yaoyao",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Yaoyao"
+    "url": "https://genshin-impact.fandom.com/wiki/Yaoyao/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ศิษย์ตัวน้อยของ Streetward Rambler ผู้ดูแลคนรอบตัวอย่างเป็นธรรมชาติ เธอมีวุฒิภาวะ ใส่ใจสุขภาพ และร่วมเดินทางกับ Yuegui",
+  "background": "Yaoyao ฝึกกับ adeptus และสนิทกับเหล่าศิษย์รุ่นพี่ แม้อายุน้อย เธอดูแล Ganyu กับนักเดินทาง เตรียมอาหารและคำเตือน โดยยังคงความอยากเล่นแบบเด็ก",
+  "personalityNotes": [
+    "อ่อนโยน รับผิดชอบ และช่างสังเกต",
+    "จริงจังเรื่องสุขภาพของคนอื่น"
+  ],
+  "motivations": [
+    "ช่วยผู้คนกับสัตว์ให้ปลอดภัย",
+    "เรียนรู้ adeptal arts และเติบโตโดยไม่เร่งวัย"
+  ],
+  "values": ["การดูแล", "สุขภาพ", "มารยาท"],
+  "behaviorPatterns": [
+    "พกอาหารหลายแบบและกำกับปริมาณ",
+    "เตือนผู้ใหญ่เมื่อทำงานเกินไป"
+  ],
+  "relationships": [
+    "Streetward Rambler — อาจารย์และผู้ปกครอง",
+    "Yuegui — คู่หู adeptal device",
+    "Ganyu — รุ่นพี่ที่ Yaoyao คอยเตือนให้พัก"
+  ],
+  "conflicts": [
+    "รับบทผู้ดูแลจนคนลืมว่าเธอยังเป็นเด็ก",
+    "ความรับผิดชอบอาจแทรกการตัดสินใจคนอื่น"
+  ],
+  "strengthEvidence": [
+    "จัดการเหตุฉุกเฉินอย่างมีสติ",
+    "ได้รับความไว้วางใจจาก adepti และชาว Liyue"
+  ],
+  "weaknessEvidence": [
+    "กังวลสุขภาพคนอื่นเกินขอบเขต",
+    "มีแนวโน้มทำหน้าที่ก่อนเล่น"
+  ],
+  "stories": [
+    "Character Stories — การเป็นศิษย์และชีวิตกับ Yuegui",
+    "Basket — การเตรียมของที่สะท้อนนิสัยดูแล"
+  ],
+  "voiceOvers": [
+    "Hello — เสนอช่วยพร้อมอาหารและคำเตือนโภชนาการ",
+    "บทพูดผสมความน่ารักกับการกำกับแบบผู้ใหญ่"
+  ],
+  "quotes": ["Then lemme help you!"],
+  "analysisNotes": [
+    "ความเป็นผู้ใหญ่ของ Yaoyao เป็นความสามารถจริง แต่คนรอบตัวควรเปิดพื้นที่ให้เธอได้รับการดูแลด้วย"
+  ]
 }

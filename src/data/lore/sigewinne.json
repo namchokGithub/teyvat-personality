@@ -2,20 +2,50 @@
   "id": "sigewinne",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Sigewinne"
+    "url": "https://genshin-impact.fandom.com/wiki/Sigewinne/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "หัวหน้าพยาบาล Melusine แห่ง Fortress of Meropide ผู้ดูน่ารักและเอาใจใส่ แต่สังเกตมนุษย์อย่างละเอียดจนบางครั้งให้ความรู้สึกเหมือนผู้วิจัย",
+  "background": "Sigewinne ใช้ชีวิตยาวนานดูแลผู้ต้องขังและเจ้าหน้าที่ใน Fortress เธอเคยเปลี่ยนรูปลักษณ์ให้คล้ายมนุษย์เพื่อช่วยเพื่อน และได้รับโทษก่อนกลายเป็นบุคลากรแพทย์ที่ทุกคนไว้ใจ",
+  "personalityNotes": [
+    "อ่อนโยน ช่างสังเกต และมั่นคงในวิกฤต",
+    "อยากเข้าใจมนุษย์ผ่านพฤติกรรมกับร่างกาย"
+  ],
+  "motivations": [
+    "รักษาผู้ป่วยทุกสถานะ",
+    "เชื่อมความเข้าใจระหว่าง Melusines กับมนุษย์"
+  ],
+  "values": ["สุขภาพ", "ความเอาใจใส่", "ความเท่าเทียมของชีวิต"],
+  "behaviorPatterns": [
+    "ตรวจสุขภาพทันทีเมื่อเห็นความผิดปกติ",
+    "ทำอาหารหรือเครื่องดื่มที่ดีต่อสุขภาพแม้รสชาติแปลก"
+  ],
+  "relationships": [
+    "Wriothesley — ผู้บริหาร Fortress และผู้ร่วมงานที่เชื่อใจ",
+    "ผู้ต้องขัง — คนไข้ที่เธอดูแลโดยไม่ตัดสิน",
+    "เพื่อนมนุษย์ในอดีต — เหตุผลที่เธอเปลี่ยนรูปลักษณ์"
+  ],
+  "conflicts": [
+    "ความอยากรู้อาจทำให้คนรู้สึกถูกสังเกตเป็นตัวอย่าง",
+    "นิยาม ‘น่ารัก’ ของ Melusine ต่างจากมนุษย์"
+  ],
+  "strengthEvidence": [
+    "รักษาความไว้วางใจในสภาพแวดล้อมเรือนจำ",
+    "อ่านอาการกายและใจที่ผู้ป่วยไม่พูด"
+  ],
+  "weaknessEvidence": [
+    "ดูแลมากเกินจนลดพื้นที่ตัดสินใจของคนไข้",
+    "ประเมินรสนิยมมนุษย์จากตรรกะสุขภาพไม่ครบ"
+  ],
+  "stories": [
+    "Character Stories — การเปลี่ยนรูปลักษณ์และมารับโทษใน Fortress",
+    "Medical Notes — การสังเกตมนุษย์ผ่านงานดูแล"
+  ],
+  "voiceOvers": [
+    "Hello — เริ่มตรวจร่างกายก่อนทราบเหตุที่มา",
+    "บทพูดใช้ความน่ารักลดความกลัวต่อการรักษา"
+  ],
+  "quotes": ["Make sure you take good care of yourself."],
+  "analysisNotes": [
+    "Sigewinne ผสมความเมตตากับสายตานักสังเกต การดูแลจึงจริงใจแต่ควรรักษาขอบเขต agency ของผู้ป่วย"
+  ]
 }

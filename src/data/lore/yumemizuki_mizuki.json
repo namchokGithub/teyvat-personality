@@ -2,20 +2,49 @@
   "id": "yumemizuki_mizuki",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Yumemizuki_Mizuki"
+    "url": "https://genshin-impact.fandom.com/wiki/Yumemizuki_Mizuki/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "baku และนักจิตวิทยาคลินิกแห่ง Inazuma ผู้ช่วยขจัดฝันร้าย เธออ่อนโยน เป็นมืออาชีพ และใช้การเข้าสู่ความฝันช่วยผู้คนเผชิญสิ่งที่กดไว้",
+  "background": "Mizuki เติบโตในฐานะ youkai ที่กินฝันและเลือกประยุกต์พลังเป็นการบำบัด เธอเปิด Aisa Bathhouse/สำนักงาน ให้คำปรึกษา และรักษาขอบเขตระหว่างการช่วยกับการลบความทรงจำ",
+  "personalityNotes": [
+    "สงบ เป็นมิตร และอ่านอารมณ์ละเอียด",
+    "มั่นใจในวิชาชีพและให้พื้นที่พูด"
+  ],
+  "motivations": [
+    "ช่วยผู้คนพักจากฝันร้ายและเข้าใจใจตน",
+    "ทำให้ youkai กับมนุษย์อยู่ร่วมกันผ่านบริการ"
+  ],
+  "values": ["สุขภาวะจิต", "ความไว้วางใจ", "การพักและความฝัน"],
+  "behaviorPatterns": [
+    "เชิญให้เล่าโดยไม่บังคับ",
+    "ใช้ความฝันเป็นข้อมูลไม่ใช่คำพิพากษา"
+  ],
+  "relationships": [
+    "Yae Miko — คนรู้จัก youkai ที่อ่านเกมกันทัน",
+    "ลูกค้า — ผู้มอบข้อมูลอ่อนไหวที่เธอต้องรักษา"
+  ],
+  "conflicts": [
+    "ความสามารถลบฝันร้ายอาจกลายเป็นการหลีกเลี่ยงต้นเหตุ",
+    "ความใกล้ชิดในฝันต้องอาศัย consent ชัด"
+  ],
+  "strengthEvidence": [
+    "สร้างวิชาชีพจากธรรมชาติ baku อย่างรับผิดชอบ",
+    "ทำให้ลูกค้ารู้สึกปลอดภัยพอเปิดเผยความกังวล"
+  ],
+  "weaknessEvidence": [
+    "อาจมั่นใจเกินไปว่าสามารถจัดการฝันทุกแบบ",
+    "แบกเนื้อหาอารมณ์ของลูกค้า"
+  ],
+  "stories": [
+    "Character Stories — การเลือกเป็นนักจิตวิทยาและชีวิต youkai",
+    "Dream Therapy — วิธีเชื่อมพลังกับจริยธรรมดูแล"
+  ],
+  "voiceOvers": [
+    "Hello — เชิญคุยและเสนอขจัดฝันร้ายโดยไม่กดดัน",
+    "บทพูดใช้บรรยากาศผ่อนคลายสร้างความไว้วางใจ"
+  ],
+  "quotes": ["If something's troubling you, feel free to talk it out with me."],
+  "analysisNotes": [
+    "จุดแข็งของ Mizuki ไม่ใช่เพียงกินฝัน แต่คือสร้างกรอบที่ผู้รับบริการไม่ถูกตีตราจากความกลัวของตน"
+  ]
 }

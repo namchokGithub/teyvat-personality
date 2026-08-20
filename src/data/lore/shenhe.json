@@ -2,20 +2,47 @@
   "id": "shenhe",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Shenhe"
+    "url": "https://genshin-impact.fandom.com/wiki/Shenhe/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ศิษย์ adepti ผู้มีพลังรุนแรงและใช้เชือกแดงกดอารมณ์ เธอถูกมองว่ามีชะตานำภัย แต่ค่อย ๆ สร้างสายสัมพันธ์มนุษย์และเลือกปกป้อง Liyue",
+  "background": "วัยเด็ก Shenhe ถูกพ่อสังเวยให้เทพชั่วร้ายและต่อสู้เอาชีวิตรอดหลายวัน Cloud Retainer รับเลี้ยงและผูก red ropes เพื่อควบคุมแรงสังหาร ทำให้เธอเติบโตห่างสังคม",
+  "personalityNotes": [
+    "ตรง เงียบ และไม่คุ้นบรรทัดฐานมนุษย์",
+    "ภักดีอย่างรุนแรงเมื่อยอมรับใคร"
+  ],
+  "motivations": [
+    "ควบคุมพลังโดยไม่ทำร้ายผู้บริสุทธิ์",
+    "กลับเชื่อมกับโลกมนุษย์"
+  ],
+  "values": ["สายสัมพันธ์ที่เลือกเอง", "ความสงบ", "การปกป้อง"],
+  "behaviorPatterns": ["ตีความคำพูดตรงตัว", "ตอบภัยต่อคนสำคัญด้วยกำลังทันที"],
+  "relationships": [
+    "Cloud Retainer — อาจารย์และผู้ปกครอง",
+    "Traveler — สะพานเชื่อมเธอกับมนุษย์",
+    "Chongyun — ญาติที่สะท้อนรากครอบครัว"
+  ],
+  "conflicts": [
+    "เชือกแดงควบคุมทั้งแรงสังหารและอารมณ์ทั่วไป",
+    "อดีตถูกสังเวยทำให้ไว้วางใจมนุษย์ยาก"
+  ],
+  "strengthEvidence": [
+    "เอาชนะเทพชั่วร้ายตั้งแต่วัยเด็ก",
+    "เสี่ยงตนหยุดคลื่นและ Beisht เพื่อ Liyue"
+  ],
+  "weaknessEvidence": [
+    "ใช้ความรุนแรงเป็นคำตอบแรกเมื่อคนสำคัญถูกคุกคาม",
+    "ขาดประสบการณ์สื่อสารอารมณ์"
+  ],
+  "stories": [
+    "Character Stories — การถูกสังเวยและรับเลี้ยงโดย adepti",
+    "Red Ropes — เครื่องควบคุมที่มีต้นทุนต่อความรู้สึก"
+  ],
+  "voiceOvers": [
+    "Hello — เปิดเผยชะตาและเชื้อเชิญจับมือเมื่อ Traveler ไม่กลัว",
+    "บทพูดตรงสะท้อนการไม่ใช้พิธีสังคมปิดบังเจตนา"
+  ],
+  "quotes": ["Now, give me your hand."],
+  "analysisNotes": [
+    "Shenhe ไม่ได้ไร้อารมณ์โดยธรรมชาติ; ความนิ่งเป็นผลของการกดด้วยเชือกและการขาดพื้นที่ปลอดภัยในการเรียนรู้อารมณ์"
+  ]
 }

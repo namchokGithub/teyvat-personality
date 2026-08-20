@@ -2,20 +2,49 @@
   "id": "xinyan",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Xinyan"
+    "url": "https://genshin-impact.fandom.com/wiki/Xinyan/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "นักดนตรี rock 'n' roll แห่ง Liyue ผู้ท้าทายภาพลักษณ์และธรรมเนียม เธออบอุ่น ขยัน และใช้เวทีทำให้คนปลดปล่อยความรู้สึก",
+  "background": "Xinyan พบ rock จาก Fontaine และสร้างเครื่องดนตรีกับการแสดงเอง แม้ถูกตัดสินจากรูปลักษณ์กับแนวดนตรี เธอยังทำงานรับจ้างและจัดคอนเสิร์ตเพื่อขยายผู้ฟัง",
+  "personalityNotes": [
+    "ตรง ร่าเริง และไม่ยอมตามกรอบ",
+    "อ่อนโยนกว่าภาพดุดันที่คนคาด"
+  ],
+  "motivations": [
+    "ทำให้ rock เป็นที่ยอมรับใน Liyue",
+    "ส่งพลังให้ผู้ฟังเป็นตัวเอง"
+  ],
+  "values": ["การแสดงออก", "ความพยายาม", "การไม่ตัดสินจากภายนอก"],
+  "behaviorPatterns": [
+    "ฝึกและสร้างอุปกรณ์เอง",
+    "ตอบอคติด้วยการแสดงมากกว่าถกเถียง"
+  ],
+  "relationships": [
+    "Yun Jin — เพื่อนศิลปินที่ชื่นชมข้ามแนวเพลง",
+    "ผู้ชม Liyue — กลุ่มที่เธอค่อย ๆ สร้างจากศูนย์"
+  ],
+  "conflicts": [
+    "รูปลักษณ์ทำให้คนกลัวก่อนรู้จัก",
+    "เสียงดังกับธรรมเนียมเมืองสร้างข้อจำกัดเวที"
+  ],
+  "strengthEvidence": [
+    "สร้างวัฒนธรรม rock ในพื้นที่ที่ไม่คุ้น",
+    "รักษาความเป็นมิตรแม้ถูกเหมารวม"
+  ],
+  "weaknessEvidence": [
+    "กังวลปฏิกิริยาคนต่อใบหน้าและเสียง",
+    "โอกาสแสดงไม่สม่ำเสมอ"
+  ],
+  "stories": [
+    "Character Stories — การค้นพบ rock และสร้างเวที",
+    "เครื่องดนตรี — หลักฐานความพึ่งตนกับความคิดสร้างสรรค์"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — ชวนฟังดนตรีอย่างเปิดเผยและกระตือรือร้น",
+    "บทพูดเผยความถนัดงานบ้านซึ่งขัด stereotype นักดนตรีดุดัน"
+  ],
+  "quotes": ["Rock 'n' roll is a new thing in Liyue."],
+  "analysisNotes": [
+    "Xinyan ไม่เพียงต่อต้านธรรมเนียม แต่สร้างพื้นที่ทางเลือกด้วยแรงงานสม่ำเสมอและการเชิญชวนมากกว่าการดูถูกวัฒนธรรมเดิม"
+  ]
 }

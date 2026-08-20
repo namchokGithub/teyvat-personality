@@ -2,20 +2,55 @@
   "id": "sandrone",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Sandrone"
+    "url": "https://genshin-impact.fandom.com/wiki/Sandrone/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Marionette ลำดับเจ็ดแห่ง Fatui Harbingers สิ่งมีชีวิตจักรกลที่ Alain Guillotin สร้างขึ้น เธอเป็นอัจฉริยะด้านเครื่องกล ตรงและหวงพื้นที่ส่วนตัว แต่ค่อย ๆ เรียนรู้อารมณ์ การสูญเสีย และมิตรภาพ",
+  "background": "Alain สร้าง Sandrone จากความทรงจำถึงน้องสาวแต่ยืนยันให้เธอมีชีวิตของตนเอง เธอดูแลเขาจนเสียชีวิต เดินทางสู่ Snezhnaya และเข้าร่วม Fatui ก่อนรับ inheritance ที่นำไปสู่ ‘การเกิดครั้งที่สอง’",
+  "personalityNotes": [
+    "ฉลาด มั่นใจ และหงุดหงิดต่อพิธีสังคม",
+    "บริสุทธิ์ต่อความผูกพันแม้แสดงออกแข็ง"
+  ],
+  "motivations": [
+    "พัฒนางานวิจัยกับ automatons",
+    "นิยามบ้านและชีวิตที่เป็นของตน"
+  ],
+  "values": [
+    "ความเป็นตัวตน",
+    "ความรู้",
+    "เพื่อนและครอบครัว",
+    "ความน่าเชื่อถือ"
+  ],
+  "behaviorPatterns": [
+    "มองปัญหาเป็นระบบที่แก้เชิงกลได้",
+    "ตั้งขอบเขตส่วนตัวแรงแต่ใจอ่อนต่อคนสนิท"
+  ],
+  "relationships": [
+    "Alain Guillotin — ผู้สร้างและครอบครัวคนแรก",
+    "Columbina — เพื่อนที่รบกวนขอบเขตแต่สอนเรื่องมิตรภาพ",
+    "Pulonia — automaton สมาชิกครอบครัวและงานของ Alain"
+  ],
+  "conflicts": [
+    "ต้นกำเนิดจากความทรงจำคนอื่นขัดกับสิทธิในตัวตนตนเอง",
+    "ความสามารถเข้าใจระบบสูงกว่าความเข้าใจอารมณ์สูญเสีย"
+  ],
+  "strengthEvidence": [
+    "สืบทอดและพัฒนาเทคโนโลยีของ Alain",
+    "สร้างชีวิตกับบทบาทใหม่ใน Snezhnaya"
+  ],
+  "weaknessEvidence": [
+    "ไม่อดทนต่อคนหรือพิธีที่เห็นว่าไร้ประสิทธิภาพ",
+    "เรียนรู้คุณค่าการขอบคุณและมิตรภาพช้า"
+  ],
+  "stories": [
+    "Character Story 1–2 — การเกิดและดูแล Alain จนสิ้นชีวิต",
+    "Character Story 5 — การเกิดครั้งที่สองและเลือกอยู่กับ Fatui"
+  ],
+  "voiceOvers": [
+    "Hello — ปฏิเสธการแนะนำตัวก่อนยอมทำตามมารยาทครั้งเดียว",
+    "บทพูดสะท้อนความภูมิใจในตำแหน่งและความรำคาญต่อเวลาเสียเปล่า"
+  ],
+  "quotes": ["I hate self-introductions."],
+  "analysisNotes": [
+    "Sandrone เติบโตเมื่อเลิกถามเพียงว่าตนถูกสร้างเพื่ออะไร และเริ่มเลือกว่าต้องการขอบคุณ ผูกพัน และเรียกที่ใดว่าบ้าน"
+  ]
 }

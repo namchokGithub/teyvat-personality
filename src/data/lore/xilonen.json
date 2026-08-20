@@ -2,20 +2,49 @@
   "id": "xilonen",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Xilonen"
+    "url": "https://genshin-impact.fandom.com/wiki/Xilonen/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ช่างตีชื่อแห่ง Children of Echoes ผู้มีฝีมือระดับสูง สบาย ๆ และยึดเงื่อนไขงานชัดเจน เธอสร้าง Ancient Names และอุปกรณ์ให้วีรชนโดยต้องรักษาสมดุลระหว่างงานกับการพัก",
+  "background": "Xilonen เป็น Name Engraver และช่างฝีมือที่ Mavuika พึ่งพา เธอรับ commission ยาก สร้างอุปกรณ์เฉพาะบุคคล และใช้เวลาบนภูเขาหลีกเลี่ยงผู้ตามงานเมื่อจำเป็น",
+  "personalityNotes": [
+    "มั่นใจ ผ่อนคลาย และเป็นมืออาชีพ",
+    "สังเกตผู้ใช้ก่อนออกแบบ"
+  ],
+  "motivations": [
+    "สร้างงานที่ตอบตัวตนผู้ถือ",
+    "รักษาคุณภาพโดยไม่ยอมให้คำขอไร้ขอบเขต"
+  ],
+  "values": ["งานฝีมือ", "ความเป็นตัวตน", "ขอบเขตการทำงาน"],
+  "behaviorPatterns": [
+    "กำหนดคิวกับเงื่อนไขชัด",
+    "หนีขึ้นเขาเมื่อจำเป็นต้องพัก"
+  ],
+  "relationships": [
+    "Mavuika — ผู้มอบงานสำคัญระดับชาติ",
+    "Kachina — รุ่นน้องที่เธอช่วยและสนับสนุน"
+  ],
+  "conflicts": [
+    "ความต้องการของชุมชนเกินเวลาที่มี",
+    "ชื่อเสียงทำให้ผู้คนคาดหวังเข้าถึงเธอตลอด"
+  ],
+  "strengthEvidence": [
+    "สร้าง Ancient Names และอุปกรณ์ที่ไม่มีใครแทนได้",
+    "ปรับงานตามบุคลิกกับภารกิจผู้ใช้"
+  ],
+  "weaknessEvidence": [
+    "ผัดงานที่ไม่เร่งด่วนเมื่อหมดแรง",
+    "ความมั่นใจอาจดูไม่ใส่ใจขั้นตอนทางการ"
+  ],
+  "stories": [
+    "Character Stories — งาน Name Engraver และระบบ commission",
+    "งานช่าง — การแปลงตัวตนผู้ใช้เป็นวัตถุ"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — พูดเรื่องงานตรงพร้อมรักษาจังหวะสบาย",
+    "บทพูดแยกงานด่วนจากคำขอที่รอได้"
+  ],
+  "quotes": ["Let's get down to business."],
+  "analysisNotes": [
+    "Xilonen ปฏิบัติต่อการพักเป็นส่วนหนึ่งของคุณภาพงาน ซึ่งต่างจากตัวละครผู้ช่วยเหลือที่ปล่อยให้ชื่อเสียงลบขอบเขต"
+  ]
 }

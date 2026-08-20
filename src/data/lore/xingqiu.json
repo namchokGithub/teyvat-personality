@@ -2,20 +2,49 @@
   "id": "xingqiu",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Xingqiu"
+    "url": "https://genshin-impact.fandom.com/wiki/Xingqiu/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "บุตร Feiyun Commerce Guild ผู้สุภาพและรักนิยาย wuxia เขาซ่อนบทบาทผู้กล้า Guhua หลังภาพคุณชายเรียนดี และชอบแกล้ง Chongyun",
+  "background": "Xingqiu ศึกษาศิลปะ Guhua จนฟื้นหลักวิชา พร้อมเขียนนิยายที่ได้รับความนิยมต่างแดน เขาใช้ทรัพยากรตระกูลช่วยความยุติธรรมโดยไม่ต้องการชื่อเสียงเปิดเผย",
+  "personalityNotes": [
+    "สุภาพ ฉลาด และมีอารมณ์ขันเจ้าเล่ห์",
+    "ยึดอุดมคติ chivalry จากหนังสือ"
+  ],
+  "motivations": [
+    "ช่วยผู้ถูกเอาเปรียบตามวิถี Guhua",
+    "เขียนและอ่านเพื่อรักษาโลกอุดมคติ"
+  ],
+  "values": ["ความยุติธรรม", "มิตรภาพ", "วรรณกรรม"],
+  "behaviorPatterns": [
+    "วางแผนช่วยเหลือโดยไม่เผยตัว",
+    "แกล้งเพื่อนด้วยถ้อยคำหน้าตาย"
+  ],
+  "relationships": [
+    "Chongyun — เพื่อนสนิทและเป้าหมายการแกล้ง",
+    "Feiyun Guild — ครอบครัวกับทรัพยากรที่เขาทั้งใช้และหลบหน้าที่"
+  ],
+  "conflicts": [
+    "อุดมคติผู้กล้าขัดกับภาระทายาทธุรกิจ",
+    "การแกล้งอาจข้ามความไว้ใจเพื่อน"
+  ],
+  "strengthEvidence": [
+    "ประยุกต์วิชา Guhua จนได้รับการยอมรับ",
+    "ใช้ความรู้และเครือข่ายหยุดผู้มีอำนาจเอาเปรียบ"
+  ],
+  "weaknessEvidence": [
+    "หลีกเลี่ยงงานครอบครัวด้วยหนังสือ",
+    "ซ่อนเจตนาจนคนร่วมแผนตามไม่ทัน"
+  ],
+  "stories": [
+    "Character Stories — การฟื้น Guhua และงานเขียน",
+    "นิยาย — พื้นที่ที่อุดมคติผู้กล้ากลายเป็นการกระทำ"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — ใช้ภาษาสุภาพแบบตัวละครวรรณกรรม",
+    "คำพูดถึง Chongyunเผยความสนิทผ่านการหยอก"
+  ],
+  "quotes": ["May knowledge guide you."],
+  "analysisNotes": [
+    "Xingqiu ใช้บทบาทจากนิยายเป็นเข็มทิศศีลธรรม แต่ความเจ้าแผนการทำให้ความช่วยเหลือมีด้านควบคุม"
+  ]
 }

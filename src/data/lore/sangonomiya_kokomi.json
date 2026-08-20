@@ -2,20 +2,49 @@
   "id": "sangonomiya_kokomi",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Sangonomiya_Kokomi"
+    "url": "https://genshin-impact.fandom.com/wiki/Sangonomiya_Kokomi/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Divine Priestess แห่ง Watatsumi ผู้เป็นนักยุทธศาสตร์ยอดเยี่ยมแต่หมดพลังจากงานสังคม เธอใช้ directives ละเอียดเพื่อรับผิดชอบเกาะและกองทัพ",
+  "background": "Kokomi สืบตำแหน่งผู้นำทางศาสนาโดยไม่ได้เลือก และนำกองต่อต้าน Vision Hunt Decree หลังสงครามเธอบริหารฟื้นฟู Watatsumi พร้อมอ่านตำรากลยุทธ์ในที่ลับ",
+  "personalityNotes": [
+    "สุขุม รอบคอบ และเห็นอกเห็นใจ",
+    "เก็บตัวและวัดพลังใจของตนเป็นแต้ม"
+  ],
+  "motivations": [
+    "รักษา Watatsumi และคุณภาพชีวิตประชาชน",
+    "ใช้แผนลดการสูญเสีย"
+  ],
+  "values": ["หน้าที่", "ชีวิตของผู้ใต้บังคับบัญชา", "การเตรียมพร้อม"],
+  "behaviorPatterns": [
+    "เขียนคำสั่งครอบคลุมหลายสถานการณ์",
+    "ถอนตัวอ่านหนังสือเพื่อฟื้นพลัง"
+  ],
+  "relationships": [
+    "Gorou — นายพลที่เธอไว้วางใจ",
+    "ชาว Watatsumi — ผู้ที่เธอรับภาระนำ"
+  ],
+  "conflicts": [
+    "พรสวรรค์ผู้นำขัดกับความต้องการชีวิตเงียบ",
+    "แผนละเอียดอาจไม่ทันความไม่แน่นอนของมนุษย์"
+  ],
+  "strengthEvidence": [
+    "นำกองกำลังด้อยทรัพยากรต่อกร Shogunate",
+    "บริหารเกาะผ่าน directives ที่เป็นระบบ"
+  ],
+  "weaknessEvidence": [
+    "ทำงานจนพลังใจติดลบ",
+    "ซ่อนความเหนื่อยเพื่อรักษาความมั่นใจของคนอื่น"
+  ],
+  "stories": [
+    "Character Stories — บทบาท Divine Priestess และระบบ energy",
+    "ตำรากลยุทธ์ — พื้นที่ส่วนตัวที่หล่อเลี้ยงความสามารถ"
+  ],
+  "voiceOvers": [
+    "Hello — ยืนยันว่าเตรียมคำสั่งกับแผนพัฒนาไว้ก่อนออกเดินทาง",
+    "การหลุดคำว่า unwind เผยความต้องการพักที่ซ่อนไว้"
+  ],
+  "quotes": ["My journey with you will be an opportunity to unwind."],
+  "analysisNotes": [
+    "Kokomi ใช้โครงสร้างและแผนรองรับภาระทางสังคม แต่การดูแลตนยังถูกวางเป็นกิจกรรมลับมากกว่าส่วนหนึ่งของงาน"
+  ]
 }

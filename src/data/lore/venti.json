@@ -2,20 +2,46 @@
   "id": "venti",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Venti"
+    "url": "https://genshin-impact.fandom.com/wiki/Venti/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "กวีพเนจรผู้เป็น Barbatos เทพแห่งอิสรภาพ เขาใช้ท่าทีเล่นสนุกและเสียงเพลงนำทาง Mondstadt โดยหลีกเลี่ยงการปกครองตรง",
+  "background": "Venti เดิมเป็นวิญญาณลมและรับรูปลักษณ์เพื่อนกวีที่เสียชีวิตในการโค่น Decarabian หลังเป็น Archon เขาปล่อยประชาชนปกครองตนและตื่นขึ้นเมื่อเสรีภาพถูกคุกคาม",
+  "personalityNotes": [
+    "ร่าเริง เจ้าเล่ห์ และเข้าใจความเศร้าลึก",
+    "ให้พื้นที่ผู้อื่นเลือกเอง"
+  ],
+  "motivations": ["รักษาอิสรภาพ Mondstadt", "เก็บเรื่องราวผ่านบทเพลง"],
+  "values": ["อิสรภาพ", "ความทรงจำ", "บทกวี"],
+  "behaviorPatterns": [
+    "ซ่อนสถานะเทพหลังภาพกวีกับนักดื่ม",
+    "แทรกแซงเมื่อประชาชนหมดทางเลือก"
+  ],
+  "relationships": [
+    "Dvalin — สหายที่เขาช่วยจากความเจ็บปวด",
+    "กวีนิรนาม — เพื่อนผู้มอบรูปลักษณ์และอุดมคติ"
+  ],
+  "conflicts": [
+    "การไม่ปกครองอาจถูกมองเป็นการละเลย",
+    "อารมณ์ขันซ่อนความสูญเสีย"
+  ],
+  "strengthEvidence": [
+    "ช่วยปลดปล่อย Mondstadt และ Dvalin",
+    "รักษาอุดมคติโดยไม่ยึดอำนาจ"
+  ],
+  "weaknessEvidence": [
+    "หลีกเลี่ยงคำตอบตรงเรื่องอดีต",
+    "การดื่มและเล่นสนุกทำให้คนประเมินความรับผิดชอบต่ำ"
+  ],
+  "stories": [
+    "Character Stories — กำเนิด Barbatos และรูปลักษณ์กวี",
+    "เพลงกับลม — วิธีรักษาความทรงจำของเมือง"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — ใช้คำชวนเล่นและบทกวีสร้างความใกล้ชิด",
+    "คำพูดถึง Celestia มักหลบเลี่ยงกว่าหัวข้อทั่วไป"
+  ],
+  "quotes": ["Come on Traveler, let's go!"],
+  "analysisNotes": [
+    "Venti นำด้วยการคืน agency ให้ผู้คน แต่เสรีภาพแบบไม่แทรกแซงมีต้นทุนเมื่อภัยเติบโตในช่วงหลับใหล"
+  ]
 }

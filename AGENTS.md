@@ -10,6 +10,7 @@
 - Use `docs/scope.md` as the product-scope reference.
 - Use `docs/stack.md` as the authoritative technology and deployment reference.
 - Use `docs/character-data-import-plan.md` for character import and source-mapping rules.
+- Use `docs/lore-research-workflow.md` when creating or continuing character lore research from Wiki Profile and Voice-Overs pages.
 - When documents disagree, follow the document dedicated to that topic and update stale summaries rather than duplicating detailed rules.
 
 ## Current Technical Constraints

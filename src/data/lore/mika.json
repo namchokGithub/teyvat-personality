@@ -2,20 +2,52 @@
   "id": "mika",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Mika"
+    "url": "https://genshin-impact.fandom.com/wiki/Mika/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "นักสำรวจแนวหน้าของ Reconnaissance Company ผู้สุภาพ ขยัน และถ่อมตน เขาเชี่ยวชาญแผนที่กับข่าวกรอง แต่ประหม่าเมื่อเป็นจุดสนใจหรือทำงานกับคนที่ยังไม่คุ้น",
+  "background": "Mika เติบโตในครอบครัวช่างแผนที่และเข้าร่วม Knights ก่อนถูก Varka เลือกไป Grand Expedition เขาทำหน้าที่สำรวจภูมิประเทศ ส่งข่าว และกลับ Mondstadt เพื่อรายงานสถานการณ์",
+  "personalityNotes": [
+    "ละเอียด รอบคอบ และพร้อมสนับสนุน",
+    "ขี้อายและวิจารณ์ตนเอง",
+    "มีความรับผิดชอบสูงต่อความแม่นยำของข้อมูล"
+  ],
+  "motivations": [
+    "นำทางหน่วยอย่างปลอดภัย",
+    "สร้างแผนที่และรายงานที่ช่วยการตัดสินใจ"
+  ],
+  "values": ["ความถูกต้อง", "การทำงานเป็นทีม", "ความปลอดภัยของพวกพ้อง"],
+  "behaviorPatterns": [
+    "ตรวจอุปกรณ์และเส้นทางซ้ำ",
+    "พูดเป็นทางการเมื่อประหม่า",
+    "รับงานสนับสนุนทันทีโดยไม่แสวงชื่อเสียง"
+  ],
+  "relationships": [
+    "Huffman — พี่ชายและอัศวินที่ Mika มองเป็นแบบอย่าง",
+    "Eula — หัวหน้าที่ช่วยให้เขาพัฒนาความมั่นใจ",
+    "Varka — ผู้นำที่เลือกเขาร่วม expedition"
+  ],
+  "conflicts": [
+    "ความต้องการรายงานแม่นยำสร้างความกังวลต่อความผิดพลาด",
+    "ความถ่อมตนทำให้ประเมินคุณค่าตนต่ำ"
+  ],
+  "strengthEvidence": [
+    "ได้รับเลือกเป็น surveyor ของ Grand Expedition",
+    "จัดทำข่าวกรองภาคสนามที่หน่วยรบพึ่งพาได้"
+  ],
+  "weaknessEvidence": [
+    "สื่อสารติดขัดต่อหน้าคนจำนวนมาก",
+    "เตรียมการมากเกินไปเมื่อกลัวทำให้ทีมผิดหวัง"
+  ],
+  "stories": [
+    "Character Stories — การฝึกสำรวจและภารกิจกับ Grand Expedition",
+    "Surveying Device — เครื่องมือที่สะท้อนวิธีสนับสนุนทีม"
+  ],
+  "voiceOvers": [
+    "Hello — รายงานตำแหน่งและเสนอช่วยทุกอย่างทันที",
+    "บทพูดเน้นการนำทางปลอดภัยกับข้อมูลแม่นยำ"
+  ],
+  "quotes": ["I'll make every effort to navigate us safely."],
+  "analysisNotes": [
+    "Mika ผูกความมั่นใจกับความเป็นประโยชน์ต่อทีม จึงโดดเด่นเมื่อมีหน้าที่ชัดแต่กังวลในพื้นที่สังคมที่ไม่มีเกณฑ์แน่นอน"
+  ]
 }

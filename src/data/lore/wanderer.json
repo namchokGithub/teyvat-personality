@@ -2,20 +2,50 @@
   "id": "wanderer",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Wanderer"
+    "url": "https://genshin-impact.fandom.com/wiki/Wanderer/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "หุ่นที่ Ei สร้างและทอดทิ้ง ผู้ผ่านชื่อ Kabukimono, Scaramouche และ Wanderer เขาเยาะเย้ย ระวังความไว้ใจ และกำลังสร้างตัวตนใหม่หลังเผชิญความจริงของอดีต",
+  "background": "หลังถูกทิ้ง Wanderer สูญเสียคนสำคัญและถูก Dottoreบิดเบือนเหตุการณ์ เขาเข้าร่วม Fatui พยายามเป็นเทพ ก่อนลบตนจาก Irminsul และให้ Nahida ช่วยคืนความทรงจำ",
+  "personalityNotes": [
+    "คมคาย เย็นชา และไวต่อการทรยศ",
+    "ต้องการอิสระแต่กลัวสายสัมพันธ์"
+  ],
+  "motivations": [
+    "กำหนดชื่อและความหมายชีวิตด้วยตน",
+    "รับผิดชอบอดีตโดยไม่กลับเป็นเครื่องมือ"
+  ],
+  "values": ["เสรีภาพ", "ความจริง", "เจตจำนง"],
+  "behaviorPatterns": [
+    "ผลักคนออกด้วยคำดูถูก",
+    "ช่วยเหลือโดยอ้างเหตุผลเชิงประโยชน์"
+  ],
+  "relationships": [
+    "Nahida — ผู้ให้โอกาสและกรอบรับผิดชอบ",
+    "Ei — ผู้สร้างซึ่งเป็นต้นกำเนิดบาดแผล",
+    "Dottore — ผู้บิดเบือนความสูญเสียและใช้เขา"
+  ],
+  "conflicts": [
+    "อยากได้รับการยอมรับแต่คาดว่าทุกคนจะทรยศ",
+    "การลบอดีตไม่ลบผลของการกระทำ"
+  ],
+  "strengthEvidence": [
+    "ยอมรับความทรงจำเจ็บปวดกลับคืน",
+    "เริ่มเลือกช่วยผู้อื่นโดยไม่ถูกสั่ง"
+  ],
+  "weaknessEvidence": [
+    "ตอบความเปราะบางด้วยความก้าวร้าว",
+    "ยังผูกตัวตนกับการปฏิเสธอดีต"
+  ],
+  "stories": [
+    "Character Stories — การเกิดและสามการทรยศ",
+    "Irminsul — ความพยายามลบตนและการคืนความทรงจำ"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — ใช้คำดูถูกเป็นระยะป้องกัน",
+    "บทพูดถึง Nahida แฝงความเคารพหลังท่าทีไม่ยอมรับ"
+  ],
+  "quotes": ["You want me to be your companion?"],
+  "analysisNotes": [
+    "Wanderer เริ่มมีอิสระจริงเมื่อยอมรับอดีตเป็นความรับผิดชอบ ไม่ใช่หลักฐานว่าตนถูกกำหนดให้ชั่วร้าย"
+  ]
 }

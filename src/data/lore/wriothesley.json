@@ -2,20 +2,43 @@
   "id": "wriothesley",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Wriothesley"
+    "url": "https://genshin-impact.fandom.com/wiki/Wriothesley/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Duke แห่ง Fortress of Meropide ผู้สุขุม ใช้อารมณ์ขันแห้ง และบริหารเรือนจำเป็นชุมชนที่ให้โอกาสเริ่มใหม่",
+  "background": "Wriothesley ฆ่าพ่อแม่บุญธรรมที่ค้ามนุษย์เด็กและยอมรับโทษใน Fortress เขาสร้างอำนาจจากภายในจนเป็นผู้บริหาร ปรับระบบให้มีระเบียบและศักดิ์ศรี",
+  "personalityNotes": [
+    "สงบ ปฏิบัติจริง และอ่านคนเก่ง",
+    "เมตตาโดยไม่แสดงเป็นความอ่อนโยน"
+  ],
+  "motivations": [
+    "รักษาความสงบและโอกาสฟื้นตัวใน Fortress",
+    "ป้องกันภัยใต้ทะเล Fontaine"
+  ],
+  "values": ["ความรับผิดชอบ", "โอกาสครั้งที่สอง", "ความเป็นส่วนตัว"],
+  "behaviorPatterns": ["เจรจาด้วยชาและข้อมูล", "ให้คนเลือกภายใต้ขอบเขตชัด"],
+  "relationships": [
+    "Sigewinne — หัวหน้าพยาบาลและพันธมิตรที่ไว้ใจ",
+    "Neuvillette — ผู้มีอำนาจที่เคารพการบริหารของเขา"
+  ],
+  "conflicts": [
+    "อดีตความรุนแรงขัดกับบทบาทผู้สร้างระเบียบ",
+    "การเก็บข้อมูลทำให้ความสัมพันธ์มีระยะ"
+  ],
+  "strengthEvidence": [
+    "เปลี่ยนเรือนจำเป็นระบบพึ่งตนเอง",
+    "เตรียมเรือรับมือคำพยากรณ์ล่วงหน้า"
+  ],
+  "weaknessEvidence": ["รับภาระลับไว้มาก", "มักทดสอบคนก่อนมอบความไว้ใจ"],
+  "stories": [
+    "Character Stories — ครอบครัวบุญธรรม คดี และการขึ้นเป็น Duke",
+    "Fortress — ปรัชญาการบริหารผ่านโอกาสใหม่"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — ใช้ชาเปิดบทสนทนาและลดความตึงเครียด",
+    "คำพูดตรงแต่เว้นข้อมูลสำคัญจนจำเป็น"
+  ],
+  "quotes": ["If you need anything, just ask."],
+  "analysisNotes": [
+    "Wriothesley สร้างความยุติธรรมจากประสบการณ์ที่ระบบครอบครัวล้มเหลว โดยให้อำนาจผ่านกฎที่คาดเดาได้"
+  ]
 }

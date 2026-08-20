@@ -2,20 +2,46 @@
   "id": "yun_jin",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Yun_Jin"
+    "url": "https://genshin-impact.fandom.com/wiki/Yun_Jin/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ผู้อำนวยการ Yun-Han Opera Troupe ผู้มีวินัยและเชี่ยวชาญงิ้ว Liyue เธอเคารพประเพณีแต่เปิดรับ rock กับชีวิตนอกเวทีเพื่อทำให้ศิลปะยังมีชีวิต",
+  "background": "Yun Jin มาจากครอบครัวช่างอาวุธและนักงิ้ว เธอฝึกเสียง ท่าทาง และการเขียนบทจนเป็นนักแสดงชื่อดัง พร้อมแอบใช้เวลาฟัง Xinyan และสำรวจวัฒนธรรมร่วมสมัย",
+  "personalityNotes": [
+    "สง่างาม ขยัน และถ่อมตน",
+    "อยากรู้นอกกรอบภาพนักงิ้วแบบดั้งเดิม"
+  ],
+  "motivations": ["รักษาและพัฒนางิ้ว Liyue", "สร้างบทที่มองวีรบุรุษเป็นมนุษย์"],
+  "values": ["งานฝีมือ", "ประเพณีที่ปรับตัว", "ความจริงของตัวละคร"],
+  "behaviorPatterns": [
+    "ซ้อมพื้นฐานซ้ำอย่างมีวินัย",
+    "แยกภาพสาธารณะจากเวลาส่วนตัวอย่างระมัดระวัง"
+  ],
+  "relationships": [
+    "Xinyan — เพื่อนศิลปินที่เปิดโลกดนตรีใหม่",
+    "Yun-Han Troupe — คณะและมรดกที่เธอนำ"
+  ],
+  "conflicts": [
+    "ชื่อเสียงกับมารยาทจำกัดอิสระส่วนตัว",
+    "การรักษาประเพณีต้องไม่ทำให้งานหยุดนิ่ง"
+  ],
+  "strengthEvidence": [
+    "นำคณะและสร้างผลงานที่ได้รับการยอมรับกว้าง",
+    "เรียนรู้แนวใหม่โดยไม่ลดคุณค่าวิชาเดิม"
+  ],
+  "weaknessEvidence": [
+    "กดความชอบบางอย่างเพื่อภาพลักษณ์",
+    "มาตรฐานการซ้อมสูงสร้างความเหนื่อย"
+  ],
+  "stories": [
+    "Character Stories — ครอบครัว การฝึก และชีวิตสองด้าน",
+    "The Divine Damsel — การเปลี่ยนตำนานเป็นเรื่องมนุษย์ร่วมสมัย"
+  ],
+  "voiceOvers": [
+    "Hello — เชิญชมการแสดงด้วยมารยาทเวทีเต็มรูปแบบ",
+    "บทพูดนอกงานเผยความสนใจดนตรีสมัยใหม่"
+  ],
+  "quotes": ["We'd be honored to have you attend a performance sometime."],
+  "analysisNotes": [
+    "Yun Jin อนุรักษ์ด้วยการตีความใหม่ ไม่ใช่การแช่แข็ง จึงทำให้ประเพณีตอบสนองผู้ชมยุคปัจจุบัน"
+  ]
 }

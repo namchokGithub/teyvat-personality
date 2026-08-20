@@ -2,20 +2,59 @@
   "id": "kaeya",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Kaeya"
+    "url": "https://genshin-impact.fandom.com/wiki/Kaeya/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Cavalry Captain แห่ง Knights of Favonius ผู้มีเสน่ห์ เจ้าเล่ห์ และเก่งเก็บข้อมูล เบื้องหลังท่าทีสบายคือชาว Khaenri’ah ที่ถูกส่งมายัง Mondstadt และต้องเลือกระหว่างภารกิจเดิมกับครอบครัวที่รับเลี้ยง",
+  "background": "Kaeya ถูกพ่อทิ้งไว้ใน Mondstadt ในฐานะ ‘ความหวังสุดท้าย’ ของ Khaenri’ah และ Crepus รับเลี้ยงเป็นพี่น้องกับ Diluc หลัง Crepus เสียชีวิต เขาเปิดเผยความจริงแก่ Diluc นำไปสู่การต่อสู้และ Vision ของเขา",
+  "personalityNotes": [
+    "มีเสน่ห์ ชอบหยอก และอ่านคนเก่ง",
+    "ซ่อนความจริงหลังเรื่องเล่าครึ่งจริงครึ่งเท็จ",
+    "รับผิดชอบต่อ Mondstadt แม้ไม่แสดงตรง ๆ"
+  ],
+  "motivations": [
+    "ปกป้อง Mondstadt และรักษาบทบาทใน Knights",
+    "ควบคุมไม่ให้อดีต Khaenri’ah กำหนดอนาคต",
+    "ค้นหาความจริงผ่านเครือข่ายข้อมูล"
+  ],
+  "values": [
+    "ความสามารถ",
+    "เสรีภาพในการเลือกฝ่าย",
+    "สายสัมพันธ์ที่พิสูจน์ด้วยการกระทำ"
+  ],
+  "behaviorPatterns": [
+    "ใช้คำหยอกและคำถามนำเพื่อดึงข้อมูล",
+    "มอบหมายงานโดยเผยข้อมูลเท่าที่จำเป็น",
+    "รักษาท่าทีผ่อนคลายในสถานการณ์ตึงเครียด"
+  ],
+  "relationships": [
+    "Diluc — พี่น้องบุญธรรมที่แตกหักแต่ยังเข้าใจกันลึก",
+    "Crepus — พ่อบุญธรรมซึ่งทำให้ Mondstadt เป็นบ้าน",
+    "Knights of Favonius — องค์กรที่เขารับใช้ด้วยวิธีไม่เป็นทางการ"
+  ],
+  "conflicts": [
+    "สายเลือดและภารกิจจาก Khaenri’ah ขัดกับความผูกพันต่อ Mondstadt",
+    "การซ่อนเจตนาทำให้แม้คนใกล้ชิดไว้วางใจได้ไม่เต็มที่"
+  ],
+  "strengthEvidence": [
+    "สร้างเครือข่ายข่าวกรองและจัดการภัยด้วยไหวพริบ",
+    "ยังปกป้องเมืองหลังสูญเสียครอบครัวและความสัมพันธ์กับ Diluc"
+  ],
+  "weaknessEvidence": [
+    "ใช้การหลอกลวงจนยากจะแยกความจริงใจ",
+    "ความขัดแย้งด้านตัวตนผลักให้ทดสอบความไว้ใจของผู้อื่น"
+  ],
+  "stories": [
+    "Character Stories — การถูกทิ้งใน Mondstadt และความจริงที่บอก Diluc",
+    "Vision — การต่อสู้ในคืนที่ความลับถูกเปิดเผย"
+  ],
+  "voiceOvers": [
+    "Hello — มองการร่วมเดินทางว่าน่าสนุกกว่างาน Knights",
+    "บทพูดใช้ความขบขันเลี่ยงคำถามที่แตะอดีต"
+  ],
+  "quotes": [
+    "Guarding you on your journey sounds far more entertaining than any of the usual Favonius stuff."
+  ],
+  "analysisNotes": [
+    "เสน่ห์ของ Kaeya ทำหน้าที่เป็นเครื่องมือข่าวกรองและเกราะป้องกันไม่ให้ใครเข้าใกล้ความขัดแย้งด้านตัวตนเกินไป"
+  ]
 }

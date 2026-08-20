@@ -2,20 +2,53 @@
   "id": "lynette",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Lynette"
+    "url": "https://genshin-impact.fandom.com/wiki/Lynette/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ผู้ช่วยนักมายากลแห่ง Fontaine และสมาชิก House of the Hearth ผู้เงียบขรึม เธอใช้ภาพเครื่องจักรที่อยู่โหมด standby เพื่อรักษาระยะ แต่สังเกตเก่งและภักดีต่อ Lyney กับ Freminet",
+  "background": "Lynette กับ Lyney เติบโตเป็นเด็กกำพร้าและเคยถูกขุนนางรับไปด้วยเจตนาร้าย ก่อน Arlecchino ช่วยและนำเข้าสู่ House of the Hearth เธอแสดงมายากลคู่พี่ชายพร้อมทำภารกิจข่าวกรอง",
+  "personalityNotes": [
+    "พูดน้อย สุขุม และสังเกตรายละเอียด",
+    "รักษาความเป็นส่วนตัวด้วยคำตอบแบบเครื่องจักร",
+    "อ่อนโยนต่อพี่น้องและเด็กใน Hearth"
+  ],
+  "motivations": [
+    "ปกป้อง Lyney และ Freminet",
+    "ทำภารกิจของ House of the Hearth ให้สำเร็จ",
+    "รักษาพื้นที่ส่วนตัวท่ามกลางสายตาผู้ชม"
+  ],
+  "values": ["ครอบครัว", "ความไว้ใจ", "ความเป็นส่วนตัว", "ความแม่นยำ"],
+  "behaviorPatterns": [
+    "ส่งคำถามสาธารณะให้ Lyney หรือตั๋วสำนักงาน",
+    "นิ่งฟังเพื่อเก็บข้อมูล",
+    "ใช้ชาและเวลาสงบเพื่อฟื้นพลัง"
+  ],
+  "relationships": [
+    "Lyney — พี่ชาย คู่แสดง และคนที่เธอปกป้อง",
+    "Freminet — น้องชายที่เธอดูแลอย่างเงียบ ๆ",
+    "Arlecchino — ผู้ช่วยชีวิตและ Father ของ Hearth"
+  ],
+  "conflicts": [
+    "บทบาทนักแสดงต้องเปิดเผยตัวต่อสาธารณะทั้งที่ต้องการระยะ",
+    "ความภักดีต่อ Hearth อาจขัดกับสายสัมพันธ์นอกองค์กร"
+  ],
+  "strengthEvidence": [
+    "รักษาความสงบและอ่านภัยในภารกิจลับ",
+    "สนับสนุนการแสดงกับแผนของ Lyneyโดยไม่ต้องเป็นจุดสนใจ"
+  ],
+  "weaknessEvidence": [
+    "การถอนตัวทำให้ผู้อื่นอ่านความต้องการเธอยาก",
+    "พึ่ง Lyney เป็นช่องทางสื่อสารในบริบทสังคม"
+  ],
+  "stories": [
+    "Character Stories — ชีวิตเด็กกำพร้าและการถูก Arlecchino ช่วย",
+    "งานมายากล — บทบาทผู้ช่วยที่ซ่อนทักษะสังเกตและข่าวกรอง"
+  ],
+  "voiceOvers": [
+    "Hello — ส่งคำถามทุกประเภทไปช่องทางอื่นก่อนยอมคุยตรง",
+    "บทพูดใช้ศัพท์โหมดพลังงานแทนการอธิบายอารมณ์"
+  ],
+  "quotes": ["You want to talk to me? ...Then get to the point."],
+  "analysisNotes": [
+    "ภาษาเครื่องจักรของ Lynette เป็นขอบเขตทางสังคมที่ช่วยให้เธอควบคุมการเข้าถึงตนหลังอดีตซึ่งผู้ใหญ่ละเมิดความปลอดภัย"
+  ]
 }

@@ -2,20 +2,49 @@
   "id": "xiangling",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Xiangling"
+    "url": "https://genshin-impact.fandom.com/wiki/Xiangling/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "เชฟ Wanmin Restaurant ผู้กล้าทดลองและเชื่อว่าอาหารดีไม่ควรถูกจำกัดด้วยชนชั้น เธอออกเดินทางหาวัตถุดิบและปรุงโดยไม่ยึดธรรมเนียม",
+  "background": "Xiangling เรียนทำอาหารจาก Chef Mao และแข่งขันกับแนวคิดอาหารชั้นสูง เธอพบ Guoba ซึ่งแท้จริงคือเทพ Marchosius และร่วมเดินทางชิมกับทดลองวัตถุดิบ",
+  "personalityNotes": [
+    "ร่าเริง กล้าลอง และไม่ถือตัว",
+    "หมกมุ่นกับรสชาติจนลืมความเสี่ยง"
+  ],
+  "motivations": [
+    "สร้างอาหารใหม่จากวัตถุดิบทุกชนิด",
+    "ทำให้อาหารอร่อยเข้าถึงทุกคน"
+  ],
+  "values": ["ความคิดสร้างสรรค์", "การแบ่งปัน", "ประสบการณ์ตรง"],
+  "behaviorPatterns": [
+    "ชิมวัตถุดิบที่คนอื่นหลีกเลี่ยง",
+    "ปรับสูตรจากผลจริงมากกว่าชื่อเสียง"
+  ],
+  "relationships": [
+    "Chef Mao — พ่อและครูที่สนับสนุนการทดลอง",
+    "Guoba — คู่หูและผู้ช่วยครัว"
+  ],
+  "conflicts": [
+    "การทดลองอาจเสี่ยงต่อผู้ชิม",
+    "ความสนใจรสใหม่ทำให้ไม่รักษาสูตรสำเร็จ"
+  ],
+  "strengthEvidence": [
+    "สร้างชื่อด้วยอาหารราคาจับต้องได้",
+    "ประยุกต์วัตถุดิบผิดธรรมเนียมเป็นเมนูสำเร็จ"
+  ],
+  "weaknessEvidence": [
+    "ประเมินความปลอดภัยวัตถุดิบช้า",
+    "รับคำวิจารณ์สูตรเป็นแรงทดลองต่อทันที"
+  ],
+  "stories": [
+    "Character Stories — ปรัชญาอาหารและการแข่งขัน",
+    "Guoba — ความสัมพันธ์ที่เกิดจากอาหารและการเดินทาง"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — สนทนาผ่านเมนูและชวนชิมของใหม่",
+    "ความตื่นเต้นเพิ่มทันทีเมื่อพบวัตถุดิบ"
+  ],
+  "quotes": ["Help! My dinner is attacking me!"],
+  "analysisNotes": [
+    "Xiangling ทำให้นวัตกรรมเป็นประชาธิปไตยผ่านอาหาร แต่ความอยากรู้อยากเห็นต้องถูกถ่วงด้วยความปลอดภัย"
+  ]
 }

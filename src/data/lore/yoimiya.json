@@ -2,20 +2,49 @@
   "id": "yoimiya",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Yoimiya"
+    "url": "https://genshin-impact.fandom.com/wiki/Yoimiya/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "เจ้าของ Naganohara Fireworks ผู้ร่าเริง รับฟังเด็ก และสร้างดอกไม้ไฟเป็นภาชนะความทรงจำ เธอคุยเก่งแต่จริงจังกับความปลอดภัยกับสัญญา",
+  "background": "Yoimiya สืบกิจการจากพ่อผู้หูตึง เรียนสูตรดอกไม้ไฟและช่วยชุมชน Inazuma เธอฝ่าฝืนนโยบาย Vision Hunt เพื่อช่วยคนหนีและรักษาความหวัง",
+  "personalityNotes": [
+    "อบอุ่น ช่างคุย และเข้าใจจินตนาการเด็ก",
+    "กล้าต่อต้านกฎเมื่อทำร้ายผู้คน"
+  ],
+  "motivations": [
+    "สร้างความทรงจำที่กลับมาได้ผ่านดอกไม้ไฟ",
+    "ทำให้ชุมชนรู้สึกมีความหวัง"
+  ],
+  "values": ["ครอบครัว", "ความทรงจำ", "ความสุขร่วมกัน"],
+  "behaviorPatterns": [
+    "ฟังเรื่องยาวของเด็กโดยไม่ตัดสิน",
+    "เก็บสูตรดอกไม้ไฟให้ลูกค้าจุดซ้ำในอนาคต"
+  ],
+  "relationships": [
+    "Naganohara Ryuunosuke — พ่อและผู้ถ่ายทอดกิจการ",
+    "เด็ก Inazuma — เพื่อนกับผู้ชมที่เธอให้พื้นที่จินตนาการ"
+  ],
+  "conflicts": [
+    "ความช่วยเหลือแบบเปิดเผยเสี่ยงต่อกฎหมาย",
+    "ความกระตือรือร้นอาจทำให้ผู้อื่นตามบทสนทนาไม่ทัน"
+  ],
+  "strengthEvidence": [
+    "รักษาธุรกิจและความปลอดภัยของงานระเบิด",
+    "ช่วยผู้ถูกตามล่าภายใต้ Vision Hunt Decree"
+  ],
+  "weaknessEvidence": [
+    "รับความกังวลของชุมชนจำนวนมาก",
+    "ลงมือก่อนประเมินผลทางการเมืองครบ"
+  ],
+  "stories": [
+    "Character Stories — Naganohara และสูตรความทรงจำ",
+    "Goldfish Fireworks — ปรัชญาความสุขชั่วครู่ที่กลับมาได้"
+  ],
+  "voiceOvers": [
+    "Hello — เผลอแนะนำอาหารก่อนจำได้ว่าร้านทำดอกไม้ไฟ",
+    "บทพูดเปลี่ยนเรื่องเร็วแต่กลับสู่ความสนใจของคู่สนทนา"
+  ],
+  "quotes": ["We make fireworks!"],
+  "analysisNotes": [
+    "Yoimiya เปลี่ยนศิลปะชั่วคราวเป็นความต่อเนื่องผ่านสูตรและเรื่องเล่า ทำให้ความทรงจำไม่ขึ้นกับวัตถุถาวร"
+  ]
 }

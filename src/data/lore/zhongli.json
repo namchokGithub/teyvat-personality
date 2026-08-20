@@ -2,20 +2,50 @@
   "id": "zhongli",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Zhongli"
+    "url": "https://genshin-impact.fandom.com/wiki/Zhongli/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ร่างมนุษย์ของ Morax อดีต Geo Archon ผู้สุขุม รู้ประวัติศาสตร์ และยึดสัญญา เขาวางแผนเกษียณเพื่อให้ Liyue พิสูจน์ว่ายืนได้โดยมนุษย์ แต่ไม่คุ้นมูลค่าเงินในชีวิตประจำวัน",
+  "background": "Morax นำ adepti ผ่าน Archon War และสร้างระบบสัญญากับเงินตรา หลังหลายพันปี เขาจัดฉากการตายผ่านข้อตกลงกับ Tsaritsa ทดสอบ Liyue และใช้ชีวิตที่ Wangsheng Funeral Parlor ในชื่อ Zhongli",
+  "personalityNotes": [
+    "สงบ ละเอียด และยึดความทรงจำ",
+    "เคารพพิธีและสัญญามากกว่าความสะดวก"
+  ],
+  "motivations": [
+    "เฝ้าดู Liyue เติบโตโดยไม่พึ่งเทพ",
+    "รักษาประวัติศาสตร์กับคำมั่นผู้จากไป"
+  ],
+  "values": ["สัญญา", "ความต่อเนื่อง", "ศักดิ์ศรีของอดีต"],
+  "behaviorPatterns": [
+    "เล่าเบื้องหลังวัตถุและพิธีอย่างละเอียด",
+    "ซื้อของคุณภาพโดยลืมเตรียม Mora"
+  ],
+  "relationships": [
+    "Guizhong — สหายผู้สูญเสียและมรดกความคิด",
+    "Xiao/adepti — ผู้ร่วมสัญญาที่เขายังดูแล",
+    "Hu Tao — นายจ้างที่รับมือความรู้กับค่าใช้จ่ายของเขา"
+  ],
+  "conflicts": [
+    "การเกษียณผ่านแผนลับทำให้ประชาชนเผชิญวิกฤตโดยไม่รู้",
+    "การยึดอดีตอาจชะลอการปรับตัวชีวิตธรรมดา"
+  ],
+  "strengthEvidence": [
+    "ยุติสงครามและสร้างเสถียรภาพ Liyue หลายพันปี",
+    "ยอมสละอำนาจเมื่อเห็นว่ายุคมนุษย์พร้อม"
+  ],
+  "weaknessEvidence": [
+    "ใช้แผนระดับเทพโดยไม่ขอ consent ผู้ได้รับผล",
+    "ไม่เข้าใจข้อจำกัดงบประมาณแม้รู้เศรษฐศาสตร์"
+  ],
+  "stories": [
+    "Character Stories — Archon War สัญญา และการเกษียณ",
+    "ของเก่า/พิธี — วิธีรักษาความทรงจำจาก erosion"
+  ],
+  "voiceOvers": [
+    "Hello — เริ่มความสัมพันธ์เป็นสัญญาและเลือกชื่อ Zhongli สำหรับช่วงลา",
+    "บทพูดเชื่อมทุกสิ่งกับประวัติศาสตร์และราคาที่ไม่ใช่เงิน"
+  ],
+  "quotes": ["A new contract? Okay."],
+  "analysisNotes": [
+    "Zhongli เปลี่ยนจากผู้ค้ำประกันระเบียบเป็นพยานของการเปลี่ยนแปลง แต่ยังควบคุมเงื่อนไขการส่งผ่านอำนาจอย่างมาก"
+  ]
 }

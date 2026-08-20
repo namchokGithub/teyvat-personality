@@ -2,20 +2,52 @@
   "id": "rosaria",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Rosaria"
+    "url": "https://genshin-impact.fandom.com/wiki/Rosaria/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Sister แห่ง Church of Favonius ผู้ไม่ศรัทธาพิธีการแต่ปกป้อง Mondstadt ในเงามืด เธอเย็นชา ตรง และใช้ประสบการณ์โจรเฝ้าระวังภัยที่ระบบทางการมองไม่เห็น",
+  "background": "Rosaria ถูกโจรลักพาตัวและเลี้ยงในกลุ่มจน Varka ปราบกลุ่มแล้วพามา Mondstadt เธอเข้าศาสนจักรแต่หลีกเลี่ยงงานพิธี เลือกสืบคนต้องสงสัยกับกำจัดภัยกลางคืน",
+  "personalityNotes": [
+    "ระแวง ตรง และรักอิสระ",
+    "แสดงความห่วงใยผ่านการเฝ้าระวังมากกว่าคำพูด"
+  ],
+  "motivations": [
+    "รักษาความปลอดภัย Mondstadt",
+    "ป้องกันไม่ให้อดีตแบบตนเกิดกับคนอื่น"
+  ],
+  "values": ["เสรีภาพ", "ความปลอดภัยของเมือง", "ผลลัพธ์เหนือพิธี"],
+  "behaviorPatterns": [
+    "ขาดงานสวดแต่ลาดตระเวนกลางคืน",
+    "ตรวจสอบคนแปลกหน้าก่อนให้ความไว้ใจ"
+  ],
+  "relationships": [
+    "Varka — ผู้มอบโอกาสชีวิตใหม่",
+    "Barbara และ Church — ชุมชนที่รับเธอแม้ไม่เข้ากรอบ",
+    "โจรผู้เลี้ยงดู — อดีตที่มีทั้งความรุนแรงและสายสัมพันธ์"
+  ],
+  "conflicts": [
+    "ตำแหน่ง Sister ขัดกับการไม่ศรัทธาพิธี",
+    "วิธีลับและรุนแรงไม่เข้ากับภาพเมืองเสรี"
+  ],
+  "strengthEvidence": [
+    "ใช้ทักษะอดีตตรวจจับและหยุดภัยก่อนถึงประชาชน",
+    "รักษาความภักดีต่อเมืองโดยไม่ต้องได้รับเครดิต"
+  ],
+  "weaknessEvidence": [
+    "ระแวงจนเข้าถึงความสัมพันธ์ยาก",
+    "พึ่งการทำงานลำพังและหลีกเลี่ยงการสนับสนุน"
+  ],
+  "stories": [
+    "Character Stories — วัยเด็กในกลุ่มโจรและชีวิตหลัง Varka",
+    "Night Watch — งานปกป้องที่ไม่มีในหน้าที่ทางการ"
+  ],
+  "voiceOvers": [
+    "Hello — เสนอแก้ปัญหาแต่ปฏิเสธบทบาทด้านคำอธิษฐาน",
+    "บทพูดสั้นและไม่แต่งเติมสะท้อนการไม่ชอบพิธี"
+  ],
+  "quotes": [
+    "If you've got a problem you can't handle, then I'm the one for the job."
+  ],
+  "analysisNotes": [
+    "Rosaria ปฏิเสธรูปแบบศรัทธาแต่ปฏิบัติคุณค่าการคุ้มครองชุมชนอย่างสม่ำเสมอ"
+  ]
 }

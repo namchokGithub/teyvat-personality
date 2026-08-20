@@ -2,20 +2,50 @@
   "id": "yae_miko",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Yae_Miko"
+    "url": "https://genshin-impact.fandom.com/wiki/Yae_Miko/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Guuji แห่ง Grand Narukami Shrine และบรรณาธิการ Yae Publishing House ผู้เฉลียวฉลาด ชอบหยอก และวางแผนหลายชั้น เธอใช้เรื่องเล่ากับความอยากรู้อยากเห็นชี้นำผู้คน",
+  "background": "Miko เป็น kitsune ผู้ใกล้ชิด Ei และสืบตำแหน่ง shrine หลังยุค Kitsune Saiguu เธอบริหารทั้งศาสนสถานกับสำนักพิมพ์ และเป็นผู้ดึง Ei ออกจาก Plane of Euthymia",
+  "personalityNotes": [
+    "เจ้าเล่ห์ มั่นใจ และอ่านความปรารถนาคนเก่ง",
+    "ผูกพันลึกแต่หลีกเลี่ยงการพูดตรง"
+  ],
+  "motivations": [
+    "รักษา Inazuma และดึง Ei กลับสู่โลก",
+    "ค้นหาเรื่องราวที่น่าสนใจ"
+  ],
+  "values": ["ความเปลี่ยนแปลง", "เรื่องเล่า", "สายสัมพันธ์เก่า"],
+  "behaviorPatterns": [
+    "ยั่วให้คนเผยปฏิกิริยา",
+    "สร้างแผนที่คู่ร่วมมือเข้าใจเพียงบางส่วน"
+  ],
+  "relationships": [
+    "Ei — เพื่อนเก่าที่เธอท้าทายและปกป้อง",
+    "Kitsune Saiguu — รุ่นก่อนและความสูญเสียสำคัญ",
+    "Gorou — เป้าหมายการหยอกที่เผยอำนาจทางสังคม"
+  ],
+  "conflicts": [
+    "ความสนุกจากการชักใยลด agency ผู้อื่น",
+    "ความผูกพันถูกซ่อนจนดูเหมือนไม่จริงจัง"
+  ],
+  "strengthEvidence": [
+    "วางแผนช่วย Ei และยุติ Vision Hunt Decree",
+    "บริหารสององค์กรด้วยอิทธิพลกว้าง"
+  ],
+  "weaknessEvidence": [
+    "เบื่อง่ายและอาจสร้างสถานการณ์เพื่อความสนุก",
+    "ทดสอบขอบเขตคนอื่นเกินไป"
+  ],
+  "stories": [
+    "Character Stories — ชีวิต kitsune และบทบาท Guuji",
+    "Yae Publishing House — การใช้เรื่องเล่าเป็นอำนาจวัฒนธรรม"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — หยอกคู่สนทนาเพื่อดูปฏิกิริยา",
+    "คำพูดถึง Ei ผสมการวิจารณ์กับความห่วงใยยาวนาน"
+  ],
+  "quotes": ["In your dreams."],
+  "analysisNotes": [
+    "Miko ใช้ความเจ้าเล่ห์ต่อสู้ความหยุดนิ่ง แต่ความสามารถควบคุมเรื่องเล่าทำให้เธอต้องรับผิดชอบต่อขอบเขตของผู้ที่กลายเป็นตัวละครในแผน"
+  ]
 }

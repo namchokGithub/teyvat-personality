@@ -2,20 +2,47 @@
   "id": "odette",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Odette"
+    "url": "https://genshin-impact.fandom.com/wiki/Odette/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "prima ballerina แห่ง Korolevskiy Troupe ผู้แม่นยำ เยือกเย็น และเป็นเจ้าหน้าที่ Fatui ภาพไร้อารมณ์เกิดจากการสูญเสียพ่อกับแม่และการฝึกที่ผลักความเจ็บปวดลงใต้ผิว",
+  "background": "Odette เกิดในตระกูลนักเต้น Spessiva พ่อเสียชีวิตในหน้าที่และแม่ล้มลงจากความโศกเศร้า เธอรับทั้งบัลเลต์กับการฝึก Fatui จนเป็นดาวเด่นและนักปฏิบัติการที่ใช้การเคลื่อนไหวแม่นยำ",
+  "personalityNotes": [
+    "สำรวม มีวินัย และควบคุมร่างกายยอดเยี่ยม",
+    "ไม่ถนัดแสดงความอบอุ่นนอกบทบาท"
+  ],
+  "motivations": ["รักษามรดกการเต้นของครอบครัว", "ทำทุกภารกิจให้ไร้ข้อผิดพลาด"],
+  "values": ["ความแม่นยำ", "ความอดทน", "ครอบครัวและศิลปะ"],
+  "behaviorPatterns": [
+    "ตอบแฟนสั้น ๆ และหลีกเลี่ยง encore",
+    "ฝึกผ่านความเจ็บปวดแทนหยุดพัก"
+  ],
+  "relationships": [
+    "Violetta — แม่และครูผู้เข้มงวด",
+    "Vodyanitsa — คนไม่กี่คนที่คุยกับเธอได้อย่างเป็นธรรมชาติ",
+    "Fatui — องค์กรที่หล่อหลอมด้านนักปฏิบัติการ"
+  ],
+  "conflicts": [
+    "บัลเลต์กับการต่อสู้ผสานกันจนแยกชีวิตสองด้านยาก",
+    "ความอดทนล้ำเส้นเป็นการทำร้ายตน"
+  ],
+  "strengthEvidence": [
+    "ควบคุมการแสดงจนคำวิจารณ์เงียบลงทันที",
+    "ทำภารกิจด้วยความแม่นยำและสงบ"
+  ],
+  "weaknessEvidence": [
+    "เพิกเฉยต่ออาการบาดเจ็บเรื้อรัง",
+    "ความสำรวมถูกมองเป็นความเย็นชา"
+  ],
+  "stories": [
+    "Character Story 3–5 — การสูญเสียครอบครัวและชีวิตคู่บัลเลต์–Fatui",
+    "Blurry Old Photo — ความทรงจำอบอุ่นก่อนความสูญเสีย"
+  ],
+  "voiceOvers": [
+    "Hello — เข้าใจผิดว่า Traveler เป็นแฟนก่อนเริ่มแนะนำใหม่",
+    "บทพูดสั้นสะท้อนความไม่คุ้นกับความสนใจนอกเวที"
+  ],
+  "quotes": ["I'm Odette, a ballerina with the Korolevskiy Troupe."],
+  "analysisNotes": [
+    "ความสมบูรณ์แบบของ Odette เป็นเกราะจัดระเบียบชีวิตหลังความสูญเสียทำลายความรู้สึกปลอดภัย"
+  ]
 }

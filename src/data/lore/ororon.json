@@ -2,20 +2,52 @@
   "id": "ororon",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Ororon"
+    "url": "https://genshin-impact.fandom.com/wiki/Ororon/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "สมาชิก Masters of the Night-Wind ผู้ใจดี แปลกตรง และผูกพันกับวิญญาณกับพืช เขาเกิดมาพร้อมวิญญาณไม่สมบูรณ์และเคยร่วมมือ Capitano เพื่อหาทางช่วย Natlan",
+  "background": "Ororon ถูกชุมชนเลี้ยงดูและเรียกผู้ใหญ่หลายคนว่าปู่ย่า เขาดูแลสวนกับวิญญาณ ใช้ความสามารถพิเศษรับรู้โลกวิญญาณ และเลือกแผนเสี่ยงเพื่อชดเชยสิ่งที่เชื่อว่าตนขาด",
+  "personalityNotes": [
+    "อ่อนโยน จริงใจ และใช้ตรรกะแปลกแต่ไม่เจตนาร้าย",
+    "เห็นคุณค่าชีวิตเล็ก ๆ และแบ่งปันโดยไม่หวังตอบแทน"
+  ],
+  "motivations": [
+    "ทำให้ชีวิตและวิญญาณของตนมีประโยชน์",
+    "ช่วย Natlan รอดจาก Abyss"
+  ],
+  "values": ["ชีวิต", "การเติบโต", "ชุมชนและการให้"],
+  "behaviorPatterns": [
+    "ปลูกผักเกินกินแล้วแจก",
+    "พูดสิ่งที่คิดตรงจนคนอื่นตามไม่ทัน"
+  ],
+  "relationships": [
+    "Citlali — ผู้ใหญ่ที่เลี้ยงดูและห่วงเขาอย่างเข้มงวด",
+    "Capitano — พันธมิตรชั่วคราวในแผนช่วย Natlan",
+    "Ifa — เพื่อนที่รับฟังตรรกะแปลกของเขา"
+  ],
+  "conflicts": [
+    "มองตนเป็นสิ่งไม่สมบูรณ์จนพร้อมเสียสละเกินจำเป็น",
+    "ความลับในแผนทำให้ขัดแย้งกับผู้ดูแล"
+  ],
+  "strengthEvidence": [
+    "รับรู้และช่วยเหลือวิญญาณได้",
+    "เลือกประโยชน์ของ Natlanเหนือความปลอดภัยตน"
+  ],
+  "weaknessEvidence": [
+    "คุณค่าตนต่ำและมองความตายตนเบา",
+    "สื่อสารเหตุผลจนผู้อื่นเข้าใจเจตนาผิด"
+  ],
+  "stories": [
+    "Character Stories — วิญญาณไม่สมบูรณ์และชีวิตกับชุมชน",
+    "สวนผัก — วิธีสร้างความหมายจากการเห็นสิ่งมีชีวิตเติบโต"
+  ],
+  "voiceOvers": [
+    "Hello — แจกผักโดยไม่ต้องการสิ่งตอบแทน",
+    "บทพูดแสดงการมองคน พืช และวิญญาณบนความต่อเนื่องเดียวกัน"
+  ],
+  "quotes": [
+    "As long as my vegetables wind up in the stomach of someone who enjoys them, that's all that matters."
+  ],
+  "analysisNotes": [
+    "การดูแลพืชของ Ororon ช่วยยืนยันว่าชีวิตไม่ต้องสมบูรณ์แบบจึงมีคุณค่า ซึ่งเป็นบทเรียนที่เขายังใช้กับตนไม่เต็มที่"
+  ]
 }

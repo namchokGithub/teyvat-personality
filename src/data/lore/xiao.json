@@ -2,20 +2,50 @@
   "id": "xiao",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Xiao"
+    "url": "https://genshin-impact.fandom.com/wiki/Xiao/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "yaksha ผู้พิทักษ์ Liyue ผู้แบก karmic debt จากการกำจัดเศษความแค้น เขาโดดเดี่ยว พูดสั้น และปฏิเสธความใกล้ชิดเพื่อไม่ให้ผู้อื่นได้รับอันตราย",
+  "background": "Xiao เคยถูกเทพชั่วร้ายควบคุมก่อน Morax ช่วยและตั้งชื่อ เขาเป็น Yaksha คนสุดท้ายที่ยังปฏิบัติหน้าที่ต่อเนื่อง และได้รับการบรรเทาจากเสียงขลุ่ยกับสายสัมพันธ์ใหม่",
+  "personalityNotes": [
+    "เคร่งขรึม ระวังตัว และเสียสละ",
+    "ไม่เข้าใจธรรมเนียมมนุษย์แต่ใส่ใจเงียบ ๆ"
+  ],
+  "motivations": [
+    "ปราบวิญญาณชั่วและปกป้อง Liyue",
+    "ไม่ให้ karmic debt ทำร้ายผู้อื่น"
+  ],
+  "values": ["หน้าที่", "บุญคุณ", "ความสงบของผู้บริสุทธิ์"],
+  "behaviorPatterns": [
+    "ปรากฏเมื่อเรียกชื่อในยามอันตราย",
+    "ถอนตัวหลังภารกิจและทนความเจ็บลำพัง"
+  ],
+  "relationships": [
+    "Zhongli — ผู้ช่วยชีวิตและนายที่เขาเคารพ",
+    "Venti — ผู้เล่นขลุ่ยที่เคยช่วยบรรเทาความทรมาน",
+    "Traveler — ผู้ที่เขายอมให้เข้าใกล้มากขึ้น"
+  ],
+  "conflicts": [
+    "การปกป้องด้วยการแยกตัวทำให้ความโดดเดี่ยวรุนแรง",
+    "หน้าที่ไม่รู้จบขัดกับสิทธิพักของตน"
+  ],
+  "strengthEvidence": [
+    "รักษาหน้าที่ผ่าน karmic debt หลายพันปี",
+    "เสี่ยงตนช่วยผู้คนโดยไม่ต้องได้รับการยอมรับ"
+  ],
+  "weaknessEvidence": [
+    "ปฏิเสธการช่วยเหลือและความสุข",
+    "มองตนเป็นภัยมากกว่าบุคคลที่ควรได้รับการดูแล"
+  ],
+  "stories": [
+    "Character Stories — การถูกควบคุมและรับใช้ Morax",
+    "Karmic Debt — ต้นทุนสะสมของหน้าที่"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — คำพูดสั้นและเตือนให้อยู่ห่างภัย",
+    "ความอ่อนโยนปรากฏผ่านคำมั่นว่าจะมาเมื่อถูกเรียก"
+  ],
+  "quotes": ["Call out my name. Adeptus Xiao. I will be here when you call."],
+  "analysisNotes": [
+    "Xiao ผูกคุณค่าตนกับการรับความเจ็บแทนคนอื่น การฟื้นตัวจึงต้องยอมรับว่าความสัมพันธ์ไม่ใช่ภัยเพียงอย่างเดียว"
+  ]
 }

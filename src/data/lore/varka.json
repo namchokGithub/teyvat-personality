@@ -2,20 +2,50 @@
   "id": "varka",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Varka"
+    "url": "https://genshin-impact.fandom.com/wiki/Varka/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Grand Master แห่ง Knights of Favonius ผู้กล้าหาญ เป็นกันเอง และมอบอิสระแก่ผู้ใต้บังคับบัญชา เขานำ Grand Expedition และสร้างคนด้วยการมองเห็นศักยภาพนอกกรอบ",
+  "background": "Varka ดำรงตำแหน่ง Knight of Boreas และนำกำลังส่วนใหญ่ของ Knights ออกจาก Mondstadt เขาเคยช่วย Razor ตั้งชื่อกับสอนดาบ รับ Rosaria เข้าสู่เมือง และสนับสนุนอัศวินที่วิธีต่างจากธรรมเนียม",
+  "personalityNotes": [
+    "มั่นใจ ใจกว้าง และชอบความท้าทาย",
+    "เป็นผู้นำที่มอบความไว้วางใจมาก"
+  ],
+  "motivations": [
+    "ปกป้อง Mondstadtจากภัยไกลบ้าน",
+    "พัฒนาคนรุ่นใหม่ให้ตัดสินใจได้เอง"
+  ],
+  "values": ["ความกล้าหาญ", "เสรีภาพ", "คำสัตย์อัศวิน", "ศักยภาพบุคคล"],
+  "behaviorPatterns": [
+    "ใช้ความเป็นกันเองลดระยะตำแหน่ง",
+    "มอบภารกิจใหญ่พร้อมอิสระแก่ทีม"
+  ],
+  "relationships": [
+    "Jean — ผู้รับช่วงบริหาร Mondstadt ที่เขาไว้วางใจ",
+    "Razor — เด็กที่เขาตั้งชื่อและสอนดาบ",
+    "Rosaria และ Lohen — ผู้มีอดีตหรือวิธีนอกกรอบที่เขาให้โอกาส"
+  ],
+  "conflicts": [
+    "การนำกำลังออก expedition ทิ้งภาระหนักแก่คนในเมือง",
+    "ความมั่นใจในทีมอาจดูเหมือนปล่อยปละ"
+  ],
+  "strengthEvidence": [
+    "รวมและนำ Grand Expedition ผ่านดินแดนอันตราย",
+    "มองเห็นความสามารถในผู้ที่สังคมไม่ยอมรับ"
+  ],
+  "weaknessEvidence": [
+    "ชอบความเสี่ยงและการท้าทาย",
+    "การสื่อสารจากแนวหน้ามีข้อจำกัดต่อผู้รับภาระที่บ้าน"
+  ],
+  "stories": [
+    "Character Stories — ภาวะผู้นำและ Grand Expedition",
+    "ความสัมพันธ์กับ Razor/Rosaria — การให้โอกาสเป็นเครื่องมือสร้างคน"
+  ],
+  "voiceOvers": [
+    "Hello — กล่าวคำสัตย์ว่าจะไม่ให้ Traveler ล้มขณะเขายืนอยู่",
+    "บทพูดมีอารมณ์ขันแต่กลับสู่คำมั่นหน้าที่ชัดเจน"
+  ],
+  "quotes": ["You shall not fall while I stand."],
+  "analysisNotes": [
+    "Varka สร้างความภักดีด้วยการเชื่อในความสามารถผู้อื่นก่อนที่พวกเขาจะเชื่อในตน มากกว่าควบคุมทุกการตัดสินใจ"
+  ]
 }

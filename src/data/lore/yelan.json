@@ -2,20 +2,49 @@
   "id": "yelan",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Yelan"
+    "url": "https://genshin-impact.fandom.com/wiki/Yelan/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "เจ้าหน้าที่ข่าวกรองลับของ Ningguang ผู้ลึกลับ ชอบความเสี่ยง และควบคุมการเจรจาด้วยข้อมูล เธอเปลี่ยนชื่อกับบทบาทเพื่อแทรกซึมเป้าหมาย",
+  "background": "Yelan สืบงานข่าวกรองจากครอบครัวที่รับใช้ Qixing และสูญเสียบรรพบุรุษใน Chasm เธอดำเนินภารกิจนอกระบบราชการ สร้างเครือข่ายและใช้ Yanshang Teahouse เป็นฉากบังหน้า",
+  "personalityNotes": [
+    "มั่นใจ อ่านคนเก่ง และรักเดิมพัน",
+    "รักษาระยะด้วยตัวตนหลายชั้น"
+  ],
+  "motivations": [
+    "ปกป้อง Liyue ผ่านข้อมูลล่วงหน้า",
+    "ค้นความจริงที่คนมีอำนาจซ่อน"
+  ],
+  "values": ["ข้อมูล", "อิสระในการปฏิบัติ", "ความเสี่ยงที่คำนวณแล้ว"],
+  "behaviorPatterns": [
+    "เสนอแลกข้อมูลแทนขอฟรี",
+    "ปลอมตัวและปล่อยเบาะแสควบคุมคู่แข่ง"
+  ],
+  "relationships": [
+    "Ningguang — ผู้มอบภารกิจและแลกข้อมูลในระดับเท่าเทียม",
+    "บรรพบุรุษ — มรดกงาน Chasm และแรงผลักดัน"
+  ],
+  "conflicts": [
+    "การควบคุมข้อมูลทำให้ความไว้ใจไม่โปร่งใส",
+    "ความชอบเดิมพันผลักสู่ความเสี่ยงสูง"
+  ],
+  "strengthEvidence": [
+    "แทรกซึม Fatui และยึดอุปกรณ์สำคัญ",
+    "สร้างเครือข่ายข่าวที่ทำงานนอกสายตา"
+  ],
+  "weaknessEvidence": [
+    "ทดสอบคนก่อนเปิดเผยเจตนา",
+    "มองความสัมพันธ์เป็นเกมต่อรองได้ง่าย"
+  ],
+  "stories": [
+    "Character Stories — เครือข่ายข่าวกรองและอดีตครอบครัว",
+    "Bracelet/Dice — สัญลักษณ์การควบคุมความเสี่ยง"
+  ],
+  "voiceOvers": [
+    "Hello — เสนอแลกความช่วยเหลือกับข้อมูล",
+    "บทพูดให้คู่สนทนารู้สึกเลือกเองทั้งที่กรอบถูกวางแล้ว"
+  ],
+  "quotes": ["You scratch my back, I'll scratch yours."],
+  "analysisNotes": [
+    "Yelan สร้างความปลอดภัยด้วยการรู้มากกว่าฝ่ายอื่น แต่ความสัมพันธ์ใกล้ชิดต้องยอมรับพื้นที่ที่ควบคุมไม่ได้"
+  ]
 }

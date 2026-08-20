@@ -2,20 +2,54 @@
   "id": "gaming",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Gaming"
+    "url": "https://genshin-impact.fandom.com/wiki/Gaming/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ผู้คุ้มกันขนส่งของ Sword and Strongbox Secure Transport Agency ผู้เป็นมิตรและกระตือรือร้น อีกด้านหนึ่งเขาเป็นหัวหน้าคณะ Mighty Mythical Beasts และมุ่งมั่นฟื้นฟูศิลปะ Wushou Dance",
+  "background": "Gaming รัก Wushou Dance ตั้งแต่เด็ก แต่ความฝันขัดกับความคาดหวังของพ่อที่ต้องการอาชีพมั่นคง เขาจึงออกจากบ้านมาทำงานคุ้มกันขนส่ง ฝึกเต้นควบคู่ และค่อย ๆ หาทางคืนดีกับครอบครัว",
+  "personalityNotes": [
+    "ร่าเริง เข้ากับคนง่าย และบริการผู้อื่นอย่างเต็มใจ",
+    "มุ่งมั่นต่อความฝันและมีความเป็นมืออาชีพ",
+    "หลีกเลี่ยงการเผชิญความขัดแย้งในครอบครัวโดยตรง"
+  ],
+  "motivations": [
+    "ทำให้ Wushou Dance ได้รับความนิยมอีกครั้ง",
+    "พิสูจน์ว่าสามารถเลี้ยงตัวเองด้วยเส้นทางที่เลือก"
+  ],
+  "values": ["ความฝัน", "ครอบครัว", "ความรับผิดชอบต่องาน"],
+  "behaviorPatterns": [
+    "เรียกลูกค้าว่า Boss และรีบช่วยจัดการงาน",
+    "ฝึก Wushou Dance ทุกครั้งที่มีโอกาส",
+    "ใช้ความร่าเริงกลบเรื่องที่ตนกังวล"
+  ],
+  "relationships": [
+    "Yip Tak — พ่อที่รักกันแต่ขัดแย้งเรื่องเส้นทางชีวิต",
+    "Man Chai — คู่หู Suanni ในการแสดง",
+    "Mighty Mythical Beasts — คณะที่ Gaming เป็นผู้นำ"
+  ],
+  "conflicts": [
+    "ความฝันด้านการแสดงปะทะความต้องการความมั่นคงของพ่อ",
+    "ความภาคภูมิใจทำให้กลับไปพูดคุยกับครอบครัวยาก"
+  ],
+  "strengthEvidence": [
+    "ทำงานคุ้มกันขนส่งได้จนลูกค้าไว้วางใจ",
+    "รักษาวินัยฝึกศิลปะการแสดงควบคู่กับงานประจำ"
+  ],
+  "weaknessEvidence": [
+    "มักหลบเลี่ยงคำถามเรื่องครอบครัว",
+    "ความกระตือรือร้นทำให้รับภาระหลายอย่างพร้อมกัน"
+  ],
+  "stories": [
+    "Character Stories — การออกจากบ้านและเส้นทาง Wushou Dance",
+    "ความสัมพันธ์กับ Yip Tak — ความขัดแย้งที่มีความรักเป็นฐาน"
+  ],
+  "voiceOvers": [
+    "Hello — เสนอจัดของและนัดส่งทันที ก่อนประชาสัมพันธ์คณะเต้น",
+    "บทพูดเกี่ยวกับอาหารและครอบครัวเผยความคิดถึงบ้านที่ซ่อนอยู่"
+  ],
+  "quotes": [
+    "The troupe's called the Mighty Mythical Beasts, and I'm the head"
+  ],
+  "analysisNotes": [
+    "ตีความได้ว่าความเป็นคนบริการเก่งของ Gaming เชื่อมทั้งทักษะอาชีพกับความต้องการสร้างการยอมรับโดยไม่ต้องร้องขอตรง ๆ"
+  ]
 }

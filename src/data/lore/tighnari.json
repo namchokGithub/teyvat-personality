@@ -2,20 +2,46 @@
   "id": "tighnari",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Tighnari"
+    "url": "https://genshin-impact.fandom.com/wiki/Tighnari/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Forest Watcher แห่ง Avidya Forest ผู้มีความรู้ชีววิทยา พูดตรง และดูแลทั้งระบบนิเวศกับนักเดินทาง เขาปฏิเสธเส้นทาง Akademiya ที่ห่างภาคสนามและเลือกสอนความรู้ใช้ได้จริง",
+  "background": "Tighnari สำเร็จ Amurta ด้วยผลงานโดดเด่นก่อนเข้าร่วม Forest Rangers เขาปรับระบบลาดตระเวน ฝึก Collei และรักษาผู้บาดเจ็บ แม้ต้องรับมือผู้มาเยือนที่ละเลยคำเตือน",
+  "personalityNotes": [
+    "ฉลาด ตรง และอดทนต่อผู้ตั้งใจเรียน",
+    "ประชดเมื่อคนละเลยความปลอดภัยซ้ำ"
+  ],
+  "motivations": ["รักษาป่าฝนและผู้มาเยือน", "ถ่ายทอดความรู้ให้ชุมชนพึ่งตนเอง"],
+  "values": ["หลักฐาน", "ระบบนิเวศ", "ความรับผิดชอบ"],
+  "behaviorPatterns": [
+    "ให้คู่มือก่อนออกป่า",
+    "อธิบายข้อผิดพลาดอย่างตรงและละเอียด"
+  ],
+  "relationships": [
+    "Collei — ศิษย์และผู้ป่วยที่เขาดูแล",
+    "Cyno — เพื่อนที่ไว้ใจและหยอกกันได้",
+    "Forest Rangers — ทีมที่เขาพัฒนามาตรฐานงาน"
+  ],
+  "conflicts": ["ความตรงถูกคนไม่คุ้นมองว่าแข็ง", "ภาระดูแลทำให้พักน้อย"],
+  "strengthEvidence": [
+    "ยกระดับการทำงาน Forest Rangers ด้วยความรู้วิทยาศาสตร์",
+    "รักษา Eleazar และเหตุฉุกเฉินภาคสนาม"
+  ],
+  "weaknessEvidence": [
+    "หมดความอดทนต่อความประมาท",
+    "แบกงานสอน ตรวจ และรักษาหลายบทบาท"
+  ],
+  "stories": [
+    "Character Stories — การศึกษา Amurta และเลือกงานภาคสนาม",
+    "Forest Survival Guide — หลักคิดเปลี่ยนความรู้เป็นความปลอดภัย"
+  ],
+  "voiceOvers": [
+    "Hello — เตือนให้อ่านคู่มือโดยเฉพาะเห็ดพิษก่อนสำรวจ",
+    "บทพูดผสมคำแนะนำจริงกับคำประชดต่อพฤติกรรมเสี่ยง"
+  ],
+  "quotes": [
+    "My duty is to preserve both the rainforest's ecosystem and the safety of its visitors."
+  ],
+  "analysisNotes": [
+    "ความเข้มของ Tighnari มาจากการเห็นผลของข้อมูลผิดในภาคสนาม จึงเป็นความเอาใจใส่แบบป้องกันมากกว่าความเย็นชา"
+  ]
 }

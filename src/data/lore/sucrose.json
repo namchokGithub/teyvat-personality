@@ -2,20 +2,50 @@
   "id": "sucrose",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Sucrose"
+    "url": "https://genshin-impact.fandom.com/wiki/Sucrose/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "นักวิจัย bio-alchemy ผู้ขี้อายและอยากสร้าง paradise ของตนจากสิ่งมีชีวิต เธอมีความอยากรู้อยากเห็นสูง ทำงานเป็นระบบ และสื่อสารกับตัวอย่างง่ายกว่าคน",
+  "background": "Sucrose สนใจชีววิทยาจากความฝันวัยเด็กกับเพื่อนสองคน เมื่อเพื่อนจากไป เธอเปลี่ยนภาพ paradise เป็นโครงการวิจัยและทำงานผู้ช่วย Albedo ใน Knights",
+  "personalityNotes": [
+    "ขี้อาย สุภาพ และหลงใหลการทดลอง",
+    "ละเอียดและอดทนต่อข้อมูลซ้ำ"
+  ],
+  "motivations": [
+    "สร้างโลกมหัศจรรย์ผ่าน bio-alchemy",
+    "รวบรวมความรู้สิ่งมีชีวิตจากทั่วโลก"
+  ],
+  "values": ["ความอยากรู้", "มิตรภาพในอดีต", "หลักฐานทดลอง"],
+  "behaviorPatterns": [
+    "เก็บตัวอย่างและวัดผลหลายรอบ",
+    "ถอนคำขอเมื่อกลัวรบกวนผู้อื่น"
+  ],
+  "relationships": [
+    "Albedo — หัวหน้าวิจัยที่เธอเคารพและเรียนรู้",
+    "เพื่อนวัยเด็ก — ต้นกำเนิดความฝัน paradise",
+    "Collei — เพื่อนที่ความขี้อายช่วยให้เข้าใจกัน"
+  ],
+  "conflicts": [
+    "ความอยากเก็บตัวอย่างอาจข้ามความสบายใจคนอื่น",
+    "ความกังวลทางสังคมจำกัดการแลกเปลี่ยนความรู้"
+  ],
+  "strengthEvidence": [
+    "พัฒนา bio-alchemy และสิ่งมีชีวิตทดลองหลากหลาย",
+    "รักษางานวิจัยระยะยาวด้วยบันทึกละเอียด"
+  ],
+  "weaknessEvidence": [
+    "ลังเลขอข้อมูลหรือความช่วยเหลือ",
+    "หมกมุ่นกับตัวอย่างจนพลาดบริบทสังคม"
+  ],
+  "stories": [
+    "Character Stories — paradise วัยเด็กและการวิจัยต่อเนื่อง",
+    "Experiments — วิธีเปลี่ยนความคิดถึงเป็นโครงการจับต้องได้"
+  ],
+  "voiceOvers": [
+    "Hello — อยากฟังเรื่องเดินทางแต่รีบถอนคำขอเพราะเกรงใจ",
+    "บทพูดเปลี่ยนเป็นคล่องเมื่อเข้าสู่หัวข้อวิจัย"
+  ],
+  "quotes": ["I'd love to hear any stories you have about your adventures."],
+  "analysisNotes": [
+    "งานวิจัยของ Sucrose เป็นทั้งความอยากรู้แท้และวิธีรักษาความสัมพันธ์วัยเด็กในรูปที่เธอควบคุมได้"
+  ]
 }

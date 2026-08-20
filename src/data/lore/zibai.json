@@ -2,20 +2,50 @@
   "id": "zibai",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Zibai"
+    "url": "https://genshin-impact.fandom.com/wiki/Zibai/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "อดีต envoy แห่งสวรรค์และ White Horse Adeptus ผู้เคยปกป้อง Lang-Gan เธอ defy สวรรค์เพื่อช่วยมนุษย์จนวิญญาณแตกเป็นสาม และเพิ่งรวมกลับมาสู่ Liyue ยุคใหม่",
+  "background": "Zibai สอนเกษตรกับการทอแก่ Lang-Gan และถูกบูชาเป็นเทพดินกับธัญพืช เมื่อสวรรค์จะชำระอาณาจักรที่ปนเปื้อน เธอต่อต้านและแตกเป็น Ziju, Ziqiao และส่วนหลับใหล ก่อน Traveler ช่วยให้คืนรวม",
+  "personalityNotes": [
+    "สงบ เมตตา และผูกพันมนุษย์",
+    "มีความทรงจำเก่าแก่ที่ขาดหายแต่ต้องการเรียนรู้ใหม่"
+  ],
+  "motivations": [
+    "ทำความรู้จัก Liyue ที่สืบต่อจาก Lang-Gan",
+    "รักษาคำมั่นปกป้องโดยไม่กลับเป็นเครื่องมือสวรรค์"
+  ],
+  "values": ["ชีวิตมนุษย์", "บ้านเกิด", "ความทรงจำ", "เสรีภาพจากชะตาที่กำหนด"],
+  "behaviorPatterns": [
+    "เดินทางชมภูมิประเทศและปักลงบนผ้าไหม",
+    "ฟังตำนานเกี่ยวกับตนโดยไม่ยึดว่าฉบับใดสมบูรณ์"
+  ],
+  "relationships": [
+    "Ziqiao/Ziju — ส่วนวิญญาณที่มีประสบการณ์ต่างกันและรวมเป็นตน",
+    "Rex Lapis — สหายเก่ากับผู้ทำสัญญากับ Ziqiao",
+    "ชาว Lang-Gan/Liyue — ผู้คนที่เธอเลือกปกป้องเหนือคำสั่งสวรรค์"
+  ],
+  "conflicts": [
+    "ภารกิจจากสวรรค์ขัดกับความเมตตาต่ออารยธรรม",
+    "เวลายาวนานทำลายความจำและความหมายของคำว่าบ้าน"
+  ],
+  "strengthEvidence": [
+    "ต่อต้านสวรรค์เพื่อรักษาความหวังของ Lang-Gan",
+    "คงเจตจำนงผ่านการแตกสลายและการกักขังยาวนาน"
+  ],
+  "weaknessEvidence": [
+    "ความทรงจำกระจัดกระจายทำให้ตัวตนไม่มั่นคง",
+    "อาจตีความ Liyue ปัจจุบันผ่านหน้าที่โบราณ"
+  ],
+  "stories": [
+    "Character Story 1–5 — Lang-Gan การแตกวิญญาณ และการกลับบ้าน",
+    "Boundless Land — การปักภาพ Liyue เพื่อสร้างความทรงจำใหม่"
+  ],
+  "voiceOvers": [
+    "Hello — วางตำแหน่ง White Horse Adeptus ไว้ในอดีตและขอให้เรียกชื่อปัจจุบัน",
+    "บทพูดสะท้อนการลงสู่โลกมนุษย์ด้วยตัวตนที่รวมใหม่"
+  ],
+  "quotes": ["You may simply call me Zibai."],
+  "analysisNotes": [
+    "Zibai เปลี่ยนจากผู้ถูกสร้างตาม divine plan เป็นบุคคลผ่านการเลือกมนุษย์เหนือคำสั่ง และการเรียกชื่อคือการยืนยันชีวิตของตนเอง"
+  ]
 }

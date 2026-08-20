@@ -2,20 +2,49 @@
   "id": "skirk",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Skirk"
+    "url": "https://genshin-impact.fandom.com/wiki/Skirk/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "นักรบจากนอกโลกและศิษย์ Surtalogi ผู้ฝึก Tartaglia ใน Abyss เธอพูดน้อย ยึดความแข็งแกร่ง และมองชะตากับจักรวาลในระดับที่มนุษย์ทั่วไปเข้าถึงยาก",
+  "background": "Skirk อาศัยฝึกใน Abyss และรับ Ajax วัยเด็กเป็นศิษย์ช่วงเวลาสั้นซึ่งเท่ากับหลายเดือนสำหรับเขา เธอสืบวิชาจาก Surtalogi หนึ่งในผู้มีอำนาจสูงและเข้ามาจัดการพลัง All-Devouring Narwhal",
+  "personalityNotes": [
+    "เยือกเย็น ตรง และให้คุณค่าความสามารถ",
+    "ห่างจากธรรมเนียมกับความผูกพันมนุษย์"
+  ],
+  "motivations": [
+    "แสวงและทดสอบความแข็งแกร่ง",
+    "ทำความเข้าใจพลังกับชะตานอกระเบียบ Teyvat"
+  ],
+  "values": ["พลังที่พิสูจน์ได้", "วินัย", "ความเท่าเทียมผ่านความสามารถ"],
+  "behaviorPatterns": [
+    "ประเมินสิทธิสนทนาจากความแข็งแกร่ง",
+    "อธิบายเรื่องใหญ่ด้วยถ้อยคำสั้น"
+  ],
+  "relationships": [
+    "Surtalogi — อาจารย์และแหล่งวิชานอกโลก",
+    "Tartaglia — ศิษย์ที่เธอฝึกและยังมองว่ายังต้องเติบโต"
+  ],
+  "conflicts": [
+    "มาตรฐานพลังทำให้คุณค่าด้านอื่นถูกมองข้าม",
+    "ระยะห่างจากโลกมนุษย์จำกัดความเข้าใจผลกระทบอารมณ์"
+  ],
+  "strengthEvidence": [
+    "เอาชนะและควบคุมภัยระดับ Narwhal ได้",
+    "ฝึก Tartaglia จนพื้นฐานการต่อสู้เปลี่ยนไป"
+  ],
+  "weaknessEvidence": [
+    "สื่อสารข้อมูลสำคัญน้อยและช้า",
+    "มองผู้อ่อนแอเป็นผู้ไม่มีสิทธิร่วมบทสนทนา"
+  ],
+  "stories": [
+    "Character Stories — การฝึกนอกโลกและความสัมพันธ์กับ Surtalogi",
+    "Tartaglia — หลักฐานวิธีสอนผ่านการต่อสู้"
+  ],
+  "voiceOvers": [
+    "Hello — ยอมรับ Traveler เป็นผู้เท่าเทียมจากความแข็งแกร่ง",
+    "บทพูดสะท้อนการมองชะตาเป็นสิ่งให้สังเกตมากกว่าปลอบใจ"
+  ],
+  "quotes": ["You've earned the right to speak to me as an equal."],
+  "analysisNotes": [
+    "Skirk ใช้พลังเป็นภาษากลางในโลกที่กฎต่างกัน แต่กรอบนี้ทำให้ความเปราะบางและคุณค่าที่ไม่ใช่การต่อสู้แทบไม่มีที่ยืน"
+  ]
 }

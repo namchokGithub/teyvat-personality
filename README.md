@@ -94,6 +94,7 @@ Character files separate factual game data from personality interpretation. When
 - [Project scope](docs/scope.md) explains the quiz concept and personality dimensions.
 - [Tech stack](docs/stack.md) records the frontend, Firebase, tooling, and GitHub Pages decisions.
 - [Character data import plan](docs/character-data-import-plan.md) documents the source mapping, fallbacks, and safe re-run behavior.
+- [Lore research workflow](docs/lore-research-workflow.md) explains how to research Profile and Voice-Overs pages, validate lore files, and resume from the saved checkpoint.
 - [Project context](CONTEXT.md) records the broader data-model and matching-system decisions.
 - [Agent rules](AGENTS.md) contains concise repository rules for AI-assisted work.
 

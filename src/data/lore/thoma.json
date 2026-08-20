@@ -2,20 +2,46 @@
   "id": "thoma",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Thoma"
+    "url": "https://genshin-impact.fandom.com/wiki/Thoma/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "housekeeper แห่ง Kamisato Clan ผู้เป็นมิตร เก่งงานบ้านและสร้างเครือข่าย เขาเกิด Mondstadt แต่เลือก Inazuma เป็นบ้านและปกป้องครอบครัว Kamisato ด้วยความภักดี",
+  "background": "Thoma เดินทางตามพ่อมายัง Inazumaแต่ติดอยู่หลัง Sakoku Decree ตระกูล Kamisato ช่วยเขาและเขากลายเป็นผู้ดูแลทั้งบ้าน งานเจรจา และปัญหาเบื้องหลัง Yashiro Commission",
+  "personalityNotes": [
+    "อบอุ่น เข้าสังคมเก่ง และพึ่งพาได้",
+    "ภักดีแต่ใช้การเจรจาก่อนกำลัง"
+  ],
+  "motivations": ["ดูแล Kamisato Clan และชุมชน", "ทำให้คนต่างพื้นเพเชื่อมกัน"],
+  "values": ["บ้าน", "ความภักดี", "การช่วยเหลือซึ่งกันและกัน"],
+  "behaviorPatterns": [
+    "ทำงานบ้านเชิงรุกก่อนมีคนขอ",
+    "สะสมเครือข่ายด้วยการช่วยเรื่องเล็ก"
+  ],
+  "relationships": [
+    "Ayato และ Ayaka — ครอบครัวนายจ้างที่เขาเลือกภักดี",
+    "ชาว Inazuma — เครือข่ายที่พึ่งพาและตอบแทนกัน"
+  ],
+  "conflicts": [
+    "สถานะคนต่างชาติทำให้ต้องพิสูจน์ที่ยืน",
+    "ความภักดีทำให้พร้อมสละตนแทนตระกูล"
+  ],
+  "strengthEvidence": [
+    "ดูแลงานหลากหลายจน Yashiro Commission ทำงานราบรื่น",
+    "ต่อต้านการยึด Vision แม้เผชิญ Shogun"
+  ],
+  "weaknessEvidence": [
+    "ช่วยทุกคนจนตารางแน่นและตนถูกมองข้าม",
+    "พึ่งความสัมพันธ์ส่วนตัวในระบบการเมืองเสี่ยง"
+  ],
+  "stories": [
+    "Character Stories — การมาถึง Inazuma และรับใช้ Kamisato",
+    "Housekeeping — การดูแลเป็นรูปแบบภาวะผู้นำของเขา"
+  ],
+  "voiceOvers": [
+    "Hello — เริ่มสร้างความสัมพันธ์ด้วยคำว่า buddy และขอความยินยอม",
+    "บทพูดแสดงการทำให้คนใหม่รู้สึกเป็นส่วนหนึ่งอย่างรวดเร็ว"
+  ],
+  "quotes": ["I'm your new buddy, Thoma."],
+  "analysisNotes": [
+    "Thoma สร้างอำนาจแบบเครือข่ายจากการดูแล ไม่ใช่ตำแหน่ง ทำให้เขาเป็นโครงสร้างสังคมที่มองไม่เห็นของ Kamisato"
+  ]
 }

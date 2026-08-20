@@ -2,20 +2,60 @@
   "id": "neuvillette",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Neuvillette"
+    "url": "https://genshin-impact.fandom.com/wiki/Neuvillette/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Iudex แห่ง Fontaine และ Hydro Dragon Sovereign ผู้เที่ยงธรรม สำรวม และพยายามเข้าใจมนุษย์จากระยะห่าง อารมณ์ของเขาเชื่อมกับฝน แม้คำพูดจะควบคุมอย่างเป็นทางการ",
+  "background": "Neuvillette ดำรงตำแหน่ง Chief Justice หลายศตวรรษตามคำเชิญของ Focalors เขาตัดสินคดีภายใต้กฎหมายและดูแล Melusines หลังคำพยากรณ์ เขาได้รับอำนาจมังกรคืนและตัดสินชาว Fontaine ให้พ้นบาปเดิม",
+  "personalityNotes": [
+    "เป็นกลาง สุภาพ และควบคุมอารมณ์",
+    "เห็นอกเห็นใจแต่ไม่คุ้นธรรมเนียมมนุษย์",
+    "ยึดหลักฐานและกระบวนการเหนือความสัมพันธ์ส่วนตัว"
+  ],
+  "motivations": [
+    "ทำให้ความยุติธรรมของ Fontaine น่าเชื่อถือ",
+    "เข้าใจมนุษย์และที่ทางของตนในโลก",
+    "ปกป้อง Melusines กับประชาชน"
+  ],
+  "values": [
+    "ความยุติธรรม",
+    "ความเป็นกลาง",
+    "ชีวิต",
+    "ความรับผิดชอบของผู้มีอำนาจ"
+  ],
+  "behaviorPatterns": [
+    "รักษาระยะทางภาษาเพื่อไม่ให้เกิดภาพลำเอียง",
+    "ชิมน้ำจากภูมิภาคต่าง ๆ อย่างละเอียด",
+    "ครุ่นคิดอารมณ์ผ่านฝนและสภาพแวดล้อม"
+  ],
+  "relationships": [
+    "Furina/Focalors — ผู้เชิญเขาสู่สังคมมนุษย์และแผนคืนอำนาจ",
+    "Melusines — กลุ่มที่เขาปกป้องและเชื่อมั่น",
+    "ชาว Fontaine — ผู้ที่เขาตัดสินทั้งทางกฎหมายและในฐานะ Sovereign"
+  ],
+  "conflicts": [
+    "หน้าที่ผู้พิพากษาต้องรักษาระยะจากผู้ที่อยากเข้าใจ",
+    "ตัวตนมังกรกับระบบมนุษย์สร้างคำถามว่าเขาเป็นส่วนหนึ่งหรือผู้สังเกต"
+  ],
+  "strengthEvidence": [
+    "รักษาความยุติธรรมยาวนานโดยไม่ยอมอิทธิพลการเมือง",
+    "ใช้อำนาจที่คืนมาช่วยชาว Fontaine จากคำพยากรณ์"
+  ],
+  "weaknessEvidence": [
+    "แสดงความรู้สึกโดยตรงยากและอาจดูเย็นชา",
+    "รับความเศร้าของคดีไว้เงียบ ๆ"
+  ],
+  "stories": [
+    "Character Stories — การรับตำแหน่ง Iudex และความสัมพันธ์กับ Melusines",
+    "Hydro Sovereign — การคืนอำนาจและคำตัดสินต่อ Fontaine"
+  ],
+  "voiceOvers": [
+    "Hello — อธิบายเหตุผลรักษาระยะและเสนอคุยภายใต้ขอบเขตกฎหมาย",
+    "บทพูดเรื่องน้ำเผยความละเอียดอ่อนที่ภาษาทางการไม่แสดง"
+  ],
+  "quotes": [
+    "To the extent permissible by law, at least — we can sit down and discuss them together."
+  ],
+  "analysisNotes": [
+    "ความเป็นทางการของ Neuvillette เป็นจริยธรรมป้องกันอคติและเกราะต่อความรู้สึกที่เขายังเรียนรู้จะเรียกชื่อ"
+  ]
 }

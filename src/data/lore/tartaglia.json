@@ -2,20 +2,50 @@
   "id": "tartaglia",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Tartaglia"
+    "url": "https://genshin-impact.fandom.com/wiki/Tartaglia/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Fatui Harbinger ลำดับ 11 ผู้รักการต่อสู้และครอบครัว เขาเป็นนักรบตรงไปตรงมาในองค์กรเจ้าแผนการ และแยกภาพพี่ชาย Teucer ออกจากชีวิต Childe อย่างสุดกำลัง",
+  "background": "Ajax ตกสู่ Abyss วัยเด็กและฝึกกับ Skirk เมื่อกลับมา บุคลิกเปลี่ยนเป็นกระหายการต่อสู้ พ่อส่งเข้า Fatui จน Tsaritsa แต่งตั้งเป็น Harbinger และใช้เขาในภารกิจอันตราย",
+  "personalityNotes": [
+    "มั่นใจ แข่งขัน และชอบคู่ต่อสู้แข็งแกร่ง",
+    "อบอุ่นกับครอบครัวและรักษาคำสัญญา"
+  ],
+  "motivations": [
+    "แข็งแกร่งขึ้นผ่านการต่อสู้",
+    "ปกป้องความไร้เดียงสากับความมั่นคงของครอบครัว"
+  ],
+  "values": ["ครอบครัว", "การท้าทาย", "ความภักดีต่อคำมั่น"],
+  "behaviorPatterns": [
+    "ท้าประลองและเรียนรู้อาวุธที่ไม่ถนัด",
+    "ซ่อนงาน Fatui จากน้องด้วยเรื่องเล่าของเล่น"
+  ],
+  "relationships": [
+    "Teucer และพี่น้อง — จุดอ่อนและแรงผลักดันหลัก",
+    "Skirk — อาจารย์ผู้กำหนดวิถีต่อสู้",
+    "Tsaritsa — ผู้นำที่เขารับใช้ด้วยความเคารพ"
+  ],
+  "conflicts": [
+    "ความรักครอบครัวขัดกับงานที่สร้างอันตรายแก่ครอบครัวอื่น",
+    "ความกระหายต่อสู้ทำให้รับความเสี่ยงเกินจำเป็น"
+  ],
+  "strengthEvidence": [
+    "เชี่ยวชาญอาวุธหลายแบบและเติบโตผ่านคู่ต่อสู้",
+    "รักษาคำสัญญากับ Teucerแม้บาดเจ็บหนัก"
+  ],
+  "weaknessEvidence": [
+    "ถูกชักนำง่ายเมื่อเสนอการต่อสู้หรือคู่ต่อสู้",
+    "แบ่งชีวิตสองด้านจนความจริงอาจทำร้ายคนใกล้ชิด"
+  ],
+  "stories": [
+    "Character Stories — การตก Abyss และเข้าสู่ Fatui",
+    "Teucer — ความสัมพันธ์ที่เผยด้านปกป้องและการโกหกด้วยรัก"
+  ],
+  "voiceOvers": [
+    "Hello — แนะนำตำแหน่งก่อนจำ Traveler ว่าเป็นคนสร้างเรื่องเช่นกัน",
+    "บทพูดมองความสัมพันธ์ผ่านการประลองและการเติบโต"
+  ],
+  "quotes": ["Something tells me we're going to get along splendidly."],
+  "analysisNotes": [
+    "Tartaglia รักษาความเป็นมนุษย์ผ่านครอบครัว แต่การแยกโลกสองด้านทำให้ไม่ต้องเผชิญผลศีลธรรมของงานอย่างเต็มที่"
+  ]
 }

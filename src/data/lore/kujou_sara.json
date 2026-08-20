@@ -2,20 +2,52 @@
   "id": "kujou_sara",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Kujou_Sara"
+    "url": "https://genshin-impact.fandom.com/wiki/Kujou_Sara/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "นายพล tengu แห่ง Tenryou Commission ผู้เคร่งครัด ภักดีต่อ Raiden Shogun และยึดหน้าที่เหนือความต้องการส่วนตัว",
+  "background": "Sara ถูก Kujou Clan รับเลี้ยงหลังได้รับ Vision และถูกฝึกเป็นนักรบ เธอนำกองทัพช่วง Vision Hunt Decree ด้วยวินัยสูง แม้ภายหลังพบการทรยศของผู้นำตระกูล",
+  "personalityNotes": [
+    "จริงจัง ตรง และมีวินัยสูง",
+    "ภักดีต่ออุดมการณ์ของ Shogun มากกว่าผลประโยชน์ตระกูล",
+    "ไม่ถนัดชีวิตสังคมนอกงาน"
+  ],
+  "motivations": [
+    "ปกป้อง Inazuma",
+    "ปฏิบัติตามสิ่งที่เชื่อว่าเป็นเจตจำนงของ Shogun"
+  ],
+  "values": ["หน้าที่", "เกียรติ", "ความยุติธรรมในการต่อสู้"],
+  "behaviorPatterns": [
+    "เตรียมกิจวัตรและฝึกซ้อมอย่างเข้มงวด",
+    "รักษาคำมั่นแม้กับอดีตศัตรู",
+    "เก็บเครื่องรางเกี่ยวกับ Shogun อย่างเป็นระเบียบ"
+  ],
+  "relationships": [
+    "Raiden Shogun — ศูนย์กลางศรัทธาและหน้าที่",
+    "Kujou Takayuki — พ่อบุญธรรมที่เธอขัดขืนเมื่อพบการทรยศ",
+    "Arataki Itto — คู่แข่งที่รบกวนแต่ได้รับการยอมรับในความพยายาม"
+  ],
+  "conflicts": [
+    "ความภักดีต่อ Shogun ถูกผู้มีอำนาจในตระกูลนำไปใช้",
+    "หน้าที่เข้มงวดทำให้ความต้องการส่วนตัวแทบไม่มีพื้นที่"
+  ],
+  "strengthEvidence": [
+    "นำกองทัพและรักษาวินัยท่ามกลางสงครามกลางเมือง",
+    "เลือกเปิดโปงการทรยศแม้กระทบตระกูลตน"
+  ],
+  "weaknessEvidence": [
+    "ยึดคำสั่งมากจนตั้งคำถามช้า",
+    "โดดเดี่ยวและสื่อสารความอ่อนโยนไม่คล่อง"
+  ],
+  "stories": [
+    "Character Stories — การรับเลี้ยงและการฝึกใน Kujou Clan",
+    "Vision — การได้รับพลังหลังตกจากภูเขา"
+  ],
+  "voiceOvers": [
+    "Hello — ประกาศปกป้อง Inazuma ก่อนยืนยันว่าจะรักษาคำมั่นต่อ Traveler",
+    "คำพูดถึง Shogun แสดงศรัทธาที่กำกับชีวิตประจำวัน"
+  ],
+  "quotes": ["I will honor that commitment."],
+  "analysisNotes": [
+    "Sara แยกความภักดีต่อหลักการออกจากการเชื่อฟังบุคคลในตระกูลได้เมื่อมีหลักฐานชัด จึงไม่ได้ภักดีแบบไร้วิจารณญาณ"
+  ]
 }

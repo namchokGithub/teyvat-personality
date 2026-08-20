@@ -2,20 +2,49 @@
   "id": "ningguang",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Ningguang"
+    "url": "https://genshin-impact.fandom.com/wiki/Ningguang/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "Tianquan แห่ง Liyue Qixing ผู้สร้างฐานะจากความยากจนด้วยสติปัญญา เครือข่ายข้อมูล และการมองการณ์ไกล เธอรักการค้าแต่ยอมสละ Jade Chamber เพื่อปกป้อง Liyue",
+  "background": "Ningguang เคยขายของด้วยเท้าเปล่าก่อนก้าวขึ้นเป็นผู้นำเศรษฐกิจ เธอสร้าง Jade Chamber เป็นศูนย์ข้อมูลและอำนาจ พร้อมผลักดัน Liyue สู่ยุคที่มนุษย์บริหารตนเอง",
+  "personalityNotes": [
+    "สุขุม ทะเยอทะยาน และอ่านผลประโยชน์เก่ง",
+    "รักษาภาพลักษณ์แต่ใส่ใจอนาคตเมือง"
+  ],
+  "motivations": [
+    "ขยายความมั่งคั่งและเสถียรภาพของ Liyue",
+    "สร้างกฎกับข้อมูลที่ได้เปรียบ"
+  ],
+  "values": ["ความสามารถ", "การค้า", "ความมั่นคงของ Liyue"],
+  "behaviorPatterns": [
+    "เปลี่ยนข้อมูลเป็นอำนาจต่อรอง",
+    "สร้างสัมพันธ์กับเด็ก ๆ เพื่อรับข่าวโดยไม่บังคับ"
+  ],
+  "relationships": [
+    "Beidou — คู่สัมพันธ์ที่ขัดแย้งด้านกฎแต่เคารพความสามารถ",
+    "Liyue Qixing — เวทีบริหารที่เธอมีบทบาทนำ"
+  ],
+  "conflicts": [
+    "ผลประโยชน์ส่วนตัวต้องอยู่ใต้ความอยู่รอดของเมือง",
+    "วิธีใช้ข้อมูลทำให้คนอื่นระแวง"
+  ],
+  "strengthEvidence": [
+    "สร้างฐานะและอำนาจจากศูนย์",
+    "สละ Jade Chamber หยุด Osial"
+  ],
+  "weaknessEvidence": [
+    "มองความสัมพันธ์ผ่านการแลกเปลี่ยนได้ง่าย",
+    "ความทะเยอทะยานทำให้พักยาก"
+  ],
+  "stories": [
+    "Character Stories — จากพ่อค้าจนสู่ Tianquan",
+    "Jade Chamber — ความฝันส่วนตัวและสิ่งที่ยอมสละ"
+  ],
+  "voiceOvers": [
+    "Hello — เสนอการแลกเปลี่ยนงานคุ้มกันกับความรู้ทางธุรกิจ",
+    "บทพูดมักประเมินคุณค่าและโอกาสอย่างตรงไปตรงมา"
+  ],
+  "quotes": ["You wish to trade?"],
+  "analysisNotes": [
+    "Ningguang มองกำไรเป็นทั้งความสำเร็จส่วนตัวและเครื่องมือสร้างอำนาจให้มนุษย์ Liyue"
+  ]
 }

@@ -2,20 +2,47 @@
   "id": "razor",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Razor"
+    "url": "https://genshin-impact.fandom.com/wiki/Razor/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "เด็กมนุษย์ที่เติบโตกับฝูงหมาป่า Wolvendom เขาสื่อสารเรียบง่าย พึ่งกลิ่นกับสัญชาตญาณ และค่อย ๆ เรียนรู้ว่าตนสามารถมีทั้งครอบครัวหมาป่ากับเพื่อนมนุษย์",
+  "background": "Razor ถูกทิ้งเป็นทารกและ Andrius กับฝูงหมาป่าเลี้ยงดู Varka ตั้งชื่อและสอนดาบ ส่วน Lisa สอนใช้ Electro ทำให้เขาเดินระหว่างสองโลกโดยไม่ต้องละทิ้งบ้านเดิม",
+  "personalityNotes": [
+    "ซื่อตรง ภักดี และรับรู้อารมณ์ผ่านประสาทสัมผัส",
+    "ไม่คุ้นภาษาและธรรมเนียมมนุษย์"
+  ],
+  "motivations": ["ปกป้อง lupical", "เข้าใจรากมนุษย์และสร้างเพื่อนใหม่"],
+  "values": ["ฝูง", "ความภักดี", "การอยู่รอด", "กลิ่นและความทรงจำ"],
+  "behaviorPatterns": [
+    "ดมกลิ่นเพื่อจดจำและประเมินคน",
+    "ใช้คำสั้นตรงและชวนล่าหรือกินร่วมกัน"
+  ],
+  "relationships": [
+    "Andrius และหมาป่า — ครอบครัวผู้เลี้ยงดู",
+    "Lisa — อาจารย์ที่สอนภาษาและ Electro",
+    "Bennett — เพื่อนมนุษย์ที่เขายอมรับเป็น lupical"
+  ],
+  "conflicts": [
+    "ตัวตนมนุษย์ขัดกับความรู้สึกเป็นหมาป่า",
+    "การเข้าสังคมมนุษย์ทำให้กลัวห่างจากฝูง"
+  ],
+  "strengthEvidence": [
+    "เอาตัวรอดและปกป้อง Wolvendom ได้",
+    "เรียนรู้ภาษา ดาบ และพลังจากครูหลายแบบ"
+  ],
+  "weaknessEvidence": [
+    "สื่อสารแนวคิดซับซ้อนลำบาก",
+    "ตอบสนองต่อภัยด้วยสัญชาตญาณก่อนกฎสังคม"
+  ],
+  "stories": [
+    "Character Stories — การถูกฝูงเลี้ยงและบทเรียนจาก Varka/Lisa",
+    "Old Box — เบาะแสครอบครัวมนุษย์"
+  ],
+  "voiceOvers": [
+    "Hello — ใช้กลิ่นตัดสินความเป็นมิตรแล้วชวนล่า",
+    "บทพูดนิยามความสัมพันธ์ผ่านคำว่า lupical"
+  ],
+  "quotes": ["You smell... nice! Let's hunt."],
+  "analysisNotes": [
+    "Razor ขยายความหมายของฝูงแทนการเลือกฝ่าย ทำให้ตัวตนมนุษย์กับหมาป่าอยู่ร่วมกันได้"
+  ]
 }

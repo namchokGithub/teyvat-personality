@@ -2,20 +2,49 @@
   "id": "xianyun",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Xianyun"
+    "url": "https://genshin-impact.fandom.com/wiki/Xianyun/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ร่างมนุษย์ของ Cloud Retainer adeptus นักประดิษฐ์ผู้ภูมิใจ พูดถึงตนว่า ‘one’ และดูแลศิษย์แบบแม่ที่ไม่ยอมรับตรง ๆ",
+  "background": "Cloud Retainer อยู่กับ Rex Lapisและ adepti มาหลายพันปี หลังเหตุใน Liyue เธอลงมาใช้ชีวิตใน Harbor ในชื่อ Xianyun เรียนรู้สังคมมนุษย์และเฝ้าดู Ganyu กับ Shenhe",
+  "personalityNotes": [
+    "ภูมิใจ ช่างเล่า และมีความคิดวิศวกรรม",
+    "ห่วงใยศิษย์ผ่านคำแนะนำกับสิ่งประดิษฐ์"
+  ],
+  "motivations": [
+    "พัฒนาเครื่องกลและเข้าใจชีวิตมนุษย์",
+    "ดูแลลูกศิษย์โดยเคารพเส้นทางตน"
+  ],
+  "values": ["ความรู้", "ครอบครัวศิษย์", "มรดก adepti"],
+  "behaviorPatterns": [
+    "เล่าเรื่องวัยเด็กศิษย์อย่างเพลิดเพลิน",
+    "แก้ปัญหาด้วยสิ่งประดิษฐ์ซับซ้อน"
+  ],
+  "relationships": [
+    "Ganyu และ Shenhe — ศิษย์ที่เธอเลี้ยงดู",
+    "Rex Lapis — สหายเก่าและศูนย์กลางยุค adepti"
+  ],
+  "conflicts": [
+    "ความภูมิใจทำให้ยอมรับความเหงายาก",
+    "ความหวังดีอาจล้ำความเป็นส่วนตัวศิษย์"
+  ],
+  "strengthEvidence": [
+    "สร้างกลไกและวิชา adeptal arts จำนวนมาก",
+    "ปรับตัวจากภูเขาสู่เมืองโดยไม่ทิ้งตัวตน"
+  ],
+  "weaknessEvidence": [
+    "พูดอ้อมเรื่องความผูกพัน",
+    "ชอบแข่งขันและพิสูจน์สิ่งประดิษฐ์"
+  ],
+  "stories": [
+    "Character Stories — การลงมาอยู่ Liyue Harbor",
+    "สิ่งประดิษฐ์ — ภาษาที่เธอใช้ดูแลและสร้างสายสัมพันธ์"
+  ],
+  "voiceOvers": [
+    "Voice-Overs — เล่าเรื่องศิษย์ด้วยความภูมิใจ",
+    "บทพูดเป็นทางการแต่เต็มด้วยความสนใจชีวิตคนใกล้ชิด"
+  ],
+  "quotes": ["One is most pleased."],
+  "analysisNotes": [
+    "Xianyun ใช้ความภูมิใจเป็นภาษาปกปิดความเป็นแม่ การเข้าเมืองคือการยอมรับว่าความผูกพันสำคัญกว่าระยะห่างแบบ adeptus"
+  ]
 }

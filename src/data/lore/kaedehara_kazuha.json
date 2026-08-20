@@ -2,20 +2,55 @@
   "id": "kaedehara_kazuha",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Kaedehara_Kazuha"
+    "url": "https://genshin-impact.fandom.com/wiki/Kaedehara_Kazuha/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ซามูไรพเนจรจากตระกูล Kaedehara ผู้สงบ อ่อนโยน และรับฟังธรรมชาติ เขาแบกความทรงจำของเพื่อนที่เสียชีวิต แต่เลือกเดินทางอย่างอิสระแทนความแค้น",
+  "background": "หลังตระกูลเสื่อมถอย Kazuha ออกพเนจรและเป็นผู้หลบหนีจาก Vision Hunt Decree เมื่อพยายามรักษา Vision ของเพื่อน ต่อมาเขาอาศัยบนเรือ Crux และกลับช่วย Inazuma โดยรับคมดาบ Musou no Hitotachi",
+  "personalityNotes": [
+    "สุขุม ถ่อมตน และไวต่อรายละเอียดรอบตัว",
+    "รักเสรีภาพและไม่ยึดติดทรัพย์สิน",
+    "เผชิญความสูญเสียโดยไม่ปล่อยให้กลายเป็นความแค้น"
+  ],
+  "motivations": [
+    "เดินทางและสัมผัสความหมายของโลก",
+    "รักษาความทรงจำของเพื่อน",
+    "ปกป้องผู้คนเมื่ออิสรภาพถูกคุกคาม"
+  ],
+  "values": ["เสรีภาพ", "มิตรภาพ", "ความสงบภายใน", "ความงามของธรรมชาติ"],
+  "behaviorPatterns": [
+    "อ่านลม เสียง และกลิ่นเพื่อประเมินสถานการณ์",
+    "แต่งบทกวีจากสิ่งที่พบ",
+    "เดินทางเบาและยอมรับการเปลี่ยนแปลง"
+  ],
+  "relationships": [
+    "เพื่อนผู้ถือ Vision — การสูญเสียที่กำหนดเส้นทางของเขา",
+    "Beidou และ Crux — ผู้มอบที่พักกับชุมชนใหม่",
+    "Raiden Shogun — ผู้ที่เขาเผชิญโดยไม่ยึดความแค้นส่วนตัว"
+  ],
+  "conflicts": [
+    "ความสงบในปัจจุบันอยู่ร่วมกับความเศร้าจากอดีต",
+    "ต้องเลือกเมื่อใดควรปล่อยวางและเมื่อใดควรชักดาบ"
+  ],
+  "strengthEvidence": [
+    "รับ Musou no Hitotachi เพื่อปกป้อง Traveler",
+    "ปรับตัวจากทายาทตระกูลสู่ผู้พเนจรโดยไม่สูญเสียศักดิ์ศรี"
+  ],
+  "weaknessEvidence": [
+    "มีแนวโน้มเก็บความเศร้าไว้ในภาษากวี",
+    "วิถีพเนจรทำให้หลีกเลี่ยงความผูกพันถาวร"
+  ],
+  "stories": [
+    "Character Stories — การล่มสลายของตระกูลและชีวิตพเนจร",
+    "Vision Shell — การรักษาความปรารถนาของเพื่อนผู้จากไป"
+  ],
+  "voiceOvers": [
+    "Hello — แนะนำตนในฐานะผู้พเนจรและชวน Traveler ร่วมทาง",
+    "บทพูดเชื่อมอารมณ์กับลม ฤดูกาล และเสียงธรรมชาติ"
+  ],
+  "quotes": [
+    "Since we are both travelers, let us journey together for a time."
+  ],
+  "analysisNotes": [
+    "การรับฟังธรรมชาติของ Kazuha เป็นทั้งทักษะจริงและวิธีอยู่กับความรู้สึกโดยไม่ถูกมันครอบงำ"
+  ]
 }

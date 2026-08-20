@@ -2,20 +2,49 @@
   "id": "sethos",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Sethos"
+    "url": "https://genshin-impact.fandom.com/wiki/Sethos/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ทายาท Temple of Silence ผู้เป็นมิตร คล่องสังคม และผสานความรู้ทะเลทรายกับโลกภายนอก เขารับช่วงผู้นำหลังยุติความขัดแย้งเรื่องพลัง Ba Fragment",
+  "background": "Sethos เติบโตภายใต้ Bamoun ใน Temple of Silence และถูกวางให้รับพลังซึ่งเดิมเป็นของ Cyno หลังเผชิญ Cyno เขาคืนพลังและรับหน้าที่นำวิหารด้วยวิธีเปิดกว้างกว่าเดิม",
+  "personalityNotes": [
+    "เป็นกันเอง อ่านบรรยากาศเก่ง และปรับตัวไว",
+    "รับผิดชอบต่อประเพณีโดยไม่ยึดติดรูปแบบเก่า"
+  ],
+  "motivations": [
+    "นำ Temple of Silence สู่อนาคต",
+    "เชื่อมชุมชนทะเลทรายกับผู้คนภายนอก"
+  ],
+  "values": ["ความรับผิดชอบ", "การเจรจา", "เสรีภาพในการเลือก"],
+  "behaviorPatterns": [
+    "เปลี่ยนเรื่องทางการเป็นบทสนทนาสบาย",
+    "สังเกตคู่สนทนาและเลือกสถานที่เหมาะ"
+  ],
+  "relationships": [
+    "Bamoun — ผู้เลี้ยงดูและมอบภาระสืบทอด",
+    "Cyno — เจ้าของพลังเดิมและคู่ทดสอบที่กลายเป็นผู้เข้าใจ"
+  ],
+  "conflicts": [
+    "หน้าที่สืบทอดขัดกับความอยากสำรวจโลก",
+    "ความลับของวิหารจำกัดความโปร่งใส"
+  ],
+  "strengthEvidence": [
+    "ยุติความขัดแย้งกับ Cynoโดยเลือกคืนสิ่งที่ไม่ควรเป็นของตน",
+    "สร้างความไว้วางใจได้รวดเร็ว"
+  ],
+  "weaknessEvidence": [
+    "อาจใช้ความสบายกลบความหนักของภาระ",
+    "ยังมีประสบการณ์นำองค์กรจำกัด"
+  ],
+  "stories": [
+    "Character Stories — การเติบโตใน Temple of Silence และการสืบทอด",
+    "Ba Fragment — บททดสอบเรื่องสิทธิและหน้าที่"
+  ],
+  "voiceOvers": [
+    "Hello — ชวนย้ายไปนั่งคุยแทนสนทนาแบบรีบเร่ง",
+    "บทพูดสะท้อนความเป็นเจ้าบ้านและนักเจรจา"
+  ],
+  "quotes": ["Come with me, I know a good place."],
+  "analysisNotes": [
+    "Sethos ใช้ความเป็นกันเองเปิดสถาบันที่เคยปิดลับ โดยไม่จำเป็นต้องปฏิเสธรากเดิมทั้งหมด"
+  ]
 }

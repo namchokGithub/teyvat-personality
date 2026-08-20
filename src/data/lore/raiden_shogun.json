@@ -2,20 +2,50 @@
   "id": "raiden_shogun",
   "source": {
     "type": "wiki",
-    "url": "https://genshin-impact.fandom.com/wiki/Raiden_Shogun"
+    "url": "https://genshin-impact.fandom.com/wiki/Raiden_Shogun/Profile"
   },
-  "summary": "",
-  "background": "",
-  "personalityNotes": [],
-  "motivations": [],
-  "values": [],
-  "behaviorPatterns": [],
-  "relationships": [],
-  "conflicts": [],
-  "strengthEvidence": [],
-  "weaknessEvidence": [],
-  "stories": [],
-  "voiceOvers": [],
-  "quotes": [],
-  "analysisNotes": []
+  "summary": "ตัวตนที่รวม Ei กับหุ่น Shogun: Ei แสวงนิรันดร์หลังสูญเสียคนรัก ส่วนหุ่นปฏิบัติกฎอย่างแข็งทื่อ การเติบโตเกิดเมื่อ Ei ยอมรับว่าความเปลี่ยนแปลงไม่เท่ากับการสูญเสียทุกสิ่ง",
+  "background": "Ei รับตำแหน่งหลัง Makoto เสียชีวิต สร้างหุ่น Shogun และถอยสู่ Plane of Euthymia เพื่อหลบ erosion นโยบาย Vision Hunt กับ Sakoku เกิดจากนิยามนิรันดร์ที่ถูก Fatui ใช้ประโยชน์ ก่อนเธอเปิดประเทศและทบทวนกฎ",
+  "personalityNotes": [
+    "Ei สำรวม แบกความเศร้า และไม่คุ้นชีวิตสมัยใหม่",
+    "Shogun เด็ดขาด ตรงตามโปรแกรม และไม่ประนีประนอม"
+  ],
+  "motivations": [
+    "ปกป้อง Inazuma จากการสูญเสียและ erosion",
+    "สร้างนิรันดร์ที่อยู่ร่วมกับความฝันของประชาชน"
+  ],
+  "values": ["นิรันดร์", "หน้าที่ต่อ Inazuma", "ความทรงจำของ Makoto"],
+  "behaviorPatterns": [
+    "ถอนตัวไปทำสมาธิและมอบงานให้หุ่น",
+    "ตอบภัยด้วยการกำจัดอย่างตรงไปตรงมา"
+  ],
+  "relationships": [
+    "Makoto — พี่สาวฝาแฝดและความสูญเสียศูนย์กลาง",
+    "Yae Miko — เพื่อนเก่าที่ท้าทายการถอนตัว",
+    "Kujou Sara — ผู้ติดตามที่ศรัทธาต่อ Shogun"
+  ],
+  "conflicts": [
+    "ความกลัวการเปลี่ยนแปลงทำให้นโยบายทำร้ายความปรารถนาประชาชน",
+    "Ei ต้องต่อสู้กับหุ่นที่เป็นรูปธรรมของเจตจำนงเดิม"
+  ],
+  "strengthEvidence": [
+    "ปกป้อง Inazuma ด้วยพลังและวินัยยาวนาน",
+    "ยอมทบทวนอุดมการณ์หลังเห็นผลกระทบจริง"
+  ],
+  "weaknessEvidence": [
+    "หลบความเศร้าด้วยการแยกตนจากโลก",
+    "ประเมินการบิดเบือนของเจ้าหน้าที่ต่ำเกินไป"
+  ],
+  "stories": [
+    "Character Stories — การสูญเสีย Makoto และการสร้าง Shogun",
+    "Story Quest — การเผชิญความเปลี่ยนแปลงและต่อสู้กับเจตจำนงเดิม"
+  ],
+  "voiceOvers": [
+    "Hello — ปิดบังสถานะและแต่งตั้ง Traveler เป็นผู้คุ้มกันก่อนบอกว่าจะจัดการภัยเอง",
+    "ความต่างของน้ำเสียงช่วยแยก Ei จากโปรแกรม Shogun"
+  ],
+  "quotes": ["Should any danger arise, I shall dispose of it."],
+  "analysisNotes": [
+    "นิรันดร์ของ Ei เริ่มเป็นการหยุดเวลาเพื่อหนีความเศร้า ก่อนพัฒนาเป็นการรักษาคุณค่าที่เดินทางผ่านความเปลี่ยนแปลง"
+  ]
 }
