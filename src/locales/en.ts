@@ -1,0 +1,25 @@
+import type { th } from "./th";
+
+export const en: Record<keyof typeof th, string> = {
+  brand: "Teyvat Personalities", navQuiz: "Quiz", navCharacters: "Characters", navResult: "Result preview", language: "ไทย", skipContent: "Skip to main content",
+  eyebrow: "Find your echo in Teyvat", heroTitle: "Which character shares your way of seeing the world?", heroBody: "Answer 24 situational questions to discover the Character Match and Vision Affinity that reflect how you think.",
+  start: "Start the quiz", resume: "Resume quiz", preview: "Preview a result", meta: "About 3–5 minutes · No right or wrong answers",
+  featureCharacter: "Character Match", featureCharacterBody: "Compare your personality profile with a deliberately diverse cast of characters.",
+  featureVision: "Vision Affinity", featureVisionBody: "Discover the element aligned with your motivations and worldview, calculated separately from your character.",
+  featureShare: "A result with a story", featureShareBody: "See the traits behind your match and a result card designed for sharing.",
+  question: "Question", back: "Back", next: "Next", finish: "See my result", selectHint: "Choose the answer that feels most like you",
+  resetQuiz: "Start over", resetTitle: "Start the quiz again?", resetBody: "Your saved answers and progress will be cleared.", cancel: "Cancel", confirmReset: "Clear and restart",
+  matchingTitle: "Finding your echo...", matchingBody: "We are preparing your sample Character Match and Vision Affinity.",
+  resultEyebrow: "The character who reflects you is", affinity: "Compatibility", sharedTraits: "Shared traits",
+  characterDetails: "View character details", characterAbout: "About this character", factualNotice: "This information comes from Character Master Data. Interpreted personality content will be added later.",
+  unavailable: "Not available yet", unknownCharacter: "Character not found", unknownCharacterBody: "This slug is not present in Character Master Data or its data is not ready.",
+  loadingCharacter: "Loading character data", browseCharacters: "Browse all characters", directoryTitle: "Characters of Teyvat", directoryBody: "Explore the factual profiles currently available in Character Master Data.",
+  searchCharacters: "Search characters", allRegions: "All regions", allElements: "All elements", allRarities: "All rarities", charactersFound: "characters", noCharacters: "No characters match these filters.", clearFilters: "Clear filters",
+  visionTitle: "Your Vision Affinity", tryAgain: "Take it again", share: "Share result",
+  shareTitle: "Share your echo", shareBody: "Send your result as a link or text, or download the prototype card.", shareDevice: "Share from device", copyLink: "Copy link", copySummary: "Copy summary", downloadCard: "Download card", close: "Close",
+  copiedLink: "Link copied", copiedSummary: "Summary copied", shared: "Share menu opened", downloaded: "Card downloaded", error: "That action did not work. Please try again.",
+  sharePreview: "Result card preview", shareSvgNotice: "This prototype downloads a 1080 × 1080 PNG and still uses a letter placeholder for character artwork.",
+  invalidResult: "This result link is invalid", invalidResultBody: "The Character Match or Vision Affinity in this link is unavailable. The link may be outdated or the result data may not be ready.", viewPreview: "View the sample result", sharedResultNotice: "Showing a result opened from a shared link",
+  mockNotice: "UI preview · This result is not yet calculated by the Matching Engine", disclaimer: "An entertainment fan project. Not affiliated with or endorsed by HoYoverse.",
+  notFoundBody: "This path has wandered beyond Teyvat.", returnHome: "Return home",
+};
