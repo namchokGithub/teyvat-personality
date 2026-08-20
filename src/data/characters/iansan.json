@@ -1,0 +1,24 @@
+{
+  "id": "iansan",
+  "name": "Iansan",
+  "region": "Natlan",
+  "element": "Electro",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Tempered in Molten Stone",
+  "titleTh": "ร้อยหลอมศิลาแกร่ง",
+  "description": "Head coach of the fitness club at the Collective of Plenty, and a renowned Natlanese nutritionist.",
+  "descriptionTh": "หัวหน้าโค้ชคลับออกกำลังกายแห่งเผ่าผองสรรพสิ่ง และนักโภชนาการชื่อดังของ Natlan",
+  "birthday": {
+    "birthdayText": "August 8",
+    "birthdayMMDD": [
+      8,
+      8
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

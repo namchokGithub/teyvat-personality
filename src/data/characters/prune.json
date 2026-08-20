@@ -1,0 +1,24 @@
+{
+  "id": "prune",
+  "name": "Prune",
+  "region": "Mondstadt",
+  "element": "Anemo",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Childlike Dreams Cherished",
+  "titleTh": "คืนใจฝันวัยเยาว์",
+  "description": "A diminutive Witch Hunter who has journeyed all the way from Nod-Krai with the singular purpose of rooting out a witch who, to hear her tell it, has committed every sin imaginable — including bullying little kids!",
+  "descriptionTh": "\"นักล่าแม่มด\" ตัวน้อย เดินทางรอนแรมมาจาก Nod-Krai เพียงเพื่อปราบแม่มดที่เธอบอกว่าชอบรังแกคนที่อ่อนแอกว่า และก่อความชั่วร้ายสารพัด",
+  "birthday": {
+    "birthdayText": "November 20",
+    "birthdayMMDD": [
+      11,
+      20
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

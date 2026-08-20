@@ -1,0 +1,24 @@
+{
+  "id": "ganyu",
+  "name": "Ganyu",
+  "region": "Liyue",
+  "element": "Cryo",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Plenilune Gaze",
+  "titleTh": "ผู้พิทักษ์แห่งจันทรา",
+  "description": "The secretary at Yuehai Pavilion. The blood of the qilin, an illuminated beast, flows within her veins.",
+  "descriptionTh": "เลขาของ Yuehai Pavilion มีเลือดของสัตว์เวท \"กิเลน\" ไหลเวียนอยู่ในร่างกาย",
+  "birthday": {
+    "birthdayText": "December 2",
+    "birthdayMMDD": [
+      12,
+      2
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

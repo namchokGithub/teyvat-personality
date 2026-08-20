@@ -1,0 +1,25 @@
+[
+  { "key": "ASSOC_FATUI", "nameEn": "Fatui", "nameTh": "Fatui" },
+  { "key": "ASSOC_FONTAINE", "nameEn": "Fontaine", "nameTh": "Fontaine" },
+  { "key": "ASSOC_HVISION", "nameEn": "HVision", "nameTh": "HVision" },
+  { "key": "ASSOC_INAZUMA", "nameEn": "Inazuma", "nameTh": "Inazuma" },
+  { "key": "ASSOC_LIYUE", "nameEn": "Liyue", "nameTh": "Liyue" },
+  { "key": "ASSOC_MAINACTOR", "nameEn": "Traveler", "nameTh": "นักเดินทาง" },
+  { "key": "ASSOC_MONDSTADT", "nameEn": "Mondstadt", "nameTh": "Mondstadt" },
+  { "key": "ASSOC_NATLAN", "nameEn": "Natlan", "nameTh": "Natlan" },
+  { "key": "ASSOC_NODKRAI", "nameEn": "Nod-Krai", "nameTh": "Nod-Krai" },
+  { "key": "ASSOC_NODKRAI_ZIBAI", "nameEn": "Zibai", "nameTh": "Zibai" },
+  {
+    "key": "ASSOC_OMNI_SCOURGE",
+    "nameEn": "Cosmic Calamity",
+    "nameTh": "ภัยพิบัติแห่งจักรวาล"
+  },
+  { "key": "ASSOC_RANGER", "nameEn": "Ranger", "nameTh": "เรนเจอร์" },
+  {
+    "key": "ASSOC_SNEZHNAYA_STAR",
+    "nameEn": "Snezhnaya Star",
+    "nameTh": "ดวงดาวแห่งสเนซนายา"
+  },
+  { "key": "ASSOC_SNEZHNAYA", "nameEn": "Snezhnaya", "nameTh": "Snezhnaya" },
+  { "key": "ASSOC_SUMERU", "nameEn": "Sumeru", "nameTh": "Sumeru" }
+]

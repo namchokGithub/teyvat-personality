@@ -1,0 +1,24 @@
+{
+  "id": "xiangling",
+  "name": "Xiangling",
+  "region": "Liyue",
+  "element": "Pyro",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Exquisite Delicacy",
+  "titleTh": "สุดยอดนักทำอาหาร",
+  "description": "A renowned chef from Liyue. She's extremely passionate about cooking and excels at making her signature hot and spicy dishes.",
+  "descriptionTh": "เชฟชื่อดังจาก Liyue ผู้หลงใหล ในการปรุงอาหารเป็นอย่างมาก ซึ่งอาหารรสเผ็ดของเธอนั้น ช่างโดดเด่นไม่เป็นสองรองใคร",
+  "birthday": {
+    "birthdayText": "November 2",
+    "birthdayMMDD": [
+      11,
+      2
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

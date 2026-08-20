@@ -1,0 +1,24 @@
+{
+  "id": "xingqiu",
+  "name": "Xingqiu",
+  "region": "Liyue",
+  "element": "Hydro",
+  "weapon": "Sword",
+  "rarity": 4,
+  "title": "Juvenile Galant",
+  "titleTh": "หนุ่มน้อยนักธุรกิจ",
+  "description": "A young man carrying a longsword who is frequently seen at book booths. He has a chivalrous heart and yearns for justice and fairness for all.",
+  "descriptionTh": "เด็กหนุ่มผู้มักจะปรากฏตัวตามแผงขายหนังสือ ในมือถือดาบยาว ในใจมีจิตวิญญาณแห่งความกล้าสถิตอยู่",
+  "birthday": {
+    "birthdayText": "October 9",
+    "birthdayMMDD": [
+      10,
+      9
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

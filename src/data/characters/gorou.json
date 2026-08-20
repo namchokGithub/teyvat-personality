@@ -1,0 +1,24 @@
+{
+  "id": "gorou",
+  "name": "Gorou",
+  "region": "Inazuma",
+  "element": "Geo",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Canine Warrior",
+  "titleTh": "นักรบคู่หูผู้ซื่อสัตย์",
+  "description": "The great general of Watatsumi Island's forces. He is deeply trusted by his subordinates.",
+  "descriptionTh": "พลเอกของกองทหารแห่งเกาะ Watatsumi ผู้ได้รับความไว้วางใจจากผู้ใต้บังคับบัญชาเป็นอย่างสูง",
+  "birthday": {
+    "birthdayText": "May 18",
+    "birthdayMMDD": [
+      5,
+      18
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

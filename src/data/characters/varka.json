@@ -1,0 +1,24 @@
+{
+  "id": "varka",
+  "name": "Varka",
+  "region": "Mondstadt",
+  "element": "Anemo",
+  "weapon": "Claymore",
+  "rarity": 5,
+  "title": "Knight of Boreas",
+  "titleTh": "อัศวินแห่ง Boreas",
+  "description": "Grand Master of the Knights of Favonius. Knight of Boreas, protector of Mondstadt.",
+  "descriptionTh": "แกรนด์มาสเตอร์ของกองอัศวินแห่ง Favonius, อัศวินแห่ง Boreas ผู้พิทักษ์ Mondstadt",
+  "birthday": {
+    "birthdayText": "February 17",
+    "birthdayMMDD": [
+      2,
+      17
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

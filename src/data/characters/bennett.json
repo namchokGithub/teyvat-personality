@@ -1,0 +1,24 @@
+{
+  "id": "bennett",
+  "name": "Bennett",
+  "region": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Sword",
+  "rarity": 4,
+  "title": "Trial by Fire",
+  "titleTh": "ไฟแห่งโชคชะตา",
+  "description": "A good-natured adventurer from Mondstadt who's unfortunately extremely unlucky.",
+  "descriptionTh": "เด็กหนุ่มนักผจญภัยแห่ง Mondstadt ผู้มาพร้อมความซวย ซึ่งไม่เข้ากันกับนิสัยใจดีมีเมตตาของเขาเลย",
+  "birthday": {
+    "birthdayText": "February 29",
+    "birthdayMMDD": [
+      2,
+      29
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

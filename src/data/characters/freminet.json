@@ -1,0 +1,24 @@
+{
+  "id": "freminet",
+  "name": "Freminet",
+  "region": "Fontaine",
+  "element": "Cryo",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Yearning for Unseen Depths",
+  "titleTh": "ดำดิ่งสู่ภวังค์ฝัน",
+  "description": "A reserved young man who is well-versed in diving. Beneath his distant, icy demeanor lies a pure heart bereft of all flaws.",
+  "descriptionTh": "เด็กหนุ่มพูดน้อยผู้เชี่ยวชาญในการประดาน้ำ ใต้รูปลักษณ์ภายนอกเย็นยะเยือกห่างเหินนั้น มีหัวใจบริสุทธิ์ไร้มลทินดวงหนึ่งซ่อนอยู่",
+  "birthday": {
+    "birthdayText": "September 24",
+    "birthdayMMDD": [
+      9,
+      24
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

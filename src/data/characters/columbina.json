@@ -1,0 +1,24 @@
+{
+  "id": "columbina",
+  "name": "Columbina",
+  "region": "Nod-Krai",
+  "element": "Hydro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Welkin Moon's Homecoming",
+  "titleTh": "จันทร์สุญตาคืนถิ่น",
+  "description": "The Moon Maiden born in Nod-Krai, and also the welkin moon returning home.",
+  "descriptionTh": "เทพธิดาแห่งจันทรา ที่ถือกำเนิดขึ้นใน Nod-Krai คือดวงจันทร์สุญตา ที่หวนกลับคืนสู่บ้านเกิด",
+  "birthday": {
+    "birthdayText": "January 14",
+    "birthdayMMDD": [
+      1,
+      14
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

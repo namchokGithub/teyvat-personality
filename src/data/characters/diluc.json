@@ -1,0 +1,24 @@
+{
+  "id": "diluc",
+  "name": "Diluc",
+  "region": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Claymore",
+  "rarity": 5,
+  "title": "Dark Side of Dawn",
+  "titleTh": "เงาแห่งรุ่งอรุณ",
+  "description": "The tycoon of a winery empire in Mondstadt, unmatched in every possible way.",
+  "descriptionTh": "คุณชายสูงศักดิ์ผู้ครอบครองกิจการผลิตไวน์ใน Mondstadt ไปกว่าครึ่ง ไม่ว่าจะด้านกำลังทรัพย์ ชื่อเสียง หรือความสามารถ ก็ไม่มีใครเทียบเคียงได้ในสักทาง",
+  "birthday": {
+    "birthdayText": "April 30",
+    "birthdayMMDD": [
+      4,
+      30
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

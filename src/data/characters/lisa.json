@@ -1,0 +1,24 @@
+{
+  "id": "lisa",
+  "name": "Lisa",
+  "region": "Mondstadt",
+  "element": "Electro",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Witch of Purple Rose",
+  "titleTh": "แม่มดกุหลาบ",
+  "description": "The languid but knowledgeable Librarian of the Knights of Favonius, deemed by Sumeru Akademiya to be their most distinguished graduate in the past two centuries.",
+  "descriptionTh": "บรรณารักษ์หอสมุดอัศวินแห่ง Favonius ผู้เอื่อยเฉื่อยแต่รอบรู้ เธอได้รับการยอมรับว่าเป็น \"อัจฉริยะในรอบสองร้อยปี\" แห่งสถาบัน Sumeru",
+  "birthday": {
+    "birthdayText": "June 9",
+    "birthdayMMDD": [
+      6,
+      9
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

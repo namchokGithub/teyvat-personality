@@ -1,0 +1,120 @@
+[
+  {
+    "elementId": "pyro",
+    "personalityTheme": {
+      "primary": "passion",
+      "secondary": [
+        "enthusiasm",
+        "self-expression",
+        "determination",
+        "optimism"
+      ],
+      "traits": {
+        "passion": 1.0,
+        "enthusiasm": 0.7,
+        "selfExpression": 0.8,
+        "determination": 0.6,
+        "optimism": 0.4
+      }
+    }
+  },
+  {
+    "elementId": "hydro",
+    "personalityTheme": {
+      "primary": "ideals",
+      "secondary": [
+        "adaptability",
+        "responsibility",
+        "creativity",
+        "perseverance"
+      ],
+      "traits": {
+        "ideals": 1.0,
+        "adaptability": 0.8,
+        "responsibility": 0.7,
+        "creativity": 0.6,
+        "perseverance": 0.5
+      }
+    }
+  },
+  {
+    "elementId": "anemo",
+    "personalityTheme": {
+      "primary": "freedom",
+      "secondary": [
+        "acceptance",
+        "sensitivity",
+        "selflessness",
+        "adaptability"
+      ],
+      "traits": {
+        "freedom": 1.0,
+        "acceptance": 0.9,
+        "sensitivity": 0.6,
+        "selflessness": 0.7,
+        "adaptability": 0.5
+      }
+    }
+  },
+  {
+    "elementId": "electro",
+    "personalityTheme": {
+      "primary": "individuality",
+      "secondary": [
+        "determination",
+        "independence",
+        "confidence",
+        "nonconformity"
+      ],
+      "traits": {
+        "individuality": 1.0,
+        "determination": 0.8,
+        "independence": 0.9,
+        "confidence": 0.6,
+        "nonconformity": 0.8
+      }
+    }
+  },
+  {
+    "elementId": "dendro",
+    "personalityTheme": {
+      "primary": "growth",
+      "secondary": ["curiosity", "knowledge", "learning", "self-development"],
+      "traits": {
+        "growth": 1.0,
+        "curiosity": 0.9,
+        "knowledge": 0.8,
+        "learning": 0.9,
+        "selfDevelopment": 0.7
+      }
+    }
+  },
+  {
+    "elementId": "cryo",
+    "personalityTheme": {
+      "primary": "innerConflict",
+      "secondary": ["contradiction", "identity", "introspection", "resilience"],
+      "traits": {
+        "innerConflict": 1.0,
+        "contradiction": 0.9,
+        "identity": 0.8,
+        "introspection": 0.7,
+        "resilience": 0.6
+      }
+    }
+  },
+  {
+    "elementId": "geo",
+    "personalityTheme": {
+      "primary": "resolve",
+      "secondary": ["stability", "perseverance", "discipline", "reliability"],
+      "traits": {
+        "resolve": 1.0,
+        "stability": 0.9,
+        "perseverance": 0.8,
+        "discipline": 0.7,
+        "reliability": 0.8
+      }
+    }
+  }
+]

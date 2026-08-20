@@ -1,0 +1,24 @@
+{
+  "id": "mualani",
+  "name": "Mualani",
+  "region": "Natlan",
+  "element": "Hydro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Splish-Splash Wavechaser",
+  "titleTh": "นักผจญคลื่นคำราม",
+  "description": "A well-known guide in Natlan who owns a watersports shop, and expert in all forms of wave-chasing.",
+  "descriptionTh": "ผู้นำทางชื่อดังของ Natlan ผู้บริหารร้านขายอุปกรณ์ทางน้ำ นักผจญคลื่นผู้เชี่ยวชาญกีฬาทางน้ำทุกประเภท",
+  "birthday": {
+    "birthdayText": "August 3",
+    "birthdayMMDD": [
+      8,
+      3
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

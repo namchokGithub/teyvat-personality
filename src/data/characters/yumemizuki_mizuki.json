@@ -1,0 +1,24 @@
+{
+  "id": "yumemizuki_mizuki",
+  "name": "Yumemizuki Mizuki",
+  "region": "Inazuma",
+  "element": "Anemo",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Embrace of Enchanting Dreams",
+  "titleTh": "ห้วงนิทราคะนึงฝัน",
+  "description": "A shareholder of Aisa Bathhouse, a baku, and a clinical psychologist. Dedicated to the dispersal of nightmares, and to bringing people peace of mind.",
+  "descriptionTh": "ผู้ถือหุ้นใหญ่ของ \"โรงอาบน้ำ Aisa\" และนักจิตบำบัดจากเผ่าพันธุ์บากุเขมือบฝัน มุ่งมั่นที่จะขจัดฝันร้าย เพื่อนำความสงบมาสู่ผู้คน",
+  "birthday": {
+    "birthdayText": "March 16",
+    "birthdayMMDD": [
+      3,
+      16
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

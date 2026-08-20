@@ -1,0 +1,24 @@
+{
+  "id": "mona",
+  "name": "Mona",
+  "region": "Mondstadt",
+  "element": "Hydro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Astral Reflection",
+  "titleTh": "เงาสะท้อนดวงดาว",
+  "description": "A mysterious young astrologer who proclaims herself to be \"Astrologist Mona Megistus,\" and who possesses abilities to match the title. Erudite, but prideful.",
+  "descriptionTh": "หญิงสาวลึกลับผู้เป็นโหรแห่งดวงดาว เรียกตัวเองว่า \"โหรแห่งดวงดาวผู้ยิ่งใหญ่ Mona\" มีความแข็งแกร่งอย่างล้นเหลือสมดังชื่อ รอบรู้ทว่าทระนง",
+  "birthday": {
+    "birthdayText": "August 31",
+    "birthdayMMDD": [
+      8,
+      31
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

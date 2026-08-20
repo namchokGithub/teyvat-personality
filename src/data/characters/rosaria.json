@@ -1,0 +1,24 @@
+{
+  "id": "rosaria",
+  "name": "Rosaria",
+  "region": "Mondstadt",
+  "element": "Cryo",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Thorny Benevolence",
+  "titleTh": "ความเมตตาที่เสียดแทง",
+  "description": "A sister of the church, though you wouldn't know it if it weren't for her attire. Known for her sharp, cold words and manner, she often works alone.",
+  "descriptionTh": "ซิสเตอร์ที่นอกจากการแต่งกายแล้วไม่มีสิ่งที่ดูเหมือนผู้ทำหน้าที่ทางศาสนาเลย ภายใต้คำพูดและการกระทำที่เย็นชาแฝงไว้ซึ่งความเฉียบแหลม มักจะทำสิ่งต่าง ๆ ด้วยตัวคนเดียวอยู่เสมอ",
+  "birthday": {
+    "birthdayText": "January 24",
+    "birthdayMMDD": [
+      1,
+      24
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

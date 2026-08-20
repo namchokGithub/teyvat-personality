@@ -1,0 +1,24 @@
+{
+  "id": "ineffa",
+  "name": "Ineffa",
+  "region": "Nod-Krai",
+  "element": "Electro",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Boom Boom Thunderwave",
+  "titleTh": "คลื่นอัสนีกัมปนาท",
+  "description": "A multifunctional robot containing integrated mechanical components from various nations. The Source Core in her chest has endured the passage of countless years.",
+  "descriptionTh": "หุ่นยนต์อเนกประสงค์ที่รวบรวมชิ้นส่วนกลไก จากหลายประเทศไว้ด้วยกัน แกนแห่งแดนลับที่อยู่ตรงหน้าอกได้ผ่านกาลเวลามานานหลายปี",
+  "birthday": {
+    "birthdayText": "April 2",
+    "birthdayMMDD": [
+      4,
+      2
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

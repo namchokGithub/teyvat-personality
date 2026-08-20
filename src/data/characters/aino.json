@@ -1,0 +1,24 @@
+{
+  "id": "aino",
+  "name": "Aino",
+  "region": "Nod-Krai",
+  "element": "Hydro",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Clinky-Clank Gadgets-A-Gogo",
+  "titleTh": "กลไกมหัศจรรย์กรุ๊งกริ๊ง",
+  "description": "A genius mechanic and inventor from Nod-Krai who loves interesting machines and sweet treats.",
+  "descriptionTh": "นักประดิษฐ์จักรกลอัจฉริยะแห่ง Nod-Krai ชื่นชอบจักรกลที่น่าสนใจ และของหวาน",
+  "birthday": {
+    "birthdayText": "September 21",
+    "birthdayMMDD": [
+      9,
+      21
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

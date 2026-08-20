@@ -1,0 +1,24 @@
+{
+  "id": "furina",
+  "name": "Furina",
+  "region": "Fontaine",
+  "element": "Hydro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Endless Solo of Solitude",
+  "titleTh": "ระบำเดียวดายชั่วนิรันดร์",
+  "description": "The absolute focus of the stage of judgment, until the final applause sounds.",
+  "descriptionTh": "จุดสนใจบนเวทีแห่งการพิพากษา จนกระทั่งเสียงปรบมือคำรามก้องเมื่อม่านปิดลง",
+  "birthday": {
+    "birthdayText": "October 13",
+    "birthdayMMDD": [
+      10,
+      13
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

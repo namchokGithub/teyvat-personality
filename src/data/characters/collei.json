@@ -1,0 +1,24 @@
+{
+  "id": "collei",
+  "name": "Collei",
+  "region": "Sumeru",
+  "element": "Dendro",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Sprout of Rebirth",
+  "titleTh": "ต้นกล้าเมื่อคราแรกแย้ม",
+  "description": "A trainee ranger active in Avidya Forest. Behind her enthusiastic words and actions hides a slightly introverted personality.",
+  "descriptionTh": "เจ้าหน้าที่พิทักษ์ป่าฝึกหัดที่ทำงานอยู่ใน Avidya Forest เบื้องหลังคำพูด และการกระทำอันแสนใส่ใจ คือหัวใจที่ถูกเก็บงำซ่อนไว้",
+  "birthday": {
+    "birthdayText": "May 8",
+    "birthdayMMDD": [
+      5,
+      8
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

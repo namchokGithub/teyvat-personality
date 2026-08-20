@@ -1,0 +1,24 @@
+{
+  "id": "nilou",
+  "name": "Nilou",
+  "region": "Sumeru",
+  "element": "Hydro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Dance of Lotuslight",
+  "titleTh": "ระบำนิโลตบลพรายแสง",
+  "description": "The star of the Zubayr Theater. She is full of warmth and innocence, and her dances are lively and elegant.",
+  "descriptionTh": "นักเต้นรำผู้แสนโด่งดังของโรงละคร Zubayr มีท่วงท่าที่คล่องแคล่วและสง่างาม ให้ความรู้สึกที่ทั้งบริสุทธิ์และเป็นมิตร",
+  "birthday": {
+    "birthdayText": "December 3",
+    "birthdayMMDD": [
+      12,
+      3
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

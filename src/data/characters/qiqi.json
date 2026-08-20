@@ -1,0 +1,24 @@
+{
+  "id": "qiqi",
+  "name": "Qiqi",
+  "region": "Liyue",
+  "element": "Cryo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Icy Resurrection",
+  "titleTh": "ความหนาวเย็นคืนชีพ",
+  "description": "An apprentice and herb gatherer at Bubu Pharmacy. An undead with a bone-white complexion, she seldom has much in the way of words or emotion.",
+  "descriptionTh": "คนเก็บสมุนไพรและเด็กฝึกงานของร้านยา \"Bubu Pharmacy\" ซอมบี้ผู้มีผิวขาวซีดราวกับกระดาษ ไม่ค่อยพูดไม่ค่อยจาและไม่ค่อยแสดงอารมณ์",
+  "birthday": {
+    "birthdayText": "March 3",
+    "birthdayMMDD": [
+      3,
+      3
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

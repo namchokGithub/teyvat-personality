@@ -1,0 +1,24 @@
+{
+  "id": "navia",
+  "name": "Navia",
+  "region": "Fontaine",
+  "element": "Geo",
+  "weapon": "Claymore",
+  "rarity": 5,
+  "title": "Helm of the Radiant Rose",
+  "titleTh": "หางเสือแห่งมวลกุหลาบ",
+  "description": "The current President of Spina di Rosula, who is lovely, dutiful, and a great boss.",
+  "descriptionTh": "ประธานองค์กรกุหลาบหนามคนปัจจุบัน เป็นเจ้านายที่น่ารัก และมีความรับผิดชอบสูง",
+  "birthday": {
+    "birthdayText": "August 16",
+    "birthdayMMDD": [
+      8,
+      16
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

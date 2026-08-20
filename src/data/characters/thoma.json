@@ -1,0 +1,24 @@
+{
+  "id": "thoma",
+  "name": "Thoma",
+  "region": "Inazuma",
+  "element": "Pyro",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Protector From Afar",
+  "titleTh": "ผู้พิทักษ์จากแดนไกล",
+  "description": "The Kamisato Clan's housekeeper. A well-known \"fixer\" in Inazuma.",
+  "descriptionTh": "พ่อบ้านผู้จัดการงานต่าง ๆ ภายในคฤหาสน์ของตระกูล Kamisato \"ผู้มีอิทธิพล\" ซึ่งเคลื่อนไหวใน Inazuma",
+  "birthday": {
+    "birthdayText": "January 9",
+    "birthdayMMDD": [
+      1,
+      9
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

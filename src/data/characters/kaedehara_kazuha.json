@@ -1,0 +1,24 @@
+{
+  "id": "kaedehara_kazuha",
+  "name": "Kaedehara Kazuha",
+  "region": "Inazuma",
+  "element": "Anemo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Scarlet Leaves Pursue Wild Waves",
+  "titleTh": "ใบไม้แดงแห่งกระแสคลื่น",
+  "description": "A wandering samurai from Inazuma who is currently with Liyue's Crux Fleet. A gentle and carefree soul whose heart hides a great many burdens from the past.",
+  "descriptionTh": "ซามูไรพเนจรจาก Inazuma ตอนนี้อาศัยอยู่กับกองเรือ \"Crux\" ของ Liyue มีนิสัยอ่อนโยนและรักอิสระ เก็บงำเหตุการณ์ในอดีตมากมายไว้ในใจ",
+  "birthday": {
+    "birthdayText": "October 29",
+    "birthdayMMDD": [
+      10,
+      29
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

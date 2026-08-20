@@ -1,0 +1,24 @@
+{
+  "id": "kujou_sara",
+  "name": "Kujou Sara",
+  "region": "Inazuma",
+  "element": "Electro",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Crowfeather Kaburaya",
+  "titleTh": "ศรคำรามแห่งรัตติกาล",
+  "description": "A general of the Tenryou Commission. Bold, decisive, and skilled in battle.",
+  "descriptionTh": "นายพลแห่งสำนัก Tenryou เด็ดเดี่ยว กล้าหาญ และเชี่ยวชาญในการต่อสู้",
+  "birthday": {
+    "birthdayText": "July 14",
+    "birthdayMMDD": [
+      7,
+      14
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

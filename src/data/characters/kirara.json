@@ -1,0 +1,24 @@
+{
+  "id": "kirara",
+  "name": "Kirara",
+  "region": "Inazuma",
+  "element": "Dendro",
+  "weapon": "Sword",
+  "rarity": 4,
+  "title": "Cat Upon the Eaves",
+  "titleTh": "แมวพเนจรบนชายคา",
+  "description": "A courier for Komaniya Express, a delivery company in Inazuma. A nekomata who loves her job and human society.",
+  "descriptionTh": "พนักงานส่งของบริษัทขนส่ง Komaniya Express ใน Inazuma \"เนโกะมาตะ\" ตนหนึ่งที่รักในงานของตัวเอง และโหยหาสังคมมนุษย์",
+  "birthday": {
+    "birthdayText": "January 22",
+    "birthdayMMDD": [
+      1,
+      22
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

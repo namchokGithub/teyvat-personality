@@ -1,0 +1,24 @@
+{
+  "id": "chiori",
+  "name": "Chiori",
+  "region": "Inazuma",
+  "element": "Geo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "The Thundering Seamstress",
+  "titleTh": "ช่างตัดเสื้อสายฟ้าฟาด",
+  "description": "The owner of Chioriya Boutique. A tailor renowned throughout Fontaine.",
+  "descriptionTh": "เจ้าของ \"ร้าน Chioriya Boutique\" ดีไซเนอร์ ชื่อดังของ Fontaine",
+  "birthday": {
+    "birthdayText": "August 17",
+    "birthdayMMDD": [
+      8,
+      17
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

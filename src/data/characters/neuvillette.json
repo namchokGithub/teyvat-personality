@@ -1,0 +1,24 @@
+{
+  "id": "neuvillette",
+  "name": "Neuvillette",
+  "region": "Fontaine",
+  "element": "Hydro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Ordainer of Inexorable Judgment",
+  "titleTh": "คลื่นประกาศิตพ้องชะตา",
+  "description": "The Chief Justice of Fontaine, known as the Iudex, is renowned for his unassailable impartiality.",
+  "descriptionTh": "ผู้พิพากษาสูงสุดแห่ง Fontaine มีชื่อเสียงในด้าน \"ความเป็นกลาง\" อย่างสมบูรณ์",
+  "birthday": {
+    "birthdayText": "December 18",
+    "birthdayMMDD": [
+      12,
+      18
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

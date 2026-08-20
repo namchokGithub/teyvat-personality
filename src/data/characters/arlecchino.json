@@ -1,0 +1,24 @@
+{
+  "id": "arlecchino",
+  "name": "Arlecchino",
+  "region": "Snezhnaya",
+  "element": "Pyro",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Dire Balemoon",
+  "titleTh": "เดือนดับผู้เดียวดาย",
+  "description": "\"The Knave,\" Fourth of the Fatui Harbingers. A poised, ruthless diplomat. To the children in the House of the Hearth, she is their feared yet dependable \"Father.\"",
+  "descriptionTh": "\"The Knave\" ผู้บริหารอันดับที่สี่ของ Fatui นักการทูตที่เงียบขรึมและเย็นชา และ \"ท่านพ่อ\" ที่เด็ก ๆ ในบ้านแสนอบอุ่นต่างหวาดกลัวและคอยพึ่งพิง",
+  "birthday": {
+    "birthdayText": "August 22",
+    "birthdayMMDD": [
+      8,
+      22
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

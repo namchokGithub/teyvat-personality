@@ -1,0 +1,24 @@
+{
+  "id": "chevreuse",
+  "name": "Chevreuse",
+  "region": "Fontaine",
+  "element": "Pyro",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Executor of Justice",
+  "titleTh": "ผู้ผดุงความยุติธรรม",
+  "description": "The captain of the Special Security and Surveillance Patrol, who wears justice as an ever-present seal upon her heart. Her musket shall only ever point at the guilty.",
+  "descriptionTh": "หัวหน้าทีมลาดตระเวนพิเศษที่ยึดมั่นใน \"ความยุติธรรม\" ในใจเสมอมา ปืนคาบศิลาในมือของเธอ จะเล็งไปที่ผู้กระทำผิดเท่านั้น",
+  "birthday": {
+    "birthdayText": "January 10",
+    "birthdayMMDD": [
+      1,
+      10
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

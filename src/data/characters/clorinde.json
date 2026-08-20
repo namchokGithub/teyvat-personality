@@ -1,0 +1,24 @@
+{
+  "id": "clorinde",
+  "name": "Clorinde",
+  "region": "Fontaine",
+  "element": "Electro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Candlebearer, Shadowhunter",
+  "titleTh": "ล่าเงาพิทักษ์ราตรี",
+  "description": "An undefeated Champion Duelist. Sword in hand, she defends justice in the Court of Fontaine.",
+  "descriptionTh": "ตัวแทนประลองผู้ไม่เคยพ่ายแพ้ ที่ใช้ดาบในมือคอยผดุง \"ความยุติธรรม\" ของนครว่าการ Fontaine",
+  "birthday": {
+    "birthdayText": "September 20",
+    "birthdayMMDD": [
+      9,
+      20
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

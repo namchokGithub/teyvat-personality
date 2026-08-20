@@ -1,0 +1,24 @@
+{
+  "id": "noelle",
+  "name": "Noelle",
+  "region": "Mondstadt",
+  "element": "Geo",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Chivalric Blossom",
+  "titleTh": "ดอกไม้ที่หาญกล้า",
+  "description": "A maid who faithfully serves the Knights of Favonius. She dreams of joining their ranks someday.",
+  "descriptionTh": "สาวใช้ผู้เป็นที่พึ่งพาได้เสมอของ \"กองอัศวินแห่ง Favonius\" มีความฝันว่าสักวันหนึ่งจะเป็นอัศวินอย่างเต็มตัวให้ได้",
+  "birthday": {
+    "birthdayText": "March 21",
+    "birthdayMMDD": [
+      3,
+      21
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

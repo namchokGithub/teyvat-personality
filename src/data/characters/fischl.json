@@ -1,0 +1,24 @@
+{
+  "id": "fischl",
+  "name": "Fischl",
+  "region": "Mondstadt",
+  "element": "Electro",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Prinzessin der Verurteilung!",
+  "titleTh": "เจ้าหญิงแห่งการลงทัณฑ์!!",
+  "description": "A mysterious girl who calls herself \"Prinzessin der Verurteilung\" and travels with a night raven named Oz.",
+  "descriptionTh": "หญิงสาวลึกลับผู้เรียกตนเองว่า \"เจ้าหญิงแห่งการลงทัณฑ์\" ร่วมเดินทางไปพร้อมกับเรเวนนามว่า Oz",
+  "birthday": {
+    "birthdayText": "May 27",
+    "birthdayMMDD": [
+      5,
+      27
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "hu_tao",
+  "name": "Hu Tao",
+  "region": "Liyue",
+  "element": "Pyro",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Fragrance in Thaw",
+  "titleTh": "กลิ่นหอมของลูกพลัม",
+  "description": "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
+  "descriptionTh": "หัวหน้า \"โถงแห่งการเกิดใหม่ Wangsheng\" รุ่นที่ 77 ผู้เข้ามาดูแลองค์กรจัดงานศพของ Liyue ตั้งแต่อายุยังน้อย",
+  "birthday": {
+    "birthdayText": "July 15",
+    "birthdayMMDD": [
+      7,
+      15
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

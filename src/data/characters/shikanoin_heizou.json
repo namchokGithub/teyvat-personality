@@ -1,0 +1,24 @@
+{
+  "id": "shikanoin_heizou",
+  "name": "Shikanoin Heizou",
+  "region": "Inazuma",
+  "element": "Anemo",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Analytical Harmony",
+  "titleTh": "สงบจิตผสานเชาวน์",
+  "description": "A young prodigy detective from the Tenryou Commission. His senses are sharp and his thoughts are clear.",
+  "descriptionTh": "นักสืบหนุ่มอัจฉริยะของสำนัก Tenryou ผู้มาพร้อมกับสัญชาตญาณที่เฉียบแหลม และจิตใจที่งดงาม",
+  "birthday": {
+    "birthdayText": "July 24",
+    "birthdayMMDD": [
+      7,
+      24
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

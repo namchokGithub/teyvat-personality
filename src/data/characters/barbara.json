@@ -1,0 +1,24 @@
+{
+  "id": "barbara",
+  "name": "Barbara",
+  "region": "Mondstadt",
+  "element": "Hydro",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Shining Idol",
+  "titleTh": "ดาราจรัสแสง",
+  "description": "Every citizen of Mondstadt adores Barbara. She learned the word \"idol\" from a magazine.",
+  "descriptionTh": "ชาวเมือง Mondstadt ทุกคนต่างก็เอ็นดู Barbara เธอเรียนรู้คำว่า \"ไอดอล\" มาจากนิตยสาร",
+  "birthday": {
+    "birthdayText": "July 5",
+    "birthdayMMDD": [
+      7,
+      5
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

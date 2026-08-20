@@ -1,0 +1,37 @@
+[
+  {
+    "id": "anemo",
+    "name": "Anemo",
+    "icon": "anemo"
+  },
+  {
+    "id": "geo",
+    "name": "Geo",
+    "icon": "geo"
+  },
+  {
+    "id": "electro",
+    "name": "Electro",
+    "icon": "electro"
+  },
+  {
+    "id": "dendro",
+    "name": "Dendro",
+    "icon": "dendro"
+  },
+  {
+    "id": "hydro",
+    "name": "Hydro",
+    "icon": "hydro"
+  },
+  {
+    "id": "pyro",
+    "name": "Pyro",
+    "icon": "pyro"
+  },
+  {
+    "id": "cryo",
+    "name": "Cryo",
+    "icon": "cryo"
+  }
+]

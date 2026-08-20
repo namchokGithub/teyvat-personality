@@ -1,0 +1,24 @@
+{
+  "id": "lan_yan",
+  "name": "Lan Yan",
+  "region": "Liyue",
+  "element": "Anemo",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Spring Woven From Jade",
+  "titleTh": "หยกงามทอวสันต์",
+  "description": "A rattan weaver from Chenyu Vale. Clear-minded and well-tempered, she is as lively as a mountain spring.",
+  "descriptionTh": "ช่างทอหวายจากหุบเขา Chenyu มีจิตใจผ่องใสบริสุทธิ์ และสดใสราวกับน้ำพุใสบนภูเขา",
+  "birthday": {
+    "birthdayText": "January 6",
+    "birthdayMMDD": [
+      1,
+      6
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "skirk",
+  "name": "Skirk",
+  "region": null,
+  "element": "Cryo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Void Star",
+  "titleTh": "ดาราอนธการห้วงลึก",
+  "description": "A visitor who once appeared in an Abyssal rift and the Primordial Sea, this solitary warrior mentored Tartaglia in the martial arts.",
+  "descriptionTh": "ผู้มาเยือนที่เคยปรากฏตัวในรอยแยกของ Abyss และทะเลบรรพกาล นักรบหญิงผู้โดดเดี่ยว อาจารย์ผู้สอนศิลปะการต่อสู้ให้กับ Tartaglia",
+  "birthday": {
+    "birthdayText": "November 5",
+    "birthdayMMDD": [
+      11,
+      5
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

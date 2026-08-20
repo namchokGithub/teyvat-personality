@@ -1,0 +1,24 @@
+{
+  "id": "kuki_shinobu",
+  "name": "Kuki Shinobu",
+  "region": "Inazuma",
+  "element": "Electro",
+  "weapon": "Sword",
+  "rarity": 4,
+  "title": "Mender of Tribulations",
+  "titleTh": "นักแก้ปัญหามือฉมัง",
+  "description": "The capable and reliable Arataki Gang deputy leader. Please note: capable and reliable are not appellations for the \"Arataki Gang,\" but for their deputy leader in specific.",
+  "descriptionTh": "รองหัวหน้าผู้มีความสามารถ และเชื่อถือได้ของ \"แก๊ง Arataki\"... หมายเหตุพิเศษ: คนที่มีความสามารถ และเชื่อถือได้ไม่ใช่ตัว \"แก๊ง Arataki\" แต่เป็นรองหัวหน้า",
+  "birthday": {
+    "birthdayText": "July 27",
+    "birthdayMMDD": [
+      7,
+      27
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

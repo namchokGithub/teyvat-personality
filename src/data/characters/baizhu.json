@@ -1,0 +1,24 @@
+{
+  "id": "baizhu",
+  "name": "Baizhu",
+  "region": "Liyue",
+  "element": "Dendro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Beyond Mortality",
+  "titleTh": "หลอมจิตรวมชีพ",
+  "description": "The owner of Bubu Pharmacy, who is rarely seen without the white snake named Changsheng. His medicinal knowledge is encyclopedic, and his personal intrigues subtle.",
+  "descriptionTh": "เจ้าของร้านยา \"Bubu Pharmacy\" มักจะมีงูเผือกที่ชื่อว่า \"Changsheng\" อยู่ข้างกายเสมอ เก่งเรื่องยาและการฝังเข็ม จิตใจลึกล้ำสุดหยั่งถึง",
+  "birthday": {
+    "birthdayText": "April 25",
+    "birthdayMMDD": [
+      4,
+      25
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

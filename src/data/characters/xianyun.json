@@ -1,0 +1,24 @@
+{
+  "id": "xianyun",
+  "name": "Xianyun",
+  "region": "Liyue",
+  "element": "Anemo",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Passerine Herald",
+  "titleTh": "ปักษาสื่อสวรรค์",
+  "description": "One of the Mighty and Illuminated Adepti of Jueyun, known as \"Cloud Retainer.\" Expert in all kinds of mechanical contraptions, her heart now turns towards the affairs of the mortal world, through which she walks under the name \"Xianyun.\"",
+  "descriptionTh": "หนึ่งในเหล่า \"เซียนสามตาห้าร่าง\" แห่ง Jueyun มีฉายานามว่า \"จ้าววังวนเมฆา\" ผู้เชี่ยวชาญในกลไกเวท จิตใจมุ่งสู่โลกมนุษย์แสนคึกคัก เดินท่องไปในโลกมนุษย์ในนามของ \"Xianyun\"",
+  "birthday": {
+    "birthdayText": "April 11",
+    "birthdayMMDD": [
+      4,
+      11
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

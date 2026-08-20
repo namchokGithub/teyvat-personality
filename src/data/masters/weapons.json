@@ -1,0 +1,22 @@
+[
+  {
+    "id": "sword",
+    "name": "Sword"
+  },
+  {
+    "id": "claymore",
+    "name": "Claymore"
+  },
+  {
+    "id": "polearm",
+    "name": "Polearm"
+  },
+  {
+    "id": "bow",
+    "name": "Bow"
+  },
+  {
+    "id": "catalyst",
+    "name": "Catalyst"
+  }
+]

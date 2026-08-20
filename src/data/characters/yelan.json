@@ -1,0 +1,24 @@
+{
+  "id": "yelan",
+  "name": "Yelan",
+  "region": "Liyue",
+  "element": "Hydro",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Valley Orchid",
+  "titleTh": "กล้วยไม้งามกลางหุบเขา",
+  "description": "A mysterious person who claims to work for the Ministry of Civil Affairs, but is a \"non-entity\" on the Ministry of Civil Affairs' list.",
+  "descriptionTh": "บุคคลลึกลับที่อ้างตัวว่าทำงานในฝ่ายกิจการทั่วไป แต่กลับเป็น \"บุคคลที่ไม่มีตัวตน\" ในรายชื่อพนักงานของฝ่ายกิจการทั่วไป",
+  "birthday": {
+    "birthdayText": "April 20",
+    "birthdayMMDD": [
+      4,
+      20
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "nicole",
+  "name": "Nicole",
+  "region": null,
+  "element": "Pyro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Clamor Within",
+  "titleTh": "เสียงสงัดในใจ",
+  "description": "The Silent \"Mage,\" the Voiceless \"Angel.\"",
+  "descriptionTh": "\"แม่มด\" ผู้เงียบงัน, \"ทูตสวรรค์\" ผู้สละเสียง",
+  "birthday": {
+    "birthdayText": "September 29",
+    "birthdayMMDD": [
+      9,
+      29
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

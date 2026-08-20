@@ -1,0 +1,24 @@
+{
+  "id": "ningguang",
+  "name": "Ningguang",
+  "region": "Liyue",
+  "element": "Geo",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Eclipsing Star",
+  "titleTh": "Tianquan ผู้บดบังดวงเดือน",
+  "description": "The Tianquan of the Liyue Qixing. Her wealth is unsurpassed in all of Teyvat.",
+  "descriptionTh": "Tianquan แห่ง Liyue Qixing ความมั่งคั่งของเธอนั้นไม่มีผู้ใดใน Teyvat เทียบได้",
+  "birthday": {
+    "birthdayText": "August 26",
+    "birthdayMMDD": [
+      8,
+      26
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

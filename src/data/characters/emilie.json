@@ -1,0 +1,24 @@
+{
+  "id": "emilie",
+  "name": "Emilie",
+  "region": "Fontaine",
+  "element": "Dendro",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "A Thousand Scents Traced",
+  "titleTh": "รอยกลิ่นหอมนับพัน",
+  "description": "A Fontainian perfumer, one who bottles secrets.",
+  "descriptionTh": "นักปรุงน้ำหอมแห่ง Fontaine ผู้ซ่อนความลับไว้ภายในขวด",
+  "birthday": {
+    "birthdayText": "September 22",
+    "birthdayMMDD": [
+      9,
+      22
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

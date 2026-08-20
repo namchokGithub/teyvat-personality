@@ -1,0 +1,24 @@
+{
+  "id": "zibai",
+  "name": "Zibai",
+  "region": "Liyue",
+  "element": "Geo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "White Horse's Fleeting Spring",
+  "titleTh": "อาชาขาวเร้นธารา",
+  "description": "The White Horse Adeptus from Liyue's legends, known as Zibai. The most mysterious figure in Liyue's myths.",
+  "descriptionTh": "เซียนม้าขาวในตำนานของ Liyue มีนามว่า Zibai เป็นเซียนที่ลึกลับที่สุด ในเรื่องเล่าเกี่ยวกับเซียนของ Liyue",
+  "birthday": {
+    "birthdayText": "May 15",
+    "birthdayMMDD": [
+      5,
+      15
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

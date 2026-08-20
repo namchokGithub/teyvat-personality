@@ -1,0 +1,24 @@
+{
+  "id": "razor",
+  "name": "Razor",
+  "region": "Mondstadt",
+  "element": "Electro",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Wolf Boy",
+  "titleTh": "หนุ่มน้อยหมาป่า",
+  "description": "A boy who lives among the wolves in Wolvendom of Mondstadt, away from human civilization. As agile as lightning.",
+  "descriptionTh": "เด็กหนุ่มผู้ใช้ชีวิตร่วมกับหมาป่า ใน Wolvendom ซึ่งเป็นพื้นที่หนึ่งใน Mondstadt ที่ห่างไกลจากผู้คน มีปฏิกิริยาที่เฉียบแหลมและคล่องแคล่วว่องไว",
+  "birthday": {
+    "birthdayText": "September 9",
+    "birthdayMMDD": [
+      9,
+      9
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

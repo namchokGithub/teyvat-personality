@@ -1,0 +1,24 @@
+{
+  "id": "kaeya",
+  "name": "Kaeya",
+  "region": "Mondstadt",
+  "element": "Cryo",
+  "weapon": "Sword",
+  "rarity": 4,
+  "title": "Frostwind Swordsman",
+  "titleTh": "นักดาบสายลมยะเยือก",
+  "description": "An accomplished swordsman and a strategic thinker in the Knights of Favonius, rumored to hail from beyond Mondstadt.",
+  "descriptionTh": "นักดาบผู้มีกลิ่นอายของคนจากต่างแดน มันสมองของกองอัศวินแห่ง Favonius",
+  "birthday": {
+    "birthdayText": "November 30",
+    "birthdayMMDD": [
+      11,
+      30
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "lyney",
+  "name": "Lyney",
+  "region": "Fontaine",
+  "element": "Pyro",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Spectacle of Phantasmagoria",
+  "titleTh": "มายาลวงพรางตา",
+  "description": "A famed Fontainian magician who possesses great stage presence as well as gift of the gab. Audiences are enthralled by his exquisite skills, and they hang on to his every clever word.",
+  "descriptionTh": "นักมายากลเลื่องชื่อแห่ง Fontaine ผู้มีพรสวรรค์ และไหวพริบอันเฉียบแหลม มักใช้ทริกกับคำพูดอันแยบยลในการจูงใจของผู้ชม",
+  "birthday": {
+    "birthdayText": "February 2",
+    "birthdayMMDD": [
+      2,
+      2
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

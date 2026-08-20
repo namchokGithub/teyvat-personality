@@ -1,0 +1,24 @@
+{
+  "id": "zhongli",
+  "name": "Zhongli",
+  "region": "Liyue",
+  "element": "Geo",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Vago Mundo",
+  "titleTh": "ผู้พเนจรแห่งแดนมนุษย์",
+  "description": "A mysterious expert contracted by the Wangsheng Funeral Parlor. Extremely knowledgeable in all things.",
+  "descriptionTh": "แขกลึกลับผู้ถูกเชิญมาโดย \"โถงแห่งการเกิดใหม่ Wangsheng\" มีความรู้แตกฉานในทุก ๆ ด้าน",
+  "birthday": {
+    "birthdayText": "December 31",
+    "birthdayMMDD": [
+      12,
+      31
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "sethos",
+  "name": "Sethos",
+  "region": "Sumeru",
+  "element": "Electro",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Wisdom's Measure",
+  "titleTh": "มาตรวัดแห่งปัญญา",
+  "description": "The Temple of Silence's heir. Burdened with secrets, he comes from the sands.",
+  "descriptionTh": "ผู้สืบทอดของวิหารแห่งความเงียบงัน ผู้ซึ่งแบกรับความลับมากมายจากทะเลทราย",
+  "birthday": {
+    "birthdayText": "May 31",
+    "birthdayMMDD": [
+      5,
+      31
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

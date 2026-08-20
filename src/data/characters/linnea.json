@@ -1,0 +1,24 @@
+{
+  "id": "linnea",
+  "name": "Linnea",
+  "region": "Nod-Krai",
+  "element": "Geo",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Augur of Wonders",
+  "titleTh": "พหูสูตสัญจร",
+  "description": "Naturalist and Advisor to the Nod-Krai Branch of the Adventurers' Guild.",
+  "descriptionTh": "ที่ปรึกษากิลด์นักผจญภัยสาขา Nod-Krai และนักธรรมชาติวิทยา",
+  "birthday": {
+    "birthdayText": "May 23",
+    "birthdayMMDD": [
+      5,
+      23
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

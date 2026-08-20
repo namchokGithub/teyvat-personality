@@ -1,0 +1,24 @@
+{
+  "id": "ifa",
+  "name": "Ifa",
+  "region": "Natlan",
+  "element": "Anemo",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "In the Wake of Wandering Winds",
+  "titleTh": "สายลมสง่านำพาจิต",
+  "description": "A vet from the Flower-Feather Clan who cherishes the life he leads alongside all manner of living things — people, animals, you name it.",
+  "descriptionTh": "สัตวแพทย์จากวงศ์ปีกบุปผา ผู้รักในการใช้ชีวิตอยู่ร่วมกับมนุษย์ สัตว์ และสิ่งมีชีวิตอื่น ๆ อย่างแท้จริง",
+  "birthday": {
+    "birthdayText": "March 23",
+    "birthdayMMDD": [
+      3,
+      23
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

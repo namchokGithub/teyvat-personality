@@ -1,0 +1,24 @@
+{
+  "id": "sucrose",
+  "name": "Sucrose",
+  "region": "Mondstadt",
+  "element": "Anemo",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Harmless Sweetie",
+  "titleTh": "ความหวานที่ไร้พิษสง",
+  "description": "An alchemist filled with curiosity about all things. She researches bio-alchemy.",
+  "descriptionTh": "นักเล่นแร่แปรธาตุผู้เต็มไปด้วยความอยากรู้อยากเห็นในทุกสิ่งทุกอย่าง เป็นนักวิจัยด้าน \"การแปรธาตุชีวภาพ\"",
+  "birthday": {
+    "birthdayText": "November 26",
+    "birthdayMMDD": [
+      11,
+      26
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

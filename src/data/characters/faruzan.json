@@ -1,0 +1,24 @@
+{
+  "id": "faruzan",
+  "name": "Faruzan",
+  "region": "Sumeru",
+  "element": "Anemo",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Enigmatic Machinist",
+  "titleTh": "กลไกลึกปริศนาลับ",
+  "description": "A researcher from \"one hundred years ago.\" She enjoys self-identifying as everyone's senior, and has significant knowledge of ancient scripts and machines of all kinds.",
+  "descriptionTh": "นักวิชาการจากเมื่อ \"หนึ่งร้อยปีก่อน\" ชื่นชอบที่จะตั้งตนเป็นรุ่นพี่ ทั้งยังมีงานวิจัยเกี่ยวข้องกับอักษรโบราณ และกลศาสตร์โบราณต่าง ๆ",
+  "birthday": {
+    "birthdayText": "August 20",
+    "birthdayMMDD": [
+      8,
+      20
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

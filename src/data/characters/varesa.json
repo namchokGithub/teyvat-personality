@@ -1,0 +1,24 @@
+{
+  "id": "varesa",
+  "name": "Varesa",
+  "region": "Natlan",
+  "element": "Electro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Strength in Serenity",
+  "titleTh": "พลังแกร่งแห่งสันติ",
+  "description": "A laid-back orchard manager and warrior of the Collective of Plenty. An aspiring hero who hungers for justice... and lots and lots of food!",
+  "descriptionTh": "นักรบและเจ้าของสวนผลไม้แห่ง \"ผองสรรพสิ่ง\" ผู้ใช้ชีวิตแสนผ่อนคลาย เธอชื่นชอบผู้กล้าที่เปี่ยมด้วยพลัง และอาหารรสเลิศปริมาณมาก!",
+  "birthday": {
+    "birthdayText": "November 15",
+    "birthdayMMDD": [
+      11,
+      15
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

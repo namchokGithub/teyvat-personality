@@ -1,0 +1,24 @@
+{
+  "id": "wriothesley",
+  "name": "Wriothesley",
+  "region": "Fontaine",
+  "element": "Cryo",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Emissary of Solitary Iniquity",
+  "titleTh": "ทูตแห่งบาปเร้นคณา",
+  "description": "Duke of the Fortress of Meropide, Lord Incognito of the murky depths.",
+  "descriptionTh": "ดยุกแห่งป้อมปราการ Meropide ผู้ปกครองใต้ท้องทะเลอันมืดมิด",
+  "birthday": {
+    "birthdayText": "November 23",
+    "birthdayMMDD": [
+      11,
+      23
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

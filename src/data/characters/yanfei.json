@@ -1,0 +1,24 @@
+{
+  "id": "yanfei",
+  "name": "Yanfei",
+  "region": "Liyue",
+  "element": "Pyro",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Wise Innocence",
+  "titleTh": "ความไร้เดียงสาอันแสนแยบยล",
+  "description": "A well-known legal adviser active in Liyue Harbor. A brilliant young lady in whose veins runs the blood of an illuminated beast.",
+  "descriptionTh": "ที่ปรึกษาด้านกฎหมายผู้โด่งดังที่ประจำอยู่ที่ท่าเรือ Liyue หญิงสาวผู้ปราดเปรื่องที่มีสายเลือดสัตว์เวทผสมอยู่",
+  "birthday": {
+    "birthdayText": "July 28",
+    "birthdayMMDD": [
+      7,
+      28
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

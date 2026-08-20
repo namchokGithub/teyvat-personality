@@ -1,0 +1,24 @@
+{
+  "id": "jean",
+  "name": "Jean",
+  "region": "Mondstadt",
+  "element": "Anemo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Dandelion Knight",
+  "titleTh": "อัศวิน Dandelion",
+  "description": "The righteous and rigorous Dandelion Knight, and Acting Grand Master of Mondstadt's Knights of Favonius.",
+  "descriptionTh": "อัศวิน Dandelion ผู้ยึดมั่นในความถูกต้อง และเป็นรักษาการผู้บัญชาการของกองอัศวินแห่ง Favonius",
+  "birthday": {
+    "birthdayText": "March 14",
+    "birthdayMMDD": [
+      3,
+      14
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

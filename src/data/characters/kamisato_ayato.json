@@ -1,0 +1,24 @@
+{
+  "id": "kamisato_ayato",
+  "name": "Kamisato Ayato",
+  "region": "Inazuma",
+  "element": "Hydro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Pillar of Fortitude",
+  "titleTh": "เล่ห์เหลี่ยมแห่งเกียรติยศ",
+  "description": "The young but highly accomplished head of the Yashiro Commission's Kamisato Clan. Cultured and polite, he is a man of many ways and means.",
+  "descriptionTh": "ผู้นำตระกูล Kamisato แห่งสำนัก Yashiro ชายหนุ่มผู้มากความสามารถ ซึ่งปฏิบัติต่อผู้คนด้วยความสุภาพอ่อนโยน และมักจะจัดการเรื่องต่าง ๆ อย่างมีชั้นเชิง",
+  "birthday": {
+    "birthdayText": "March 26",
+    "birthdayMMDD": [
+      3,
+      26
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

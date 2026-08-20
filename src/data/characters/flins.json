@@ -1,0 +1,24 @@
+{
+  "id": "flins",
+  "name": "Flins",
+  "region": "Nod-Krai",
+  "element": "Electro",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Shadowy Lights, Stranger Wights",
+  "titleTh": "ประทีปลวงเร้นเงา",
+  "description": "A Lightkeeper of Nod-Krai, guardian of a lighthouse and graveyard on a northern isle. An enigmatic gentleman, cultured and courtly.",
+  "descriptionTh": "\"ผู้เฝ้าประภาคาร\" แห่ง Nod-Krai คอยเฝ้าดูแลประภาคาร และสุสานบนเกาะเล็ก ๆ ทางตอนเหนือ เขาคือสุภาพบุรุษลึกลับ ผู้สง่างามในทุกกิริยาและวาจา",
+  "birthday": {
+    "birthdayText": "October 31",
+    "birthdayMMDD": [
+      10,
+      31
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

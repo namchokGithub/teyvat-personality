@@ -1,0 +1,24 @@
+{
+  "id": "xilonen",
+  "name": "Xilonen",
+  "region": "Natlan",
+  "element": "Geo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Ardent Flames Forge the Soul",
+  "titleTh": "เปลวเพลิงหลอมวิญญาณ",
+  "description": "A Name Engraver of the Nanatzcayan, she is especially skilled at finding a good balance between the heavy responsibilities of her job and living well.",
+  "descriptionTh": "ช่างสลักนามของ Nanatzcayan เชี่ยวชาญในการหาความสมดุล ระหว่างภาระงานที่หนักอึ้ง และชีวิตที่สะดวกสบาย",
+  "birthday": {
+    "birthdayText": "March 13",
+    "birthdayMMDD": [
+      3,
+      13
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

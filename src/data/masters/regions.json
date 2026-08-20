@@ -1,0 +1,58 @@
+[
+  {
+    "id": "mondstadt",
+    "name": "Mondstadt",
+    "displayName": "Mondstadt",
+    "theme": "Freedom",
+    "element": "anemo"
+  },
+  {
+    "id": "liyue",
+    "name": "Liyue",
+    "displayName": "Liyue",
+    "theme": "Contracts",
+    "element": "geo"
+  },
+  {
+    "id": "inazuma",
+    "name": "Inazuma",
+    "displayName": "Inazuma",
+    "theme": "Eternity",
+    "element": "electro"
+  },
+  {
+    "id": "sumeru",
+    "name": "Sumeru",
+    "displayName": "Sumeru",
+    "theme": "Wisdom",
+    "element": "dendro"
+  },
+  {
+    "id": "fontaine",
+    "name": "Fontaine",
+    "displayName": "Fontaine",
+    "theme": "Justice",
+    "element": "hydro"
+  },
+  {
+    "id": "natlan",
+    "name": "Natlan",
+    "displayName": "Natlan",
+    "theme": "War",
+    "element": "pyro"
+  },
+  {
+    "id": "snezhnaya",
+    "name": "Snezhnaya",
+    "displayName": "Snezhnaya",
+    "theme": null,
+    "element": "cryo"
+  },
+  {
+    "id": "nod-krai",
+    "name": "Nod-Krai",
+    "displayName": "Nod-Krai",
+    "theme": null,
+    "element": null
+  }
+]

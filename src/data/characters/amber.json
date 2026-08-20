@@ -1,0 +1,24 @@
+{
+  "id": "amber",
+  "name": "Amber",
+  "region": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Gliding Champion",
+  "titleTh": "แชมป์นักร่อนเวหา",
+  "description": "Always energetic and full of life, Amber's the best — albeit only — Outrider of the Knights of Favonius.",
+  "descriptionTh": "เด็กสาวผู้เปี่ยมไปด้วยพลังและมีชีวิตชีวาอยู่เสมอ ยอดฝีมือแห่งกองอัศวินและเป็นอัศวินลาดตระเวนคนสุดท้าย",
+  "birthday": {
+    "birthdayText": "August 10",
+    "birthdayMMDD": [
+      8,
+      10
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

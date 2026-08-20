@@ -1,0 +1,24 @@
+{
+  "id": "mavuika",
+  "name": "Mavuika",
+  "region": "Natlan",
+  "element": "Pyro",
+  "weapon": "Claymore",
+  "rarity": 5,
+  "title": "Night-Igniting Flame",
+  "titleTh": "เพลิงผลาญรัตติกาล",
+  "description": "The leader of Natlan who inherited the Ancient Name of \"Kiongozi.\" She made a vow to illuminate the future of the nation of war with the Sacred Flame.",
+  "descriptionTh": "ผู้นำแห่ง Natlan ผู้สืบทอดนามโบราณ \"Kiongozi\" ที่สาบานว่าจะใช้เพลิงศักดิ์สิทธิ์ส่องสว่างอนาคตให้กับประเทศแห่งสงคราม",
+  "birthday": {
+    "birthdayText": "August 28",
+    "birthdayMMDD": [
+      8,
+      28
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

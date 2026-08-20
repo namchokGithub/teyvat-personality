@@ -1,0 +1,24 @@
+{
+  "id": "nefer",
+  "name": "Nefer",
+  "region": "Nod-Krai",
+  "element": "Dendro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Secret Beneath the Sands",
+  "titleTh": "ความลับใต้ผืนทราย",
+  "description": "The remarkably resourceful owner of the Curatorium of Secrets.",
+  "descriptionTh": "เจ้าของ \"เคหาสน์แห่งความลับ\" ผู้เก่งกาจและกว้างขวาง",
+  "birthday": {
+    "birthdayText": "May 9",
+    "birthdayMMDD": [
+      5,
+      9
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

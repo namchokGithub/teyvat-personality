@@ -1,0 +1,24 @@
+{
+  "id": "aloy",
+  "name": "Aloy",
+  "region": null,
+  "element": "Cryo",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Savior From Another World",
+  "titleTh": "\"ผู้ปลดปล่อยจากต่างโลก\"",
+  "description": "Formerly an outcast, now a hunter of unparalleled skill. Ready to do the right thing at any time.",
+  "descriptionTh": "อดีตเคยเป็นผู้ถูกเนรเทศ ปัจจุบันเป็นนักล่ายอดฝีมือที่หาตัวจับได้ยาก เธอพร้อมที่จะใช้คันธนูและลูกธนูของเธอทำสิ่งที่ถูกต้องทุกเมื่อ",
+  "birthday": {
+    "birthdayText": "April 4",
+    "birthdayMMDD": [
+      4,
+      4
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

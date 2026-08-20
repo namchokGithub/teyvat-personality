@@ -1,0 +1,24 @@
+{
+  "id": "sandrone",
+  "name": "Sandrone",
+  "region": "Snezhnaya",
+  "element": "Cryo",
+  "weapon": "Claymore",
+  "rarity": 5,
+  "title": "Mirrored Analysis",
+  "titleTh": "พิเคราะห์ส่องสะท้อน",
+  "description": "The Seventh of the Fatui Harbingers, \"Marionette.\" Interprets all phenomena through the prism of mathematics, and is an elegant lady who is never absent from a tea party.",
+  "descriptionTh": "\"Marionette\" ผู้บริหารอันดับที่เจ็ดของ Fatui ผู้ไขความลับของทุกสิ่ง ด้วยหลักคณิตศาสตร์ และสุภาพสตรีผู้สง่างาม ที่ไม่เคยว่างเว้นจากงานเลี้ยงน้ำชา",
+  "birthday": {
+    "birthdayText": "January 13",
+    "birthdayMMDD": [
+      1,
+      13
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

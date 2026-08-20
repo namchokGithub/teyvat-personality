@@ -1,0 +1,24 @@
+{
+  "id": "mika",
+  "name": "Mika",
+  "region": "Mondstadt",
+  "element": "Cryo",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Coordinates of Clear Frost",
+  "titleTh": "พิกัดเหมันต์ใต้ฟ้าคราม",
+  "description": "A young knight born to an ordinary family. He serves as a Front-Line Surveyor in his Company. He is a low-key and cautious character.",
+  "descriptionTh": "อัศวินหนุ่มผู้มาจากครอบครัวธรรมดา หน้าที่ของเขาคือ \"เจ้าหน้าที่สำรวจแนวหน้า\" ประจำทีม เด็กหนุ่มเป็นคนเงียบขรึม และระมัดระวังรอบคอบเสมอ",
+  "birthday": {
+    "birthdayText": "August 11",
+    "birthdayMMDD": [
+      8,
+      11
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

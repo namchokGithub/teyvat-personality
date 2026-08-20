@@ -1,0 +1,24 @@
+{
+  "id": "lohen",
+  "name": "Lohen",
+  "region": "Mondstadt",
+  "element": "Cryo",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Sharpened Arrowhead",
+  "titleTh": "ศรคมพยศ",
+  "description": "Vice Captain of the Knights of Favonius Ranged Company, a knight known for his unorthodox approach and fondness for unconventional tactics.",
+  "descriptionTh": "รองหัวหน้าหน่วยระยะไกลของกองอัศวินแห่ง Favonius อัศวินผู้ลงมือโดยไม่ยึดติดกับรูปแบบ และหลงใหลในยุทธวิธีที่ไม่เป็นไปตามแบบแผน",
+  "birthday": {
+    "birthdayText": "April 3",
+    "birthdayMMDD": [
+      4,
+      3
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

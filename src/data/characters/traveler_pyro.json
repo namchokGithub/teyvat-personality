@@ -1,0 +1,18 @@
+{
+  "id": "traveler_pyro",
+  "name": "Traveler (Pyro)",
+  "region": "Natlan",
+  "element": "Pyro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": null,
+  "titleTh": null,
+  "description": "A traveler from another world who had their only kin taken away, forcing them to embark on a journey to find The Seven.",
+  "descriptionTh": null,
+  "birthday": null,
+  "gender": null,
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

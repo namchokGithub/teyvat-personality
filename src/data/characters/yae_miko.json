@@ -1,0 +1,24 @@
+{
+  "id": "yae_miko",
+  "name": "Yae Miko",
+  "region": "Inazuma",
+  "element": "Electro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Astute Amusement",
+  "titleTh": "ยิ้มเล่ห์กลยลโลกา",
+  "description": "Lady Guuji of the Grand Narukami Shrine. Also serves as the editor-in-chief of Yae Publishing House. Unimaginable intelligence and cunning are hidden under her beautiful appearance.",
+  "descriptionTh": "ท่าน Guuji แห่งศาลเจ้า Grand Narukami และเป็นหัวหน้าบรรณาธิการของ \"สำนักพิมพ์ Yae\" ภายใต้รูปโฉมภายนอกที่งดงาม มีความเฉลียวฉลาดและเล่ห์กลซ่อนอยู่",
+  "birthday": {
+    "birthdayText": "June 27",
+    "birthdayMMDD": [
+      6,
+      27
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

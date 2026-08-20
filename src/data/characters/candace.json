@@ -1,0 +1,24 @@
+{
+  "id": "candace",
+  "name": "Candace",
+  "region": "Sumeru",
+  "element": "Hydro",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Golden Vow",
+  "titleTh": "บุหลันดั้นปฏิญาณ",
+  "description": "A descendant of King Deshret with an amber left eye. The defender of Aaru Village.",
+  "descriptionTh": "ลูกหลานของราชา Deshret ผู้มีนัยน์ตาซ้ายสีเหลืองอำพัน ผู้คุ้มกันของหมู่บ้าน Aaru",
+  "birthday": {
+    "birthdayText": "May 3",
+    "birthdayMMDD": [
+      5,
+      3
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

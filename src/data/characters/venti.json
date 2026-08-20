@@ -1,0 +1,24 @@
+{
+  "id": "venti",
+  "name": "Venti",
+  "region": "Mondstadt",
+  "element": "Anemo",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Windborne Bard",
+  "titleTh": "นักกวีแห่งสายลม",
+  "description": "One of the many bards of Mondstadt, who freely wanders the city's streets and alleys.",
+  "descriptionTh": "หนึ่งในนักกวีพเนจร ที่มีอยู่มากมายใน Mondstadt ผู้เดินเตร่ไปตามถนนซอกซอย อย่างอิสรเสรี",
+  "birthday": {
+    "birthdayText": "June 16",
+    "birthdayMMDD": [
+      6,
+      16
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

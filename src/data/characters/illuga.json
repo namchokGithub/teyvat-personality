@@ -1,0 +1,24 @@
+{
+  "id": "illuga",
+  "name": "Illuga",
+  "region": "Nod-Krai",
+  "element": "Geo",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Nightmare's Burning Heart",
+  "titleTh": "หัวใจเพลิงผลาญฝันร้าย",
+  "description": "Member of the investigation squad, the Nightmare Orioles. The youngest squad leader among the Lightkeepers.",
+  "descriptionTh": "สมาชิกหน่วยสืบสวน \"นกขมิ้นแห่งราตรีฝันร้าย\" และหัวหน้าหน่วย ที่อายุน้อยที่สุดของผู้เฝ้าประภาคาร",
+  "birthday": {
+    "birthdayText": "December 23",
+    "birthdayMMDD": [
+      12,
+      23
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "shenhe",
+  "name": "Shenhe",
+  "region": "Liyue",
+  "element": "Cryo",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Lonesome Transcendence",
+  "titleTh": "ห้วงคำนึงแสนอ้างว้าง",
+  "description": "An adepti disciple with a most unusual air about her. Having spent much time cultivating in isolation in Liyue's mountains, she has become every bit as cool and distant as the adepti themselves.",
+  "descriptionTh": "ลูกศิษย์ของเซียนผู้มีออร่าโดดเด่นเกินมนุษย์ เธอหลบซ่อนตัวฝึกฝนอยู่ท่ามกลางป่าเขาของ Liyue บุคลิกของเธอดูเย็นชาและห่างเหินเฉกเช่นเดียวกับเหล่าเซียน",
+  "birthday": {
+    "birthdayText": "March 10",
+    "birthdayMMDD": [
+      3,
+      10
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

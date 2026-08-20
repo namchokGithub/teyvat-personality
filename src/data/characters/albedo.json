@@ -1,0 +1,24 @@
+{
+  "id": "albedo",
+  "name": "Albedo",
+  "region": "Mondstadt",
+  "element": "Geo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Kreideprinz",
+  "titleTh": "องค์ชายชอล์กขาว",
+  "description": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
+  "descriptionTh": "อัจฉริยะที่ถูกขนานนามว่า \"Kreideprinz\" (องค์ชายชอล์กขาว) เป็นหัวหน้านักเล่นแร่แปรธาตุและหัวหน้าทีมสืบสวนของกองอัศวินแห่ง Favonius",
+  "birthday": {
+    "birthdayText": "September 13",
+    "birthdayMMDD": [
+      9,
+      13
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

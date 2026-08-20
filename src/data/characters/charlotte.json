@@ -1,0 +1,24 @@
+{
+  "id": "charlotte",
+  "name": "Charlotte",
+  "region": "Fontaine",
+  "element": "Cryo",
+  "weapon": "Catalyst",
+  "rarity": 4,
+  "title": "Lens of Verity",
+  "titleTh": "เลนส์สะท้อนความจริง",
+  "description": "Indefatigable reporter of The Steambird, constantly on the hunt for the \"truth.\"",
+  "descriptionTh": "นักข่าวของหนังสือพิมพ์ The Steambird ผู้เปี่ยมไปด้วยพลังและมีชีวิตชีวาอยู่เสมอ กำลังวิ่งตามหา \"ความจริง\" อยู่ทุกวินาที",
+  "birthday": {
+    "birthdayText": "April 10",
+    "birthdayMMDD": [
+      4,
+      10
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

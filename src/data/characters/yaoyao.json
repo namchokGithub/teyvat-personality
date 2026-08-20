@@ -1,0 +1,24 @@
+{
+  "id": "yaoyao",
+  "name": "Yaoyao",
+  "region": "Liyue",
+  "element": "Dendro",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Burgeoning Grace",
+  "titleTh": "เกสรน้อยเจ้าปัญญา",
+  "description": "Streetward Rambler's youngest disciple. A gentle and caring \"little adult.\"",
+  "descriptionTh": "ศิษย์ที่อายุน้อยที่สุดที่อยู่ภายใต้การดูแลของจ้าวขับขานล่องนครา เธอคือ \"ผู้ใหญ่ตัวน้อย\" ที่อ่อนโยนและใจอารี",
+  "birthday": {
+    "birthdayText": "March 6",
+    "birthdayMMDD": [
+      3,
+      6
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

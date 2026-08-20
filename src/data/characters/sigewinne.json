@@ -1,0 +1,24 @@
+{
+  "id": "sigewinne",
+  "name": "Sigewinne",
+  "region": "Fontaine",
+  "element": "Hydro",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Wondrous Dragonheir",
+  "titleTh": "ธิดามังกรจำแลง",
+  "description": "A Melusine and the Fortress of Meropide's head nurse. She cares equally for every convict locked in the undersea prison.",
+  "descriptionTh": "หัวหน้าพยาบาลเมลูซีน แห่งป้อมปราการ Meropide ผู้คอยดูแลนักโทษทุกคน ในคุกใต้ทะเลอย่างเท่าเทียม",
+  "birthday": {
+    "birthdayText": "March 30",
+    "birthdayMMDD": [
+      3,
+      30
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

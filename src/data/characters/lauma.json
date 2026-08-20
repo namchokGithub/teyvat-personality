@@ -1,0 +1,24 @@
+{
+  "id": "lauma",
+  "name": "Lauma",
+  "region": "Nod-Krai",
+  "element": "Dendro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Evermoon's Sacrament Song",
+  "titleTh": "เพลงสดุดีจันทรานิรันดร์",
+  "description": "A Maiden blessed by moonlight and the grove alike, hope born to the Frostmoon Scions.",
+  "descriptionTh": "นักบุญหญิงผู้ได้รับพร จากแสงจันทร์และผืนป่า ความหวังหนึ่งเดียว ที่ถือกำเนิดขึ้นในหมู่ \"ลูกหลานจันทราน้ำค้างแข็ง\"",
+  "birthday": {
+    "birthdayText": "March 1",
+    "birthdayMMDD": [
+      3,
+      1
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

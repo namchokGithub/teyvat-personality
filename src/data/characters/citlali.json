@@ -1,0 +1,24 @@
+{
+  "id": "citlali",
+  "name": "Citlali",
+  "region": "Natlan",
+  "element": "Cryo",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Obsidian Opalstar",
+  "titleTh": "ออบซิเดียนดาราผ่อง",
+  "description": "The great shaman from the Masters of the Night-Wind, the universally-revered Granny Itztli.",
+  "descriptionTh": "ชาแมนผู้ยิ่งใหญ่แห่งจ้าวแห่งลมราตรี คุณยาย Itztli ผู้ซึ่งทำให้ชาวเผ่าทุกคนเคารพและยำเกรง",
+  "birthday": {
+    "birthdayText": "January 20",
+    "birthdayMMDD": [
+      1,
+      20
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

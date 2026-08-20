@@ -1,0 +1,24 @@
+{
+  "id": "yoimiya",
+  "name": "Yoimiya",
+  "region": "Inazuma",
+  "element": "Pyro",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Frolicking Flames",
+  "titleTh": "ประกายเพลิงเริงระบำ",
+  "description": "Owner of Naganohara Fireworks. Known as the \"Queen of the Summer Festival,\" she excels in her craft of creating fireworks that symbolize people's hopes and dreams.",
+  "descriptionTh": "เจ้าของร้านดอกไม้ไฟ Naganohara \"ราชินีแห่งเทศกาลฤดูร้อน\" ช่างฝีมือมากความสามารถ ผู้ส่งความปรารถนาของผู้คนผ่านการทำดอกไม้ไฟ",
+  "birthday": {
+    "birthdayText": "June 21",
+    "birthdayMMDD": [
+      6,
+      21
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

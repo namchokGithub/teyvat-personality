@@ -1,0 +1,24 @@
+{
+  "id": "lynette",
+  "name": "Lynette",
+  "region": "Fontaine",
+  "element": "Anemo",
+  "weapon": "Sword",
+  "rarity": 4,
+  "title": "Elegance in the Shadows",
+  "titleTh": "เงาฉายงามสง่า",
+  "description": "A magic assistant of few words, her emotions are as inscrutable as any cat's.",
+  "descriptionTh": "ผู้ช่วยนักมายากลที่พูดจาน้อยคำ และมักมีสีหน้าไร้อารมณ์ นิสัยก็ยากจะคาดเดา ไม่ต่างอะไรไปจากแมวเลยสักนิด",
+  "birthday": {
+    "birthdayText": "February 2",
+    "birthdayMMDD": [
+      2,
+      2
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

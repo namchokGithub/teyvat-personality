@@ -1,0 +1,24 @@
+{
+  "id": "tighnari",
+  "name": "Tighnari",
+  "region": "Sumeru",
+  "element": "Dendro",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Verdant Strider",
+  "titleTh": "ย่างก้าวในแดนไพร",
+  "description": "A young researcher well-versed in botany who currently serves as a Forest Watcher in Avidya Forest. He is a straight shooter with a warm heart — and a dab hand at guiding even the dullest of pupils.",
+  "descriptionTh": "นักวิชาการรุ่นเยาว์ที่เชี่ยวชาญด้านพฤกษศาสตร์ ตอนนี้เขาทำหน้าที่เป็นหัวหน้าเจ้าหน้าที่พิทักษ์ป่าที่ Avidya Forest นิสัยตรงไปตรงมากระตือรือร้น เก่งในเรื่องการแนะนำสั่งสอนพวกคนสมองเลอะเลือน",
+  "birthday": {
+    "birthdayText": "December 29",
+    "birthdayMMDD": [
+      12,
+      29
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

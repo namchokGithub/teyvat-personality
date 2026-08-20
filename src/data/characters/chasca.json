@@ -1,0 +1,24 @@
+{
+  "id": "chasca",
+  "name": "Chasca",
+  "region": "Natlan",
+  "element": "Anemo",
+  "weapon": "Bow",
+  "rarity": 5,
+  "title": "Skyborne Arbiter",
+  "titleTh": "ผู้คืนสันติเหนือนภา",
+  "description": "The Peacemaker of the Tlalocan, the ender of all disputes.",
+  "descriptionTh": "\"ผู้ไกล่เกลี่ย\" แห่ง Tlalocan ผู้ยุติความขัดแย้งทั้งปวง",
+  "birthday": {
+    "birthdayText": "December 10",
+    "birthdayMMDD": [
+      12,
+      10
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

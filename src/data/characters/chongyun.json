@@ -1,0 +1,24 @@
+{
+  "id": "chongyun",
+  "name": "Chongyun",
+  "region": "Liyue",
+  "element": "Cryo",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Frozen Ardor",
+  "titleTh": "ร่องรอยในหิมะ",
+  "description": "A young exorcist from a family of exorcists. He does everything he can to suppress his abundance of yang energy.",
+  "descriptionTh": "นักปราบปีศาจแห่งตระกูลที่โด่งดังในการปราบภูตผี ต้องเหนื่อยยากกับการระงับ \"ร่างกายแห่งหยางบริสุทธิ์\" ของตนเองอยู่บ่อยครั้ง",
+  "birthday": {
+    "birthdayText": "September 7",
+    "birthdayMMDD": [
+      9,
+      7
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

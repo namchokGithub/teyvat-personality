@@ -1,0 +1,24 @@
+{
+  "id": "escoffier",
+  "name": "Escoffier",
+  "region": "Fontaine",
+  "element": "Cryo",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Tasteful Excellence",
+  "titleTh": "ท่วงทำนองเลิศรส",
+  "description": "The ex-head chef of Hotel Debord, renowned throughout Fontaine as the Patissiere Supreme and vanguard of precision gastronomy. Has incomparably strict standards when it comes to cooking.",
+  "descriptionTh": "อดีตหัวหน้าเชฟของโรงแรม Debord ผู้มีชื่อเสียงโด่งดังใน Fontaine และเป็นผู้บุกเบิก \"การทำอาหารเชิงเทคนิค\" ที่มีฉายาแห่งเกียรติยศว่า \"แม่ทัพขนมหวาน\" ผู้มีมาตรฐานในการทำอาหารที่เข้มงวดอย่างยิ่ง",
+  "birthday": {
+    "birthdayText": "June 8",
+    "birthdayMMDD": [
+      6,
+      8
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

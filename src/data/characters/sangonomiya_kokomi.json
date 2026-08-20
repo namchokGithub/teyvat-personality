@@ -1,0 +1,24 @@
+{
+  "id": "sangonomiya_kokomi",
+  "name": "Sangonomiya Kokomi",
+  "region": "Inazuma",
+  "element": "Hydro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Pearl of Wisdom",
+  "titleTh": "ไข่มุกแห่งปัญญา",
+  "description": "The Divine Priestess of Watatsumi Island. All of the island's affairs are at this young lady's fingertips.",
+  "descriptionTh": "ผู้นำมิโกะคนปัจจุบันของเกาะ Watatsumi สาวน้อยผู้รับผิดชอบงานทุกอย่างบนเกาะ Watatsumi",
+  "birthday": {
+    "birthdayText": "February 22",
+    "birthdayMMDD": [
+      2,
+      22
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "keqing",
+  "name": "Keqing",
+  "region": "Liyue",
+  "element": "Electro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Driving Thunder",
+  "titleTh": "ผู้บงการสายฟ้า",
+  "description": "The Yuheng of the Liyue Qixing. Keqing has much to say about Rex Lapis's unilateral approach to policymaking in Liyue — but in truth, gods admire skeptics such as her quite a lot.",
+  "descriptionTh": "Yuheng หนึ่งใน Liyue Qixing มักจะไม่พอใจกับสภาพของ \"Liyue ที่ตัดสินทุกอย่างตามคำพูดของราชา\" เสมอ—แต่ในความเป็นจริงแล้ว ท่านเทพชื่นชมคนแบบเธอมากทีเดียว",
+  "birthday": {
+    "birthdayText": "November 20",
+    "birthdayMMDD": [
+      11,
+      20
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "dori",
+  "name": "Dori",
+  "region": "Sumeru",
+  "element": "Electro",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Treasure of Dream Garden",
+  "titleTh": "ห้วงฝันมหาเงินตรา",
+  "description": "An elusive merchant who has a fondness for glittering Mora.",
+  "descriptionTh": "แม่ค้าเร่สารพัดผู้ลึกลับ สิ่งที่ชอบที่สุดก็คือประกายแวววับของ Mora",
+  "birthday": {
+    "birthdayText": "December 21",
+    "birthdayMMDD": [
+      12,
+      21
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

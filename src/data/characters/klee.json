@@ -1,0 +1,24 @@
+{
+  "id": "klee",
+  "name": "Klee",
+  "region": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Catalyst",
+  "rarity": 5,
+  "title": "Fleeing Sunlight",
+  "titleTh": "ดวงอาทิตย์ที่หลบหนี",
+  "description": "An explosives expert and a regular at the Knights of Favonius's confinement room. Also known as Fleeing Sunlight.",
+  "descriptionTh": "แขกประจำห้องกักบริเวณของกองอัศวินแห่ง Favonius ผู้เชี่ยวชาญด้านระเบิดแห่ง Mondstadt ผู้คนเรียกเธอว่า \"ดวงอาทิตย์ที่หลบหนี\"",
+  "birthday": {
+    "birthdayText": "July 27",
+    "birthdayMMDD": [
+      7,
+      27
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

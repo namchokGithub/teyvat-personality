@@ -1,0 +1,24 @@
+{
+  "id": "kachina",
+  "name": "Kachina",
+  "region": "Natlan",
+  "element": "Geo",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Mottled Gold Yet Unsmelted",
+  "titleTh": "ทองแท้รอหลอมประกาย",
+  "description": "A young warrior of the Nanatzcayan, given the Ancient Name of \"Uthabiti.\" Kind-hearted and insatiably persistent, she grows stronger and more capable with each setback she faces.",
+  "descriptionTh": "นักรบรุ่นเยาว์แห่ง Nanatzcayan ผู้ได้รับนามโบราณว่า \"Uthabiti\" สาวน้อยผู้ใจดีและดื้อรั้น ที่เติบโตขึ้นมาท่ามกลางอุปสรรค",
+  "birthday": {
+    "birthdayText": "April 22",
+    "birthdayMMDD": [
+      4,
+      22
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

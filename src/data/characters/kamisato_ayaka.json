@@ -1,0 +1,24 @@
+{
+  "id": "kamisato_ayaka",
+  "name": "Kamisato Ayaka",
+  "region": "Inazuma",
+  "element": "Cryo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Frostflake Heron",
+  "titleTh": "กระเรียนขาวกลางหิมะ",
+  "description": "Daughter of the Yashiro Commission's Kamisato Clan. Dignified and elegant, as well as wise and strong.",
+  "descriptionTh": "คุณหนูใหญ่ของตระกูล Kamisato แห่งสำนัก Yashiro ใน Inazuma ทั้งสง่างามและมีเกียรติ เปี่ยมไปด้วยสติปัญญาและความแข็งแกร่ง",
+  "birthday": {
+    "birthdayText": "September 28",
+    "birthdayMMDD": [
+      9,
+      28
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

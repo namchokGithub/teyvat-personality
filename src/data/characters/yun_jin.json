@@ -1,0 +1,24 @@
+{
+  "id": "yun_jin",
+  "name": "Yun Jin",
+  "region": "Liyue",
+  "element": "Geo",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Stage Lucida",
+  "titleTh": "สาวน้อยในม่านแดง",
+  "description": "A renowned Liyue opera singer who is skilled in both playwriting and singing. Her style is one-of-a-kind, exquisite and delicate, much like the person herself.",
+  "descriptionTh": "นักแสดงชื่อดังแห่งท่าเรือ Liyue ที่ถนัดทั้งด้านการเขียนบทและการแสดง สไตล์ของเธอเป็นเอกลักษณ์ไม่เหมือนใคร ทั้งสง่างามและนุ่มนวล เช่นเดียวกับตัวตนของเธอ",
+  "birthday": {
+    "birthdayText": "May 21",
+    "birthdayMMDD": [
+      5,
+      21
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

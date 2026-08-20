@@ -1,0 +1,24 @@
+{
+  "id": "kaveh",
+  "name": "Kaveh",
+  "region": "Sumeru",
+  "element": "Dendro",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Empyrean Reflection",
+  "titleTh": "ม่านนภาสะท้อนปฐพี",
+  "description": "A renowned architect from Sumeru who perhaps cares a bit too much about too many things. He is an aesthete troubled by reality.",
+  "descriptionTh": "สถาปนิกที่มีชื่อเสียงของ Sumeru เขาเป็นคนที่ใส่ใจเป็นห่วงเป็นใยหลายสิ่งหลายอย่างมากจนเกินไป ทั้งยังเป็นนักสุนทรียศาสตร์ ผู้มีปัญหากับความเป็นจริงอีกด้วย",
+  "birthday": {
+    "birthdayText": "July 9",
+    "birthdayMMDD": [
+      7,
+      9
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

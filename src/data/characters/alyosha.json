@@ -1,0 +1,21 @@
+{
+  "id": "alyosha",
+  "name": "Alyosha",
+  "region": "Snezhnaya",
+  "element": "Electro",
+  "weapon": "Polearm",
+  "rarity": 4,
+  "title": "Swift-Striding Hound",
+  "titleTh": "สุนัขล่าโฉบอัสนี",
+  "description": "A \"professional hunter\" and master of the Snezhnayan snowfields. A fierce, distinct \"idealism\" burns beneath his calm demeanor.",
+  "descriptionTh": "Alyosha นักล่าผู้มาจาก \"Alatyr\" คอยดิ้นรนเอาชีวิตรอดบนทุ่งหิมะกว้างใหญ่ ด้วยการพึ่งพาทักษะการล่าสัตว์ของตนเองร่วมกับเหล่าสุนัขคู่หู",
+  "birthday": {
+    "birthdayText": "February 9",
+    "birthdayMMDD": [2, 9]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

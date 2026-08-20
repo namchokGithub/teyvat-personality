@@ -1,0 +1,24 @@
+{
+  "id": "ororon",
+  "name": "Ororon",
+  "region": "Natlan",
+  "element": "Electro",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Shadow of the Night-Wind",
+  "titleTh": "เงาแห่งควันราตรี",
+  "description": "A young man from the Masters of the Night-Wind who instead lives in the wild alongside all manner of life.",
+  "descriptionTh": "เด็กหนุ่มจากจ้าวแห่งลมราตรี แต่กลับอาศัยอยู่บนทุ่งกว้างพร้อมกับสรรพชีวิตนับหมื่นนับพัน",
+  "birthday": {
+    "birthdayText": "October 14",
+    "birthdayMMDD": [
+      10,
+      14
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

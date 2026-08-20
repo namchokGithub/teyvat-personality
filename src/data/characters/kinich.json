@@ -1,0 +1,24 @@
+{
+  "id": "kinich",
+  "name": "Kinich",
+  "region": "Natlan",
+  "element": "Dendro",
+  "weapon": "Claymore",
+  "rarity": 5,
+  "title": "Turnfire Hunt",
+  "titleTh": "นักล่าเพลิงหวน",
+  "description": "A Huitztlan Saurian Hunter skilled at counting costs.",
+  "descriptionTh": "นักล่า Saurian แห่ง Huitztlan ผู้เชี่ยวชาญด้านการประเมินราคา",
+  "birthday": {
+    "birthdayText": "November 11",
+    "birthdayMMDD": [
+      11,
+      11
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

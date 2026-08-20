@@ -1,0 +1,24 @@
+{
+  "id": "jahoda",
+  "name": "Jahoda",
+  "region": "Nod-Krai",
+  "element": "Anemo",
+  "weapon": "Bow",
+  "rarity": 4,
+  "title": "Windthreading Shadow",
+  "titleTh": "ร้อยเงากับสายลม",
+  "description": "The Curatorium of Secrets' extremely reliable, do-it-all super employee (or so she claims).",
+  "descriptionTh": "พนักงานของ \"เคหาสน์แห่งความลับ\" ผู้ที่ (อ้างตนว่า) พึ่งพาได้อย่างยิ่ง และทำได้ทุกอย่าง",
+  "birthday": {
+    "birthdayText": "January 5",
+    "birthdayMMDD": [
+      1,
+      5
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

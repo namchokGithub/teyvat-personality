@@ -1,0 +1,24 @@
+{
+  "id": "xinyan",
+  "name": "Xinyan",
+  "region": "Liyue",
+  "element": "Pyro",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Blazing Riff",
+  "titleTh": "เมโลดี้อันร้อนแรง",
+  "description": "Liyue's sole rock 'n' roll musician. She rebels against ossified prejudices using her music and passionate singing.",
+  "descriptionTh": "นักดนตรีร็อกแอนด์โรลเพียงหนึ่งเดียวของท่าเรือ Liyue ผู้ใช้เสียงดนตรีและความเร่าร้อนร้องเพลงเพื่อต่อต้าน \"อคติ\"",
+  "birthday": {
+    "birthdayText": "October 16",
+    "birthdayMMDD": [
+      10,
+      16
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

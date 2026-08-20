@@ -1,0 +1,24 @@
+{
+  "id": "alhaitham",
+  "name": "Alhaitham",
+  "region": "Sumeru",
+  "element": "Dendro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Admonishing Instruction",
+  "titleTh": "คำวิจารณ์ซ่อนคม",
+  "description": "The current scribe of the Sumeru Akademiya, a man endowed with extraordinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
+  "descriptionTh": "เสมียนคนปัจจุบันของสถาบัน Sumeru มีสติปัญญา และพรสวรรค์ที่เหนือคนธรรมดา เขาใช้ชีวิตอย่างอิสระจนคนส่วนใหญ่แทบจะหาเขาไม่เจอ",
+  "birthday": {
+    "birthdayText": "February 11",
+    "birthdayMMDD": [
+      2,
+      11
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

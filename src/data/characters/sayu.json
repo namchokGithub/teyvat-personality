@@ -1,0 +1,24 @@
+{
+  "id": "sayu",
+  "name": "Sayu",
+  "region": "Inazuma",
+  "element": "Anemo",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Mujina Ninja",
+  "titleTh": "นินจามูจิน่า",
+  "description": "A pint-sized ninja attached to the Shuumatsuban, who always seems sleep-deprived.",
+  "descriptionTh": "นินจารูปร่างบอบบางแห่ง Shuumatsuban มักจะมีท่าทางเหมือนคนนอนหลับไม่เพียงพออยู่เสมอ",
+  "birthday": {
+    "birthdayText": "October 19",
+    "birthdayMMDD": [
+      10,
+      19
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

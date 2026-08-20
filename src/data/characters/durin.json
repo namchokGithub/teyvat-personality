@@ -1,0 +1,24 @@
+{
+  "id": "durin",
+  "name": "Durin",
+  "region": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "\"The Undying Fire\"",
+  "titleTh": "\"เพลิงที่ไม่มีวันดับ\"",
+  "description": "A dragon born from M's pen, who came to alight in the human world. His \"story\" continues to unfold.",
+  "descriptionTh": "มังกรที่ถือกำเนิด จากปลายปากกาของแม่มด M ในที่สุด ก็ได้มาถึงโลกของมนุษย์ และ \"เรื่องราว\" ของเขาก็ยังคงดำเนินต่อไป",
+  "birthday": {
+    "birthdayText": "March 14",
+    "birthdayMMDD": [
+      3,
+      14
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

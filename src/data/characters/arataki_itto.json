@@ -1,0 +1,24 @@
+{
+  "id": "arataki_itto",
+  "name": "Arataki Itto",
+  "region": "Inazuma",
+  "element": "Geo",
+  "weapon": "Claymore",
+  "rarity": 5,
+  "title": "Hanamizaka Heroics",
+  "titleTh": "ขาใหญ่ประจำ Hanamizaka",
+  "description": "The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka... Wait, what? You've never heard of them? Are you trying to be funny here?",
+  "descriptionTh": "ผู้นำรุ่นแรกของแก๊ง Arataki ผู้โด่งดังไปทั่วทั้ง Hanamizaka แห่ง Inazuma... หืม ว่ายังไงนะ? ไม่เคยได้ยินชื่อแก๊ง Arataki? อยากมีเรื่องรึไง?",
+  "birthday": {
+    "birthdayText": "June 1",
+    "birthdayMMDD": [
+      6,
+      1
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

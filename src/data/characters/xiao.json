@@ -1,0 +1,24 @@
+{
+  "id": "xiao",
+  "name": "Xiao",
+  "region": "Liyue",
+  "element": "Anemo",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Vigilant Yaksha",
+  "titleTh": "ยักษาผู้พิทักษ์",
+  "description": "A yaksha adeptus who defends Liyue. Also heralded as the \"Conqueror of Demons\" and \"Vigilant Yaksha.\"",
+  "descriptionTh": "\"ยักษา\" เซียนผู้พิทักษ์ Liyue ผู้มีสมญานามว่า \"ผู้กำราบอสูร\" และ \"ยักษาผู้พิทักษ์\"",
+  "birthday": {
+    "birthdayText": "April 17",
+    "birthdayMMDD": [
+      4,
+      17
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

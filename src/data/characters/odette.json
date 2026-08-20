@@ -1,0 +1,21 @@
+{
+  "id": "odette",
+  "name": "Odette",
+  "region": "Snezhnaya",
+  "element": "Cryo",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Swirling Snow",
+  "titleTh": "วายุร่ายหิมะระบำ",
+  "description": "A famed Snezhnayan ballerina who blossoms against the frozen landscape with a beauty as sharp as frost.",
+  "descriptionTh": "นักเต้นบัลเลต์หลักของคณะละคร Korolevskiy ไม่ว่าจะบนเวทีหรือนอกเวที เธอมักจะยึดมั่นในหลักปฏิบัติอย่างเคร่งครัด... หรืออาจถึงขั้นเคร่งครัดจนเกินไป... อยู่เสมอ",
+  "birthday": {
+    "birthdayText": "February 20",
+    "birthdayMMDD": [2, 20]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

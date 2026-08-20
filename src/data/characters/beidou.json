@@ -1,0 +1,24 @@
+{
+  "id": "beidou",
+  "name": "Beidou",
+  "region": "Liyue",
+  "element": "Electro",
+  "weapon": "Claymore",
+  "rarity": 4,
+  "title": "Uncrowned Lord of the Ocean",
+  "titleTh": "ราชินีไร้บัลลังก์แห่งท้องทะเล",
+  "description": "Captain of her crew, The Crux. She's quite an unbound and forthright woman.",
+  "descriptionTh": "ผู้นำกองเรือติดอาวุธ \"Crux\" สตรีผู้ซื่อตรง และไร้ซึ่งพันธนาการ",
+  "birthday": {
+    "birthdayText": "February 14",
+    "birthdayMMDD": [
+      2,
+      14
+    ]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}

@@ -1,0 +1,24 @@
+{
+  "id": "cyno",
+  "name": "Cyno",
+  "region": "Sumeru",
+  "element": "Electro",
+  "weapon": "Polearm",
+  "rarity": 5,
+  "title": "Judicator of Secrets",
+  "titleTh": "การพิพากษาอันซ่อนเร้น",
+  "description": "The General Mahamatra in charge of supervising the researchers of the Akademiya. It is said that when he gets down to work, the General Mahamatra is even more efficient than the \"Great Vayuvyastra\" made by the Kshahrewar.",
+  "descriptionTh": "\"เจ้าหน้าที่มหามาตรา\" ผู้รับหน้าที่ดูแลนักวิชาการในสถาบัน...ในตอนที่ทำงาน มีประสิทธิภาพมากกว่า \"กลไกมหามนตรา\" ที่ผลิตโดยคณะ Kshahrewar เสียอีก",
+  "birthday": {
+    "birthdayText": "June 23",
+    "birthdayMMDD": [
+      6,
+      23
+    ]
+  },
+  "gender": "Male",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
+}
