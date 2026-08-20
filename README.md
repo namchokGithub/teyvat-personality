@@ -69,6 +69,10 @@ Character and master data are normalized from these reference repositories. They
 
 Please review and respect the licenses and attribution requirements of these upstream projects when reusing derived data.
 
+## Image credits
+
+Character images are sourced from official [Genshin Impact](https://genshin.hoyoverse.com/en/) materials and are referenced alongside the character data from [theBowja/genshin-db](https://github.com/theBowja/genshin-db) and [MadeBaruna/paimon-moe](https://github.com/MadeBaruna/paimon-moe). All related artwork, characters, and trademarks remain the property of HoYoverse and their respective owners.
+
 ## Disclaimer
 
 This is an unofficial fan project and is not affiliated with, endorsed by, or sponsored by HoYoverse. Genshin Impact and related names are trademarks of their respective owners.
