@@ -2,6 +2,7 @@
 
 > This file is the primary context for AI agents working on this project.
 > Read this file before making architectural, data-model, quiz, or personality-system changes.
+> Repository-operation rules live in `AGENTS.md`; detailed product scope lives in `docs/scope.md`; the authoritative implementation stack lives in `docs/stack.md`.
 
 ---
 
@@ -115,7 +116,17 @@ Character personality and elemental personality must be calculated independently
 
 # 3. Data Sources
 
-Character factual/master data may be derived from:
+Character factual/master data may be derived from these read-only references:
+
+**genshin-db**
+
+Repository:
+
+```text
+https://github.com/theBowja/genshin-db
+```
+
+genshin-db is the primary source for localized character facts and master data.
 
 **Paimon.moe**
 
@@ -125,22 +136,24 @@ Repository:
 https://github.com/MadeBaruna/paimon-moe
 ```
 
-Paimon.moe should be treated as a **reference/source dataset**, not as a runtime dependency.
+Both repositories are **reference/source datasets**, not runtime dependencies.
 
 Recommended development workspace:
 
 ```text
 workspace/
 │
-├── paimon-moe/
+├── genshin-db/
+│   └── reference repository
 │
+├── paimon-moe/
 │   └── reference repository
 │
 └── teyvat-personality/
     └── this project
 ```
 
-Do not modify the Paimon.moe repository.
+Do not modify the genshin-db or Paimon.moe repositories.
 
 Extract and normalize only the data required by this project.
 
@@ -150,23 +163,25 @@ Extract and normalize only the data required by this project.
 
 Character factual data should be separated from personality interpretation.
 
-Recommended:
+Current layout:
 
 ```text
 src/data/
-│
-├── characters.json
-│
+├── characters/
+│   ├── characters.json
+│   ├── {character-id}.json
+│   └── _missing-data-report.md
+├── lore/
+│   └── {character-id}.json
 ├── masters/
+│   ├── associationTypes.json
+│   ├── bodyTypes.json
 │   ├── elements.json
 │   ├── regions.json
 │   └── weapons.json
-│
 └── personality/
-    ├── dimensions.json
-    ├── traits.json
     ├── character-personalities.json
-    └── questions.json
+    └── element-personalities.json
 ```
 
 Example Character:
@@ -175,17 +190,29 @@ Example Character:
 {
   "id": "furina",
   "name": "Furina",
+  "region": "Fontaine",
+  "element": "Hydro",
+  "weapon": "Sword",
+  "rarity": 5,
+  "title": "Endless Solo of Solitude",
+  "titleTh": "บทเพลงเดี่ยวอันไร้ที่สิ้นสุด",
   "description": "...",
-  "regionId": "fontaine",
-  "elementId": "hydro",
-  "weaponId": "sword",
-  "rarity": 5
+  "descriptionTh": "...",
+  "birthday": {
+    "birthdayText": "October 13",
+    "birthdayMMDD": [10, 13]
+  },
+  "gender": "Female",
+  "personality": null,
+  "traits": [],
+  "strengths": [],
+  "weaknesses": []
 }
 ```
 
 Character master data represents factual game information.
 
-Do not place personality scores directly inside `characters.json`.
+Do not place personality scores directly inside `data/characters/characters.json` or the per-character factual files. Lore/research evidence belongs in `data/lore/`; interpreted personality profiles belong in `data/personality/`.
 
 ---
 
@@ -196,11 +223,11 @@ Prefer deterministic scripts for factual data.
 Recommended:
 
 ```text
-Paimon.moe
-      ↓
-generate-character-data.ts
-      ↓
-characters.json
+genshin-db + Paimon.moe (read-only)
+              ↓
+  deterministic import script
+              ↓
+src/data/characters/*.json
 ```
 
 AI may help create or maintain the importer, but factual data extraction should eventually be deterministic.
@@ -210,11 +237,16 @@ Required character fields:
 ```text
 id
 name
-description
-regionId
-elementId
-weaponId
+region
+element
+weapon
 rarity
+title
+titleTh
+description
+descriptionTh
+birthday
+gender
 ```
 
 Do not import unnecessary gameplay information such as:
@@ -1161,21 +1193,28 @@ Do not tightly couple these layers.
 
 ```text
 src/
+├── App.tsx
+├── main.tsx
+│
+├── components/
+│   ├── common/
+│   ├── quiz/
+│   └── result/
 │
 ├── data/
-│   │
-│   ├── characters.json
-│   │
+│   ├── characters/
+│   │   ├── characters.json
+│   │   └── {character-id}.json
+│   ├── lore/
+│   │   └── {character-id}.json
 │   ├── masters/
 │   │   ├── elements.json
 │   │   ├── regions.json
-│   │   └── weapons.json
-│   │
+│   │   ├── weapons.json
+│   │   └── lookup data
 │   └── personality/
-│       ├── dimensions.json
-│       ├── traits.json
 │       ├── character-personalities.json
-│       └── questions.json
+│       └── element-personalities.json
 │
 ├── engine/
 │   ├── calculatePersonality.ts
@@ -1183,16 +1222,46 @@ src/
 │   ├── calculateCharacterSimilarity.ts
 │   └── rankCharacters.ts
 │
+├── hooks/
+├── lib/
+│   └── firebase.ts
+├── pages/
+├── schemas/
+├── styles/
 ├── types/
-│
-├── components/
-│
-└── pages/
+└── utils/
 ```
 
 Exact folder structure may adapt to the existing project.
 
 Do not restructure an existing working project solely to match this example.
+
+## 28.1 Current Implementation Stack
+
+The current application scaffold uses:
+
+```text
+Vite
+React
+TypeScript
+Tailwind CSS v4
+React Router
+Zod
+Firebase Web SDK
+ESLint
+Prettier
+pnpm
+```
+
+Architecture and deployment constraints:
+
+- The application is a static client-side web app.
+- The frontend connects to Firebase directly; there is no Backend API.
+- Firebase access must be protected with Firebase Security Rules.
+- Admin SDK credentials and service-account keys must never be included in frontend code.
+- GitHub Pages is the hosting target, using a repository-aware Vite base path and hash-based routing.
+- Unit tests and a test framework are deferred until a later phase.
+- shadcn/ui components should be initialized only when UI implementation begins.
 
 ---
 

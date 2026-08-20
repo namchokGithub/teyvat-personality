@@ -1,6 +1,6 @@
 # Teyvat Personality
 
-[![Status: Data Foundation](https://img.shields.io/badge/status-data%20foundation-4c7cff)](docs/scope.md)
+[![Status: Project Scaffold](https://img.shields.io/badge/status-project%20scaffold-4c7cff)](docs/scope.md)
 [![Characters](https://img.shields.io/badge/characters-125-8b5cf6)](src/data/characters/characters.json)
 [![Elements](https://img.shields.io/badge/elements-7-00a896)](src/data/masters/elements.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
@@ -33,23 +33,58 @@ The initial model uses six dimensions:
 
 Elemental profiles use weighted traits rather than treating every trait equally. For example, an element's primary trait has a higher influence than its supporting traits.
 
+## Tech stack
+
+- Vite, React, and TypeScript
+- Tailwind CSS v4 and shadcn/ui (components will be added when UI development begins)
+- React Router
+- Zod
+- Firebase Web SDK connected directly from the frontend; no Backend API
+- GitHub Pages deployment
+- pnpm via Corepack
+
+Unit testing is intentionally deferred until a later development phase. See [Tech stack](docs/stack.md) for the complete decision record.
+
+## Getting started
+
+Requirements: Node.js 20+ and Corepack.
+
+```bash
+corepack prepare pnpm@9.15.4 --activate
+corepack pnpm install
+corepack pnpm dev
+```
+
+For Firebase integration, copy `.env.example` to `.env.local` and fill in the public Firebase Web configuration. Never place Firebase Admin SDK credentials or service-account keys in frontend environment files.
+
+Available commands:
+
+```bash
+corepack pnpm dev          # Start the development server
+corepack pnpm build        # Type-check and create a production build
+corepack pnpm lint         # Run ESLint
+corepack pnpm format       # Format files with Prettier
+corepack pnpm preview      # Preview the production build
+```
+
 ## Data layout
 
 ```text
-src/data/
-├── characters/
-│   ├── characters.json          # Character index
-│   ├── {character-id}.json     # Factual data for each character
-│   └── _missing-data-report.md # Source-data gaps to review
-├── masters/
-│   ├── associationTypes.json
-│   ├── bodyTypes.json
-│   ├── elements.json
-│   ├── regions.json
-│   └── weapons.json
-└── personality/
-    ├── character-personalities.json
-    └── element-personalities.json
+src/
+├── components/                  # Shared, quiz, and result components
+├── data/
+│   ├── characters/              # Character index and factual data
+│   ├── lore/                    # Lore and research scaffolds
+│   ├── masters/                 # Elements, regions, weapons, and lookup data
+│   └── personality/             # Character and element personality profiles
+├── engine/                      # Scoring and matching logic
+├── hooks/
+├── lib/                         # Firebase and external integrations
+├── pages/
+├── schemas/                     # Zod schemas
+├── styles/
+├── types/
+└── utils/
 ```
 
 Character files separate factual game data from personality interpretation. When a factual value is unavailable from a reference source, it is stored as `null` rather than guessed.
@@ -57,8 +92,14 @@ Character files separate factual game data from personality interpretation. When
 ## Project documentation
 
 - [Project scope](docs/scope.md) explains the quiz concept and personality dimensions.
+- [Tech stack](docs/stack.md) records the frontend, Firebase, tooling, and GitHub Pages decisions.
 - [Character data import plan](docs/character-data-import-plan.md) documents the source mapping, fallbacks, and safe re-run behavior.
 - [Project context](CONTEXT.md) records the broader data-model and matching-system decisions.
+- [Agent rules](AGENTS.md) contains concise repository rules for AI-assisted work.
+
+## Deployment
+
+The production target is GitHub Pages. Vite applies the repository base path during GitHub Actions builds, and the application uses hash-based routing so client-side routes remain compatible with static hosting.
 
 ## Data credits
 
