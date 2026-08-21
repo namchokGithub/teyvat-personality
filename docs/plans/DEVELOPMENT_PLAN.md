@@ -50,7 +50,7 @@
 
 ### Prototype Limitations / Next Integration
 
-- [ ] แทนที่คำถาม placeholder ด้วยคำถามสถานการณ์จริง 24 ข้อ
+- [x] แทนที่คำถาม placeholder ด้วยคำถามสถานการณ์จริง 24 ข้อ พร้อม dimension/trait score mapping
 - [ ] เชื่อม Character Matching Engine และ Vision Affinity Engine
 - [ ] เชื่อมข้อมูล Character Personality และ Element Personality จริง
 - [ ] แทนที่ Matching transition prototype ด้วย animation และข้อความลำดับสุดท้าย
@@ -63,19 +63,26 @@
 
 ## Data Gaps After Character Personality Completion
 
-> สมมติว่า Character Personality Profiles ครบทุกตัวละครแล้ว ส่วนนี้ระบุข้อมูลและ data contract ที่ยังต้องมีเพื่อให้ Quiz คำนวณผลจริงได้ โดยไม่รวมงาน UI prototype ที่ทำเสร็จแล้ว
+> Character Personality Profiles ครบทุกตัวละครแล้ว ส่วนนี้ระบุข้อมูลและ data contract ที่ยังต้องมีเพื่อให้ Quiz คำนวณผลจริงได้ โดยไม่รวมงาน UI prototype ที่ทำเสร็จแล้ว
 
-### P0 — Data blockers สำหรับ Quiz จริง
+### P0 — Data blockers สำหรับ Quiz จริง — Implemented
 
 #### 1. Canonical character index
 
+- [x] ใช้ `src/data/characters/_characters.json` เป็น canonical index และปรับ Character repository ให้ใช้ชื่อนี้
+- [x] ตรวจ id coverage ระหว่าง factual data, lore และ character personality profiles ครบ `125/125`
+- [ ] ปรับ Character importer plan ให้ใช้ชื่อ canonical เดียวกัน
+
 ต้องมี character index เพียงแหล่งเดียวที่ repository, เอกสาร และ importer ใช้อ้างอิงตรงกัน
 
-- ปัจจุบันข้อมูลรายตัวละครและ lore ครอบคลุม `125` id แต่ชื่อ index ที่ใช้ไม่สอดคล้องกัน: repository และเอกสารบางส่วนอ้าง `src/data/characters/characters.json` ขณะที่ dataset ปัจจุบันใช้ `src/data/characters/_characters.json`
-- ต้องเลือกชื่อ canonical หนึ่งชื่อ, ปรับ import และเอกสารให้ตรงกัน, และ validate ว่า factual character, lore และ character personality profile มี id ชุดเดียวกัน
+- ใช้ `src/data/characters/_characters.json` เป็นชื่อ canonical แล้ว; repository และเอกสารหลักถูกปรับให้ตรงกัน
+- ยังต้องปรับ Character importer plan ที่อ้างชื่อเดิม ก่อนถือว่าทุกเอกสารตรงกัน
 - index ต้องเก็บอย่างน้อย `{ id, name }` และไม่ควรมี id ซ้ำ
 
 #### 2. Situational question dataset พร้อม score mapping
+
+- [x] เพิ่มคำถามสถานการณ์สองภาษา `24` ข้อ และ score mapping ทุกตัวเลือกใน `src/data/quiz/questions.ts`
+- [x] กำหนด `DimensionId` และ `TraitId` แบบ type-safe เพื่อป้องกัน reference ที่ไม่รู้จัก
 
 ต้องแทนที่ mock questions ด้วยข้อมูลจริงจำนวน `24` ข้อ โดยแต่ละข้อมี:
 
@@ -104,6 +111,9 @@ interface ScoredQuizQuestion {
 
 #### 3. Trait catalog สำหรับผลลัพธ์และ localization
 
+- [x] เพิ่ม trait catalog กลาง `39` traits พร้อม label/description ไทย–อังกฤษ
+- [x] ตรวจ trait references ของ element profiles และ character profiles ว่าอยู่ใน catalog ทั้งหมด
+
 ต้องมี registry กลางของ trait ที่เป็น canonical เพื่อเชื่อมสามส่วนเข้าด้วยกัน: คำถาม, character profiles และ element profiles
 
 ```ts
@@ -117,6 +127,9 @@ interface TraitDefinition {
 อย่างน้อยต้องครอบคลุม trait ใน `element-personalities.json` และ trait ที่ character profiles ใช้จริง เช่น `ideals`, `selfExpression`, `selfDevelopment`, `reliability` และ `curiosity` เพื่อให้แสดง Matching Traits เป็นสองภาษาได้อย่างสม่ำเสมอ
 
 #### 4. Result interpretation content
+
+- [x] เพิ่ม fallback result titles ตาม dominant dimension
+- [x] เพิ่ม Vision interpretation templates ไทย–อังกฤษครบทั้ง 7 ธาตุ
 
 profile คะแนนอย่างเดียวบอกอันดับได้ แต่ยังไม่เพียงพอสำหรับหน้าผลลัพธ์ที่อธิบายเหตุผลของ match ตาม Product Direction
 
@@ -135,9 +148,9 @@ profile คะแนนอย่างเดียวบอกอันดับ
 
 ค่าที่เป็น `null` ต้องมี fallback ใน UI และอยู่ใน missing-data report จนกว่าจะมีแหล่งอ้างอิงที่เชื่อถือได้:
 
-| Field | Characters |
-| --- | --- |
-| `region` | Aloy, Nicole, Skirk |
+| Field                                                     | Characters              |
+| --------------------------------------------------------- | ----------------------- |
+| `region`                                                  | Aloy, Nicole, Skirk     |
 | `title`, `titleTh`, `descriptionTh`, `birthday`, `gender` | Traveler ทั้ง 7 variant |
 
 ห้ามเดาค่าทาง factual เพื่อปิดช่องว่างเหล่านี้
@@ -190,11 +203,11 @@ interface CharacterArtwork {
 
 ### Definition of ready for Engine integration
 
-- [ ] Character index, factual data, lore และ profiles มี id coverage ตรงกัน
-- [ ] Question dataset 24 ข้อผ่าน schema และมี score mapping ครบ
-- [ ] Trait catalog ครอบคลุม trait reference ทุกจุดและมี TH/EN labels
-- [ ] Element profiles ครบ 7 ธาตุและผ่าน validation
-- [ ] Result explanation/translation fallback พร้อมใช้งาน
+- [x] Character index, factual data, lore และ profiles มี id coverage ตรงกัน
+- [x] Question dataset 24 ข้อมี score mapping ครบ และมี Zod schema สำหรับตรวจโครงสร้าง
+- [x] Trait catalog ครอบคลุม trait reference ทุกจุดและมี TH/EN labels
+- [x] Element profiles ครบ 7 ธาตุและไม่มี trait reference ที่ไม่รู้จัก
+- [x] Result explanation/translation fallback พร้อมใช้งาน
 - [ ] Missing factual fields มี UI fallback และรายงานที่ตรวจสอบได้
 - [ ] Dataset validation report ผ่านก่อน build และก่อน deploy
 

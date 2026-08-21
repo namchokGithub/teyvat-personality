@@ -1,5 +1,20 @@
 export type Locale = "th" | "en";
 
+export const DIMENSION_IDS = ["social", "decision", "lifestyle", "adventure", "responsibility", "expression"] as const;
+export type DimensionId = (typeof DIMENSION_IDS)[number];
+
+export const TRAIT_IDS = [
+  "passion", "enthusiasm", "selfExpression", "determination", "optimism",
+  "ideals", "adaptability", "responsibility", "creativity", "perseverance",
+  "freedom", "acceptance", "sensitivity", "selflessness",
+  "individuality", "independence", "confidence", "nonconformity",
+  "growth", "curiosity", "knowledge", "learning", "selfDevelopment",
+  "innerConflict", "contradiction", "identity", "introspection", "resilience",
+  "resolve", "stability", "discipline", "reliability",
+  "leadership", "empathy", "ambition", "loyalty", "idealism", "humor", "competitiveness",
+] as const;
+export type TraitId = (typeof TRAIT_IDS)[number];
+
 export interface LocalizedText {
   th: string;
   en: string;
@@ -9,6 +24,36 @@ export interface QuizQuestion {
   id: string;
   prompt: LocalizedText;
   answers: Array<{ id: string; label: LocalizedText }>;
+}
+
+export interface ScoredQuizQuestion extends QuizQuestion {
+  answers: Array<{
+    id: string;
+    label: LocalizedText;
+    scores: {
+      dimensions: Partial<Record<DimensionId, number>>;
+      traits: Partial<Record<TraitId, number>>;
+    };
+  }>;
+}
+
+export interface TraitDefinition {
+  id: TraitId;
+  label: LocalizedText;
+  description: LocalizedText;
+}
+
+export interface CharacterPersonalityProfile {
+  id: string;
+  personality: Record<DimensionId, number>;
+  traits: Partial<Record<TraitId, number>>;
+  strengths: string[];
+  weaknesses: string[];
+}
+
+export interface ResultInterpretation {
+  title: LocalizedText;
+  summary: LocalizedText;
 }
 
 export interface CharacterMatch {

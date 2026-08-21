@@ -1,1 +1,75 @@
-export {};
+import { z } from "zod";
+
+import { DIMENSION_IDS, TRAIT_IDS, type CharacterPersonalityProfile, type ScoredQuizQuestion, type TraitDefinition } from "../types";
+
+const knownDimensionIds = new Set<string>(DIMENSION_IDS);
+const knownTraitIds = new Set<string>(TRAIT_IDS);
+
+export const localizedTextSchema = z.object({ th: z.string().min(1), en: z.string().min(1) });
+export const dimensionIdSchema = z.enum(DIMENSION_IDS);
+export const traitIdSchema = z.enum(TRAIT_IDS);
+
+const scoreMapSchema = z.record(z.string(), z.number()).superRefine((value, context) => {
+  for (const key of Object.keys(value)) {
+    if (!knownDimensionIds.has(key)) context.addIssue({ code: z.ZodIssueCode.custom, message: `Unknown dimension id: ${key}` });
+  }
+});
+
+const traitScoreMapSchema = z.record(z.string(), z.number()).superRefine((value, context) => {
+  for (const key of Object.keys(value)) {
+    if (!knownTraitIds.has(key)) context.addIssue({ code: z.ZodIssueCode.custom, message: `Unknown trait id: ${key}` });
+  }
+});
+
+export const scoredQuizQuestionSchema = z.object({
+  id: z.string().min(1),
+  prompt: localizedTextSchema,
+  answers: z.array(z.object({
+    id: z.string().min(1),
+    label: localizedTextSchema,
+    scores: z.object({ dimensions: scoreMapSchema, traits: traitScoreMapSchema }),
+  })).min(2),
+});
+
+export const traitDefinitionSchema = z.object({
+  id: traitIdSchema,
+  label: localizedTextSchema,
+  description: localizedTextSchema,
+});
+
+export const characterPersonalityProfileSchema = z.object({
+  id: z.string().min(1),
+  personality: z.object({
+    social: z.number().int().min(0).max(100),
+    decision: z.number().int().min(0).max(100),
+    lifestyle: z.number().int().min(0).max(100),
+    adventure: z.number().int().min(0).max(100),
+    responsibility: z.number().int().min(0).max(100),
+    expression: z.number().int().min(0).max(100),
+  }),
+  traits: z.record(z.string(), z.number().min(0).max(1)).superRefine((value, context) => {
+    for (const key of Object.keys(value)) {
+      if (!knownTraitIds.has(key)) context.addIssue({ code: z.ZodIssueCode.custom, message: `Unknown trait id: ${key}` });
+    }
+  }),
+  strengths: z.array(z.string().min(1)).min(3).max(5),
+  weaknesses: z.array(z.string().min(1)).min(3).max(5),
+});
+
+function duplicateIds(values: Array<{ id: string }>) {
+  const seen = new Set<string>();
+  return values.filter(({ id }) => seen.has(id) || !seen.add(id)).map(({ id }) => id);
+}
+
+export function validateP0QuizData(input: { questions: ScoredQuizQuestion[]; traits: TraitDefinition[]; profiles: CharacterPersonalityProfile[] }) {
+  const traits = z.array(traitDefinitionSchema).parse(input.traits);
+  const questions = z.array(scoredQuizQuestionSchema).length(24).parse(input.questions);
+  const profiles = z.array(characterPersonalityProfileSchema).parse(input.profiles);
+  const duplicateTraitIds = duplicateIds(traits);
+  const duplicateQuestionIds = duplicateIds(questions);
+  const duplicateProfileIds = duplicateIds(profiles);
+  const duplicateAnswerIds = questions.flatMap((question) => duplicateIds(question.answers).map((id) => `${question.id}/${id}`));
+  const duplicates = [...duplicateTraitIds, ...duplicateQuestionIds, ...duplicateProfileIds, ...duplicateAnswerIds];
+  if (duplicates.length) throw new Error(`Duplicate dataset identifiers: ${duplicates.join(", ")}`);
+  return { questions, traits, profiles };
+}

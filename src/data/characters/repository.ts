@@ -1,4 +1,4 @@
-import characterIndex from "./characters.json";
+import characterIndex from "./_characters.json";
 import type { CharacterDetail, CharacterSummary } from "../../types";
 
 interface RawCharacter {
@@ -15,7 +15,7 @@ interface RawCharacter {
 }
 
 type CharacterLoader = () => Promise<RawCharacter>;
-const modules = import.meta.glob<RawCharacter>(["./*.json", "!./characters.json"], { import: "default" });
+const modules = import.meta.glob<RawCharacter>(["./*.json", "!./_characters.json"], { import: "default" });
 const cache = new Map<string, CharacterDetail>();
 
 function normalize(value: RawCharacter): CharacterDetail {

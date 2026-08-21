@@ -168,7 +168,7 @@ Current layout:
 ```text
 src/data/
 ├── characters/
-│   ├── characters.json
+│   ├── _characters.json
 │   ├── {character-id}.json
 │   └── _missing-data-report.md
 ├── lore/
@@ -180,7 +180,8 @@ src/data/
 │   ├── regions.json
 │   └── weapons.json
 └── personality/
-    ├── character-personalities.json
+    ├── character-personalities/
+    │   └── {character-id}.json
     └── element-personalities.json
 ```
 
@@ -212,7 +213,7 @@ Example Character:
 
 Character master data represents factual game information.
 
-Do not place personality scores directly inside `data/characters/characters.json` or the per-character factual files. Lore/research evidence belongs in `data/lore/`; interpreted personality profiles belong in `data/personality/`.
+Do not place personality scores directly inside `data/characters/_characters.json` or the per-character factual files. Lore/research evidence belongs in `data/lore/`; interpreted personality profiles belong in `data/personality/`.
 
 ---
 

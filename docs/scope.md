@@ -49,7 +49,7 @@ Result
 | -------------- | ------------- | ----------- |
 | Social         | Introverted   | Extroverted |
 | Decision       | Emotional     | Rational    |
-| Lifestyle      | Structured    | Flexible    |
+| Lifestyle      | Spontaneous / Flexible | Structured / Planned |
 | Adventure      | Cautious      | Adventurous |
 | Responsibility | Free-spirited | Duty-driven |
 | Expression     | Reserved      | Expressive  |

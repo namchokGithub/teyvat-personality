@@ -1,7 +1,7 @@
 # Teyvat Personality
 
 [![Status: Project Scaffold](https://img.shields.io/badge/status-project%20scaffold-4c7cff)](docs/scope.md)
-[![Characters](https://img.shields.io/badge/characters-125-8b5cf6)](src/data/characters/characters.json)
+[![Characters](https://img.shields.io/badge/characters-125-8b5cf6)](src/data/characters/_characters.json)
 [![Elements](https://img.shields.io/badge/elements-7-00a896)](src/data/masters/elements.json)
 [![License: MIT](https://img.shields.io/badge/license-MIT-2ea44f)](LICENSE)
 
@@ -26,7 +26,7 @@ The initial model uses six dimensions:
 | --- | --- | --- |
 | Social | Introverted | Extroverted |
 | Decision | Emotional | Rational |
-| Lifestyle | Structured | Flexible |
+| Lifestyle | Spontaneous / Flexible | Structured / Planned |
 | Adventure | Cautious | Adventurous |
 | Responsibility | Free-spirited | Duty-driven |
 | Expression | Reserved | Expressive |
@@ -76,7 +76,7 @@ src/
 │   ├── characters/              # Character index and factual data
 │   ├── lore/                    # Lore and research scaffolds
 │   ├── masters/                 # Elements, regions, weapons, and lookup data
-│   └── personality/             # Character and element personality profiles
+│   └── personality/             # Trait catalog, character profiles, and element profiles
 ├── engine/                      # Scoring and matching logic
 ├── hooks/
 ├── lib/                         # Firebase and external integrations

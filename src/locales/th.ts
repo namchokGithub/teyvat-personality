@@ -9,7 +9,7 @@ export const th = {
   resetQuiz: "เริ่มใหม่", resetTitle: "เริ่มแบบทดสอบใหม่หรือไม่?", resetBody: "คำตอบและความคืบหน้าที่บันทึกไว้จะถูกล้าง", cancel: "ยกเลิก", confirmReset: "ล้างและเริ่มใหม่",
   matchingTitle: "กำลังค้นหาเสียงสะท้อนของคุณ...", matchingBody: "เรากำลังเตรียม Character Match และ Vision Affinity ตัวอย่าง",
   resultEyebrow: "ตัวละครที่สะท้อนตัวตนของคุณคือ", affinity: "ความเข้ากัน", sharedTraits: "Trait ที่เหมือนกัน",
-  characterDetails: "ดูข้อมูลตัวละคร", characterAbout: "เกี่ยวกับตัวละคร", factualNotice: "ข้อมูลหน้านี้มาจาก Character Master Data ส่วนการวิเคราะห์บุคลิกจะเพิ่มภายหลัง",
+  characterDetails: "ดูข้อมูลตัวละคร", characterAbout: "เกี่ยวกับตัวละคร", factualNotice: "ข้อมูลหน้านี้มาจาก Character Master Data ซึ่งแยกจากการวิเคราะห์บุคลิกแบบ fan-made",
   unavailable: "ยังไม่มีข้อมูล", unknownCharacter: "ไม่พบตัวละครนี้", unknownCharacterBody: "slug นี้ไม่มีอยู่ใน Character Master Data หรือข้อมูลยังไม่พร้อม",
   loadingCharacter: "กำลังโหลดข้อมูลตัวละคร", browseCharacters: "ดูตัวละครทั้งหมด", directoryTitle: "ตัวละครใน Teyvat", directoryBody: "สำรวจข้อมูลพื้นฐานของตัวละครที่มีอยู่ใน Character Master Data",
   searchCharacters: "ค้นหาชื่อตัวละคร", allRegions: "ทุกภูมิภาค", allElements: "ทุกธาตุ", allRarities: "ทุกระดับดาว", charactersFound: "ตัวละคร", noCharacters: "ไม่พบตัวละครที่ตรงกับตัวกรอง", clearFilters: "ล้างตัวกรอง",

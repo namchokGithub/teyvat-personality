@@ -11,7 +11,7 @@ export const en: Record<keyof typeof th, string> = {
   resetQuiz: "Start over", resetTitle: "Start the quiz again?", resetBody: "Your saved answers and progress will be cleared.", cancel: "Cancel", confirmReset: "Clear and restart",
   matchingTitle: "Finding your echo...", matchingBody: "We are preparing your sample Character Match and Vision Affinity.",
   resultEyebrow: "The character who reflects you is", affinity: "Compatibility", sharedTraits: "Shared traits",
-  characterDetails: "View character details", characterAbout: "About this character", factualNotice: "This information comes from Character Master Data. Interpreted personality content will be added later.",
+  characterDetails: "View character details", characterAbout: "About this character", factualNotice: "This information comes from Character Master Data, separate from fan-made personality interpretation.",
   unavailable: "Not available yet", unknownCharacter: "Character not found", unknownCharacterBody: "This slug is not present in Character Master Data or its data is not ready.",
   loadingCharacter: "Loading character data", browseCharacters: "Browse all characters", directoryTitle: "Characters of Teyvat", directoryBody: "Explore the factual profiles currently available in Character Master Data.",
   searchCharacters: "Search characters", allRegions: "All regions", allElements: "All elements", allRarities: "All rarities", charactersFound: "characters", noCharacters: "No characters match these filters.", clearFilters: "Clear filters",
