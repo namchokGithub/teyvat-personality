@@ -8,6 +8,25 @@ export interface ShareResultPayload {
 
 export type SharedResultState = "preview" | "shared" | "invalid";
 
+export interface SharedResultParams {
+  characterId: string;
+  visionId: string;
+  compatibility: number;
+  affinity: number;
+  traitIds: string[];
+}
+
+export function parseSharedResult(search: string): SharedResultParams | null {
+  const params = new URLSearchParams(search);
+  const characterId = params.get("character");
+  const visionId = params.get("vision");
+  if (!params.has("compatibility") || !params.has("affinity")) return null;
+  const compatibility = Number(params.get("compatibility"));
+  const affinity = Number(params.get("affinity"));
+  if (!characterId || !visionId || !Number.isInteger(compatibility) || compatibility < 0 || compatibility > 100 || !Number.isInteger(affinity) || affinity < 0 || affinity > 100) return null;
+  return { characterId, visionId, compatibility, affinity, traitIds: (params.get("traits") ?? "").split(",").filter(Boolean) };
+}
+
 export function validateSharedResult(search: string, character: CharacterMatch, vision: VisionMatch): SharedResultState {
   const params = new URLSearchParams(search);
   const characterId = params.get("character");
@@ -19,7 +38,13 @@ export function validateSharedResult(search: string, character: CharacterMatch, 
 
 export function createResultUrl(character: CharacterMatch, vision: VisionMatch) {
   const base = `${window.location.origin}${window.location.pathname}`;
-  const query = new URLSearchParams({ character: character.characterId, vision: vision.element.toLowerCase() });
+  const query = new URLSearchParams({
+    character: character.characterId,
+    vision: vision.element.toLowerCase(),
+    compatibility: String(character.compatibility),
+    affinity: String(vision.affinity),
+    traits: (character.matchingTraitIds ?? []).join(","),
+  });
   return `${base}#/result?${query.toString()}`;
 }
 

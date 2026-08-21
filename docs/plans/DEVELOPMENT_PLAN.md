@@ -47,19 +47,28 @@
 - [x] Quiz screen-reader announcements พร้อม `radiogroup` / `radio` semantics
 - [x] Semantic progressbar พร้อม current/total values
 - [x] Reduced-motion mode หยุด decorative animations
+- [x] Dataset validation รันก่อน production build พร้อมตรวจ schema, id coverage, score ranges, duplicate ids และ Element trait coverage
+- [x] User Personality Profile normalization สำหรับ 6 dimensions และ 39 traits
+- [x] Character Matching Engine เปรียบเทียบ personality profiles ครบ 125 ตัวละคร
+- [x] Vision Affinity Engine คำนวณทั้ง 7 ธาตุแยกจาก Character Matching
+- [x] Deterministic tie-break และ verification script โดยไม่เพิ่ม test framework
+- [x] Balance simulation แบบ deterministic 10,000 ชุด
+- [x] Matching flow และ Result Page ใช้ผลคำนวณจริงแทน mock result
+- [x] Quiz progress และ result persistence มี question/algorithm version
+- [x] Share URL ใช้ Character/Vision/score/trait identifiers จากผลจริงและเปิดข้ามอุปกรณ์ได้
 
 ### Prototype Limitations / Next Integration
 
 - [x] แทนที่คำถาม placeholder ด้วยคำถามสถานการณ์จริง 24 ข้อ พร้อม dimension/trait score mapping
-- [ ] เชื่อม Character Matching Engine และ Vision Affinity Engine
-- [ ] เชื่อมข้อมูล Character Personality และ Element Personality จริง
+- [x] เชื่อม Character Matching Engine และ Vision Affinity Engine
+- [x] เชื่อมข้อมูล Character Personality และ Element Personality จริง
 - [ ] แทนที่ Matching transition prototype ด้วย animation และข้อความลำดับสุดท้าย
-- [ ] กำหนดแหล่ง artwork และ licensing rule ก่อนเชื่อมภาพจริงกับ Result/PNG export
+- [x] กำหนดแหล่ง artwork และ licensing rule ก่อนเชื่อมภาพจริงกับ Result/PNG export
 - [ ] เพิ่ม QR code บน Share Card ในระยะถัดไป
 - [ ] เพิ่ม image loading และ missing image states เมื่อเริ่มใช้ asset จริง
 - [ ] ตรวจ visual layout ใน browser viewports ตาม QA checklist
 
-ผลลัพธ์ที่แสดงในหน้า prototype เป็น mock result และต้องมีข้อความกำกับจนกว่าจะเชื่อม Engine จริง
+ผลลัพธ์จากการทำ Quiz ใช้ Matching Engine จริงแล้ว ส่วน visual/manual QA และการปรับ balance จากผู้ทดสอบจริงยังต้องทำก่อน release
 
 ## Data Gaps After Character Personality Completion
 
@@ -184,6 +193,10 @@ interface CharacterArtwork {
 
 #### 7. Dataset validation report
 
+- [x] เพิ่ม `pnpm validate:data` และบังคับรันก่อน `pnpm build`
+- [x] เพิ่ม `pnpm verify:engine` สำหรับ deterministic verification cases
+- [x] เพิ่ม `pnpm simulate:balance` สำหรับ deterministic random simulation 10,000 ชุด
+
 ต้องมี script/report แบบ read-only ที่ตรวจอย่างน้อย:
 
 - JSON และ schema ของ factual character, lore, character profile, element profile และ questions
@@ -194,6 +207,8 @@ interface CharacterArtwork {
 - duplicate id, duplicate question id และ duplicate answer id
 
 ### Data-definition decisions ที่ต้องล็อกก่อนเชื่อม Engine
+
+สูตร baseline ถูกกำหนดและ implement แล้วตาม `docs/plans/CALCULATION_RULES_PLAN.md` โดยใช้ algorithm version `1.0.0`:
 
 - สูตร normalize คะแนนคำตอบเป็น User Personality Profile
 - น้ำหนักของแต่ละ dimension ใน Character Matching
@@ -218,7 +233,7 @@ interface CharacterArtwork {
 - [x] Element profiles ครบ 7 ธาตุและไม่มี trait reference ที่ไม่รู้จัก
 - [x] Result explanation/translation fallback พร้อมใช้งาน
 - [x] Missing factual fields มี UI fallback และรายงานที่ตรวจสอบได้
-- [ ] Dataset validation report ผ่านก่อน build และก่อน deploy
+- [x] Dataset validation report ผ่านก่อน build และก่อน deploy
 
 ## References
 

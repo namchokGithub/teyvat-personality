@@ -6,7 +6,10 @@
   "packageManager": "pnpm@9.15.4",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "validate:data": "node scripts/validate-data.mjs",
+    "verify:engine": "node scripts/verify-engine.mjs",
+    "simulate:balance": "node scripts/simulate-balance.mjs",
+    "build": "node scripts/validate-data.mjs && tsc -b && vite build",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

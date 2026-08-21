@@ -51,6 +51,36 @@ export interface CharacterPersonalityProfile {
   weaknesses: string[];
 }
 
+export interface ElementPersonalityProfile {
+  elementId: string;
+  personalityTheme: {
+    primary: TraitId;
+    secondary: TraitId[];
+    traits: Partial<Record<TraitId, number>>;
+  };
+}
+
+export interface UserPersonalityProfile {
+  dimensions: Record<DimensionId, number>;
+  traits: Record<TraitId, number>;
+}
+
+export interface CharacterMatchScore {
+  characterId: string;
+  compatibility: number;
+  rawSimilarity: number;
+  dimensionSimilarity: number;
+  traitSimilarity: number;
+  matchingTraitIds: TraitId[];
+}
+
+export interface VisionMatchScore {
+  elementId: string;
+  affinity: number;
+  rawAffinity: number;
+  primaryTraitScore: number;
+}
+
 export interface ResultInterpretation {
   title: LocalizedText;
   summary: LocalizedText;
@@ -65,6 +95,7 @@ export interface CharacterMatch {
   title: LocalizedText;
   summary: LocalizedText;
   matchingTraits: LocalizedText[];
+  matchingTraitIds?: TraitId[];
   artworkUrl?: string;
 }
 
@@ -75,12 +106,24 @@ export interface VisionMatch {
 }
 
 export interface QuizProgressState {
-  version: 1;
+  version: 2;
+  questionVersion: string;
+  algorithmVersion: string;
   currentQuestionIndex: number;
   answers: Record<string, string>;
   startedAt: string;
   updatedAt: string;
   completedAt: string | null;
+}
+
+export interface QuizResult {
+  version: 1;
+  questionVersion: string;
+  algorithmVersion: string;
+  profile: UserPersonalityProfile;
+  characterMatches: CharacterMatch[];
+  visionMatches: VisionMatch[];
+  completedAt: string;
 }
 
 export interface CharacterDetail {

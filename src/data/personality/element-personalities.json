@@ -5,7 +5,7 @@
       "primary": "passion",
       "secondary": [
         "enthusiasm",
-        "self-expression",
+        "selfExpression",
         "determination",
         "optimism"
       ],
@@ -79,7 +79,7 @@
     "elementId": "dendro",
     "personalityTheme": {
       "primary": "growth",
-      "secondary": ["curiosity", "knowledge", "learning", "self-development"],
+      "secondary": ["curiosity", "knowledge", "learning", "selfDevelopment"],
       "traits": {
         "growth": 1.0,
         "curiosity": 0.9,

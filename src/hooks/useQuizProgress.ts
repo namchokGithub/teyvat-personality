@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 
 import type { QuizProgressState } from "../types";
+import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
+import { clearQuizResult } from "../utils/quiz-result";
 
-const STORAGE_KEY = "teyvat-quiz-progress-v1";
+const STORAGE_KEY = "teyvat-quiz-progress-v2";
 
 const createInitialState = (): QuizProgressState => {
   const now = new Date().toISOString();
-  return { version: 1, currentQuestionIndex: 0, answers: {}, startedAt: now, updatedAt: now, completedAt: null };
+  return { version: 2, questionVersion: QUESTION_VERSION, algorithmVersion: ALGORITHM_VERSION, currentQuestionIndex: 0, answers: {}, startedAt: now, updatedAt: now, completedAt: null };
 };
 
 function readStoredState(): QuizProgressState | null {
@@ -14,7 +16,7 @@ function readStoredState(): QuizProgressState | null {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const value = JSON.parse(raw) as Partial<QuizProgressState>;
-    if (value.version !== 1 || typeof value.currentQuestionIndex !== "number" || !value.answers) return null;
+    if (value.version !== 2 || value.questionVersion !== QUESTION_VERSION || typeof value.currentQuestionIndex !== "number" || !value.answers) return null;
     return value as QuizProgressState;
   } catch {
     return null;
@@ -42,10 +44,18 @@ export function useQuizProgress() {
   }, []);
 
   const complete = useCallback(() => {
-    setState((value) => ({ ...value, completedAt: new Date().toISOString(), updatedAt: new Date().toISOString() }));
+    setState((value) => {
+      const now = new Date().toISOString();
+      const completed = { ...value, completedAt: now, updatedAt: now };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completed));
+      return completed;
+    });
   }, []);
 
-  const reset = useCallback(() => setState(createInitialState()), []);
+  const reset = useCallback(() => {
+    clearQuizResult();
+    setState(createInitialState());
+  }, []);
 
   return { state, selectAnswer, goToQuestion, complete, reset };
 }

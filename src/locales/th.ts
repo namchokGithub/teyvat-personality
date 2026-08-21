@@ -33,7 +33,7 @@ export const th = {
   cancel: "ยกเลิก",
   confirmReset: "ล้างและเริ่มใหม่",
   matchingTitle: "กำลังค้นหาเสียงสะท้อนของคุณ...",
-  matchingBody: "เรากำลังเตรียม Character Match และ Vision Affinity ตัวอย่าง",
+  matchingBody: "เรากำลังคำนวณ Character Match และ Vision Affinity จากคำตอบของคุณ",
   resultEyebrow: "ตัวละครที่สะท้อนตัวตนของคุณคือ",
   affinity: "ความเข้ากัน",
   sharedTraits: "Trait ที่เหมือนกัน",

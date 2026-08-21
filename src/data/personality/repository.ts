@@ -1,8 +1,12 @@
 import type { CharacterPersonalityProfile } from "../../types";
 import { characterPersonalityProfileSchema } from "../../schemas";
+import { getCharacterIndex } from "../characters/repository";
 
 type ProfileLoader = () => Promise<unknown>;
-const modules = import.meta.glob("./character-personalities/*.json", { import: "default" });
+const modules = import.meta.glob([
+  "./character-personalities/*.json",
+  "!./character-personalities/_*.json",
+], { import: "default" });
 const cache = new Map<string, CharacterPersonalityProfile>();
 
 export async function loadCharacterPersonalityById(id: string | undefined) {
@@ -16,4 +20,9 @@ export async function loadCharacterPersonalityById(id: string | undefined) {
   if (profile.id !== id) return null;
   cache.set(id, profile);
   return profile;
+}
+
+export async function loadAllCharacterPersonalities() {
+  const profiles = await Promise.all(getCharacterIndex().map(({ id }) => loadCharacterPersonalityById(id)));
+  return profiles.filter((profile): profile is CharacterPersonalityProfile => Boolean(profile));
 }

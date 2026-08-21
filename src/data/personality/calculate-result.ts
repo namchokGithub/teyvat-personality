@@ -1,0 +1,112 @@
+import { getCharacterArtwork } from "../characters/artwork";
+import { loadCharacterById } from "../characters/repository";
+import { questions } from "../quiz";
+import { ALGORITHM_VERSION, buildUserPersonalityProfile, QUESTION_VERSION, rankCharacterMatches, rankVisionAffinities } from "../../engine";
+import type { CharacterMatch, DimensionId, LocalizedText, QuizResult, TraitId, VisionMatch } from "../../types";
+import { TRAIT_IDS } from "../../types";
+import type { SharedResultParams } from "../../utils/share-result";
+import { elementProfiles } from "./element-profiles";
+import { loadAllCharacterPersonalities } from "./repository";
+import { resultTitleByDimension, visionInterpretations } from "./result-interpretations";
+import { traitById } from "./traits";
+
+function dominantDimension(dimensions: Record<DimensionId, number>) {
+  return (Object.entries(dimensions) as Array<[DimensionId, number]>).sort((left, right) =>
+    Math.abs(right[1] - 50) - Math.abs(left[1] - 50) || left[0].localeCompare(right[0]),
+  )[0][0];
+}
+
+function traitLabels(ids: TraitId[]): LocalizedText[] {
+  return ids.map((id) => traitById.get(id)?.label).filter((label): label is LocalizedText => Boolean(label));
+}
+
+function characterSummary(name: string, traits: LocalizedText[]): LocalizedText {
+  if (!traits.length) {
+    return {
+      th: `รูปแบบการตัดสินใจและการใช้ชีวิตของคุณมีความใกล้เคียงกับ ${name} มากที่สุด`,
+      en: `Your approach to decisions and daily life is closest to ${name}.`,
+    };
+  }
+  const th = traits.map((trait) => trait.th).join(" และ");
+  const en = traits.map((trait) => trait.en).join(" and ");
+  return {
+    th: `คุณและ ${name} มีลักษณะเด่นร่วมกันด้าน${th} จึงมีรูปแบบบุคลิกที่ใกล้เคียงกัน`,
+    en: `You and ${name} share strengths in ${en}, creating a closely aligned personality pattern.`,
+  };
+}
+
+export async function calculateQuizResult(answers: Record<string, string>): Promise<QuizResult> {
+  const profile = buildUserPersonalityProfile(answers, questions);
+  const personalities = await loadAllCharacterPersonalities();
+  const rankedCharacters = rankCharacterMatches(profile, personalities).slice(0, 4);
+  const rankedVisions = rankVisionAffinities(profile, elementProfiles);
+  const title = resultTitleByDimension[dominantDimension(profile.dimensions)];
+
+  const characterMatches = (await Promise.all(rankedCharacters.map(async (score): Promise<CharacterMatch | null> => {
+    const character = await loadCharacterById(score.characterId);
+    if (!character) return null;
+    const labels = traitLabels(score.matchingTraitIds);
+    return {
+      characterId: character.id,
+      name: character.name,
+      element: character.element ?? "Unknown",
+      region: character.region ?? "Unknown",
+      compatibility: score.compatibility,
+      title,
+      summary: characterSummary(character.name, labels),
+      matchingTraits: labels,
+      matchingTraitIds: score.matchingTraitIds,
+      artworkUrl: getCharacterArtwork(character.id, "full")?.url,
+    };
+  }))).filter((match): match is CharacterMatch => Boolean(match));
+
+  const visionMatches: VisionMatch[] = rankedVisions.map((score) => ({
+    element: score.elementId.charAt(0).toUpperCase() + score.elementId.slice(1),
+    affinity: score.affinity,
+    summary: visionInterpretations[score.elementId]?.summary ?? { th: "ผลลัพธ์นี้เป็นการตีความแบบแฟนเมด", en: "This result is a fan-made interpretation." },
+  }));
+
+  if (!characterMatches.length) throw new Error("No character matches are available");
+  return {
+    version: 1,
+    questionVersion: QUESTION_VERSION,
+    algorithmVersion: ALGORITHM_VERSION,
+    profile,
+    characterMatches,
+    visionMatches,
+    completedAt: new Date().toISOString(),
+  };
+}
+
+export async function loadSharedQuizResult(params: SharedResultParams): Promise<QuizResult | null> {
+  const character = await loadCharacterById(params.characterId);
+  const personality = await (await import("./repository")).loadCharacterPersonalityById(params.characterId);
+  const vision = visionInterpretations[params.visionId];
+  if (!character || !personality || !vision || !elementProfiles.some(({ elementId }) => elementId === params.visionId)) return null;
+  const validTraitIds = params.traitIds.filter((id): id is TraitId => (TRAIT_IDS as readonly string[]).includes(id)).slice(0, 3);
+  const labels = traitLabels(validTraitIds);
+  const primaryCharacter: CharacterMatch = {
+    characterId: character.id,
+    name: character.name,
+    element: character.element ?? "Unknown",
+    region: character.region ?? "Unknown",
+    compatibility: params.compatibility,
+    title: resultTitleByDimension[dominantDimension(personality.personality)],
+    summary: characterSummary(character.name, labels),
+    matchingTraits: labels,
+    matchingTraitIds: validTraitIds,
+    artworkUrl: getCharacterArtwork(character.id, "full")?.url,
+  };
+  return {
+    version: 1,
+    questionVersion: QUESTION_VERSION,
+    algorithmVersion: ALGORITHM_VERSION,
+    profile: {
+      dimensions: personality.personality,
+      traits: Object.fromEntries(TRAIT_IDS.map((id) => [id, personality.traits[id] ?? 0])) as Record<TraitId, number>,
+    },
+    characterMatches: [primaryCharacter],
+    visionMatches: [{ element: params.visionId.charAt(0).toUpperCase() + params.visionId.slice(1), affinity: params.affinity, summary: vision.summary }],
+    completedAt: "",
+  };
+}

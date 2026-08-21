@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { DIMENSION_IDS, TRAIT_IDS, type CharacterPersonalityProfile, type ScoredQuizQuestion, type TraitDefinition } from "../types";
+import { DIMENSION_IDS, TRAIT_IDS, type CharacterPersonalityProfile, type ElementPersonalityProfile, type ScoredQuizQuestion, type TraitDefinition } from "../types";
 
 const knownDimensionIds = new Set<string>(DIMENSION_IDS);
 const knownTraitIds = new Set<string>(TRAIT_IDS);
@@ -56,6 +56,19 @@ export const characterPersonalityProfileSchema = z.object({
   weaknesses: z.array(z.string().min(1)).min(3).max(5),
 });
 
+export const elementPersonalityProfileSchema = z.object({
+  elementId: z.string().min(1),
+  personalityTheme: z.object({
+    primary: traitIdSchema,
+    secondary: z.array(traitIdSchema),
+    traits: z.record(z.string(), z.number().min(0).max(1)).superRefine((value, context) => {
+      for (const key of Object.keys(value)) {
+        if (!knownTraitIds.has(key)) context.addIssue({ code: z.ZodIssueCode.custom, message: `Unknown trait id: ${key}` });
+      }
+    }),
+  }),
+});
+
 function duplicateIds(values: Array<{ id: string }>) {
   const seen = new Set<string>();
   return values.filter(({ id }) => seen.has(id) || !seen.add(id)).map(({ id }) => id);
@@ -72,4 +85,18 @@ export function validateP0QuizData(input: { questions: ScoredQuizQuestion[]; tra
   const duplicates = [...duplicateTraitIds, ...duplicateQuestionIds, ...duplicateProfileIds, ...duplicateAnswerIds];
   if (duplicates.length) throw new Error(`Duplicate dataset identifiers: ${duplicates.join(", ")}`);
   return { questions, traits, profiles };
+}
+
+export function validateElementProfiles(input: unknown): ElementPersonalityProfile[] {
+  const profiles = z.array(elementPersonalityProfileSchema).length(7).parse(input);
+  const duplicateElementIds = duplicateIds(profiles.map(({ elementId }) => ({ id: elementId })));
+  if (duplicateElementIds.length) throw new Error(`Duplicate element identifiers: ${duplicateElementIds.join(", ")}`);
+  for (const profile of profiles) {
+    const traitIds = Object.keys(profile.personalityTheme.traits);
+    if (!traitIds.includes(profile.personalityTheme.primary)) throw new Error(`${profile.elementId} primary trait is missing from weights`);
+    for (const traitId of profile.personalityTheme.secondary) {
+      if (!traitIds.includes(traitId)) throw new Error(`${profile.elementId} secondary trait is missing from weights: ${traitId}`);
+    }
+  }
+  return profiles as ElementPersonalityProfile[];
 }
