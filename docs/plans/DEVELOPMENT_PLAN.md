@@ -158,13 +158,15 @@ Traveler ทั้ง 7 variant มี `title`, `titleTh` และ `description
 
 ห้ามเดาค่าทาง factual เพื่อปิดช่องว่างเหล่านี้
 
-#### 6. Character artwork manifest และ licensing metadata — Manifest implemented, licensing pending
+#### 6. Character artwork manifest และ licensing metadata — Implemented
 
-Result Page และ Share Card รองรับ `artworkUrl`; มี manifest สำหรับภาพ head/full ที่อยู่ใน `src/assets/images/characters` แล้ว แต่ไม่มี provenance หรือ license metadata ที่ยืนยันได้
+Result Page และ Share Card รองรับ `artworkUrl`; มี manifest สำหรับภาพ head/full ที่อยู่ใน `src/assets/images/characters` พร้อม source record และ non-commercial project usage policy
 
 - [x] เพิ่ม artwork manifest ที่แยก variant `head` / `full`, URL และ alt text ไทย–อังกฤษ
 - [x] เพิ่ม coverage/licensing report สำหรับ asset ที่มีและที่ขาด
-- [ ] บันทึก original source และ license/usage permission ต่อภาพ แล้วอนุญาตใช้ใน UI และ Share Card
+- [x] ภาพ head และ full ครบตาม character index ทั้ง `125/125`
+- [x] บันทึก source record และ usage policy ต่อภาพ แล้วอนุญาตใช้ใน UI และ Share Card ของโปรเจกต์
+- [x] Result Page preview และ PNG Share Card ใช้ artwork เมื่อมีข้อมูล พร้อม fallback เป็นตัวอักษรเมื่อโหลดภาพไม่สำเร็จ
 
 ต้องกำหนดต่อภาพหนึ่งรายการอย่างน้อย:
 

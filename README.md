@@ -113,7 +113,7 @@ Please review and respect the licenses and attribution requirements of these ups
 
 ## Image credits
 
-Character images are sourced from official [Genshin Impact](https://genshin.hoyoverse.com/en/) materials and are referenced alongside the character data from [theBowja/genshin-db](https://github.com/theBowja/genshin-db) and [MadeBaruna/paimon-moe](https://github.com/MadeBaruna/paimon-moe). All related artwork, characters, and trademarks remain the property of HoYoverse and their respective owners.
+The artwork manifest records a per-image source and project usage policy. 248 head/full character images exactly match [MadeBaruna/paimon-moe](https://github.com/MadeBaruna/paimon-moe/tree/main/static/images/characters); the Traveler Cryo head/full images were provided by the project maintainer. They may be displayed in this non-commercial fan project's UI and generated Share Cards with attribution and this disclaimer. They may not be relicensed or redistributed as standalone assets. Genshin Impact game content, artwork, characters, and trademarks remain the property of HoYoverse and their respective owners. See the [artwork manifest report](src/data/characters/_artwork-manifest-report.md) and HoYoverse's [fan-made content guidance](https://support.hoyoverse.com/hc/en-us/articles/51005649400729-What-are-the-guidelines-for-creating-and-selling-fan-made-content).
 
 ## Disclaimer
 

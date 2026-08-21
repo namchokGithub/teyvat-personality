@@ -8,9 +8,7 @@ export function CharacterResultCard({ character, locale }: { character: Characte
     <article className="result-card">
       <div className="result-portrait" aria-hidden="true">
         {character.artworkUrl && <img src={character.artworkUrl} alt="" loading="lazy" />}
-        <span className="result-portrait__halo" />
-        <Leaf size={72} strokeWidth={1.1} />
-        <span className="result-portrait__initial">N</span>
+        {!character.artworkUrl && <><span className="result-portrait__halo" /><Leaf size={72} strokeWidth={1.1} /><span className="result-portrait__initial">N</span></>}
       </div>
       <div className="result-card__content">
         <div className="result-card__badges"><ElementBadge element={character.element} /><span className="region-badge">{character.region}</span></div>

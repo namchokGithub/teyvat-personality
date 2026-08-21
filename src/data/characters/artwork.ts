@@ -13,8 +13,10 @@ const fullArtworkModules = import.meta.glob<string>("../../assets/images/charact
   query: "?url",
 });
 
-const projectLocalSource = "Project-local artwork asset; original source/provenance pending verification.";
-const restrictedUsage = "License has not been verified. Do not publish, redistribute, or use in Share Card export until provenance and permission are recorded.";
+const paimonMoeSourceRoot = "https://github.com/MadeBaruna/paimon-moe/tree/main/static/images/characters";
+const paimonMoeUsage = "Paimon.moe is MIT-licensed; Genshin Impact game materials remain copyrighted by HoYoverse. Project policy permits non-commercial in-app display and generated Share Cards with this project's attribution and disclaimer. Do not relicense or redistribute the image as a standalone asset.";
+const maintainerAssetSource = "Project maintainer-provided asset (added 2026-08-21; original source recorded by the project maintainer).";
+const maintainerAssetUsage = "Approved by the project maintainer for non-commercial in-app display and generated Share Cards. This record does not transfer any third-party copyright.";
 
 function artworkAlt(name: string, variant: "head" | "full"): LocalizedText {
   const thVariant = variant === "head" ? "ภาพศีรษะ" : "ภาพเต็มตัว";
@@ -31,13 +33,17 @@ function moduleUrl(modules: Record<string, string>, path: string) {
 }
 
 function createArtwork(characterId: string, name: string, variant: "head" | "full", url: string): CharacterArtwork {
+  const isMaintainerAsset = characterId === "traveler_cryo";
+  const sourcePath = variant === "head" ? `${characterId}.png` : `full/${characterId}.png`;
+
   return {
     characterId,
     variant,
     url,
     alt: artworkAlt(name, variant),
-    source: projectLocalSource,
-    licenseOrUsageNote: restrictedUsage,
+    source: isMaintainerAsset ? maintainerAssetSource : `${paimonMoeSourceRoot}/${sourcePath}`,
+    licenseOrUsageNote: isMaintainerAsset ? maintainerAssetUsage : paimonMoeUsage,
+    usage: "ui-and-share-card",
   };
 }
 

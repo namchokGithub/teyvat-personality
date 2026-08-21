@@ -103,6 +103,7 @@ export interface CharacterSummary {
 }
 
 export type ArtworkVariant = "head" | "full";
+export type ArtworkUsage = "ui-and-share-card";
 
 export interface CharacterArtwork {
   characterId: string;
@@ -111,4 +112,5 @@ export interface CharacterArtwork {
   alt: LocalizedText;
   source: string;
   licenseOrUsageNote: string;
+  usage: ArtworkUsage;
 }

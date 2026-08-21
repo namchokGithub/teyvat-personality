@@ -16,7 +16,7 @@ export const th = {
   visionTitle: "Vision Affinity ของคุณ", tryAgain: "ทำแบบทดสอบใหม่", share: "แชร์ผลลัพธ์",
   shareTitle: "แชร์เสียงสะท้อนของคุณ", shareBody: "ส่งผลลัพธ์เป็นลิงก์ ข้อความ หรือดาวน์โหลดการ์ดตัวอย่าง", shareDevice: "แชร์ผ่านอุปกรณ์", copyLink: "คัดลอกลิงก์", copySummary: "คัดลอกข้อความ", downloadCard: "ดาวน์โหลดการ์ด", close: "ปิด",
   copiedLink: "คัดลอกลิงก์แล้ว", copiedSummary: "คัดลอกข้อความแล้ว", shared: "เปิดเมนูแชร์แล้ว", downloaded: "ดาวน์โหลดการ์ดแล้ว", error: "ไม่สามารถทำรายการได้ กรุณาลองอีกครั้ง",
-  sharePreview: "ตัวอย่างการ์ดผลลัพธ์", shareSvgNotice: "Prototype นี้ดาวน์โหลดเป็น PNG ขนาด 1080 × 1080 โดยยังใช้ภาพตัวอักษร placeholder",
+  sharePreview: "ตัวอย่างการ์ดผลลัพธ์", shareSvgNotice: "Prototype นี้ดาวน์โหลดเป็น PNG ขนาด 1080 × 1080 และใช้ภาพตัวละครของผลลัพธ์เมื่อมีข้อมูล",
   invalidResult: "ลิงก์ผลลัพธ์ไม่ถูกต้อง", invalidResultBody: "ไม่พบ Character Match หรือ Vision Affinity ที่ระบุในลิงก์นี้ อาจเป็นลิงก์เก่าหรือข้อมูลยังไม่พร้อม", viewPreview: "ดูผลลัพธ์ตัวอย่าง", sharedResultNotice: "กำลังแสดงผลลัพธ์จากลิงก์ที่แชร์",
   mockNotice: "หน้าตัวอย่าง UI · ผลลัพธ์นี้ยังไม่ได้คำนวณจาก Matching Engine", disclaimer: "แฟนโปรเจกต์เพื่อความบันเทิง ไม่เกี่ยวข้องหรือได้รับการรับรองจาก HoYoverse",
   notFoundBody: "เส้นทางนี้อยู่นอกแผนที่ Teyvat", returnHome: "กลับหน้าหลัก",

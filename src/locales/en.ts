@@ -18,7 +18,7 @@ export const en: Record<keyof typeof th, string> = {
   visionTitle: "Your Vision Affinity", tryAgain: "Take it again", share: "Share result",
   shareTitle: "Share your echo", shareBody: "Send your result as a link or text, or download the prototype card.", shareDevice: "Share from device", copyLink: "Copy link", copySummary: "Copy summary", downloadCard: "Download card", close: "Close",
   copiedLink: "Link copied", copiedSummary: "Summary copied", shared: "Share menu opened", downloaded: "Card downloaded", error: "That action did not work. Please try again.",
-  sharePreview: "Result card preview", shareSvgNotice: "This prototype downloads a 1080 × 1080 PNG and still uses a letter placeholder for character artwork.",
+  sharePreview: "Result card preview", shareSvgNotice: "This prototype downloads a 1080 × 1080 PNG and uses the result's artwork when available.",
   invalidResult: "This result link is invalid", invalidResultBody: "The Character Match or Vision Affinity in this link is unavailable. The link may be outdated or the result data may not be ready.", viewPreview: "View the sample result", sharedResultNotice: "Showing a result opened from a shared link",
   mockNotice: "UI preview · This result is not yet calculated by the Matching Engine", disclaimer: "An entertainment fan project. Not affiliated with or endorsed by HoYoverse.",
   notFoundBody: "This path has wandered beyond Teyvat.", returnHome: "Return home",

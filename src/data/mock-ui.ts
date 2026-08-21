@@ -1,4 +1,5 @@
 import type { CharacterMatch, QuizQuestion, VisionMatch } from "../types";
+import { getCharacterArtwork } from "./characters/artwork";
 
 const placeholderPrompt = {
   th: "เมื่อแผนที่วางไว้เปลี่ยนกะทันหัน คุณมักจะทำอย่างไร?",
@@ -50,6 +51,7 @@ export const mockCharacter: CharacterMatch = {
     { th: "เห็นอกเห็นใจ", en: "Empathetic" },
     { th: "ใฝ่รู้", en: "Curious" },
   ],
+  artworkUrl: getCharacterArtwork("nahida", "head")?.url,
 };
 
 export const mockVision: VisionMatch = {

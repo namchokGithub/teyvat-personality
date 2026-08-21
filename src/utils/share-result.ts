@@ -61,7 +61,8 @@ export async function downloadShareCard(character: CharacterMatch, vision: Visio
   panel.addColorStop(0, "#76976d"); panel.addColorStop(1, "#365a58");
   context.fillStyle = panel; context.beginPath(); context.roundRect(110, 110, 390, 860, 38); context.fill();
   context.strokeStyle = "rgba(255,255,255,.25)"; context.lineWidth = 3; context.beginPath(); context.arc(305, 385, 142, 0, Math.PI * 2); context.stroke();
-  context.fillStyle = "#ffffff"; context.font = "270px Georgia, serif"; context.textAlign = "center"; context.fillText(character.name.charAt(0), 305, 475);
+  const artworkDrawn = character.artworkUrl ? await drawArtwork(context, character.artworkUrl, 110, 110, 390, 860) : false;
+  if (!artworkDrawn) { context.fillStyle = "#ffffff"; context.font = "270px Georgia, serif"; context.textAlign = "center"; context.fillText(character.name.charAt(0), 305, 475); }
   context.textAlign = "left"; context.fillStyle = "#b49454"; context.font = "700 24px Arial, sans-serif"; context.fillText("TEYVAT PERSONALITIES", 555, 170);
   context.fillStyle = "#252a32"; context.font = "92px Georgia, serif"; context.fillText(character.name, 555, 290, 400);
   context.fillStyle = "#b49454"; context.font = '30px "Noto Sans Thai", Arial, sans-serif'; context.fillText(character.title[locale], 555, 345, 400);
@@ -71,7 +72,8 @@ export async function downloadShareCard(character: CharacterMatch, vision: Visio
   context.fillStyle = "#252a32"; context.font = "48px Georgia, serif"; context.fillText(`${vision.element} Vision`, 555, 610, 400);
   context.fillStyle = "#78944a"; context.font = "700 30px Arial, sans-serif"; context.fillText(`${vision.affinity}% AFFINITY`, 555, 656);
   context.fillStyle = "#737b88"; context.font = '23px "Noto Sans Thai", Arial, sans-serif'; context.fillText(character.matchingTraits.slice(0, 3).map((trait) => trait[locale]).join(" · "), 555, 755, 400);
-  context.font = "20px Arial, sans-serif"; context.fillText("teyvat-personality · fan project", 555, 910);
+  context.font = "20px Arial, sans-serif"; context.fillText("teyvat-personality · fan project", 555, 900);
+  if (artworkDrawn) context.fillText("Genshin Impact artwork © HoYoverse", 555, 935);
 
   const blob = await new Promise<Blob>((resolve, reject) => canvas.toBlob((value) => value ? resolve(value) : reject(new Error("PNG export failed")), "image/png"));
   const url = URL.createObjectURL(blob);
@@ -80,4 +82,15 @@ export async function downloadShareCard(character: CharacterMatch, vision: Visio
   anchor.download = `teyvat-personality-${character.characterId}.png`;
   anchor.click();
   window.setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+async function drawArtwork(context: CanvasRenderingContext2D, url: string, x: number, y: number, width: number, height: number) {
+  const image = new Image();
+  image.src = url;
+  try { await image.decode(); } catch { return false; }
+  const scale = Math.max(width / image.width, height / image.height);
+  const drawWidth = image.width * scale;
+  const drawHeight = image.height * scale;
+  context.save(); context.beginPath(); context.roundRect(x, y, width, height, 38); context.clip(); context.drawImage(image, x + (width - drawWidth) / 2, y + (height - drawHeight) / 2, drawWidth, drawHeight); context.restore();
+  return true;
 }
