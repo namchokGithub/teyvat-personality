@@ -1,20 +1,19 @@
-- กดออกแบบทดสอบเกิน 5 นาที เริ่มใหม่
-- มีปุ่มเริ่มใหม่
-- เปลี่ยน font เป็น Prompt
-- หน้าดูข้อมูลตัวละคร ไม่มีรูป ให้เอารูป Full มา
-- เปลี่ยน Text footer By Lesser Lord Kusanali @ 2026
-- หน้า result และดูตัวละคร เพิ่มรูปไอคอนสำหรับชื่อเมืองและธาตุ
-- แชร์ผลลัพธ์
-  - ลิงก์ที่แชร์ /#/result?character=kaedehara_kazuha&vision=anemo&compatibility=83&affinity=34&traits=sensitivity เปลี่ยน path เพราะคิดว่าใครๆก็แก้ได้
-  - ลิงก์ที่แชร์เอา กำลังแสดงผลลัพธ์จากลิงก์ที่แชร์ และ ตัวละครที่สะท้อนตัวตนของคุณคือ ออก
-  - ลิงก์ที่แชร์ เอาปุ่มแชร์ต่อ และอื่นๆ ออก เอาไว้แต่เริ่มทำบททดสอบ
-  - เอาคัดลอกข้อความออก
-  - (อนาคต) เพิ่มปุ่มแชร์ Social
-  - การ์ดที่แสดง เพิ่มรายละเอียด
-  - สีการ์ดหรือผลลัพธ์อิงตามแต่ละธาตุ
-  - ตอนโหลดการ์ด ปรับที่มาให้เล็กลง และใส่ Credit ให้ Hoyo ใส่ qr ไปหน้าโหลดเกม
-- ก่อนเริ่มทำบททดสอบ สร้างหน้าลงชื่อเหมือนคล้ายๆในเกม
-- หน้าตัวละครยังไม่มีรูป
-- เอา menu ตัวอย่างผลลัพธ์ออก หน้า home ด้วย
-- ปรับโลโก้เป็น Paimon
-- Responsive
+- random คำถามและคำตอบ
+- ปิด copy text สำหรับหน้าทำแบบทดสอบ
+- Trait ที่เหมือนกัน ไม่อยากได้ค่าว่าง หาสูตรเพื่อให้ได้ที่ใกล้เคียง
+- ยัง shared-result แต่ปรับปรุง URL ให้ทำเป็นหน้าใหม่
+- footer มีสองภาษา
+  - Fan-made เพื่อความบันเทิงเท่านั้น ไม่เกี่ยวข้อง ไม่ได้รับการสนับสนุน หรือรับรองโดย HoYoverse By Lesser Lord Kusanali © 2026
+  - A fan-made project for entertainment purposes only. Not affiliated with, sponsored by, or endorsed by HoYoverse. By Lesser Lord Kusanali © 2026
+- ถ้าทำเสร็จให้ Reset เวลา ถ้าไปกดเมนูบททดสอบให้เคลียของเดิม
+- font ของระบบ
+  - ภาษาไทย
+    - [fonts.google.com/specimen/Mitr](https://fonts.google.com/specimen/Mitr) พื้นฐานระบบ
+    - [fonts.google.com/specimen/Anuphan](https://fonts.google.com/specimen/Anuphan) เนื้อหาและคำถาม
+    - [fonts.google.com/specimen/Thasadith](https://fonts.google.com/specimen/Thasadith) คำบรรยาย
+  - อังกฤษ
+    - [fonts.google.com/specimen/Marcellus](https://fonts.google.com/specimen/Marcellus) ชื่อหน้า ชื่อตัวละคร พื้นฐานระบบ
+    - [fonts.google.com/specimen/Jost](https://fonts.google.com/specimen/Jost) UI ภาษาอังกฤษ ปุ่ม และคำถาม
+    - [fonts.google.com/specimen/Cinzel](https://fonts.google.com/specimen/Cinzel) หัวข้อแฟนตาซี
+- การ์ด Vision Affinity ของคุณปรับสีให้เขาโทน element ด้วย
+- รูป element เอาจาก src\assets\images\elements

@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, PropsWithChildren } from "react";
-import { Languages, Sparkles } from "lucide-react";
+import { Languages, MapPin, Sparkles } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 import { t } from "../../i18n";
@@ -32,7 +32,6 @@ export function AppHeader({ locale, onToggleLocale }: { locale: Locale; onToggle
         <nav className="app-nav" aria-label="Primary navigation">
           <NavLink to="/quiz">{t(locale, "navQuiz")}</NavLink>
           <NavLink to="/characters">{t(locale, "navCharacters")}</NavLink>
-          <NavLink to="/result">{t(locale, "navResult")}</NavLink>
           <Button variant="ghost" onClick={onToggleLocale} aria-label="Change language">
             <Languages size={16} /> {t(locale, "language")}
           </Button>
@@ -42,14 +41,21 @@ export function AppHeader({ locale, onToggleLocale }: { locale: Locale; onToggle
   );
 }
 
-export function AppFooter({ locale }: { locale: Locale }) {
+export function AppFooter() {
   return (
     <footer className="app-footer">
-      <PageContainer><p>{t(locale, "disclaimer")}</p></PageContainer>
+      <PageContainer>
+        <p>Fan-made เพื่อความบันเทิงเท่านั้น ไม่เกี่ยวข้อง ไม่ได้รับการสนับสนุน หรือรับรองโดย HoYoverse By Lesser Lord Kusanali © 2026</p>
+        <p>A fan-made project for entertainment purposes only. Not affiliated with, sponsored by, or endorsed by HoYoverse. By Lesser Lord Kusanali © 2026</p>
+      </PageContainer>
     </footer>
   );
 }
 
 export function ElementBadge({ element }: { element: string }) {
-  return <span className={`element-badge element-badge--${element.toLowerCase()}`}>{element}</span>;
+  return <span className={`element-badge element-badge--${element.toLowerCase()}`}><Sparkles size={13} aria-hidden="true" />{element}</span>;
+}
+
+export function RegionBadge({ region }: { region: string }) {
+  return <span className="region-badge"><MapPin size={13} aria-hidden="true" />{region}</span>;
 }

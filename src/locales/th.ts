@@ -12,6 +12,11 @@ export const th = {
   start: "เริ่มทำแบบทดสอบ",
   resume: "ทำแบบทดสอบต่อ",
   preview: "ดูตัวอย่างผลลัพธ์",
+  nameTitle: "นักเดินทาง มีนามว่าอะไร?",
+  nameBody: "ชื่อนี้ใช้สำหรับประสบการณ์ในอุปกรณ์ของคุณเท่านั้น และไม่ส่งออกไปที่ใด",
+  nameLabel: "ชื่อของคุณ",
+  namePlaceholder: "ใส่ชื่อ หรือเว้นว่างไว้ก็ได้",
+  confirmName: "เริ่มการเดินทาง",
   meta: "ประมาณ 3–5 นาที · ไม่มีคำตอบที่ถูกหรือผิด",
   featureCharacter: "Character Match",
   featureCharacterBody:

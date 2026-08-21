@@ -30,7 +30,7 @@ export function App() {
           <Route path="*" element={<NotFoundPage locale={locale} />} />
         </Routes>
       </div>
-      <AppFooter locale={locale} />
+      <AppFooter />
     </div>
   );
 }

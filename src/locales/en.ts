@@ -4,6 +4,7 @@ export const en: Record<keyof typeof th, string> = {
   brand: "Teyvat Personalities", navQuiz: "Quiz", navCharacters: "Characters", navResult: "Result preview", language: "ไทย", skipContent: "Skip to main content",
   eyebrow: "Find your echo in Teyvat", heroTitle: "Which character shares your way of seeing the world?", heroBody: "Answer 24 situational questions to discover the Character Match and Vision Affinity that reflect how you think.",
   start: "Start the quiz", resume: "Resume quiz", preview: "Preview a result", meta: "About 3–5 minutes · No right or wrong answers",
+  nameTitle: "Traveler, what is your name?", nameBody: "This name stays on this device and is only used for your quiz experience.", nameLabel: "Your name", namePlaceholder: "Enter a name, or leave it blank", confirmName: "Begin the journey",
   featureCharacter: "Character Match", featureCharacterBody: "Compare your personality profile with a deliberately diverse cast of characters.",
   featureVision: "Vision Affinity", featureVisionBody: "Discover the element aligned with your motivations and worldview, calculated separately from your character.",
   featureShare: "A result with a story", featureShareBody: "See the traits behind your match and a result card designed for sharing.",

@@ -5,6 +5,7 @@ import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
 import { clearQuizResult } from "../utils/quiz-result";
 
 const STORAGE_KEY = "teyvat-quiz-progress-v2";
+const QUIZ_IDLE_TIMEOUT_MS = 5 * 60 * 1000;
 
 const createInitialState = (): QuizProgressState => {
   const now = new Date().toISOString();
@@ -17,6 +18,10 @@ function readStoredState(): QuizProgressState | null {
     if (!raw) return null;
     const value = JSON.parse(raw) as Partial<QuizProgressState>;
     if (value.version !== 2 || value.questionVersion !== QUESTION_VERSION || typeof value.currentQuestionIndex !== "number" || !value.answers) return null;
+    if (!value.completedAt && (!value.updatedAt || Date.now() - Date.parse(value.updatedAt) > QUIZ_IDLE_TIMEOUT_MS)) {
+      localStorage.removeItem(STORAGE_KEY);
+      return null;
+    }
     return value as QuizProgressState;
   } catch {
     return null;

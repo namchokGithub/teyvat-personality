@@ -78,24 +78,25 @@ export async function downloadShareCard(character: CharacterMatch, vision: Visio
   const context = canvas.getContext("2d");
   if (!context) throw new Error("Canvas is unavailable");
 
+  const palette = elementPalette(vision.element);
   const background = context.createLinearGradient(0, 0, 1080, 1080);
-  background.addColorStop(0, "#edf4ee"); background.addColorStop(1, "#dce7ef");
+  background.addColorStop(0, palette.light); background.addColorStop(1, palette.pale);
   context.fillStyle = background; context.fillRect(0, 0, 1080, 1080);
   context.fillStyle = "#ffffff"; context.beginPath(); context.roundRect(70, 70, 940, 940, 54); context.fill();
   const panel = context.createLinearGradient(110, 110, 500, 970);
-  panel.addColorStop(0, "#76976d"); panel.addColorStop(1, "#365a58");
+  panel.addColorStop(0, palette.primary); panel.addColorStop(1, palette.deep);
   context.fillStyle = panel; context.beginPath(); context.roundRect(110, 110, 390, 860, 38); context.fill();
   context.strokeStyle = "rgba(255,255,255,.25)"; context.lineWidth = 3; context.beginPath(); context.arc(305, 385, 142, 0, Math.PI * 2); context.stroke();
   const artworkDrawn = character.artworkUrl ? await drawArtwork(context, character.artworkUrl, 110, 110, 390, 860) : false;
   if (!artworkDrawn) { context.fillStyle = "#ffffff"; context.font = "270px Georgia, serif"; context.textAlign = "center"; context.fillText(character.name.charAt(0), 305, 475); }
-  context.textAlign = "left"; context.fillStyle = "#b49454"; context.font = "700 24px Arial, sans-serif"; context.fillText("TEYVAT PERSONALITIES", 555, 170);
+  context.textAlign = "left"; context.fillStyle = palette.accent; context.font = "700 24px Arial, sans-serif"; context.fillText("TEYVAT PERSONALITIES", 555, 170);
   context.fillStyle = "#252a32"; context.font = "92px Georgia, serif"; context.fillText(character.name, 555, 290, 400);
-  context.fillStyle = "#b49454"; context.font = '30px "Noto Sans Thai", Arial, sans-serif'; context.fillText(character.title[locale], 555, 345, 400);
-  context.fillStyle = "#3e5778"; context.font = "700 72px Arial, sans-serif"; context.fillText(`${character.compatibility}%`, 555, 445);
+  context.fillStyle = palette.accent; context.font = '30px "Noto Sans Thai", Arial, sans-serif'; context.fillText(character.title[locale], 555, 345, 400);
+  context.fillStyle = palette.deep; context.font = "700 72px Arial, sans-serif"; context.fillText(`${character.compatibility}%`, 555, 445);
   context.fillStyle = "#737b88"; context.font = "22px Arial, sans-serif"; context.fillText("CHARACTER MATCH", 555, 482);
   context.strokeStyle = "#dfe5e8"; context.lineWidth = 2; context.beginPath(); context.moveTo(555, 535); context.lineTo(930, 535); context.stroke();
   context.fillStyle = "#252a32"; context.font = "48px Georgia, serif"; context.fillText(`${vision.element} Vision`, 555, 610, 400);
-  context.fillStyle = "#78944a"; context.font = "700 30px Arial, sans-serif"; context.fillText(`${vision.affinity}% AFFINITY`, 555, 656);
+  context.fillStyle = palette.primary; context.font = "700 30px Arial, sans-serif"; context.fillText(`${vision.affinity}% AFFINITY`, 555, 656);
   context.fillStyle = "#737b88"; context.font = '23px "Noto Sans Thai", Arial, sans-serif'; context.fillText(character.matchingTraits.slice(0, 3).map((trait) => trait[locale]).join(" · "), 555, 755, 400);
   context.font = "20px Arial, sans-serif"; context.fillText("teyvat-personality · fan project", 555, 900);
   if (artworkDrawn) context.fillText("Genshin Impact artwork © HoYoverse", 555, 935);
@@ -107,6 +108,19 @@ export async function downloadShareCard(character: CharacterMatch, vision: Visio
   anchor.download = `teyvat-personality-${character.characterId}.png`;
   anchor.click();
   window.setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+function elementPalette(element: string) {
+  const palettes: Record<string, { light: string; pale: string; primary: string; deep: string; accent: string }> = {
+    pyro: { light: "#fff0e9", pale: "#f9d7c6", primary: "#df7651", deep: "#a73f36", accent: "#b7553d" },
+    hydro: { light: "#eaf7ff", pale: "#cfe8f6", primary: "#66aecd", deep: "#2f719e", accent: "#3d86ad" },
+    anemo: { light: "#e7f8f3", pale: "#cdebe3", primary: "#66b9a8", deep: "#347b72", accent: "#438d81" },
+    electro: { light: "#f4ecfc", pale: "#e4d4f2", primary: "#a87aca", deep: "#704697", accent: "#8355aa" },
+    dendro: { light: "#edf5e2", pale: "#dce9c5", primary: "#78944a", deep: "#547554", accent: "#6e853e" },
+    cryo: { light: "#e8f9fb", pale: "#caebef", primary: "#68bdc9", deep: "#287e93", accent: "#3b92a4" },
+    geo: { light: "#fbf4df", pale: "#f0dfac", primary: "#c39c48", deep: "#95702d", accent: "#a88336" },
+  };
+  return palettes[element.toLowerCase()] ?? palettes.dendro;
 }
 
 async function drawArtwork(context: CanvasRenderingContext2D, url: string, x: number, y: number, width: number, height: number) {
