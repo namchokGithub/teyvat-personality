@@ -215,6 +215,8 @@ Character master data represents factual game information.
 
 A **dynamic factual field** is a fact controlled by the player's in-game choice rather than one canonical character value. Store it as `null` rather than choosing an arbitrary variant, and document why in the missing-data report. Traveler `birthday` and `gender` are dynamic factual fields.
 
+Character artwork is presentation data, not factual character data. Keep image paths, localized alt text, provenance, and usage status in the artwork manifest; an asset with unverified rights is unavailable for publishing and Share Card export.
+
 Do not place personality scores directly inside `data/characters/_characters.json` or the per-character factual files. Lore/research evidence belongs in `data/lore/`; interpreted personality profiles belong in `data/personality/`.
 
 ---

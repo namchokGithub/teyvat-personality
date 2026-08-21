@@ -101,3 +101,14 @@ export interface CharacterSummary {
   element: string | null;
   rarity: number | null;
 }
+
+export type ArtworkVariant = "head" | "full";
+
+export interface CharacterArtwork {
+  characterId: string;
+  variant: ArtworkVariant;
+  url: string;
+  alt: LocalizedText;
+  source: string;
+  licenseOrUsageNote: string;
+}
