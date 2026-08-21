@@ -51,7 +51,7 @@ export const mockCharacter: CharacterMatch = {
     { th: "เห็นอกเห็นใจ", en: "Empathetic" },
     { th: "ใฝ่รู้", en: "Curious" },
   ],
-  artworkUrl: getCharacterArtwork("nahida", "head")?.url,
+  artworkUrl: getCharacterArtwork("nahida", "full")?.url,
 };
 
 export const mockVision: VisionMatch = {
