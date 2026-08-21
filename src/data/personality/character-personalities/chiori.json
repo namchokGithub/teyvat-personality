@@ -1,0 +1,28 @@
+{
+  "id": "chiori",
+  "personality": {
+    "social": 50,
+    "decision": 60,
+    "lifestyle": 50,
+    "adventure": 65,
+    "responsibility": 50,
+    "expression": 50
+  },
+  "traits": {
+    "resolve": 1,
+    "stability": 0.9,
+    "perseverance": 0.8,
+    "discipline": 0.7,
+    "reliability": 0.8
+  },
+  "strengths": [
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

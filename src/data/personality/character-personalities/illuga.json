@@ -1,0 +1,28 @@
+{
+  "id": "illuga",
+  "personality": {
+    "social": 50,
+    "decision": 45,
+    "lifestyle": 50,
+    "adventure": 60,
+    "responsibility": 65,
+    "expression": 50
+  },
+  "traits": {
+    "resolve": 1,
+    "stability": 0.9,
+    "perseverance": 0.8,
+    "discipline": 0.7,
+    "reliability": 0.8
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "รับความเสี่ยงมากเกินไป",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

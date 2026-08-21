@@ -61,6 +61,143 @@
 
 ผลลัพธ์ที่แสดงในหน้า prototype เป็น mock result และต้องมีข้อความกำกับจนกว่าจะเชื่อม Engine จริง
 
+## Data Gaps After Character Personality Completion
+
+> สมมติว่า Character Personality Profiles ครบทุกตัวละครแล้ว ส่วนนี้ระบุข้อมูลและ data contract ที่ยังต้องมีเพื่อให้ Quiz คำนวณผลจริงได้ โดยไม่รวมงาน UI prototype ที่ทำเสร็จแล้ว
+
+### P0 — Data blockers สำหรับ Quiz จริง
+
+#### 1. Canonical character index
+
+ต้องมี character index เพียงแหล่งเดียวที่ repository, เอกสาร และ importer ใช้อ้างอิงตรงกัน
+
+- ปัจจุบันข้อมูลรายตัวละครและ lore ครอบคลุม `125` id แต่ชื่อ index ที่ใช้ไม่สอดคล้องกัน: repository และเอกสารบางส่วนอ้าง `src/data/characters/characters.json` ขณะที่ dataset ปัจจุบันใช้ `src/data/characters/_characters.json`
+- ต้องเลือกชื่อ canonical หนึ่งชื่อ, ปรับ import และเอกสารให้ตรงกัน, และ validate ว่า factual character, lore และ character personality profile มี id ชุดเดียวกัน
+- index ต้องเก็บอย่างน้อย `{ id, name }` และไม่ควรมี id ซ้ำ
+
+#### 2. Situational question dataset พร้อม score mapping
+
+ต้องแทนที่ mock questions ด้วยข้อมูลจริงจำนวน `24` ข้อ โดยแต่ละข้อมี:
+
+```ts
+interface ScoredQuizQuestion {
+  id: string;
+  prompt: { th: string; en: string };
+  answers: Array<{
+    id: string;
+    label: { th: string; en: string };
+    scores: {
+      dimensions: Partial<Record<DimensionId, number>>;
+      traits: Partial<Record<TraitId, number>>;
+    };
+  }>;
+}
+```
+
+ข้อกำหนดข้อมูล:
+
+- คำถามต้องเป็นสถานการณ์ ไม่ถามบุคลิกตรง ๆ
+- แต่ละคำตอบปรับได้หลาย dimension และ trait
+- ครอบคลุมทั้ง 6 dimensions อย่างสมดุล (เป้าหมายเริ่มต้นประมาณ 4 ข้อต่อ dimension)
+- ต้องมีทั้งภาษาไทยและอังกฤษ โดยเก็บคำตอบด้วย id เพื่อสลับภาษาได้โดยคะแนนไม่เปลี่ยน
+- ต้องตรวจว่าทุก `DimensionId` และ `TraitId` ที่อ้างถึงมีอยู่จริง
+
+#### 3. Trait catalog สำหรับผลลัพธ์และ localization
+
+ต้องมี registry กลางของ trait ที่เป็น canonical เพื่อเชื่อมสามส่วนเข้าด้วยกัน: คำถาม, character profiles และ element profiles
+
+```ts
+interface TraitDefinition {
+  id: string;
+  label: { th: string; en: string };
+  description?: { th: string; en: string };
+}
+```
+
+อย่างน้อยต้องครอบคลุม trait ใน `element-personalities.json` และ trait ที่ character profiles ใช้จริง เช่น `ideals`, `selfExpression`, `selfDevelopment`, `reliability` และ `curiosity` เพื่อให้แสดง Matching Traits เป็นสองภาษาได้อย่างสม่ำเสมอ
+
+#### 4. Result interpretation content
+
+profile คะแนนอย่างเดียวบอกอันดับได้ แต่ยังไม่เพียงพอสำหรับหน้าผลลัพธ์ที่อธิบายเหตุผลของ match ตาม Product Direction
+
+ต้องกำหนดข้อมูลหรือ template ที่ให้ผลลัพธ์สร้าง:
+
+- Character Match explanation ภาษาไทย/อังกฤษ โดยอิง dimensions และ matching traits ที่สูงสุด
+- Vision Affinity explanation สำหรับทั้ง 7 ธาตุ
+- ชื่อผลลัพธ์ (result title) และ fallback เมื่อไม่มีข้อความเฉพาะตัวละคร
+- labels สำหรับ matching traits และ different traits
+
+ข้อความตีความต้องอยู่แยกจาก Character Master Data และต้องระบุว่าเป็น fan-made interpretation
+
+### P1 — Data quality และ presentation data
+
+#### 5. Factual character fields ที่ยังไม่มีค่า
+
+ค่าที่เป็น `null` ต้องมี fallback ใน UI และอยู่ใน missing-data report จนกว่าจะมีแหล่งอ้างอิงที่เชื่อถือได้:
+
+| Field | Characters |
+| --- | --- |
+| `region` | Aloy, Nicole, Skirk |
+| `title`, `titleTh`, `descriptionTh`, `birthday`, `gender` | Traveler ทั้ง 7 variant |
+
+ห้ามเดาค่าทาง factual เพื่อปิดช่องว่างเหล่านี้
+
+#### 6. Character artwork manifest และ licensing metadata
+
+Result Page และ Share Card รองรับ `artworkUrl` แต่ข้อมูลตัวละครยังไม่มี artwork manifest
+
+ต้องกำหนดต่อภาพหนึ่งรายการอย่างน้อย:
+
+```ts
+interface CharacterArtwork {
+  characterId: string;
+  url: string;
+  alt: { th: string; en: string };
+  source: string;
+  licenseOrUsageNote: string;
+}
+```
+
+ก่อนเพิ่มภาพจริง ต้องยืนยัน source, สิทธิ์การใช้, fallback เมื่อภาพหาย และความเหมาะสมของภาพสำหรับ Share Card ขนาด `1080 × 1080`
+
+#### 7. Dataset validation report
+
+ต้องมี script/report แบบ read-only ที่ตรวจอย่างน้อย:
+
+- JSON และ schema ของ factual character, lore, character profile, element profile และ questions
+- id coverage ระหว่าง index, factual data, lore และ profiles
+- ช่วงคะแนน personality (`0–100`) และ trait weight (`0–1`)
+- trait references และ element references ที่ไม่รู้จัก
+- key localization ที่ขาดใน TH/EN
+- duplicate id, duplicate question id และ duplicate answer id
+
+### Data-definition decisions ที่ต้องล็อกก่อนเชื่อม Engine
+
+- สูตร normalize คะแนนคำตอบเป็น User Personality Profile
+- น้ำหนักของแต่ละ dimension ใน Character Matching
+- สูตรแปลง similarity/distance เป็น Compatibility `0–100`
+- tie-break ที่คงที่และไม่ขึ้นกับลำดับไฟล์
+- วิธี normalize trait scores ก่อนเทียบ Element Personality Profiles
+- policy สำหรับคำตอบไม่ครบ, dataset version และการ restore progress เก่าใน `localStorage`
+
+### Documentation alignment
+
+ก่อนเริ่ม integration ต้องอัปเดตเอกสารให้ใช้ schema และ file layout เดียวกัน:
+
+- `README.md` และ `docs/scope.md` ยังนิยาม `lifestyle` แบบเดิม; ค่าที่อนุมัติคือ `0 = spontaneous/flexible`, `100 = structured/planned`
+- `CONTEXT.md`, `README.md` และแผน importer ต้องอ้างชื่อ canonical ของ character index และ directory `src/data/personality/character-personalities/{id}.json`
+- เอกสารต้องสะท้อนว่า Firebase User Reports เป็นงานอนาคต ไม่ใช่ dependency ของการคำนวณ Quiz V1
+
+### Definition of ready for Engine integration
+
+- [ ] Character index, factual data, lore และ profiles มี id coverage ตรงกัน
+- [ ] Question dataset 24 ข้อผ่าน schema และมี score mapping ครบ
+- [ ] Trait catalog ครอบคลุม trait reference ทุกจุดและมี TH/EN labels
+- [ ] Element profiles ครบ 7 ธาตุและผ่าน validation
+- [ ] Result explanation/translation fallback พร้อมใช้งาน
+- [ ] Missing factual fields มี UI fallback และรายงานที่ตรวจสอบได้
+- [ ] Dataset validation report ผ่านก่อน build และก่อน deploy
+
 ## References
 
 - [OOOPEN Lab — คุณเป็นแมว MBTI ประเภทไหน](https://ooopenlab.cc/quiz/HBOilLl8AcGzxCZPmwUc)

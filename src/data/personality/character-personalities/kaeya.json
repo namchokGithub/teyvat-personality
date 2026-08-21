@@ -1,0 +1,28 @@
+{
+  "id": "kaeya",
+  "personality": {
+    "social": 50,
+    "decision": 45,
+    "lifestyle": 50,
+    "adventure": 50,
+    "responsibility": 70,
+    "expression": 50
+  },
+  "traits": {
+    "innerConflict": 1,
+    "contradiction": 1,
+    "identity": 0.9,
+    "introspection": 0.7,
+    "resilience": 0.6
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

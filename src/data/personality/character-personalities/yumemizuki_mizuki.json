@@ -1,0 +1,28 @@
+{
+  "id": "yumemizuki_mizuki",
+  "personality": {
+    "social": 55,
+    "decision": 40,
+    "lifestyle": 50,
+    "adventure": 35,
+    "responsibility": 55,
+    "expression": 55
+  },
+  "traits": {
+    "freedom": 1,
+    "acceptance": 0.9,
+    "sensitivity": 0.6,
+    "selflessness": 0.7,
+    "adaptability": 0.5
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

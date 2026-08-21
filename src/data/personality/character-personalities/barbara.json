@@ -1,0 +1,28 @@
+{
+  "id": "barbara",
+  "personality": {
+    "social": 60,
+    "decision": 40,
+    "lifestyle": 55,
+    "adventure": 50,
+    "responsibility": 60,
+    "expression": 50
+  },
+  "traits": {
+    "ideals": 1,
+    "adaptability": 0.8,
+    "responsibility": 0.8,
+    "creativity": 0.6,
+    "perseverance": 0.55
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "มุ่งมั่นพัฒนาตนเองอย่างต่อเนื่อง",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

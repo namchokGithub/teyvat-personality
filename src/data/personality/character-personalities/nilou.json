@@ -1,0 +1,28 @@
+{
+  "id": "nilou",
+  "personality": {
+    "social": 50,
+    "decision": 40,
+    "lifestyle": 60,
+    "adventure": 55,
+    "responsibility": 50,
+    "expression": 50
+  },
+  "traits": {
+    "ideals": 1,
+    "adaptability": 0.8,
+    "responsibility": 0.7,
+    "creativity": 0.8,
+    "perseverance": 0.5
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "sigewinne",
+  "personality": {
+    "social": 50,
+    "decision": 60,
+    "lifestyle": 50,
+    "adventure": 50,
+    "responsibility": 60,
+    "expression": 50
+  },
+  "traits": {
+    "ideals": 1,
+    "adaptability": 0.8,
+    "responsibility": 0.8,
+    "creativity": 0.6,
+    "perseverance": 0.5
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

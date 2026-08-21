@@ -1,0 +1,28 @@
+{
+  "id": "kamisato_ayaka",
+  "personality": {
+    "social": 50,
+    "decision": 50,
+    "lifestyle": 60,
+    "adventure": 50,
+    "responsibility": 65,
+    "expression": 50
+  },
+  "traits": {
+    "innerConflict": 1,
+    "contradiction": 0.9,
+    "identity": 0.8,
+    "introspection": 0.7,
+    "resilience": 0.6
+  },
+  "strengths": [
+    "มุ่งมั่นพัฒนาตนเองอย่างต่อเนื่อง",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

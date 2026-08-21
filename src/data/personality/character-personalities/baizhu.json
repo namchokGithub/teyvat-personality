@@ -1,0 +1,28 @@
+{
+  "id": "baizhu",
+  "personality": {
+    "social": 50,
+    "decision": 55,
+    "lifestyle": 60,
+    "adventure": 65,
+    "responsibility": 75,
+    "expression": 50
+  },
+  "traits": {
+    "growth": 1,
+    "curiosity": 0.95,
+    "knowledge": 0.8,
+    "learning": 0.9,
+    "selfDevelopment": 0.7
+  },
+  "strengths": [
+    "เข้าใจและช่วยเหลือผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "รับความเสี่ยงมากเกินไป",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

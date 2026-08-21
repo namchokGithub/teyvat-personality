@@ -1,0 +1,28 @@
+{
+  "id": "candace",
+  "personality": {
+    "social": 60,
+    "decision": 50,
+    "lifestyle": 55,
+    "adventure": 50,
+    "responsibility": 85,
+    "expression": 50
+  },
+  "traits": {
+    "ideals": 1,
+    "adaptability": 0.8,
+    "responsibility": 0.9,
+    "creativity": 0.6,
+    "perseverance": 0.5
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

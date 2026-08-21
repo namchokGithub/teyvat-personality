@@ -1,0 +1,28 @@
+{
+  "id": "nicole",
+  "personality": {
+    "social": 50,
+    "decision": 50,
+    "lifestyle": 45,
+    "adventure": 50,
+    "responsibility": 55,
+    "expression": 50
+  },
+  "traits": {
+    "passion": 1,
+    "enthusiasm": 0.7,
+    "selfExpression": 0.8,
+    "determination": 0.6,
+    "optimism": 0.4
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "chevreuse",
+  "personality": {
+    "social": 45,
+    "decision": 60,
+    "lifestyle": 50,
+    "adventure": 55,
+    "responsibility": 55,
+    "expression": 45
+  },
+  "traits": {
+    "passion": 1,
+    "enthusiasm": 0.7,
+    "selfExpression": 0.8,
+    "determination": 0.6,
+    "optimism": 0.4
+  },
+  "strengths": [
+    "วิเคราะห์และแก้ปัญหาอย่างเป็นระบบ",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

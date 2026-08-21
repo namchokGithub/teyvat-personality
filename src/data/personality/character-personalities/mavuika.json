@@ -1,0 +1,28 @@
+{
+  "id": "mavuika",
+  "personality": {
+    "social": 55,
+    "decision": 45,
+    "lifestyle": 50,
+    "adventure": 55,
+    "responsibility": 60,
+    "expression": 55
+  },
+  "traits": {
+    "passion": 1,
+    "enthusiasm": 0.7,
+    "selfExpression": 0.85,
+    "determination": 0.6,
+    "optimism": 0.45
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "freminet",
+  "personality": {
+    "social": 45,
+    "decision": 50,
+    "lifestyle": 50,
+    "adventure": 40,
+    "responsibility": 55,
+    "expression": 45
+  },
+  "traits": {
+    "innerConflict": 1,
+    "contradiction": 0.9,
+    "identity": 0.8,
+    "introspection": 0.7,
+    "resilience": 0.6
+  },
+  "strengths": [
+    "เข้าใจและช่วยเหลือผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

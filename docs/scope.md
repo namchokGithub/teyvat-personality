@@ -970,3 +970,45 @@ Frontend Only
 > **Fan-made personality quiz inspired by Genshin Impact.**
 
 Personality classification และ Character Personality Scores เป็นการวิเคราะห์และตีความของผู้สร้าง ไม่ใช่ข้อมูลหรือ Personality Classification อย่างเป็นทางการจาก HoYoverse
+
+---
+
+6 dimensions using scores from 0-100:
+
+- social
+  0 = strongly introverted / socially withdrawn
+  100 = strongly extroverted / socially energized
+- decision
+  0 = strongly emotion/value-driven
+  100 = strongly logic/reason-driven
+- lifestyle
+  0 = spontaneous / flexible
+  100 = structured / planned
+- adventure
+  0 = cautious / risk-averse
+  100 = adventurous / risk-tolerant
+- responsibility
+  0 = free-spirited / low duty orientation
+  100 = strongly duty-driven / responsible
+- expression
+  0 = reserved / emotionally private
+  100 = highly expressive / emotionally visible
+
+{
+"personality": {
+"social": 35,
+"decision": 65,
+"lifestyle": 55,
+"adventure": 75,
+"responsibility": 70,
+"expression": 30
+},
+"traits": {
+"idealism": 0.9,
+"calmness": 0.8,
+"independence": 0.7,
+"determination": 0.8
+}
+}
+
+"traits" อิงตาม elements

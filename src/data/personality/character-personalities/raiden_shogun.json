@@ -1,0 +1,28 @@
+{
+  "id": "raiden_shogun",
+  "personality": {
+    "social": 50,
+    "decision": 55,
+    "lifestyle": 55,
+    "adventure": 55,
+    "responsibility": 70,
+    "expression": 50
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.8,
+    "independence": 0.9,
+    "confidence": 0.6,
+    "nonconformity": 0.8
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "มุ่งมั่นพัฒนาตนเองอย่างต่อเนื่อง",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

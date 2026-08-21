@@ -1,0 +1,28 @@
+{
+  "id": "yoimiya",
+  "personality": {
+    "social": 55,
+    "decision": 55,
+    "lifestyle": 50,
+    "adventure": 50,
+    "responsibility": 50,
+    "expression": 60
+  },
+  "traits": {
+    "passion": 1,
+    "enthusiasm": 0.75,
+    "selfExpression": 0.85,
+    "determination": 0.6,
+    "optimism": 0.45
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

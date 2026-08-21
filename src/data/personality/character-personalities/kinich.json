@@ -1,0 +1,28 @@
+{
+  "id": "kinich",
+  "personality": {
+    "social": 50,
+    "decision": 50,
+    "lifestyle": 50,
+    "adventure": 50,
+    "responsibility": 50,
+    "expression": 55
+  },
+  "traits": {
+    "growth": 1,
+    "curiosity": 0.9,
+    "knowledge": 0.8,
+    "learning": 0.9,
+    "selfDevelopment": 0.7
+  },
+  "strengths": [
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "arlecchino",
+  "personality": {
+    "social": 50,
+    "decision": 50,
+    "lifestyle": 65,
+    "adventure": 40,
+    "responsibility": 70,
+    "expression": 35
+  },
+  "traits": {
+    "passion": 1,
+    "enthusiasm": 0.7,
+    "selfExpression": 0.8,
+    "determination": 0.6,
+    "optimism": 0.4
+  },
+  "strengths": [
+    "มุ่งมั่นพัฒนาตนเองอย่างต่อเนื่อง",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

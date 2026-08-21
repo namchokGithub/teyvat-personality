@@ -1,0 +1,28 @@
+{
+  "id": "chongyun",
+  "personality": {
+    "social": 50,
+    "decision": 45,
+    "lifestyle": 65,
+    "adventure": 45,
+    "responsibility": 55,
+    "expression": 50
+  },
+  "traits": {
+    "innerConflict": 1,
+    "contradiction": 0.9,
+    "identity": 0.8,
+    "introspection": 0.7,
+    "resilience": 0.6
+  },
+  "strengths": [
+    "มุ่งมั่นพัฒนาตนเองอย่างต่อเนื่อง",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "หุนหันเมื่ออารมณ์หรือแรงกดดันสูง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

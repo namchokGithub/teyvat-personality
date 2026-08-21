@@ -1,0 +1,28 @@
+{
+  "id": "zibai",
+  "personality": {
+    "social": 50,
+    "decision": 50,
+    "lifestyle": 50,
+    "adventure": 55,
+    "responsibility": 65,
+    "expression": 50
+  },
+  "traits": {
+    "resolve": 1,
+    "stability": 0.95,
+    "perseverance": 0.8,
+    "discipline": 0.7,
+    "reliability": 0.85
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

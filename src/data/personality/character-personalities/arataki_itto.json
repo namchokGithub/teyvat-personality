@@ -1,0 +1,28 @@
+{
+  "id": "arataki_itto",
+  "personality": {
+    "social": 85,
+    "decision": 60,
+    "lifestyle": 65,
+    "adventure": 50,
+    "responsibility": 85,
+    "expression": 65
+  },
+  "traits": {
+    "resolve": 1,
+    "stability": 0.9,
+    "perseverance": 0.8,
+    "discipline": 0.75,
+    "reliability": 0.8
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "clorinde",
+  "personality": {
+    "social": 55,
+    "decision": 20,
+    "lifestyle": 60,
+    "adventure": 60,
+    "responsibility": 85,
+    "expression": 50
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.8,
+    "independence": 0.9,
+    "confidence": 0.6,
+    "nonconformity": 0.85
+  },
+  "strengths": [
+    "มุ่งมั่นพัฒนาตนเองอย่างต่อเนื่อง",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

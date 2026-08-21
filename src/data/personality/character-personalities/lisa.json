@@ -1,0 +1,28 @@
+{
+  "id": "lisa",
+  "personality": {
+    "social": 50,
+    "decision": 65,
+    "lifestyle": 50,
+    "adventure": 35,
+    "responsibility": 60,
+    "expression": 50
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.8,
+    "independence": 0.9,
+    "confidence": 0.65,
+    "nonconformity": 0.8
+  },
+  "strengths": [
+    "วิเคราะห์และแก้ปัญหาอย่างเป็นระบบ",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

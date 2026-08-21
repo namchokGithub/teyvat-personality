@@ -1,0 +1,28 @@
+{
+  "id": "varesa",
+  "personality": {
+    "social": 65,
+    "decision": 45,
+    "lifestyle": 55,
+    "adventure": 60,
+    "responsibility": 70,
+    "expression": 55
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.8,
+    "independence": 0.9,
+    "confidence": 0.65,
+    "nonconformity": 0.8
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

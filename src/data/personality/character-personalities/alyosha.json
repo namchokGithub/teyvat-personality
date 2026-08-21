@@ -1,0 +1,28 @@
+{
+  "id": "alyosha",
+  "personality": {
+    "social": 50,
+    "decision": 45,
+    "lifestyle": 55,
+    "adventure": 55,
+    "responsibility": 80,
+    "expression": 45
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.8,
+    "independence": 0.9,
+    "confidence": 0.6,
+    "nonconformity": 0.8
+  },
+  "strengths": [
+    "วิเคราะห์และแก้ปัญหาอย่างเป็นระบบ",
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "รับความเสี่ยงมากเกินไป",
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง"
+  ]
+}

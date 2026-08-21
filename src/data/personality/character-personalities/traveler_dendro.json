@@ -1,0 +1,28 @@
+{
+  "id": "traveler_dendro",
+  "personality": {
+    "social": 50,
+    "decision": 50,
+    "lifestyle": 50,
+    "adventure": 65,
+    "responsibility": 55,
+    "expression": 50
+  },
+  "traits": {
+    "growth": 1,
+    "curiosity": 0.9,
+    "knowledge": 0.8,
+    "learning": 0.95,
+    "selfDevelopment": 0.7
+  },
+  "strengths": [
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

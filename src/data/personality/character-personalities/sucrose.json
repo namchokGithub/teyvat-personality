@@ -1,0 +1,28 @@
+{
+  "id": "sucrose",
+  "personality": {
+    "social": 40,
+    "decision": 55,
+    "lifestyle": 50,
+    "adventure": 60,
+    "responsibility": 50,
+    "expression": 40
+  },
+  "traits": {
+    "freedom": 1,
+    "acceptance": 0.9,
+    "sensitivity": 0.6,
+    "selflessness": 0.75,
+    "adaptability": 0.5
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

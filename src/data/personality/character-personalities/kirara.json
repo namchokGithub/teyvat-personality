@@ -1,0 +1,28 @@
+{
+  "id": "kirara",
+  "personality": {
+    "social": 55,
+    "decision": 45,
+    "lifestyle": 50,
+    "adventure": 65,
+    "responsibility": 55,
+    "expression": 55
+  },
+  "traits": {
+    "growth": 1,
+    "curiosity": 0.95,
+    "knowledge": 0.8,
+    "learning": 0.9,
+    "selfDevelopment": 0.7
+  },
+  "strengths": [
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

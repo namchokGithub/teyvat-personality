@@ -1,0 +1,28 @@
+{
+  "id": "escoffier",
+  "personality": {
+    "social": 50,
+    "decision": 60,
+    "lifestyle": 60,
+    "adventure": 70,
+    "responsibility": 50,
+    "expression": 50
+  },
+  "traits": {
+    "innerConflict": 1,
+    "contradiction": 0.9,
+    "identity": 0.8,
+    "introspection": 0.7,
+    "resilience": 0.6
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

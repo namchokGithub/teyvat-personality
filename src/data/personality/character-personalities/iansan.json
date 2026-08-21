@@ -1,0 +1,28 @@
+{
+  "id": "iansan",
+  "personality": {
+    "social": 50,
+    "decision": 60,
+    "lifestyle": 60,
+    "adventure": 45,
+    "responsibility": 50,
+    "expression": 50
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.9,
+    "independence": 0.9,
+    "confidence": 0.6,
+    "nonconformity": 0.85
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "aino",
+  "personality": {
+    "social": 45,
+    "decision": 70,
+    "lifestyle": 35,
+    "adventure": 78,
+    "responsibility": 75,
+    "expression": 55
+  },
+  "traits": {
+    "ideals": 0.85,
+    "adaptability": 0.75,
+    "responsibility": 0.85,
+    "creativity": 0.9,
+    "perseverance": 0.8
+  },
+  "strengths": [
+    "วิเคราะห์และประดิษฐ์อย่างชำนาญ",
+    "สร้างสรรค์และแก้ปัญหาเก่ง",
+    "ดูแลคนสำคัญอย่างจริงจัง"
+  ],
+  "weaknesses": [
+    "หมกมุ่นจนละเลยการพักผ่อน",
+    "จัดระเบียบงานและพื้นที่ได้ไม่สม่ำเสมอ",
+    "อ่อนไหวเมื่อผลงานไม่ได้รับการยอมรับ"
+  ]
+}

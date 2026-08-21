@@ -1,0 +1,28 @@
+{
+  "id": "gaming",
+  "personality": {
+    "social": 65,
+    "decision": 50,
+    "lifestyle": 55,
+    "adventure": 50,
+    "responsibility": 55,
+    "expression": 65
+  },
+  "traits": {
+    "passion": 1,
+    "enthusiasm": 0.85,
+    "selfExpression": 0.85,
+    "determination": 0.65,
+    "optimism": 0.4
+  },
+  "strengths": [
+    "สร้างสรรค์และพัฒนาสิ่งใหม่",
+    "มุ่งมั่นพัฒนาตนเองอย่างต่อเนื่อง",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

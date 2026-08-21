@@ -1,0 +1,28 @@
+{
+  "id": "flins",
+  "personality": {
+    "social": 50,
+    "decision": 40,
+    "lifestyle": 55,
+    "adventure": 55,
+    "responsibility": 75,
+    "expression": 55
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.8,
+    "independence": 0.9,
+    "confidence": 0.6,
+    "nonconformity": 0.85
+  },
+  "strengths": [
+    "วิเคราะห์และแก้ปัญหาอย่างเป็นระบบ",
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "กล้าเผชิญความท้าทาย"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

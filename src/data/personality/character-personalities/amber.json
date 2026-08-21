@@ -1,0 +1,28 @@
+{
+  "id": "amber",
+  "personality": {
+    "social": 80,
+    "decision": 45,
+    "lifestyle": 45,
+    "adventure": 75,
+    "responsibility": 75,
+    "expression": 50
+  },
+  "traits": {
+    "passion": 1,
+    "enthusiasm": 0.7,
+    "selfExpression": 0.8,
+    "determination": 0.6,
+    "optimism": 0.5
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "beidou",
+  "personality": {
+    "social": 60,
+    "decision": 50,
+    "lifestyle": 45,
+    "adventure": 85,
+    "responsibility": 70,
+    "expression": 50
+  },
+  "traits": {
+    "individuality": 1,
+    "determination": 0.8,
+    "independence": 0.95,
+    "confidence": 0.6,
+    "nonconformity": 0.85
+  },
+  "strengths": [
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "รับความเสี่ยงมากเกินไป",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

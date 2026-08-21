@@ -1,0 +1,28 @@
+{
+  "id": "chasca",
+  "personality": {
+    "social": 45,
+    "decision": 20,
+    "lifestyle": 65,
+    "adventure": 60,
+    "responsibility": 60,
+    "expression": 45
+  },
+  "traits": {
+    "freedom": 1,
+    "acceptance": 0.9,
+    "sensitivity": 0.65,
+    "selflessness": 0.75,
+    "adaptability": 0.5
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "กล้าเผชิญความท้าทาย",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

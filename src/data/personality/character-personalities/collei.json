@@ -1,0 +1,28 @@
+{
+  "id": "collei",
+  "personality": {
+    "social": 50,
+    "decision": 50,
+    "lifestyle": 45,
+    "adventure": 45,
+    "responsibility": 55,
+    "expression": 50
+  },
+  "traits": {
+    "growth": 1,
+    "curiosity": 0.9,
+    "knowledge": 0.85,
+    "learning": 0.95,
+    "selfDevelopment": 0.7
+  },
+  "strengths": [
+    "เข้าใจและช่วยเหลือผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "แบกรับความกดดันและบาดแผลไว้กับตนเอง",
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก"
+  ]
+}

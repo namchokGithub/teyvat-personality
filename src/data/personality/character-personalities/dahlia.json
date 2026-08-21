@@ -1,0 +1,28 @@
+{
+  "id": "dahlia",
+  "personality": {
+    "social": 50,
+    "decision": 55,
+    "lifestyle": 30,
+    "adventure": 60,
+    "responsibility": 55,
+    "expression": 50
+  },
+  "traits": {
+    "ideals": 1,
+    "adaptability": 1,
+    "responsibility": 0.75,
+    "creativity": 0.6,
+    "perseverance": 0.5
+  },
+  "strengths": [
+    "เข้าใจและช่วยเหลือผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

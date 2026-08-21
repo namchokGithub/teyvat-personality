@@ -1,0 +1,28 @@
+{
+  "id": "kaedehara_kazuha",
+  "personality": {
+    "social": 50,
+    "decision": 45,
+    "lifestyle": 50,
+    "adventure": 60,
+    "responsibility": 60,
+    "expression": 45
+  },
+  "traits": {
+    "freedom": 1,
+    "acceptance": 0.95,
+    "sensitivity": 0.65,
+    "selflessness": 0.7,
+    "adaptability": 0.55
+  },
+  "strengths": [
+    "ปกป้องและรับผิดชอบต่อผู้อื่น",
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

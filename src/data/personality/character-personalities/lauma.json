@@ -1,0 +1,28 @@
+{
+  "id": "lauma",
+  "personality": {
+    "social": 65,
+    "decision": 45,
+    "lifestyle": 50,
+    "adventure": 50,
+    "responsibility": 70,
+    "expression": 50
+  },
+  "traits": {
+    "growth": 1,
+    "curiosity": 0.95,
+    "knowledge": 0.8,
+    "learning": 0.9,
+    "selfDevelopment": 0.7
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}

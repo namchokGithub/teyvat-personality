@@ -1,0 +1,28 @@
+{
+  "id": "lan_yan",
+  "personality": {
+    "social": 60,
+    "decision": 45,
+    "lifestyle": 50,
+    "adventure": 50,
+    "responsibility": 50,
+    "expression": 50
+  },
+  "traits": {
+    "freedom": 1,
+    "acceptance": 0.95,
+    "sensitivity": 0.6,
+    "selflessness": 0.7,
+    "adaptability": 0.5
+  },
+  "strengths": [
+    "ยืนหยัดต่อเป้าหมายที่ให้ความสำคัญ",
+    "เรียนรู้จากประสบการณ์และปรับตัว",
+    "รักษาความตั้งใจเมื่อเผชิญอุปสรรค"
+  ],
+  "weaknesses": [
+    "กดดันตนเองกับมาตรฐานสูง",
+    "ต้องใช้เวลาในการจัดการความรู้สึก",
+    "อาจแบกรับปัญหาไว้คนเดียว"
+  ]
+}
