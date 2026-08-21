@@ -213,6 +213,8 @@ Example Character:
 
 Character master data represents factual game information.
 
+A **dynamic factual field** is a fact controlled by the player's in-game choice rather than one canonical character value. Store it as `null` rather than choosing an arbitrary variant, and document why in the missing-data report. Traveler `birthday` and `gender` are dynamic factual fields.
+
 Do not place personality scores directly inside `data/characters/_characters.json` or the per-character factual files. Lore/research evidence belongs in `data/lore/`; interpreted personality profiles belong in `data/personality/`.
 
 ---
@@ -1204,7 +1206,7 @@ src/
 │
 ├── data/
 │   ├── characters/
-│   │   ├── characters.json
+│   │   ├── _characters.json
 │   │   └── {character-id}.json
 │   ├── lore/
 │   │   └── {character-id}.json

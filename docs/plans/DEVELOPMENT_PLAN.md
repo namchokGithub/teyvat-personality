@@ -71,13 +71,12 @@
 
 - [x] ใช้ `src/data/characters/_characters.json` เป็น canonical index และปรับ Character repository ให้ใช้ชื่อนี้
 - [x] ตรวจ id coverage ระหว่าง factual data, lore และ character personality profiles ครบ `125/125`
-- [ ] ปรับ Character importer plan ให้ใช้ชื่อ canonical เดียวกัน
+- [x] ปรับ Character importer plan ให้ใช้ชื่อ canonical เดียวกัน และกำหนด validation ของ `{ id, name }` / id ซ้ำ
 
 ต้องมี character index เพียงแหล่งเดียวที่ repository, เอกสาร และ importer ใช้อ้างอิงตรงกัน
 
 - ใช้ `src/data/characters/_characters.json` เป็นชื่อ canonical แล้ว; repository และเอกสารหลักถูกปรับให้ตรงกัน
-- ยังต้องปรับ Character importer plan ที่อ้างชื่อเดิม ก่อนถือว่าทุกเอกสารตรงกัน
-- index ต้องเก็บอย่างน้อย `{ id, name }` และไม่ควรมี id ซ้ำ
+- Character importer plan อ้าง `src/data/characters/_characters.json` แล้ว และกำหนดให้ตรวจ `{ id, name }` ที่ไม่ว่างกับ id ที่ไม่ซ้ำก่อน import
 
 #### 2. Situational question dataset พร้อม score mapping
 
@@ -144,14 +143,18 @@ profile คะแนนอย่างเดียวบอกอันดับ
 
 ### P1 — Data quality และ presentation data
 
-#### 5. Factual character fields ที่ยังไม่มีค่า
+#### 5. Factual character fields ที่ยังไม่มีค่า — Implemented
 
 ค่าที่เป็น `null` ต้องมี fallback ใน UI และอยู่ใน missing-data report จนกว่าจะมีแหล่งอ้างอิงที่เชื่อถือได้:
 
-| Field                                                     | Characters              |
-| --------------------------------------------------------- | ----------------------- |
-| `region`                                                  | Aloy, Nicole, Skirk     |
-| `title`, `titleTh`, `descriptionTh`, `birthday`, `gender` | Traveler ทั้ง 7 variant |
+- [x] Character Detail มี fallback สำหรับ factual field ที่ไม่มีค่า
+- [x] สร้างและปรับ `src/data/characters/_missing-data-report.md` ให้เหลือเฉพาะ factual gap ที่ตรวจสอบได้
+
+| Field | Characters |
+| --- | --- |
+| `region` | Aloy, Nicole, Skirk |
+
+Traveler ทั้ง 7 variant มี `title`, `titleTh` และ `descriptionTh` แล้ว ส่วน `birthday` เป็นค่าที่ผู้เล่นเลือก และ `gender` ขึ้นกับ Aether/Lumine จึงคง `null` เป็น dynamic factual fields ที่ตั้งใจไว้ ไม่ใช่ missing data
 
 ห้ามเดาค่าทาง factual เพื่อปิดช่องว่างเหล่านี้
 
@@ -208,7 +211,7 @@ interface CharacterArtwork {
 - [x] Trait catalog ครอบคลุม trait reference ทุกจุดและมี TH/EN labels
 - [x] Element profiles ครบ 7 ธาตุและไม่มี trait reference ที่ไม่รู้จัก
 - [x] Result explanation/translation fallback พร้อมใช้งาน
-- [ ] Missing factual fields มี UI fallback และรายงานที่ตรวจสอบได้
+- [x] Missing factual fields มี UI fallback และรายงานที่ตรวจสอบได้
 - [ ] Dataset validation report ผ่านก่อน build และก่อน deploy
 
 ## References

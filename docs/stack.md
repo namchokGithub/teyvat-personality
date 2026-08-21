@@ -60,7 +60,9 @@ src/
 │   ├── quiz/
 │   └── result/
 ├── data/
-│   ├── characters.json
+│   ├── characters/
+│   │   ├── _characters.json
+│   │   └── {character-id}.json
 │   ├── questions.json
 │   ├── regions.json
 │   └── elements.json

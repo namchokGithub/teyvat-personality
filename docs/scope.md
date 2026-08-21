@@ -659,7 +659,7 @@ React
  │
  ├── questions.json
  │
- ├── characters.json
+ ├── characters/_characters.json
  │
  ├── personality-dimensions.json
  │
@@ -716,7 +716,9 @@ Firebase
 src/
 │
 ├── data/
-│   ├── characters.json
+│   ├── characters/
+│   │   ├── _characters.json
+│   │   └── {character-id}.json
 │   ├── questions.json
 │   ├── personality-dimensions.json
 │   └── personality-titles.json
