@@ -3,6 +3,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { Button, ContentCard, PageContainer } from "../components/common";
+import {
+  VisionEffectOverlay,
+  type VisionEffect,
+} from "../components/effects/VisionEffectOverlay";
+import { VisionEffectSwitcher } from "../components/effects/VisionEffectSwitcher";
 import paimonArtwork from "../assets/images/paimon_hello.png";
 import featCharBG from "../assets/images/characters/full/varka.png";
 import nahidaWishArtwork from "../assets/images/characters/full/nahida_wish.png";
@@ -27,6 +32,15 @@ function renderTextWithBreaks(text: string) {
   ));
 }
 
+const VISION_EFFECT_STORAGE_KEY = "teyvat-vision-effect";
+
+function readVisionEffect(): VisionEffect {
+  const savedEffect = localStorage.getItem(VISION_EFFECT_STORAGE_KEY);
+  return savedEffect === "dendro" || savedEffect === "pyro"
+    ? savedEffect
+    : "cryo";
+}
+
 export function LandingPage({ locale }: { locale: Locale }) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,6 +50,8 @@ export function LandingPage({ locale }: { locale: Locale }) {
   const [canResume] = useState(hasSavedQuizProgress);
   const [showNameDialog, setShowNameDialog] = useState(() => requestName);
   const [name, setName] = useState(readPlayerName);
+  const [visionEffect, setVisionEffect] =
+    useState<VisionEffect>(readVisionEffect);
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeNameDialog = useCallback(() => setShowNameDialog(false), []);
 
@@ -44,6 +60,10 @@ export function LandingPage({ locale }: { locale: Locale }) {
       navigate(location.pathname, { replace: true, state: null });
     }
   }, [location.pathname, navigate, requestName]);
+
+  useEffect(() => {
+    localStorage.setItem(VISION_EFFECT_STORAGE_KEY, visionEffect);
+  }, [visionEffect]);
 
   useDialogAccessibility(dialogRef, closeNameDialog, showNameDialog);
   const features = [
@@ -85,6 +105,8 @@ export function LandingPage({ locale }: { locale: Locale }) {
 
   return (
     <main className="landing-page">
+      <VisionEffectOverlay effect={visionEffect} />
+      <VisionEffectSwitcher effect={visionEffect} onChange={setVisionEffect} />
       <PageContainer className="hero">
         <div className="hero__copy">
           <span className="eyebrow">
