@@ -47,7 +47,7 @@
 
 ## 22 สิงหาคม 2026 — P1 locale typography and element pass
 
-- ปรับ font system ให้ใช้ Prompt ทั้งไทยและอังกฤษ พร้อม fallback และ Google Fonts `font-display: swap`
+- ใช้ Prompt สำหรับเนื้อหา/UI ทั่วไป; ใช้ Cinzel กับชื่อและหัวข้อสำคัญภาษาอังกฤษ และ Mitr กับชื่อและหัวข้อสำคัญภาษาไทย พร้อม Google Fonts `font-display: swap`
 - ใช้ Element assets ครบ 7 ธาตุใน badge, Vision Affinity และ Share Card preview พร้อม alt/fallback ที่อ่านได้
 - เก็บ palette ครบ 7 ธาตุสำหรับ Vision Card, Character Detail และ Share Card พร้อมปรับ contrast ของข้อความ
 - ตรวจ regression ด้วย data validation, engine verification, lint และ production build รวมถึง manual QA ที่ viewport เป้าหมาย

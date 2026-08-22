@@ -6,22 +6,25 @@ export const th = {
   language: "EN",
   skipContent: "ข้ามไปยังเนื้อหาหลัก",
   eyebrow: "ค้นหาเสียงสะท้อนของคุณใน Teyvat",
-  heroTitle: "ตัวละครคนไหนที่มีบุคลิกเหมือนคุณมากที่สุด?",
+  heroTitle: "ตัวละครคนไหน<br>ที่มีบุคลิกเหมือนคุณ<br>มากที่สุด?",
   heroBody:
-    "ตอบคำถามสถานการณ์ 24 ข้อ เพื่อค้นหา Character Match และ Vision Affinity ที่สะท้อนวิธีคิดของคุณ",
+    "ตอบคำถามจาก 24 สถานการณ์ เพื่อค้นหาตัวละครที่เข้ากับคุณ และค้นหา Vision ที่สะท้อนวิธีคิดของคุณ",
+  heroArtTitle: "เรื่องราวของคุณ สะท้อนอยู่ในตัวละครใด?",
+  heroArtMeta: "ตัวละคร · วิชั่น · บุคลิก",
   start: "เริ่มทำแบบทดสอบ",
   resume: "ทำแบบทดสอบต่อ",
   preview: "ดูตัวอย่างผลลัพธ์",
   nameTitle: "นักเดินทาง มีนามว่าอะไร?",
-  nameBody: "ชื่อนี้ใช้สำหรับประสบการณ์ในอุปกรณ์ของคุณเท่านั้น และไม่ส่งออกไปที่ใด",
+  nameBody:
+    "ชื่อนี้ใช้สำหรับประสบการณ์ในอุปกรณ์ของคุณเท่านั้น และไม่ส่งออกไปที่ใด",
   nameLabel: "ชื่อของคุณ",
   namePlaceholder: "ใส่ชื่อ หรือเว้นว่างไว้ก็ได้",
   confirmName: "เริ่มการเดินทาง",
-  meta: "ประมาณ 3–5 นาที · ไม่มีคำตอบที่ถูกหรือผิด",
-  featureCharacter: "Character Match",
+  meta: "ใช้เวลาประมาณ 3–5 นาที · ไม่มีคำตอบที่ถูกหรือผิด",
+  featureCharacter: "ตัวละครที่เหมือนคุณ",
   featureCharacterBody:
     "เปรียบเทียบโปรไฟล์บุคลิกของคุณกับตัวละครที่คัดสรรมาอย่างหลากหลาย",
-  featureVision: "Vision Affinity",
+  featureVision: "Vision ที่เข้ากับคุณ",
   featureVisionBody:
     "ค้นหาธาตุที่สอดคล้องกับแรงขับและวิธีมองโลกของคุณ แยกจากผลตัวละคร",
   featureShare: "ผลลัพธ์ที่เล่าเรื่องได้",
@@ -38,7 +41,8 @@ export const th = {
   cancel: "ยกเลิก",
   confirmReset: "ล้างและเริ่มใหม่",
   matchingTitle: "กำลังค้นหาเสียงสะท้อนของคุณ...",
-  matchingBody: "เรากำลังคำนวณ Character Match และ Vision Affinity จากคำตอบของคุณ",
+  matchingBody:
+    "เรากำลังคำนวณ Character Match และ Vision Affinity จากคำตอบของคุณ",
   matchingProfile: "กำลังเรียบเรียงภาพบุคลิกของคุณ",
   matchingCharacter: "กำลังค้นหา Character Match ที่ใกล้เคียงที่สุด",
   matchingVision: "กำลังค้นหา Vision Affinity ของคุณ",
@@ -91,7 +95,7 @@ export const th = {
   sharedResultNotice: "กำลังแสดงผลลัพธ์จากลิงก์ที่แชร์",
   mockNotice: "หน้าตัวอย่าง UI · ผลลัพธ์นี้ยังไม่ได้คำนวณจาก Matching Engine",
   disclaimer:
-    "Fan made เพื่อความบันเทิง ไม่เกี่ยวข้องหรือได้รับการรับรองจาก HoYoverse \n By Lesser Lord Kusanali 2026",
+    "Fan made เพื่อความบันเทิง ไม่เกี่ยวข้องหรือได้รับการรับรองจาก HoYoverse",
   notFoundBody: "เส้นทางนี้อยู่นอกแผนที่ Teyvat",
   returnHome: "กลับหน้าหลัก",
 } as const;
