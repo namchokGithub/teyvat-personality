@@ -23,6 +23,7 @@ try {
     assert(characters.length === profiles.length, "Character ranking is incomplete");
     assert(visions.length === 7, "Vision ranking is incomplete");
     assert(characters.every(({ compatibility }) => compatibility >= 0 && compatibility <= 100), "Compatibility is outside 0–100");
+    assert(characters.every(({ matchingTraitIds }) => matchingTraitIds.length > 0), "A character match has no matching-trait explanation");
     assert(visions.every(({ affinity }) => affinity >= 0 && affinity <= 100), "Affinity is outside 0–100");
     const repeated = engine.rankCharacterMatches(profile, [...profiles].reverse());
     assert(characters.map(({ characterId }) => characterId).join() === repeated.map(({ characterId }) => characterId).join(), "Character ranking depends on input order");

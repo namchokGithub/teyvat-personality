@@ -1,9 +1,17 @@
-import type { ButtonHTMLAttributes, PropsWithChildren } from "react";
+import { useState, type ButtonHTMLAttributes, type PropsWithChildren } from "react";
 import { Languages, MapPin, Sparkles } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 import { t } from "../../i18n";
+import { beginQuizFromNavigation } from "../../hooks";
 import type { Locale } from "../../types";
+import anemoIcon from "../../assets/images/elements/anemo.png";
+import cryoIcon from "../../assets/images/elements/cryo.png";
+import dendroIcon from "../../assets/images/elements/dendro.png";
+import electroIcon from "../../assets/images/elements/electro.png";
+import geoIcon from "../../assets/images/elements/geo.png";
+import hydroIcon from "../../assets/images/elements/hydro.png";
+import pyroIcon from "../../assets/images/elements/pyro.png";
 
 export { RouteFocus } from "./RouteFocus";
 
@@ -30,7 +38,7 @@ export function AppHeader({ locale, onToggleLocale }: { locale: Locale; onToggle
           <span>{t(locale, "brand")}</span>
         </Link>
         <nav className="app-nav" aria-label="Primary navigation">
-          <NavLink to="/quiz">{t(locale, "navQuiz")}</NavLink>
+          <NavLink to="/quiz" onClick={beginQuizFromNavigation}>{t(locale, "navQuiz")}</NavLink>
           <NavLink to="/characters">{t(locale, "navCharacters")}</NavLink>
           <Button variant="ghost" onClick={onToggleLocale} aria-label="Change language">
             <Languages size={16} /> {t(locale, "language")}
@@ -41,19 +49,27 @@ export function AppHeader({ locale, onToggleLocale }: { locale: Locale; onToggle
   );
 }
 
-export function AppFooter() {
+export function AppFooter({ locale }: { locale: Locale }) {
   return (
     <footer className="app-footer">
       <PageContainer>
-        <p>Fan-made เพื่อความบันเทิงเท่านั้น ไม่เกี่ยวข้อง ไม่ได้รับการสนับสนุน หรือรับรองโดย HoYoverse By Lesser Lord Kusanali © 2026</p>
-        <p>A fan-made project for entertainment purposes only. Not affiliated with, sponsored by, or endorsed by HoYoverse. By Lesser Lord Kusanali © 2026</p>
+        <p>{t(locale, "disclaimer")} · By Lesser Lord Kusanali © 2026</p>
       </PageContainer>
     </footer>
   );
 }
 
 export function ElementBadge({ element }: { element: string }) {
-  return <span className={`element-badge element-badge--${element.toLowerCase()}`}><Sparkles size={13} aria-hidden="true" />{element}</span>;
+  return <span className={`element-badge element-badge--${element.toLowerCase()}`}><ElementIcon element={element} />{element}</span>;
+}
+
+const elementIcons: Record<string, string> = { anemo: anemoIcon, cryo: cryoIcon, dendro: dendroIcon, electro: electroIcon, geo: geoIcon, hydro: hydroIcon, pyro: pyroIcon };
+
+export function ElementIcon({ element, alt = "", className = "" }: { element: string; alt?: string; className?: string }) {
+  const [failed, setFailed] = useState(false);
+  const source = elementIcons[element.toLowerCase()];
+  if (!source || failed) return <span className={`element-icon element-icon--fallback ${className}`} role={alt ? "img" : undefined} aria-label={alt || undefined}><Sparkles aria-hidden="true" /></span>;
+  return <img className={`element-icon ${className}`} src={source} alt={alt} onError={() => setFailed(true)} />;
 }
 
 export function RegionBadge({ region }: { region: string }) {

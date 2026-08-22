@@ -11,6 +11,7 @@ export const en: Record<keyof typeof th, string> = {
   question: "Question", back: "Back", next: "Next", finish: "See my result", selectHint: "Choose the answer that feels most like you",
   resetQuiz: "Start over", resetTitle: "Start the quiz again?", resetBody: "Your saved answers and progress will be cleared.", cancel: "Cancel", confirmReset: "Clear and restart",
   matchingTitle: "Finding your echo...", matchingBody: "We are calculating your Character Match and Vision Affinity from your answers.",
+  matchingProfile: "Reading the shape of your personality.", matchingCharacter: "Finding your closest Character Match.", matchingVision: "Discovering your Vision Affinity.", matchingReady: "Your result is ready.",
   resultEyebrow: "The character who reflects you is", affinity: "Compatibility", sharedTraits: "Shared traits",
   characterDetails: "View character details", characterAbout: "About this character", factualNotice: "This information comes from Character Master Data, separate from fan-made personality interpretation.",
   unavailable: "Not available yet", unknownCharacter: "Character not found", unknownCharacterBody: "This slug is not present in Character Master Data or its data is not ready.",

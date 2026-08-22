@@ -69,7 +69,7 @@ export function rankCharacterMatches(
     const coverageFactor = Math.min(characterTraits.length / 5, 1);
     const adjustedTraitSimilarity = traitSimilarity * (0.85 + 0.15 * coverageFactor);
     const rawSimilarity = dimensionSimilarity * 0.7 + adjustedTraitSimilarity * 0.3;
-    const matchingTraitIds = characterTraits
+    let matchingTraitIds = characterTraits
       .filter(([traitId, weight]) => user.traits[traitId] >= 0.5 && weight >= 0.5 && 1 - Math.abs(user.traits[traitId] - weight) >= 0.75)
       .sort((left, right) => {
         const leftMatch = 1 - Math.abs(user.traits[left[0]] - left[1]);
@@ -78,6 +78,16 @@ export function rankCharacterMatches(
       })
       .slice(0, 3)
       .map(([traitId]) => traitId);
+    if (!matchingTraitIds.length && characterTraits.length) {
+      matchingTraitIds = [...characterTraits]
+        .sort((left, right) => {
+          const leftMatch = 1 - Math.abs(user.traits[left[0]] - left[1]);
+          const rightMatch = 1 - Math.abs(user.traits[right[0]] - right[1]);
+          return rightMatch - leftMatch || right[1] - left[1] || left[0].localeCompare(right[0]);
+        })
+        .slice(0, 1)
+        .map(([traitId]) => traitId);
+    }
     return {
       characterId: character.id,
       compatibility: Math.round(clamp(rawSimilarity * 100, 0, 100)),

@@ -27,7 +27,7 @@ export function ResultPage({ locale }: { locale: Locale }) {
     <div className="result-heading"><span className="eyebrow"><Sparkles size={15} />{t(locale, "resultEyebrow")}</span></div>
     <CharacterResultCard character={character} locale={locale} />
     <div className="result-details"><ContentCard><span className="section-kicker">{t(locale, "sharedTraits")}</span><div className="trait-list">{character.matchingTraits.map((trait) => <span key={trait.en}>{trait[locale]}</span>)}</div></ContentCard><VisionCard vision={vision} locale={locale} title={t(locale, "visionTitle")} /></div>
-    <div className="result-actions"><Button onClick={() => void downloadCard()}><Download size={18} />{t(locale, "downloadCard")}</Button><Link className="button button--secondary" to={`/characters/${character.characterId}`}><BookOpen size={18} />{t(locale, "characterDetails")}</Link><Button variant="secondary" onClick={() => { reset(); navigate("/quiz"); }}><RotateCcw size={18} />{t(locale, "tryAgain")}</Button></div>
+    <div className="result-actions"><Button onClick={() => void downloadCard()}><Download size={18} />{t(locale, "downloadCard")}</Button><Link className="button button--secondary" to={`/characters/${character.characterId}`}><BookOpen size={18} />{t(locale, "characterDetails")}</Link><Button variant="secondary" onClick={() => { reset(); navigate("/", { state: { requestName: true } }); }}><RotateCcw size={18} />{t(locale, "tryAgain")}</Button></div>
     {downloadError && <p className="result-action-error" role="status">Unable to download the card. Please try again.</p>}
   </PageContainer></main>;
 }

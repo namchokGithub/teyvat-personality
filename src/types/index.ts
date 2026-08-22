@@ -106,9 +106,12 @@ export interface VisionMatch {
 }
 
 export interface QuizProgressState {
-  version: 2;
+  version: 3;
   questionVersion: string;
   algorithmVersion: string;
+  seed: number;
+  questionOrder: string[];
+  answerOrder: Record<string, string[]>;
   currentQuestionIndex: number;
   answers: Record<string, string>;
   startedAt: string;

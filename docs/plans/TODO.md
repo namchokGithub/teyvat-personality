@@ -1,19 +1,10 @@
-- random คำถามและคำตอบ
-- ปิด copy text สำหรับหน้าทำแบบทดสอบ
-- Trait ที่เหมือนกัน ไม่อยากได้ค่าว่าง หาสูตรเพื่อให้ได้ที่ใกล้เคียง
-- ยัง shared-result แต่ปรับปรุง URL ให้ทำเป็นหน้าใหม่
-- footer มีสองภาษา
-  - Fan-made เพื่อความบันเทิงเท่านั้น ไม่เกี่ยวข้อง ไม่ได้รับการสนับสนุน หรือรับรองโดย HoYoverse By Lesser Lord Kusanali © 2026
-  - A fan-made project for entertainment purposes only. Not affiliated with, sponsored by, or endorsed by HoYoverse. By Lesser Lord Kusanali © 2026
-- ถ้าทำเสร็จให้ Reset เวลา ถ้าไปกดเมนูบททดสอบให้เคลียของเดิม
-- font ของระบบ
-  - ภาษาไทย
-    - [fonts.google.com/specimen/Mitr](https://fonts.google.com/specimen/Mitr) พื้นฐานระบบ
-    - [fonts.google.com/specimen/Anuphan](https://fonts.google.com/specimen/Anuphan) เนื้อหาและคำถาม
-    - [fonts.google.com/specimen/Thasadith](https://fonts.google.com/specimen/Thasadith) คำบรรยาย
-  - อังกฤษ
-    - [fonts.google.com/specimen/Marcellus](https://fonts.google.com/specimen/Marcellus) ชื่อหน้า ชื่อตัวละคร พื้นฐานระบบ
-    - [fonts.google.com/specimen/Jost](https://fonts.google.com/specimen/Jost) UI ภาษาอังกฤษ ปุ่ม และคำถาม
-    - [fonts.google.com/specimen/Cinzel](https://fonts.google.com/specimen/Cinzel) หัวข้อแฟนตาซี
-- การ์ด Vision Affinity ของคุณปรับสีให้เขาโทน element ด้วย
-- รูป element เอาจาก src\assets\images\elements
+# TODO Inbox
+
+รายการวันที่ 22 สิงหาคม 2026 ถูกคัดแยกแล้ว:
+
+- งานเข้าแบบทดสอบผ่านขั้นตอนกรอกชื่อและ flow “เริ่มใหม่” ย้ายไป P0 ใน [DEVELOPMENT_PLAN.md](DEVELOPMENT_PLAN.md)
+- งานฟอนต์ตาม locale และการสุ่มลำดับคำถามเสร็จแล้ว บันทึกใน [_plan_log.md](_plan_log.md)
+
+เพิ่มไอเดียใหม่ที่ยังไม่ได้จัดลำดับไว้ใต้หัวข้อนี้ แล้วค่อยย้ายเข้า Development Plan ในรอบปรับแผนถัดไป
+
+- รูป Full บางอันหัวรอย รอ check

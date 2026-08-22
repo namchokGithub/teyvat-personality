@@ -1,7 +1,7 @@
 import { Leaf } from "lucide-react";
 import { useState } from "react";
 
-import { ElementBadge, RegionBadge } from "../common";
+import { ElementBadge, ElementIcon, RegionBadge } from "../common";
 import type { CharacterMatch, Locale, VisionMatch } from "../../types";
 
 export function CharacterResultCard({ character, locale }: { character: CharacterMatch; locale: Locale }) {
@@ -27,7 +27,7 @@ export function CharacterResultCard({ character, locale }: { character: Characte
 export function VisionCard({ vision, locale, title }: { vision: VisionMatch; locale: Locale; title: string }) {
   return (
     <article className={`vision-card vision-card--${vision.element.toLowerCase()}`}>
-      <div className="vision-card__icon"><Leaf size={24} /></div>
+      <div className="vision-card__icon"><ElementIcon element={vision.element} alt={`${vision.element} element symbol`} /></div>
       <div><span className="section-kicker">{title}</span><h2>{vision.element}</h2><p>{vision.summary[locale]}</p></div>
       <strong>{vision.affinity}%</strong>
     </article>

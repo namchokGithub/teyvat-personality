@@ -21,13 +21,6 @@
 - เพิ่ม deterministic engine verification และ balance simulation `10,000` ชุด
 - Visual QA รอบแรกใน browser viewports เป้าหมายทำแล้ว; findings ที่ต้องแก้และตรวจซ้ำติดตามใน `DEVELOPMENT_PLAN.md`
 
-## Verification ล่าสุด
-
-- `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements
-- `corepack pnpm verify:engine` ผ่าน: 4 deterministic answer sets
-- `corepack pnpm lint` ผ่าน
-- `corepack pnpm build` ผ่าน
-
 ## 21 สิงหาคม 2026 — P0 usability and asset pass
 
 - เปลี่ยน footer เป็น disclaimer ไทย–อังกฤษ พร้อม `By Lesser Lord Kusanali © 2026`
@@ -43,11 +36,46 @@
 - เพิ่มไอคอน Region และ Element บน Result Page และ Character Detail
 - เพิ่ม palette สำหรับทั้ง 7 ธาตุใน Result Card, Vision Card และ PNG Share Card เพื่อให้สีสัมพันธ์กับ Element/Vision
 
+## 22 สิงหาคม 2026 — P0 quiz correctness pass
+
+- สุ่มลำดับคำถามและคำตอบเมื่อเริ่มรอบใหม่ พร้อมเก็บ seed และลำดับจริงใน versioned progress เพื่อให้ resume ได้ชุดเดิม
+- เมื่อเข้า Quiz ผ่านเมนูหลังทำจบ ระบบล้างเฉพาะ completed progress/result; progress ที่ยังไม่เสร็จยัง resume ได้
+- เพิ่ม nearest-trait fallback เพื่อให้ Matching Traits ไม่ว่าง โดยไม่เปลี่ยนอันดับ Character Match
+- ลดการคัดลอกข้อความหน้า Quiz ในระดับ UX ด้วย `user-select` และ context-menu deterrence โดยไม่อ้างว่าสามารถป้องกันการคัดลอกฝั่ง client ได้สมบูรณ์
+- เปลี่ยน footer ให้แสดง disclaimer ตาม locale ทีละภาษา
+- เพิ่ม engine verification ว่า Character Match ทุกตัวมี trait explanation อย่างน้อยหนึ่งรายการ
+
+## 22 สิงหาคม 2026 — P1 locale typography and element pass
+
+- ปรับ font system ให้ใช้ Prompt ทั้งไทยและอังกฤษ พร้อม fallback และ Google Fonts `font-display: swap`
+- ใช้ Element assets ครบ 7 ธาตุใน badge, Vision Affinity และ Share Card preview พร้อม alt/fallback ที่อ่านได้
+- เก็บ palette ครบ 7 ธาตุสำหรับ Vision Card, Character Detail และ Share Card พร้อมปรับ contrast ของข้อความ
+- ตรวจ regression ด้วย data validation, engine verification, lint และ production build รวมถึง manual QA ที่ viewport เป้าหมาย
+
+## 22 สิงหาคม 2026 — Vision Affinity and name-entry flow pass
+
+- แก้ Vision Affinity Card ให้ใช้ CSS palette จาก `vision.element` โดยตรง; Hydro, Pyro, Anemo, Electro, Dendro, Cryo และ Geo จึงใช้สีและ Element icon ของตนเอง ไม่อิง Element ของ Character Match
+- ปรับ Quiz route ที่ไม่มีคำตอบให้กลับไปขั้นกรอกชื่อก่อนเริ่ม และยัง resume ได้ทันทีเมื่อมี progress ที่ยังไม่เสร็จ
+- ปุ่ม “เริ่มใหม่” จาก Quiz และ “ทำแบบทดสอบใหม่” จาก Result ล้าง progress/result ใน localStorage ทันที แล้วกลับไปขั้นกรอกชื่อ; รองรับการเว้นชื่อว่าง
+
+## 22 สิงหาคม 2026 — P1 Matching transition
+
+- เพิ่ม Matching transition 1.2 วินาทีที่แสดงลำดับการอ่านบุคลิก, หา Character Match, หา Vision Affinity และข้อความสุดท้ายก่อนเปิดหน้า Result
+- รองรับ `prefers-reduced-motion`: ข้าม transition และไปหน้า Result ทันทีหลังคำนวณเสร็จ; การคำนวณยังเริ่มพร้อมกับ animation จึงไม่ถูกหน่วงเกินเวลาการแสดงผลสั้น ๆ
+
 ## กติกา Calculation V1 ที่นำไปใช้
 
 - Character Match และ Vision Affinity คำนวณจาก User Profile เดียวกัน แต่เป็นระบบแยกกัน
 - Character Match ใช้ dimension similarity 70% และ trait similarity 30%; ใช้คะแนนเต็มในการ sort ก่อนปัดเป็นเปอร์เซ็นต์สำหรับ UI
 - Vision Affinity ใช้ normalized traits และ Element Personality Profiles เท่านั้น ไม่อนุมาน Vision จากธาตุของตัวละครที่ชนะ
 - Progress/result เก็บ question และ algorithm versions เพื่อป้องกันข้อมูลเก่าที่ไม่เข้ากัน
+
+## Verification ล่าสุด
+
+- `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements
+- `corepack pnpm verify:engine` ผ่าน: 4 deterministic answer sets
+- `corepack pnpm lint` ผ่าน
+- `corepack pnpm build` ผ่าน
+- Regression QA และ manual QA ที่ viewport เป้าหมายผ่านแล้วเมื่อ 22 สิงหาคม 2026
 
 รายละเอียดแบบเต็มของแผนเดิมอยู่ในประวัติ Git; ให้เพิ่มผลการปรับ weights และผล QA รอบถัดไปในไฟล์นี้เมื่อปิดงานได้

@@ -1,7 +1,7 @@
 import { Check, Clipboard, Download, Link as LinkIcon, Share2, X } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 
-import { Button } from "../common";
+import { Button, ElementIcon } from "../common";
 import { t } from "../../i18n";
 import { useDialogAccessibility } from "../../hooks";
 import type { CharacterMatch, Locale, VisionMatch } from "../../types";
@@ -27,5 +27,5 @@ export function ShareResultDialog({ character, vision, locale, onClose }: { char
 }
 
 function ShareCardPreview({ character, vision, locale }: { character: CharacterMatch; vision: VisionMatch; locale: Locale }) {
-  return <div className="share-card" aria-label={t(locale, "sharePreview")}><div className="share-card__portrait">{character.artworkUrl ? <img src={character.artworkUrl} alt="" loading="lazy" /> : <span>{character.name.charAt(0)}</span>}</div><div className="share-card__content"><small>Teyvat Personalities</small><h3>{character.name}</h3><p>{character.title[locale]}</p><strong>{character.compatibility}%</strong><span>Character Match</span><div className="share-card__vision"><b>{vision.element} Vision</b><em>{vision.affinity}% Affinity</em></div><div className="share-card__traits">{character.matchingTraits.slice(0, 3).map((trait) => <i key={trait.en}>{trait[locale]}</i>)}</div></div></div>;
+  return <div className={`share-card share-card--${vision.element.toLowerCase()}`} aria-label={t(locale, "sharePreview")}><div className="share-card__portrait">{character.artworkUrl ? <img src={character.artworkUrl} alt="" loading="lazy" /> : <span>{character.name.charAt(0)}</span>}</div><div className="share-card__content"><small>Teyvat Personalities</small><h3>{character.name}</h3><p>{character.title[locale]}</p><strong>{character.compatibility}%</strong><span>Character Match</span><div className="share-card__vision"><b><ElementIcon element={vision.element} alt="" />{vision.element} Vision</b><em>{vision.affinity}% Affinity</em></div><div className="share-card__traits">{character.matchingTraits.slice(0, 3).map((trait) => <i key={trait.en}>{trait[locale]}</i>)}</div></div></div>;
 }
