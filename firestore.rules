@@ -7,6 +7,10 @@ service cloud.firestore {
 
       allow create: if
         id.matches('^[A-Za-z0-9_-]{12}$') &&
+        request.resource.data.keys().hasAll([
+          'schemaVersion', 'questionVersion', 'algorithmVersion',
+          'publishedAt', 'character', 'vision'
+        ]) &&
         request.resource.data.keys().hasOnly([
           'schemaVersion', 'questionVersion', 'algorithmVersion',
           'publishedAt', 'character', 'vision'
@@ -21,29 +25,36 @@ service cloud.firestore {
       allow update: if false;
       allow delete: if false;
     }
+
+    function isValidCharacter(c) {
+      return c.keys().hasAll([
+          'characterId', 'name', 'element', 'region', 'compatibility',
+          'title', 'summary', 'matchingTraits', 'artworkUrl'
+        ])
+        && c.keys().hasOnly([
+          'characterId', 'name', 'element', 'region', 'compatibility',
+          'title', 'summary', 'matchingTraits', 'artworkUrl'
+        ])
+        && c.characterId is string && c.name is string
+        && c.element is string && c.region is string
+        && c.compatibility is int && c.compatibility >= 0 && c.compatibility <= 100
+        && isLocalizedText(c.title) && isLocalizedText(c.summary)
+        && c.matchingTraits is list
+        && (c.artworkUrl == null || c.artworkUrl is string);
+    }
+
+    function isValidVision(v) {
+      return v.keys().hasAll(['element', 'affinity', 'summary'])
+        && v.keys().hasOnly(['element', 'affinity', 'summary'])
+        && v.element is string
+        && v.affinity is int && v.affinity >= 0 && v.affinity <= 100
+        && isLocalizedText(v.summary);
+    }
+
+    function isLocalizedText(t) {
+      return t.keys().hasAll(['th', 'en'])
+        && t.keys().hasOnly(['th', 'en'])
+        && t.th is string && t.en is string;
+    }
   }
-}
-
-function isValidCharacter(c) {
-  return c.keys().hasOnly([
-      'characterId', 'name', 'element', 'region', 'compatibility',
-      'title', 'summary', 'matchingTraits', 'artworkUrl'
-    ])
-    && c.characterId is string && c.name is string
-    && c.element is string && c.region is string
-    && c.compatibility is int && c.compatibility >= 0 && c.compatibility <= 100
-    && isLocalizedText(c.title) && isLocalizedText(c.summary)
-    && c.matchingTraits is list
-    && (c.artworkUrl == null || c.artworkUrl is string);
-}
-
-function isValidVision(v) {
-  return v.keys().hasOnly(['element', 'affinity', 'summary'])
-    && v.element is string
-    && v.affinity is int && v.affinity >= 0 && v.affinity <= 100
-    && isLocalizedText(v.summary);
-}
-
-function isLocalizedText(t) {
-  return t.keys().hasOnly(['th', 'en']) && t.th is string && t.en is string;
 }

@@ -122,6 +122,20 @@ try {
 
   await assertFails(deleteDoc(doc(db, "sharedResults", validId)));
 
+  const extraField = sampleSharedResultDoc();
+  extraField.playerName = "someone";
+  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes005"), extraField));
+
+  const wrongType = sampleSharedResultDoc();
+  wrongType.character.name = 42;
+  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes006"), wrongType));
+
+  const wrongSchemaVersion = sampleSharedResultDoc();
+  wrongSchemaVersion.schemaVersion = 2;
+  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes007"), wrongSchemaVersion));
+
+  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes!01"), sampleSharedResultDoc()));
+
   console.log("Shared result rules verification passed.");
 } finally {
   await testEnv.cleanup();
@@ -155,8 +169,8 @@ try {
   let secondWriteRejected = false;
   try {
     await setDoc(doc(integrationDb, "sharedResults", publishedId), { ...storedData, character: { ...storedData.character, compatibility: 1 } });
-  } catch {
-    secondWriteRejected = true;
+  } catch (error) {
+    secondWriteRejected = error.code === "permission-denied";
   }
   assert(secondWriteRejected, "overwriting an already-published document must be rejected by the rules");
 
