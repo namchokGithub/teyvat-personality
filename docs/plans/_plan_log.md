@@ -70,6 +70,18 @@
 - Vision Affinity ใช้ normalized traits และ Element Personality Profiles เท่านั้น ไม่อนุมาน Vision จากธาตุของตัวละครที่ชนะ
 - Progress/result เก็บ question และ algorithm versions เพื่อป้องกันข้อมูลเก่าที่ไม่เข้ากัน
 
+## 24 สิงหาคม 2026 — P0 name-entry และ Vision Affinity regression ปิดงาน
+
+- ตรวจ regression ของ name-entry flow ครบกรณีครั้งแรก, resume, reset ระหว่างทำ, เริ่มใหม่หลังจบ และการเว้นชื่อว่าง ผ่านทุกกรณี
+- ตรวจ Vision Affinity Card ครบ 7 ธาตุในหน้า Result ผ่าน
+- เริ่มออกแบบ P2 Shared Result: เขียน spec Firestore schema + Security Rules + testing plan ไว้ที่ [2026-08-24-shared-result-schema-rules-design.md](../superpowers/specs/2026-08-24-shared-result-schema-rules-design.md) (ยังเป็น design เท่านั้น ยังไม่ implement)
+
+## 25 สิงหาคม 2026 — P2 Shared Result schema/rules
+
+- ใช้ Firestore schema `sharedResults/{id}` แบบ self-contained snapshot ตาม spec 2026-08-24-shared-result-schema-rules-design.md
+- เขียนและทดสอบ Firestore Security Rules แบบ create/read only ผ่าน Firestore Emulator (`pnpm run verify:shared-result`)
+- เพิ่ม `publishSharedResult` write helper พร้อม id-collision retry ให้ item 3 (publish flow UI) เรียกใช้ต่อได้ทันที
+
 ## Verification ล่าสุด
 
 - `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements

@@ -1,6 +1,6 @@
 # Teyvat Personalities — Development Plan
 
-สถานะล่าสุด: 22 สิงหาคม 2026
+สถานะล่าสุด: 24 สิงหาคม 2026
 
 งานที่เสร็จแล้วอยู่ใน [_plan_log.md](_plan_log.md) ไฟล์นี้เก็บเฉพาะ backlog ที่จะทำต่อ โดยนำรายการจาก `TODO.md` มาจัดลำดับใหม่ตามความเสี่ยงและลำดับพึ่งพา
 
@@ -12,14 +12,10 @@
 - Firestore Rules ต้องอนุญาตเฉพาะการสร้างและอ่านผลที่แชร์ ห้ามแก้ไขหรือลบหลังสร้าง การแก้ `id` ใน URL จึงทำได้เพียงไปยังลิงก์อื่น ไม่สามารถเปลี่ยนผลในเอกสารเดิมได้
 - การกัน spam/abuse สำหรับ public create (เช่น App Check หรือ Anonymous Auth) เป็นการตัดสินใจก่อนเปิดใช้จริงใน phase นั้น
 
-## P0 — Regression ของ Name entry และ Vision Affinity
-
-1. [ ] ตรวจ regression ของ name-entry flow ทั้งกรณีครั้งแรก, resume, reset ระหว่างทำ, เริ่มใหม่หลังจบ และการเว้นชื่อว่าง รวมถึงตรวจ Vision Affinity Card ครบ 7 ธาตุในหน้า Result
-
 ## P2 — Shared Result ข้ามอุปกรณ์ (เลื่อนทำภายหลัง)
 
-1. [ ] ออกแบบ Firestore schema สำหรับ published result: opaque ID, result snapshot, algorithm/data version และเวลาเผยแพร่
-2. [ ] เขียนและทดสอบ Firestore Security Rules แบบ create/read only พร้อมตรวจว่า client แก้ไขหรือลบ published result ไม่ได้
+1. [x] ออกแบบ Firestore schema สำหรับ published result: opaque ID, result snapshot, algorithm/data version และเวลาเผยแพร่ — spec พร้อมแล้วใน [2026-08-24-shared-result-schema-rules-design.md](../superpowers/specs/2026-08-24-shared-result-schema-rules-design.md) รอ implementation
+2. [x] เขียนและทดสอบ Firestore Security Rules แบบ create/read only พร้อมตรวจว่า client แก้ไขหรือลบ published result ไม่ได้ — spec พร้อมแล้วในไฟล์เดียวกันข้างบน รอ implementation
 3. [ ] สร้าง publish flow หลังคำนวณผลสำเร็จ และหน้า read-only `#/shared/:id` สำหรับเปิดผลจากอุปกรณ์อื่น
 4. [ ] จัดการกรณีลิงก์ไม่มีอยู่, version เก่า และผลที่ไม่รองรับ โดยแสดง CTA ให้เริ่มแบบทดสอบแทน
 5. [ ] ตัดสินใจมาตรการป้องกัน public-write abuse ก่อนเปิด production แล้วจึงทำ end-to-end QA บนอุปกรณ์/เบราว์เซอร์ต่างกัน
