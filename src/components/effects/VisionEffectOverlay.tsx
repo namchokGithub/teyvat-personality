@@ -1,21 +1,134 @@
 import { useEffect, useRef, useState } from "react";
 
+import { createAnemoParticles, drawAnemoEffect } from "./AnemoEffect";
 import { createCryoParticles, drawCryoEffect } from "./CryoEffect";
 import { createDendroParticles, drawDendroEffect } from "./DendroEffect";
+import { createElectroParticles, drawElectroEffect } from "./ElectroEffect";
+import { createGeoParticles, drawGeoEffect } from "./GeoEffect";
+import { createHydroParticles, drawHydroEffect } from "./HydroEffect";
 import { createPyroParticles, drawPyroEffect } from "./PyroEffect";
+import {
+  visionParticleCounts,
+  type VisionElement,
+} from "./visionEffects.config";
 
-export type VisionEffect = "cryo" | "dendro" | "pyro";
+type Particles =
+  | ReturnType<typeof createAnemoParticles>
+  | ReturnType<typeof createCryoParticles>
+  | ReturnType<typeof createDendroParticles>
+  | ReturnType<typeof createElectroParticles>
+  | ReturnType<typeof createGeoParticles>
+  | ReturnType<typeof createHydroParticles>
+  | ReturnType<typeof createPyroParticles>;
 
-const particleCounts: Record<
-  VisionEffect,
-  { desktop: number; mobile: number }
-> = {
-  cryo: { desktop: 52, mobile: 24 },
-  dendro: { desktop: 46, mobile: 22 },
-  pyro: { desktop: 48, mobile: 24 },
-};
+function createParticles(
+  effect: VisionElement,
+  count: number,
+  width: number,
+  height: number,
+): Particles {
+  switch (effect) {
+    case "anemo":
+      return createAnemoParticles(count, width, height);
+    case "cryo":
+      return createCryoParticles(count, width, height);
+    case "dendro":
+      return createDendroParticles(count, width, height);
+    case "electro":
+      return createElectroParticles(count, width, height);
+    case "geo":
+      return createGeoParticles(count, width, height);
+    case "hydro":
+      return createHydroParticles(count, width, height);
+    case "pyro":
+      return createPyroParticles(count, width, height);
+  }
+}
 
-function VisionEffectCanvas({ effect }: { effect: VisionEffect }) {
+function drawParticles(
+  effect: VisionElement,
+  context: CanvasRenderingContext2D,
+  particles: Particles,
+  delta: number,
+  elapsed: number,
+  width: number,
+  height: number,
+): void {
+  switch (effect) {
+    case "anemo":
+      drawAnemoEffect(
+        context,
+        particles as ReturnType<typeof createAnemoParticles>,
+        delta,
+        elapsed,
+        width,
+        height,
+      );
+      return;
+    case "cryo":
+      drawCryoEffect(
+        context,
+        particles as ReturnType<typeof createCryoParticles>,
+        delta,
+        elapsed,
+        width,
+        height,
+      );
+      return;
+    case "dendro":
+      drawDendroEffect(
+        context,
+        particles as ReturnType<typeof createDendroParticles>,
+        delta,
+        elapsed,
+        width,
+        height,
+      );
+      return;
+    case "electro":
+      drawElectroEffect(
+        context,
+        particles as ReturnType<typeof createElectroParticles>,
+        delta,
+        elapsed,
+        width,
+        height,
+      );
+      return;
+    case "geo":
+      drawGeoEffect(
+        context,
+        particles as ReturnType<typeof createGeoParticles>,
+        delta,
+        elapsed,
+        width,
+        height,
+      );
+      return;
+    case "hydro":
+      drawHydroEffect(
+        context,
+        particles as ReturnType<typeof createHydroParticles>,
+        delta,
+        elapsed,
+        width,
+        height,
+      );
+      return;
+    case "pyro":
+      drawPyroEffect(
+        context,
+        particles as ReturnType<typeof createPyroParticles>,
+        delta,
+        elapsed,
+        width,
+        height,
+      );
+      return;
+  }
+}
+
+function VisionEffectCanvas({ effect }: { effect: VisionElement }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -25,17 +138,16 @@ function VisionEffectCanvas({ effect }: { effect: VisionEffect }) {
     const context = canvas.getContext("2d");
     if (!context) return;
 
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
     let frameId = 0;
     let previousTime = performance.now();
     let elapsed = 0;
     let isVisible = !document.hidden;
     let width = 0;
     let height = 0;
-    let particles:
-      | ReturnType<typeof createCryoParticles>
-      | ReturnType<typeof createDendroParticles>
-      | ReturnType<typeof createPyroParticles> = [];
+    let particles: Particles = [];
 
     const resize = () => {
       const scale = Math.min(window.devicePixelRatio || 1, 2);
@@ -49,14 +161,9 @@ function VisionEffectCanvas({ effect }: { effect: VisionEffect }) {
 
       const count =
         window.innerWidth < 768
-          ? particleCounts[effect].mobile
-          : particleCounts[effect].desktop;
-      particles =
-        effect === "cryo"
-          ? createCryoParticles(count, width, height)
-          : effect === "dendro"
-            ? createDendroParticles(count, width, height)
-            : createPyroParticles(count, width, height);
+          ? visionParticleCounts[effect].mobile
+          : visionParticleCounts[effect].desktop;
+      particles = createParticles(effect, count, width, height);
     };
 
     const render = (time: number) => {
@@ -67,33 +174,7 @@ function VisionEffectCanvas({ effect }: { effect: VisionEffect }) {
       previousTime = time;
       elapsed += delta;
       context.clearRect(0, 0, width, height);
-      if (effect === "cryo")
-        drawCryoEffect(
-          context,
-          particles as ReturnType<typeof createCryoParticles>,
-          delta,
-          elapsed,
-          width,
-          height,
-        );
-      if (effect === "dendro")
-        drawDendroEffect(
-          context,
-          particles as ReturnType<typeof createDendroParticles>,
-          delta,
-          elapsed,
-          width,
-          height,
-        );
-      if (effect === "pyro")
-        drawPyroEffect(
-          context,
-          particles as ReturnType<typeof createPyroParticles>,
-          delta,
-          elapsed,
-          width,
-          height,
-        );
+      drawParticles(effect, context, particles, delta, elapsed, width, height);
       frameId = requestAnimationFrame(render);
     };
 
@@ -117,7 +198,10 @@ function VisionEffectCanvas({ effect }: { effect: VisionEffect }) {
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener("resize", resize);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      document.removeEventListener(
+        "visibilitychange",
+        handleVisibilityChange,
+      );
     };
   }, [effect]);
 
@@ -130,7 +214,7 @@ function VisionEffectCanvas({ effect }: { effect: VisionEffect }) {
   );
 }
 
-export function VisionEffectOverlay({ effect }: { effect: VisionEffect }) {
+export function VisionEffectOverlay({ effect }: { effect: VisionElement }) {
   const [reduceMotion, setReduceMotion] = useState(
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );

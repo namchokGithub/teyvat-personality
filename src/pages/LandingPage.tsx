@@ -3,11 +3,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { Button, ContentCard, PageContainer } from "../components/common";
-import {
-  VisionEffectOverlay,
-  type VisionEffect,
-} from "../components/effects/VisionEffectOverlay";
+import { VisionEffectOverlay } from "../components/effects/VisionEffectOverlay";
 import { VisionEffectSwitcher } from "../components/effects/VisionEffectSwitcher";
+import {
+  isVisionElement,
+  VISION_EFFECT_DEFAULT,
+  type VisionElement,
+} from "../components/effects/visionEffects.config";
 import paimonArtwork from "../assets/images/paimon_hello.png";
 import featCharBG from "../assets/images/characters/full/varka.png";
 import nahidaWishArtwork from "../assets/images/characters/full/nahida_wish.png";
@@ -34,11 +36,9 @@ function renderTextWithBreaks(text: string) {
 
 const VISION_EFFECT_STORAGE_KEY = "teyvat-vision-effect";
 
-function readVisionEffect(): VisionEffect {
+function readVisionEffect(): VisionElement {
   const savedEffect = localStorage.getItem(VISION_EFFECT_STORAGE_KEY);
-  return savedEffect === "dendro" || savedEffect === "pyro"
-    ? savedEffect
-    : "cryo";
+  return isVisionElement(savedEffect) ? savedEffect : VISION_EFFECT_DEFAULT;
 }
 
 export function LandingPage({ locale }: { locale: Locale }) {
@@ -51,7 +51,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
   const [showNameDialog, setShowNameDialog] = useState(() => requestName);
   const [name, setName] = useState(readPlayerName);
   const [visionEffect, setVisionEffect] =
-    useState<VisionEffect>(readVisionEffect);
+    useState<VisionElement>(readVisionEffect);
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeNameDialog = useCallback(() => setShowNameDialog(false), []);
 
