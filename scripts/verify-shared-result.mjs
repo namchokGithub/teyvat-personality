@@ -126,3 +126,41 @@ try {
 } finally {
   await testEnv.cleanup();
 }
+
+const integrationServer = await createServer({
+  root: process.cwd(),
+  appType: "custom",
+  server: { middlewareMode: true, hmr: false },
+  logLevel: "error",
+});
+
+try {
+  const { initializeApp } = await import("firebase/app");
+  const { connectFirestoreEmulator, getFirestore, doc, getDoc, setDoc } = await import("firebase/firestore");
+
+  const integrationApp = initializeApp({ projectId: EMULATOR_PROJECT_ID }, "shared-result-integration-test");
+  const integrationDb = getFirestore(integrationApp);
+  connectFirestoreEmulator(integrationDb, EMULATOR_HOST, EMULATOR_PORT);
+
+  const sharedResult = await integrationServer.ssrLoadModule("/src/lib/shared-result.ts");
+  const publishedId = await sharedResult.publishSharedResult(integrationDb, sampleCharacter, sampleVision, sampleVersions);
+  assert(/^[A-Za-z0-9_-]{12}$/.test(publishedId), "publishSharedResult must return a 12-character opaque id");
+
+  const stored = await getDoc(doc(integrationDb, "sharedResults", publishedId));
+  assert(stored.exists(), "the published document must exist after publishSharedResult resolves");
+  const storedData = stored.data();
+  assert(storedData.character.characterId === sampleCharacter.characterId, "stored character snapshot must match the input character");
+  assert(typeof storedData.publishedAt?.toMillis === "function", "publishedAt must be a Firestore Timestamp");
+
+  let secondWriteRejected = false;
+  try {
+    await setDoc(doc(integrationDb, "sharedResults", publishedId), { ...storedData, character: { ...storedData.character, compatibility: 1 } });
+  } catch {
+    secondWriteRejected = true;
+  }
+  assert(secondWriteRejected, "overwriting an already-published document must be rejected by the rules");
+
+  console.log("Shared result publish-helper integration verification passed.");
+} finally {
+  await integrationServer.close();
+}

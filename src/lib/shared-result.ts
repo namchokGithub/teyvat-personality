@@ -1,4 +1,5 @@
 import { customAlphabet } from "nanoid";
+import { doc, getDoc, serverTimestamp, setDoc, type Firestore } from "firebase/firestore";
 
 import type {
   CharacterMatch,
@@ -51,4 +52,22 @@ export function buildSharedResultDoc(
     character: toCharacterSnapshot(character),
     vision: toVisionSnapshot(vision),
   };
+}
+
+const MAX_SHARED_RESULT_ID_ATTEMPTS = 5;
+
+export async function publishSharedResult(
+  db: Firestore,
+  character: CharacterMatch,
+  vision: VisionMatch,
+  versions: SharedResultVersion,
+): Promise<string> {
+  for (let attempt = 0; attempt < MAX_SHARED_RESULT_ID_ATTEMPTS; attempt += 1) {
+    const id = createSharedResultId();
+    const ref = doc(db, "sharedResults", id);
+    if ((await getDoc(ref)).exists()) continue;
+    await setDoc(ref, { ...buildSharedResultDoc(character, vision, versions), publishedAt: serverTimestamp() });
+    return id;
+  }
+  throw new Error(`Could not generate a unique shared result id after ${MAX_SHARED_RESULT_ID_ATTEMPTS} attempts`);
 }
