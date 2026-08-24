@@ -2232,6 +2232,10 @@ html[lang="th"] .hero__copy h1 {
 }
 
 @media (max-width: 450px) {
+  .landing-page .hero,
+  .landing-page .feature-grid {
+    width: calc(100% - 40px);
+  }
   .vision-effect-picker__trigger {
     right: max(14px, env(safe-area-inset-right));
     bottom: max(14px, env(safe-area-inset-bottom));
