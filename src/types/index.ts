@@ -1,3 +1,5 @@
+import type { Timestamp } from "firebase/firestore";
+
 export type Locale = "th" | "en";
 
 export type Theme = "light" | "dark";
@@ -161,4 +163,37 @@ export interface CharacterArtwork {
   source: string;
   licenseOrUsageNote: string;
   usage: ArtworkUsage;
+}
+
+export interface SharedResultVersion {
+  questionVersion: string;
+  algorithmVersion: string;
+}
+
+export interface SharedResultCharacterSnapshot {
+  characterId: string;
+  name: string;
+  element: string;
+  region: string;
+  compatibility: number;
+  title: LocalizedText;
+  summary: LocalizedText;
+  matchingTraits: LocalizedText[];
+  artworkUrl: string | null;
+}
+
+export interface SharedResultVisionSnapshot {
+  element: string;
+  affinity: number;
+  summary: LocalizedText;
+}
+
+export interface SharedResultSnapshot extends SharedResultVersion {
+  schemaVersion: 1;
+  character: SharedResultCharacterSnapshot;
+  vision: SharedResultVisionSnapshot;
+}
+
+export interface SharedResultDoc extends SharedResultSnapshot {
+  publishedAt: Timestamp;
 }
