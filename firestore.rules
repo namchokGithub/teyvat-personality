@@ -1,8 +1,49 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if false;
+    match /sharedResults/{id} {
+      allow get: if true;
+      allow list: if false;
+
+      allow create: if
+        id.matches('^[A-Za-z0-9_-]{12}$') &&
+        request.resource.data.keys().hasOnly([
+          'schemaVersion', 'questionVersion', 'algorithmVersion',
+          'publishedAt', 'character', 'vision'
+        ]) &&
+        request.resource.data.schemaVersion == 1 &&
+        request.resource.data.questionVersion is string &&
+        request.resource.data.algorithmVersion is string &&
+        request.resource.data.publishedAt == request.time &&
+        isValidCharacter(request.resource.data.character) &&
+        isValidVision(request.resource.data.vision);
+
+      allow update: if false;
+      allow delete: if false;
     }
   }
+}
+
+function isValidCharacter(c) {
+  return c.keys().hasOnly([
+      'characterId', 'name', 'element', 'region', 'compatibility',
+      'title', 'summary', 'matchingTraits', 'artworkUrl'
+    ])
+    && c.characterId is string && c.name is string
+    && c.element is string && c.region is string
+    && c.compatibility is int && c.compatibility >= 0 && c.compatibility <= 100
+    && isLocalizedText(c.title) && isLocalizedText(c.summary)
+    && c.matchingTraits is list
+    && (c.artworkUrl == null || c.artworkUrl is string);
+}
+
+function isValidVision(v) {
+  return v.keys().hasOnly(['element', 'affinity', 'summary'])
+    && v.element is string
+    && v.affinity is int && v.affinity >= 0 && v.affinity <= 100
+    && isLocalizedText(v.summary);
+}
+
+function isLocalizedText(t) {
+  return t.keys().hasOnly(['th', 'en']) && t.th is string && t.en is string;
 }
