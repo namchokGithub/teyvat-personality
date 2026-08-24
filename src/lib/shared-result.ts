@@ -24,7 +24,7 @@ function toCharacterSnapshot(character: CharacterMatch): SharedResultCharacterSn
     name: character.name,
     element: character.element,
     region: character.region,
-    compatibility: Math.round(character.compatibility),
+    compatibility: Math.round(Math.min(100, Math.max(0, character.compatibility))),
     title: character.title,
     summary: character.summary,
     matchingTraits: character.matchingTraits,
@@ -35,7 +35,7 @@ function toCharacterSnapshot(character: CharacterMatch): SharedResultCharacterSn
 function toVisionSnapshot(vision: VisionMatch): SharedResultVisionSnapshot {
   return {
     element: vision.element,
-    affinity: Math.round(vision.affinity),
+    affinity: Math.round(Math.min(100, Math.max(0, vision.affinity))),
     summary: vision.summary,
   };
 }
