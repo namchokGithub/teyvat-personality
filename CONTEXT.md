@@ -2,7 +2,7 @@
 
 > This file is the primary context for AI agents working on this project.
 > Read this file before making architectural, data-model, quiz, or personality-system changes.
-> Repository-operation rules live in `AGENTS.md`; detailed product scope lives in `docs/scope.md`; the authoritative implementation stack lives in `docs/stack.md`.
+> Repository-operation rules live in `AGENTS.md`; detailed product scope lives in `docs/scope.md`; the authoritative implementation stack lives in `README.md`.
 
 ---
 
@@ -1266,7 +1266,8 @@ Architecture and deployment constraints:
 - Admin SDK credentials and service-account keys must never be included in frontend code.
 - GitHub Pages is the hosting target, using a repository-aware Vite base path and hash-based routing.
 - Unit tests and a test framework are deferred until a later phase.
-- shadcn/ui components should be initialized only when UI implementation begins.
+- Styling uses Tailwind CSS v4 plus custom design-token CSS (`src/styles/index.css`); shadcn/ui was not adopted.
+- The app supports a light and dark theme via CSS custom properties, toggled through a `data-theme` attribute on `<html>`. It follows the OS `prefers-color-scheme` until the user manually switches, and the explicit choice is then remembered in `localStorage`. Per-element accent colors and decorative artwork are intentionally the same in both themes; only neutral surface, text, and border tokens change.
 
 ---
 

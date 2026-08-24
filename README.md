@@ -1,5 +1,6 @@
 # Teyvat Personality
 
+[![Version](https://img.shields.io/badge/version-0.1.0-4c7cff)](package.json)
 [![Status: Project Scaffold](https://img.shields.io/badge/status-project%20scaffold-4c7cff)](docs/scope.md)
 [![Characters](https://img.shields.io/badge/characters-125-8b5cf6)](src/data/characters/_characters.json)
 [![Elements](https://img.shields.io/badge/elements-7-00a896)](src/data/masters/elements.json)
@@ -36,14 +37,22 @@ Elemental profiles use weighted traits rather than treating every trait equally.
 ## Tech stack
 
 - Vite, React, and TypeScript
-- Tailwind CSS v4 and shadcn/ui (components will be added when UI development begins)
-- React Router
+- Tailwind CSS v4, with custom design-token CSS (light/dark theme via CSS custom properties and a `data-theme` attribute; no shadcn/ui adopted)
+- React Router (hash-based, for GitHub Pages compatibility)
 - Zod
 - Firebase Web SDK connected directly from the frontend; no Backend API
 - GitHub Pages deployment
 - pnpm via Corepack
 
-Unit testing is intentionally deferred until a later development phase. See [Tech stack](docs/stack.md) for the complete decision record.
+Unit testing is intentionally deferred until a later development phase.
+
+## Features
+
+- 24-question personality quiz with independent Character Match and Vision Affinity results
+- Character directory with search and filters across all 125 characters
+- Shareable result cards
+- Light and dark theme, following the system preference until manually switched, with the choice remembered
+- Decorative Landing Page particle background covering all 7 elements, switchable from a single picker
 
 ## Getting started
 
@@ -92,7 +101,6 @@ Character files separate factual game data from personality interpretation. When
 ## Project documentation
 
 - [Project scope](docs/scope.md) explains the quiz concept and personality dimensions.
-- [Tech stack](docs/stack.md) records the frontend, Firebase, tooling, and GitHub Pages decisions.
 - [Character data import plan](docs/character-data-import-plan.md) documents the source mapping, fallbacks, and safe re-run behavior.
 - [Lore research workflow](docs/lore-research-workflow.md) explains how to research Profile and Voice-Overs pages, validate lore files, and resume from the saved checkpoint.
 - [Project context](CONTEXT.md) records the broader data-model and matching-system decisions.

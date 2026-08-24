@@ -1,6 +1,6 @@
 # Character Personality Generation Plan
 
-> Status: approved plan only. This document does not create character personality profiles or modify factual character data.
+> Status: executed. All 125 `src/data/personality/character-personalities/{id}.json` profiles exist. The implemented generator is `scripts/generate-character-personality-drafts.mjs` (run as `node scripts/generate-character-personality-drafts.mjs [--overwrite-drafts]`, not the `scripts/preview-character-personalities.mts` / `pnpm personality:preview` command named below) — it drafts scores from Thai keyword signals in lore text and writes `src/data/personality/character-personalities/_generation-review-report.md` for manual review, rather than the interactive preview-only flow originally planned. Kept as the design reference for scoring rules, trait vocabulary, and evidence priority when new characters are added.
 
 ## Goal
 
@@ -54,7 +54,7 @@ Rules:
 | `responsibility` | free-spirited / low duty orientation | strongly duty-driven / responsible |
 | `expression` | reserved / emotionally private | highly expressive / emotionally visible |
 
-`lifestyle` deliberately uses the direction above. It supersedes the older reversed wording in `docs/scope.md`; `CONTEXT.md` is updated to match it.
+`lifestyle` deliberately uses the direction above, matching `CONTEXT.md` and `docs/scope.md`.
 
 ## Evidence and scoring method
 

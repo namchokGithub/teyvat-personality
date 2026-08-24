@@ -32,7 +32,7 @@
 
 ## งานต่อเนื่องนอกแผนผลิตภัณฑ์
 
-- [ ] รวบรวม feedback จากผู้ทดสอบจริงและปรับ weights ตาม [CALCULATION_RULES_PLAN.md](CALCULATION_RULES_PLAN.md) เมื่อมีข้อมูลเพียงพอ
+- [ ] รวบรวม feedback จากผู้ทดสอบจริงและปรับ weights ตาม [CALCULATION_RULES_V1.md](../CALCULATION_RULES_V1.md) เมื่อมีข้อมูลเพียงพอ
 
 ## ไม่เพิ่มกลับเข้า backlog
 

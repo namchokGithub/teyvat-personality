@@ -43,63 +43,7 @@ Result
 
 # 2. Personality Dimensions
 
-ระบบเริ่มต้นด้วย Personality Dimensions จำนวนประมาณ **6 แกน**
-
-| Dimension      | คะแนนต่ำ      | คะแนนสูง    |
-| -------------- | ------------- | ----------- |
-| Social         | Introverted   | Extroverted |
-| Decision       | Emotional     | Rational    |
-| Lifestyle      | Spontaneous / Flexible | Structured / Planned |
-| Adventure      | Cautious      | Adventurous |
-| Responsibility | Free-spirited | Duty-driven |
-| Expression     | Reserved      | Expressive  |
-
-คะแนนแต่ละ Dimension อยู่ระหว่าง:
-
-```text
-0 – 100
-```
-
-ตัวอย่าง:
-
-### Zhongli
-
-```json
-{
-  "social": 45,
-  "decision": 85,
-  "lifestyle": 80,
-  "adventure": 35,
-  "responsibility": 90,
-  "expression": 30
-}
-```
-
-### Venti
-
-```json
-{
-  "social": 85,
-  "decision": 45,
-  "lifestyle": 15,
-  "adventure": 90,
-  "responsibility": 35,
-  "expression": 90
-}
-```
-
-### Nahida
-
-```json
-{
-  "social": 55,
-  "decision": 80,
-  "lifestyle": 65,
-  "adventure": 55,
-  "responsibility": 95,
-  "expression": 65
-}
-```
+ดูรายชื่อ Dimension, ทิศทางคะแนน (0–100), และตัวอย่างค่าจริงที่ `CONTEXT.md` (หัวข้อ `# 7. Main Personality Dimensions`) — เอกสารนี้ไม่ทำสำเนาซ้ำเพื่อป้องกันข้อมูลเพี้ยนไปคนละทาง
 
 > คะแนน Personality ของ Character เป็น **Fan-made Interpretation** ไม่ใช่ข้อมูล Official จาก HoYoverse
 
@@ -399,6 +343,8 @@ Furina:
 
 # 11. Matching Algorithm
 
+> Euclidean/Weighted Distance ด้านล่างเป็นแนวคิดตอนออกแบบเท่านั้น ระบบที่ implement จริงใช้สูตรอื่น (hybrid similarity) ดูสูตรจริงที่ `docs/CALCULATION_RULES_V1.md`
+
 Algorithm เบื้องต้นสามารถใช้:
 
 ```text
@@ -678,62 +624,7 @@ React
 
 # 17. Recommended Tech Stack
 
-สำหรับ V1:
-
-```text
-Vite
-React
-TypeScript
-Tailwind CSS
-shadcn/ui
-lucide-react
-```
-
-Data:
-
-```text
-JSON / TypeScript
-```
-
-ยังไม่จำเป็นต้องใช้:
-
-```text
-Backend
-Database
-Authentication
-Firebase
-```
-
-สามารถเพิ่มภายหลังได้หากต้องการเก็บ Statistics หรือ User Results
-
----
-
-# 18. Data Structure
-
-แนะนำ:
-
-```text
-src/
-│
-├── data/
-│   ├── characters/
-│   │   ├── _characters.json
-│   │   └── {character-id}.json
-│   ├── questions.json
-│   ├── personality-dimensions.json
-│   └── personality-titles.json
-│
-├── engine/
-│   ├── calculatePersonality.ts
-│   ├── calculateSimilarity.ts
-│   └── rankCharacters.ts
-│
-├── components/
-│
-├── pages/
-│
-└── types/
-```
+Tech stack จริงที่ใช้และโครงสร้างไฟล์ปัจจุบัน ดูที่ `README.md` (หัวข้อ "Tech stack" และ "Data layout") — เอกสารนี้เก็บไว้เฉพาะ concept ตอนออกแบบ ไม่ใช่ record ของสิ่งที่ implement จริง
 
 ---
 
@@ -972,45 +863,3 @@ Frontend Only
 > **Fan-made personality quiz inspired by Genshin Impact.**
 
 Personality classification และ Character Personality Scores เป็นการวิเคราะห์และตีความของผู้สร้าง ไม่ใช่ข้อมูลหรือ Personality Classification อย่างเป็นทางการจาก HoYoverse
-
----
-
-6 dimensions using scores from 0-100:
-
-- social
-  0 = strongly introverted / socially withdrawn
-  100 = strongly extroverted / socially energized
-- decision
-  0 = strongly emotion/value-driven
-  100 = strongly logic/reason-driven
-- lifestyle
-  0 = spontaneous / flexible
-  100 = structured / planned
-- adventure
-  0 = cautious / risk-averse
-  100 = adventurous / risk-tolerant
-- responsibility
-  0 = free-spirited / low duty orientation
-  100 = strongly duty-driven / responsible
-- expression
-  0 = reserved / emotionally private
-  100 = highly expressive / emotionally visible
-
-{
-"personality": {
-"social": 35,
-"decision": 65,
-"lifestyle": 55,
-"adventure": 75,
-"responsibility": 70,
-"expression": 30
-},
-"traits": {
-"idealism": 0.9,
-"calmness": 0.8,
-"independence": 0.7,
-"determination": 0.8
-}
-}
-
-"traits" อิงตาม elements
