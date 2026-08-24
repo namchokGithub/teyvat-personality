@@ -1,8 +1,8 @@
-import { Search, Sparkles, Star } from "lucide-react";
+import { Sparkles, Star } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Button, PageContainer } from "../components/common";
+import { Button, ElementIcon, PageContainer } from "../components/common";
 import { getCharacterArtwork } from "../data/characters/artwork";
 import { loadCharacterSummaries } from "../data/characters/repository";
 import { t } from "../i18n";
@@ -16,9 +16,10 @@ const unique = (values: Array<string | null>) =>
 export function CharactersPage({ locale }: { locale: Locale }) {
   const [characters, setCharacters] = useState<CharacterSummary[] | null>(null);
   const [query, setQuery] = useState("");
-  const [region, setRegion] = useState("");
-  const [element, setElement] = useState("");
-  const [rarity, setRarity] = useState("");
+  const [regionsSelected, setRegionsSelected] = useState<string[]>([]);
+  const [elementsSelected, setElementsSelected] = useState<string[]>([]);
+  const [raritiesSelected, setRaritiesSelected] = useState<string[]>([]);
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -43,17 +44,23 @@ export function CharactersPage({ locale }: { locale: Locale }) {
       (characters ?? []).filter(
         (character) =>
           character.name.toLowerCase().includes(query.trim().toLowerCase()) &&
-          (!region || character.region === region) &&
-          (!element || character.element === element) &&
-          (!rarity || character.rarity === Number(rarity)),
+          (!regionsSelected.length ||
+            (character.region !== null &&
+              regionsSelected.includes(character.region))) &&
+          (!elementsSelected.length ||
+            (character.element !== null &&
+              elementsSelected.includes(character.element))) &&
+          (!raritiesSelected.length ||
+            (character.rarity !== null &&
+              raritiesSelected.includes(String(character.rarity)))),
       ),
-    [characters, element, query, rarity, region],
+    [characters, elementsSelected, query, raritiesSelected, regionsSelected],
   );
   const clear = () => {
     setQuery("");
-    setRegion("");
-    setElement("");
-    setRarity("");
+    setRegionsSelected([]);
+    setElementsSelected([]);
+    setRaritiesSelected([]);
   };
 
   return (
@@ -69,42 +76,50 @@ export function CharactersPage({ locale }: { locale: Locale }) {
         </header>
         <div className="directory-filters">
           <label className="search-field">
-            <Search size={18} />
             <input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder={t(locale, "searchCharacters")}
             />
           </label>
-          <select
-            value={region}
-            onChange={(event) => setRegion(event.target.value)}
-            aria-label={t(locale, "allRegions")}
+          <button
+            className="directory-filters__toggle"
+            type="button"
+            aria-expanded={filtersOpen}
+            aria-controls="character-filter-options"
+            onClick={() => setFiltersOpen((isOpen) => !isOpen)}
           >
-            <option value="">{t(locale, "allRegions")}</option>
-            {regions.map((value) => (
-              <option key={value}>{value}</option>
-            ))}
-          </select>
-          <select
-            value={element}
-            onChange={(event) => setElement(event.target.value)}
-            aria-label={t(locale, "allElements")}
-          >
-            <option value="">{t(locale, "allElements")}</option>
-            {elements.map((value) => (
-              <option key={value}>{value}</option>
-            ))}
-          </select>
-          <select
-            value={rarity}
-            onChange={(event) => setRarity(event.target.value)}
-            aria-label={t(locale, "allRarities")}
-          >
-            <option value="">{t(locale, "allRarities")}</option>
-            <option value="4">4 {"\u2605"}</option>
-            <option value="5">5 {"\u2605"}</option>
-          </select>
+            {t(locale, filtersOpen ? "hideFilters" : "showFilters")}
+          </button>
+          {filtersOpen && (
+            <div
+              className="directory-filter-options"
+              id="character-filter-options"
+            >
+              <FilterGroup
+                label={t(locale, "region")}
+                allLabel={t(locale, "allRegions")}
+                values={regionsSelected}
+                options={regions}
+                onChange={setRegionsSelected}
+              />
+              <FilterGroup
+                label={t(locale, "element")}
+                allLabel={t(locale, "allElements")}
+                values={elementsSelected}
+                options={elements}
+                onChange={setElementsSelected}
+              />
+              <FilterGroup
+                label={t(locale, "rarity")}
+                allLabel={t(locale, "allRarities")}
+                values={raritiesSelected}
+                options={["4 ★", "5 ★"]}
+                optionValue={(option) => option.charAt(0)}
+                onChange={setRaritiesSelected}
+              />
+            </div>
+          )}
         </div>
         {characters === null ? (
           <div
@@ -148,6 +163,60 @@ export function CharactersPage({ locale }: { locale: Locale }) {
   );
 }
 
+function FilterGroup({
+  label,
+  allLabel,
+  values,
+  options,
+  optionValue = (option) => option,
+  onChange,
+}: {
+  label: string;
+  allLabel: string;
+  values: string[];
+  options: string[];
+  optionValue?: (option: string) => string;
+  onChange: (values: string[]) => void;
+}) {
+  return (
+    <section className="directory-filter-group" aria-label={label}>
+      <h2>{label}</h2>
+      <div className="directory-filter-group__options">
+        <button
+          type="button"
+          className={!values.length ? "is-selected" : undefined}
+          aria-pressed={!values.length}
+          onClick={() => onChange([])}
+        >
+          {allLabel}
+        </button>
+        {options.map((option) => {
+          const valueForOption = optionValue(option);
+          return (
+            <button
+              key={option}
+              type="button"
+              className={
+                values.includes(valueForOption) ? "is-selected" : undefined
+              }
+              aria-pressed={values.includes(valueForOption)}
+              onClick={() =>
+                onChange(
+                  values.includes(valueForOption)
+                    ? values.filter((value) => value !== valueForOption)
+                    : [...values, valueForOption],
+                )
+              }
+            >
+              {option}
+            </button>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function DirectoryCharacterCard({
   character,
   locale,
@@ -157,9 +226,19 @@ function DirectoryCharacterCard({
 }) {
   const [imageFailed, setImageFailed] = useState(false);
   const artwork = getCharacterArtwork(character.id, "full");
+  const elementClass = (character.element ?? "unknown").toLowerCase();
   return (
     <Link className="directory-card" to={`/characters/${character.id}`}>
-      <div className="directory-card__portrait" aria-hidden="true">
+      <div
+        className={`directory-card__portrait directory-card__portrait--${elementClass}`}
+        aria-hidden="true"
+      >
+        {character.element && (
+          <ElementIcon
+            element={character.element}
+            className="directory-card__element-watermark"
+          />
+        )}
         {artwork && !imageFailed ? (
           <img
             src={artwork.url}

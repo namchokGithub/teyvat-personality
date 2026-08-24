@@ -17,6 +17,14 @@ import electroIcon from "../../assets/images/elements/electro.png";
 import geoIcon from "../../assets/images/elements/geo.png";
 import hydroIcon from "../../assets/images/elements/hydro.png";
 import pyroIcon from "../../assets/images/elements/pyro.png";
+import fontaineRegionIcon from "../../assets/images/Fontaine.png";
+import inazumaRegionIcon from "../../assets/images/Inazuma.png";
+import liyueRegionIcon from "../../assets/images/Liyue.png";
+import mondstadtRegionIcon from "../../assets/images/Mondstadt.png";
+import natlanRegionIcon from "../../assets/images/Natlan.png";
+import nodKraiRegionIcon from "../../assets/images/Nod-Krai.png";
+import snezhnayaRegionIcon from "../../assets/images/Snezhnaya.png";
+import sumeruRegionIcon from "../../assets/images/Sumeru.png";
 
 export { RouteFocus } from "./RouteFocus";
 
@@ -147,10 +155,27 @@ export function ElementIcon({
 }
 
 export function RegionBadge({ region }: { region: string }) {
+  const regionKey = region.toLowerCase().replaceAll(" ", "-");
+  const icon = regionIcons[regionKey];
   return (
-    <span className="region-badge">
-      <MapPin size={13} aria-hidden="true" />
+    <span className={`region-badge region-badge--${regionKey}`}>
+      {icon ? (
+        <img className="region-badge__icon" src={icon} alt="" />
+      ) : (
+        <MapPin size={13} aria-hidden="true" />
+      )}
       {region}
     </span>
   );
 }
+
+const regionIcons: Record<string, string> = {
+  fontaine: fontaineRegionIcon,
+  inazuma: inazumaRegionIcon,
+  liyue: liyueRegionIcon,
+  mondstadt: mondstadtRegionIcon,
+  natlan: natlanRegionIcon,
+  "nod-krai": nodKraiRegionIcon,
+  snezhnaya: snezhnayaRegionIcon,
+  sumeru: sumeruRegionIcon,
+};
