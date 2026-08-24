@@ -88,6 +88,7 @@
 - `corepack pnpm verify:engine` ผ่าน: 4 deterministic answer sets
 - `corepack pnpm lint` ผ่าน
 - `corepack pnpm build` ผ่าน
+- `corepack pnpm verify:shared-result` ผ่าน: schema/rules verification ผ่าน Firestore Emulator
 - Regression QA และ manual QA ที่ viewport เป้าหมายผ่านแล้วเมื่อ 22 สิงหาคม 2026
 
 รายละเอียดแบบเต็มของแผนเดิมอยู่ในประวัติ Git; ให้เพิ่มผลการปรับ weights และผล QA รอบถัดไปในไฟล์นี้เมื่อปิดงานได้
