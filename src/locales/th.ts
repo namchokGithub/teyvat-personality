@@ -4,6 +4,8 @@ export const th = {
   navCharacters: "ตัวละคร",
   navResult: "ตัวอย่างผลลัพธ์",
   language: "EN",
+  themeLight: "สว่าง",
+  themeDark: "มืด",
   skipContent: "ข้ามไปยังเนื้อหาหลัก",
   eyebrow: "ค้นหาเสียงสะท้อนของคุณใน Teyvat",
   heroTitle: "ตัวละครคนไหน<br>ที่มีบุคลิกเหมือนคุณ<br>มากที่สุด?",

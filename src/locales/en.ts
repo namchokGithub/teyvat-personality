@@ -6,6 +6,8 @@ export const en: Record<keyof typeof th, string> = {
   navCharacters: "Characters",
   navResult: "Result preview",
   language: "ไทย",
+  themeLight: "Light",
+  themeDark: "Dark",
   skipContent: "Skip to main content",
   eyebrow: "Find your echo in Teyvat",
   heroTitle: "Which character is most like you?",

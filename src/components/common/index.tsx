@@ -8,14 +8,16 @@ import { Link, NavLink } from "react-router-dom";
 
 import { t } from "../../i18n";
 import { beginQuizFromNavigation } from "../../hooks";
-import type { Locale } from "../../types";
+import type { Locale, Theme } from "../../types";
 import anemoIcon from "../../assets/images/elements/anemo.png";
 import characterLogo from "../../assets/images/characters.png";
 import cryoIcon from "../../assets/images/elements/cryo.png";
+import dayIcon from "../../assets/images/day.png";
 import dendroIcon from "../../assets/images/elements/dendro.png";
 import electroIcon from "../../assets/images/elements/electro.png";
 import geoIcon from "../../assets/images/elements/geo.png";
 import hydroIcon from "../../assets/images/elements/hydro.png";
+import nightIcon from "../../assets/images/night.png";
 import pyroIcon from "../../assets/images/elements/pyro.png";
 import fontaineRegionIcon from "../../assets/images/Fontaine.png";
 import inazumaRegionIcon from "../../assets/images/Inazuma.png";
@@ -63,9 +65,13 @@ export function Button({
 export function AppHeader({
   locale,
   onToggleLocale,
+  theme,
+  onToggleTheme,
 }: {
   locale: Locale;
   onToggleLocale: () => void;
+  theme: Theme;
+  onToggleTheme: () => void;
 }) {
   return (
     <header className="app-header">
@@ -81,6 +87,18 @@ export function AppHeader({
             {t(locale, "navQuiz")}
           </NavLink>
           <NavLink to="/characters">{t(locale, "navCharacters")}</NavLink>
+          <Button
+            variant="ghost"
+            onClick={onToggleTheme}
+            aria-label="Switch theme"
+          >
+            <img
+              className="theme-toggle__icon"
+              src={theme === "dark" ? nightIcon : dayIcon}
+              alt=""
+            />{" "}
+            {t(locale, theme === "dark" ? "themeDark" : "themeLight")}
+          </Button>
           <Button
             variant="ghost"
             onClick={onToggleLocale}

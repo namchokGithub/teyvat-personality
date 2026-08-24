@@ -1,5 +1,7 @@
 export type Locale = "th" | "en";
 
+export type Theme = "light" | "dark";
+
 export const DIMENSION_IDS = ["social", "decision", "lifestyle", "adventure", "responsibility", "expression"] as const;
 export type DimensionId = (typeof DIMENSION_IDS)[number];
 
