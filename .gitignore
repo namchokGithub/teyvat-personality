@@ -7,3 +7,6 @@ dist/
 .env
 .env.local
 *.tsbuildinfo
+firebase-debug.log
+firestore-debug.log
+.firebase/
