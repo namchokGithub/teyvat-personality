@@ -56,7 +56,7 @@ Unit testing is intentionally deferred until a later development phase.
 
 ## Getting started
 
-Requirements: Node.js 20+ and Corepack.
+Requirements: Node.js 20+ and Corepack. The Firestore Emulator (used by `verify:shared-result`) additionally requires a JVM installed locally.
 
 ```bash
 corepack prepare pnpm@9.15.4 --activate
@@ -64,16 +64,17 @@ corepack pnpm install
 corepack pnpm dev
 ```
 
-For Firebase integration, copy `.env.example` to `.env.local` and fill in the public Firebase Web configuration. Never place Firebase Admin SDK credentials or service-account keys in frontend environment files.
+For Firebase integration, copy `.env.example` to `.env.local` and fill in the public Firebase Web configuration. Never place Firebase Admin SDK credentials or service-account keys in frontend environment files. `firestore.rules` exists in the repo but nothing currently deploys it (no `firebase deploy --only firestore:rules` step anywhere), so it must be deployed manually against the real Firebase project before any code that writes to Firestore goes live.
 
 Available commands:
 
 ```bash
-corepack pnpm dev          # Start the development server
-corepack pnpm build        # Type-check and create a production build
-corepack pnpm lint         # Run ESLint
-corepack pnpm format       # Format files with Prettier
-corepack pnpm preview      # Preview the production build
+corepack pnpm dev                    # Start the development server
+corepack pnpm build                  # Type-check and create a production build
+corepack pnpm lint                   # Run ESLint
+corepack pnpm format                 # Format files with Prettier
+corepack pnpm preview                # Preview the production build
+corepack pnpm verify:shared-result   # Run the Firestore rules/schema verification suite against the local Firestore Emulator
 ```
 
 ## Data layout
