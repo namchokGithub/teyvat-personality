@@ -2,6 +2,7 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
+import aetherImage from "../assets/images/Aether1.png";
 import { ContentCard, PageContainer } from "../components/common";
 import { CharacterResultCard, VisionCard } from "../components/result";
 import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
@@ -51,7 +52,7 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
       <main className="result-page">
         <PageContainer className="result-shell">
           <div className="empty-state">
-            <span className="empty-state__icon">!</span>
+            <img className="empty-state__image" src={aetherImage} alt="" />
             <h1>{t(locale, "invalidResult")}</h1>
             <p>{t(locale, "invalidResultBody")}</p>
             <Link className="button button--primary" to="/quiz">
@@ -71,7 +72,7 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
       <main className="result-page">
         <PageContainer className="result-shell">
           <div className="empty-state">
-            <span className="empty-state__icon">!</span>
+            <img className="empty-state__image" src={aetherImage} alt="" />
             <h1>{t(locale, "sharedResultUnsupported")}</h1>
             <p>{t(locale, "sharedResultUnsupportedBody")}</p>
             <Link className="button button--primary" to="/quiz">

@@ -1905,6 +1905,11 @@ html[lang="th"] .hero__copy h1 {
   font-family: var(--font-display);
   font-size: 34px;
 }
+.empty-state__image {
+  width: 144px;
+  height: 144px;
+  object-fit: contain;
+}
 .empty-state h1 {
   margin: 24px 0 4px;
   font-family: var(--font-display);

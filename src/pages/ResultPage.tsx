@@ -2,6 +2,7 @@ import { BookOpen, Download, Link2, RotateCcw, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
+import aetherImage from "../assets/images/Aether1.png";
 import { Button, ContentCard, PageContainer } from "../components/common";
 import { CharacterResultCard, VisionCard } from "../components/result";
 import { useQuizProgress } from "../hooks";
@@ -195,7 +196,7 @@ function InvalidResult({ locale }: { locale: Locale }) {
     <main className="result-page">
       <PageContainer className="result-shell">
         <div className="empty-state">
-          <span className="empty-state__icon">!</span>
+          <img className="empty-state__image" src={aetherImage} alt="" />
           <h1>{t(locale, "invalidResult")}</h1>
           <p>{t(locale, "invalidResultBody")}</p>
           <Link className="button button--primary" to="/quiz">
