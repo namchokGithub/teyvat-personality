@@ -82,6 +82,15 @@
 - เขียนและทดสอบ Firestore Security Rules แบบ create/read only ผ่าน Firestore Emulator (`pnpm run verify:shared-result`)
 - เพิ่ม `publishSharedResult` write helper พร้อม id-collision retry ให้ item 3 (publish flow UI) เรียกใช้ต่อได้ทันที
 
+## 25 สิงหาคม 2026 — P2 Shared Result publish flow และหน้าอ่านอย่างเดียว
+
+- Deploy Firestore Rules จากรอบก่อนเข้า production project จริงแล้ว (manual deploy)
+- เพิ่มปุ่ม "สร้างลิงก์ข้ามอุปกรณ์" บน Result Page เรียก `publishSharedResult` แล้ว copy ลิงก์ `#/shared/:id` ให้ทันที; cache ผลลัพธ์ที่เผยแพร่แล้วไว้ในหน้าเดียวกัน กดซ้ำไม่สร้าง document ใหม่
+- เพิ่มหน้า `SharedResultPage` อ่านผลจาก Firestore ตาม id ใน URL แบบอ่านอย่างเดียว มี loading state และใช้ empty-state เดิม (`invalidResult`) เมื่อไม่พบ document
+- ทดสอบ manual QA จริงกับ production Firestore ผ่าน browser: publish สำเร็จ, เปิดลิงก์ข้ามแท็บอ่านได้ถูกต้องทั้งไทย/อังกฤษ, ลิงก์ปลอมแสดง invalid-result ถูกต้อง, ไม่ error ใน console
+- หมายเหตุ: มี test document ปลอม (ชื่อ "Test Character") ค้างอยู่ใน production `sharedResults` collection จากการทดสอบนี้ 3 รายการ ลบเองไม่ได้ผ่านแอพ (rules ห้าม delete) ต้องเข้า Firebase Console ลบเองถ้าต้องการ
+- ยังไม่ทำ: item 4 (invalid-link/version-mismatch handling แบบละเอียด, ตอนนี้ตกไปที่ empty-state ทั่วไป), item 5 (abuse prevention)
+
 ## Verification ล่าสุด
 
 - `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements

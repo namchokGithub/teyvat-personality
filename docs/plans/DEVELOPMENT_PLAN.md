@@ -14,9 +14,9 @@
 
 ## P2 — Shared Result ข้ามอุปกรณ์ (เลื่อนทำภายหลัง)
 
-1. [x] ออกแบบ Firestore schema สำหรับ published result: opaque ID, result snapshot, algorithm/data version และเวลาเผยแพร่ — spec พร้อมแล้วใน [2026-08-24-shared-result-schema-rules-design.md](../superpowers/specs/2026-08-24-shared-result-schema-rules-design.md) รอ implementation
-2. [x] เขียนและทดสอบ Firestore Security Rules แบบ create/read only พร้อมตรวจว่า client แก้ไขหรือลบ published result ไม่ได้ — spec พร้อมแล้วในไฟล์เดียวกันข้างบน รอ implementation
-3. [ ] สร้าง publish flow หลังคำนวณผลสำเร็จ และหน้า read-only `#/shared/:id` สำหรับเปิดผลจากอุปกรณ์อื่น
+1. [x] ออกแบบ Firestore schema สำหรับ published result: opaque ID, result snapshot, algorithm/data version และเวลาเผยแพร่ — spec ใน [2026-08-24-shared-result-schema-rules-design.md](../superpowers/specs/2026-08-24-shared-result-schema-rules-design.md)
+2. [x] เขียนและทดสอบ Firestore Security Rules แบบ create/read only พร้อมตรวจว่า client แก้ไขหรือลบ published result ไม่ได้ — spec ในไฟล์เดียวกันข้างบน
+3. [x] สร้าง publish flow หลังคำนวณผลสำเร็จ และหน้า read-only `#/shared/:id` สำหรับเปิดผลจากอุปกรณ์อื่น
 4. [ ] จัดการกรณีลิงก์ไม่มีอยู่, version เก่า และผลที่ไม่รองรับ โดยแสดง CTA ให้เริ่มแบบทดสอบแทน
 5. [ ] ตัดสินใจมาตรการป้องกัน public-write abuse ก่อนเปิด production แล้วจึงทำ end-to-end QA บนอุปกรณ์/เบราว์เซอร์ต่างกัน
 
