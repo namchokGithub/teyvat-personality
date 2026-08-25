@@ -1,4 +1,3 @@
-import { getFirestore } from "firebase/firestore";
 import { BookOpen, Download, Link2, RotateCcw, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
@@ -8,7 +7,6 @@ import { CharacterResultCard, VisionCard } from "../components/result";
 import { useQuizProgress } from "../hooks";
 import { t } from "../i18n";
 import { firebaseApp } from "../lib/firebase";
-import { publishSharedResult } from "../lib/shared-result";
 import type { CharacterMatch, Locale, QuizResult, VisionMatch } from "../types";
 import { loadCharacterById } from "../data/characters/repository";
 import { createCharacterResultPreview } from "../utils/character-preview";
@@ -74,6 +72,10 @@ export function ResultPage({ locale }: { locale: Locale }) {
     }
     setShareLinkState("publishing");
     try {
+      const [{ getFirestore }, { publishSharedResult }] = await Promise.all([
+        import("firebase/firestore"),
+        import("../lib/shared-result"),
+      ]);
       const db = getFirestore(firebaseApp);
       const id = await publishSharedResult(db, character, vision, {
         questionVersion: quizResult.questionVersion,

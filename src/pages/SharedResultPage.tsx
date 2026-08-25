@@ -1,5 +1,4 @@
 import { doc, getDoc, getFirestore } from "firebase/firestore";
-import { Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -71,12 +70,6 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
   return (
     <main className="result-page">
       <PageContainer className="result-shell">
-        <div className="result-heading">
-          <span className="eyebrow">
-            <Sparkles size={15} />
-            {t(locale, "sharedResultNotice")}
-          </span>
-        </div>
         <CharacterResultCard character={character} locale={locale} />
         <div className="result-details">
           {character.matchingTraits.length > 0 && (

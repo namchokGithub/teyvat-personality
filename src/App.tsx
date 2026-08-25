@@ -1,12 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { AppFooter, AppHeader, RouteFocus } from "./components/common";
 import { t } from "./i18n";
-import { CharacterPage, CharactersPage, LandingPage, MatchingPage, NotFoundPage, QuizPage, ResultPage, SharedResultPage } from "./pages";
+import { CharacterPage, CharactersPage, LandingPage, MatchingPage, NotFoundPage, QuizPage, ResultPage } from "./pages";
 import type { Locale, Theme } from "./types";
 
 const THEME_STORAGE_KEY = "teyvat-theme";
+const SharedResultPage = lazy(async () => {
+  const module = await import("./pages/SharedResultPage");
+  return { default: module.SharedResultPage };
+});
 
 function readStoredTheme(): Theme | null {
   const saved = localStorage.getItem(THEME_STORAGE_KEY);
@@ -66,7 +70,14 @@ export function App() {
           <Route path="/quiz" element={<QuizPage locale={locale} />} />
           <Route path="/matching" element={<MatchingPage locale={locale} />} />
           <Route path="/result" element={<ResultPage locale={locale} />} />
-          <Route path="/shared/:id" element={<SharedResultPage locale={locale} />} />
+          <Route
+            path="/shared/:id"
+            element={
+              <Suspense fallback={null}>
+                <SharedResultPage locale={locale} />
+              </Suspense>
+            }
+          />
           <Route path="/characters" element={<CharactersPage locale={locale} />} />
           <Route path="/characters/:slug" element={<CharacterPage locale={locale} />} />
           <Route path="*" element={<NotFoundPage locale={locale} />} />

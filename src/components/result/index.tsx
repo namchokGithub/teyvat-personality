@@ -13,8 +13,7 @@ export function CharacterResultCard({
 }) {
   const [imageFailed, setImageFailed] = useState(false);
   const showArtwork = Boolean(character.artworkUrl && !imageFailed);
-  const hasLongEnglishName =
-    locale === "en" && character.name.replaceAll(" ", "").length >= 10;
+  const hasLongName = character.name.replaceAll(" ", "").length >= 10;
   return (
     <article
       className={`result-card result-card--${character.element.toLowerCase()}`}
@@ -45,7 +44,7 @@ export function CharacterResultCard({
           <RegionBadge region={character.region} />
         </div>
         <h1
-          className={hasLongEnglishName ? "result-card__name--long" : undefined}
+          className={hasLongName ? "result-card__name--long" : undefined}
         >
           {character.name}
         </h1>
@@ -81,7 +80,7 @@ export function VisionCard({
       </div>
       <div>
         <span className="section-kicker">{title}</span>
-        <h2>{vision.element}</h2>
+        <h2 className="vision-card__element">{vision.element}</h2>
         <p>{vision.summary[locale]}</p>
       </div>
       <strong>{vision.affinity}%</strong>

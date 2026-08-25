@@ -1576,7 +1576,7 @@ html[lang="th"] .hero__copy h1 {
 }
 .result-card h1 {
   margin: 22px 0 0;
-  font-family: var(--font-display);
+  font-family: "Cinzel", Georgia, serif;
   font-size: clamp(50px, 7vw, 76px);
   font-weight: 500;
   line-height: 1;
@@ -1669,7 +1669,7 @@ html[lang="th"] .hero__copy h1 {
 }
 .vision-card h2 {
   margin: 3px 0;
-  font-family: var(--font-display);
+  font-family: "Cinzel", Georgia, serif;
   font-size: 26px;
 }
 .vision-card p {
