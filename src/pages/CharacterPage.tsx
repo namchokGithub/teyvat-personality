@@ -4,7 +4,10 @@ import { Link, useParams } from "react-router-dom";
 
 import { BackToTopButton, ElementBadge, PageContainer, RegionBadge } from "../components/common";
 import { CharacterResultCard, VisionCard } from "../components/result";
-import { getCharacterArtwork } from "../data/characters/artwork";
+import {
+  getCharacterArtwork,
+  getCharacterArtworkFramingStyle,
+} from "../data/characters/artwork";
 import { loadCharacterById } from "../data/characters/repository";
 import { useDialogAccessibility } from "../hooks";
 import { t } from "../i18n";
@@ -178,7 +181,11 @@ function CharacterArtwork({
   const [imageFailed, setImageFailed] = useState(false);
   const artwork = getCharacterArtwork(characterId, "full");
   return (
-    <div className="character-profile__art" aria-hidden="true">
+    <div
+      className="character-profile__art"
+      aria-hidden="true"
+      style={getCharacterArtworkFramingStyle(characterId)}
+    >
       {artwork && !imageFailed ? (
         <img
           src={artwork.url}

@@ -2,6 +2,7 @@ import { Leaf } from "lucide-react";
 import { useState } from "react";
 
 import { ElementBadge, ElementIcon, RegionBadge } from "../common";
+import { getCharacterArtworkFramingStyle } from "../../data/characters/artwork";
 import type { CharacterMatch, Locale, VisionMatch } from "../../types";
 
 export function CharacterResultCard({
@@ -18,7 +19,11 @@ export function CharacterResultCard({
     <article
       className={`result-card result-card--${character.element.toLowerCase()}`}
     >
-      <div className="result-portrait" aria-hidden="true">
+      <div
+        className="result-portrait"
+        aria-hidden="true"
+        style={getCharacterArtworkFramingStyle(character.characterId)}
+      >
         {showArtwork && (
           <img
             src={character.artworkUrl}

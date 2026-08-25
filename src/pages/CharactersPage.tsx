@@ -3,7 +3,10 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { BackToTopButton, Button, ElementIcon, PageContainer } from "../components/common";
-import { getCharacterArtwork } from "../data/characters/artwork";
+import {
+  getCharacterArtwork,
+  getCharacterArtworkFramingStyle,
+} from "../data/characters/artwork";
 import { loadCharacterSummaries } from "../data/characters/repository";
 import { t } from "../i18n";
 import type { CharacterSummary, Locale } from "../types";
@@ -233,6 +236,7 @@ function DirectoryCharacterCard({
       <div
         className={`directory-card__portrait directory-card__portrait--${elementClass}`}
         aria-hidden="true"
+        style={getCharacterArtworkFramingStyle(character.id)}
       >
         {character.element && (
           <ElementIcon

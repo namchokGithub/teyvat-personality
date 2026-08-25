@@ -155,11 +155,18 @@ export interface CharacterSummary {
 export type ArtworkVariant = "head" | "full";
 export type ArtworkUsage = "ui-and-share-card";
 
+export interface CharacterArtworkFraming {
+  x: number;
+  y: number;
+  mobileZoom: number;
+}
+
 export interface CharacterArtwork {
   characterId: string;
   variant: ArtworkVariant;
   url: string;
   alt: LocalizedText;
+  framing: CharacterArtworkFraming;
   source: string;
   licenseOrUsageNote: string;
   usage: ArtworkUsage;
