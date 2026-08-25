@@ -53,6 +53,7 @@ Unit testing is intentionally deferred until a later development phase.
 - Shareable result cards
 - Light and dark theme, following the system preference until manually switched, with the choice remembered
 - Decorative Landing Page particle background covering all 7 elements, switchable from a single picker
+- Cookie consent banner and preferences dialog, with the choice stored locally and revisitable from the footer
 
 ## Getting started
 
@@ -75,6 +76,7 @@ corepack pnpm lint                   # Run ESLint
 corepack pnpm format                 # Format files with Prettier
 corepack pnpm preview                # Preview the production build
 corepack pnpm verify:shared-result   # Run the Firestore rules/schema verification suite against the local Firestore Emulator
+corepack pnpm verify:consent         # Run the cookie consent state module's fail-safe verification suite
 ```
 
 ## Data layout
@@ -82,6 +84,7 @@ corepack pnpm verify:shared-result   # Run the Firestore rules/schema verificati
 ```text
 src/
 ├── components/                  # Shared, quiz, and result components
+│   └── consent/                 # Cookie consent banner and preferences dialog
 ├── data/
 │   ├── characters/              # Character index and factual data
 │   ├── lore/                    # Lore and research scaffolds
@@ -89,7 +92,7 @@ src/
 │   └── personality/             # Trait catalog, character profiles, and element profiles
 ├── engine/                      # Scoring and matching logic
 ├── hooks/
-├── lib/                         # Firebase and external integrations
+├── lib/                         # Firebase and external integrations, and the cookie consent state module
 ├── pages/
 ├── schemas/                     # Zod schemas
 ├── styles/
