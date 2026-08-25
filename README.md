@@ -48,7 +48,7 @@ Unit testing is intentionally deferred until a later development phase.
 
 ## Features
 
-- 24-question personality quiz with independent Character Match and Vision Affinity results
+- 36-question bank with 24 questions per quiz attempt, balanced across all 6 dimensions, with independent Character Match and Vision Affinity results
 - Character directory with search and filters across all 125 characters
 - Shareable result cards
 - Light and dark theme, following the system preference until manually switched, with the choice remembered

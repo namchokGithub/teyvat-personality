@@ -11,7 +11,7 @@ import {
   type VisionMatchScore,
 } from "../types";
 
-export const QUESTION_VERSION = "2026-08-25";
+export const QUESTION_VERSION = "2026-08-25-rpg-2";
 export const ALGORITHM_VERSION = "1.0.0";
 export const QUESTIONS_PER_DIMENSION = 4;
 

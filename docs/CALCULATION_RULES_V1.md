@@ -4,7 +4,7 @@
 
 ## Overview
 
-The quiz produces one `UserPersonalityProfile` (6 normalized dimension scores + 39 normalized trait scores) from 24 answered questions. That single profile is then run through two independent ranking functions:
+The quiz produces one `UserPersonalityProfile` (6 normalized dimension scores + 39 normalized trait scores) from 24 answered questions selected from a 36-question bank. That single profile is then run through two independent ranking functions:
 
 - **Character Match** — ranks all character personality profiles by similarity to the user.
 - **Vision Affinity** — ranks all 7 element personality profiles by how well the user's traits fit each element's weighted trait theme.
@@ -25,7 +25,7 @@ src/
 │   └── useQuizProgress.ts              # seeding, shuffling, localStorage persistence/resume, complete()
 ├── data/
 │   ├── quiz/
-│   │   ├── questions.ts                # question(...)/answer(...) factories, the 24-question bank
+│   │   ├── questions.ts                # question(...)/answer(...) factories, the 36-question bank
 │   │   └── index.ts
 │   └── personality/
 │       ├── calculate-result.ts         # calculateQuizResult, loadSharedQuizResult (final QuizResult assembly)
@@ -55,7 +55,7 @@ scripts/
 
 ### Question bank shape
 
-24 questions, fixed at exactly 4 per dimension across the 6 dimensions (`social`, `decision`, `lifestyle`, `adventure`, `responsibility`, `expression`). Every question has exactly 4 answers (96 answers total). This is enforced by `scoredQuizQuestionSchema` (`.min(2)` on answers) combined with `validateP0QuizData`'s hard `.length(24)` on the question array — `pnpm validate:data` fails the build if either count drifts.
+The bank contains 36 questions, with 6 authored questions for each of the 6 dimensions (`social`, `decision`, `lifestyle`, `adventure`, `responsibility`, `expression`). A quiz attempt shuffles each dimension's pool, selects `QUESTIONS_PER_DIMENSION` (currently 4), then shuffles the combined 24-question selection. Every question currently has exactly 4 answers (144 authored answers total), whose display order is also shuffled per attempt. The bank's total count is enforced by `validateP0QuizData`'s hard `.length(36)`; the validator also requires at least 4 questions per dimension, while the current 6-per-dimension and 4-answers-per-question authoring balance is verified from the dataset rather than fully enforced by those minimum constraints.
 
 Runtime shape of one question (`ScoredQuizQuestion`, `src/types/index.ts`):
 
@@ -76,7 +76,7 @@ interface ScoredQuizQuestion {
 
 Questions are authored with two small factory helpers in `src/data/quiz/questions.ts` (`question(...)`, `answer(...)`) rather than hand-written object literals, so every question/answer has the same shape by construction. An answer's `dimensions` map is a set of small signed deltas (typically -3 to +3) toward one or two dimensions; its `traits` map is a set of small positive weights (typically 0.1–0.3) toward one to four traits. Not every dimension/trait needs to appear on every answer — omitted keys are simply not scored by that answer.
 
-`QUESTION_VERSION` (`src/engine/index.ts`, currently `"2026-08-21"`) and `ALGORITHM_VERSION` (currently `"1.0.0"`) are stamped onto both in-progress quiz state and the final result. They exist purely for invalidation: if either constant changes, any saved progress or shared result computed under the old version is discarded rather than trusted (see Persistence below).
+`QUESTION_VERSION` (`src/engine/index.ts`, currently `"2026-08-25-rpg-2"`) and `ALGORITHM_VERSION` (currently `"1.0.0"`) are stamped onto both in-progress quiz state and the final result. They exist purely for invalidation: if either constant changes, any saved progress or shared result computed under the old version is discarded rather than trusted (see Persistence below).
 
 ### Question and answer ordering (seeded, per session)
 
@@ -128,7 +128,7 @@ The quiz component itself decides "last question" by comparing `currentQuestionI
 For each of the 6 dimensions, `buildUserPersonalityProfile()` (`src/engine/index.ts`):
 
 1. Sums that dimension's delta across the user's 24 selected answers (`raw`).
-2. Computes the theoretical **minimum** possible raw sum for that dimension — the sum, over all 24 questions, of each question's most-negative answer delta for that dimension (0 if a question doesn't score that dimension at all) — and likewise the theoretical **maximum**.
+2. Computes the theoretical **minimum** possible raw sum for that dimension — the sum, over all 24 questions selected for that attempt, of each question's most-negative answer delta for that dimension (0 if a question doesn't score that dimension at all) — and likewise the theoretical **maximum**.
 3. Linearly rescales `raw` from `[minimum, maximum]` to `[0, 100]`, clamps, and rounds to an integer: `round(clamp(((raw - minimum) / (maximum - minimum)) * 100, 0, 100))`.
 
 This is a min-max normalization computed from the actual question bank's answer deltas, not a hardcoded fixed range — if a question's deltas are ever edited, the normalization range recalculates automatically from the new data (which is why `validate:data`/`verify:engine` exist as guard rails rather than the range being asserted anywhere). If a dimension's computed min equals its max (i.e. no question can move that dimension at all), `buildUserPersonalityProfile` throws rather than silently dividing by zero.
@@ -266,4 +266,4 @@ Each profile also carries a `secondary` array (the same trait ids as the non-pri
 
 - **CONTEXT.md §16 lists "Euclidean Distance / Weighted Euclidean Distance / Cosine Similarity / Hybrid Dimension + Trait Similarity" as _potential_ algorithms** for Character Matching, without committing to one. The implemented algorithm is none of the pure named forms: it's a custom hybrid — an inverted mean-absolute-difference for dimensions (closer to Manhattan/L1 distance than Euclidean/L2), combined with a trait-weight-weighted overlap score for traits (not a distance metric at all), blended 70/30, with an additional non-linear "coverage factor" penalty for characters with sparse trait data. This is consistent with CONTEXT.md's own framing of these as options to choose from rather than a spec to match exactly, and matches the "70% dimension / 30% trait" split already recorded as an implementation decision in `docs/plans/_plan_log.md`.
 - **CONTEXT.md's dimension/trait JSON examples use plain 0–100 integers and 0.0–1.0 decimals without describing _how_ those get there from quiz answers.** The actual normalization (min-max over the real question bank's achievable range, computed at build/run time rather than assumed) is an implementation detail CONTEXT.md doesn't specify — documented here for the first time.
-- No divergence was found in the element trait-weight data itself, the 6-dimension/39-trait catalog, the 24-question count, the "Character Match and Vision Affinity must stay independent" rule, or the general two-stage (profile → matching) pipeline shape — the implementation follows CONTEXT.md's design intent faithfully in all of these.
+- No divergence was found in the element trait-weight data itself, the 6-dimension/39-trait catalog, the "Character Match and Vision Affinity must stay independent" rule, or the general two-stage (profile → matching) pipeline shape. The implemented question bank has since expanded from CONTEXT.md's initial 24-question target to 36 questions (6 per dimension).
