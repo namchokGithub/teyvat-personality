@@ -112,11 +112,20 @@ export function AppHeader({
   );
 }
 
-export function AppFooter({ locale }: { locale: Locale }) {
+export function AppFooter({
+  locale,
+  onOpenCookieSettings,
+}: {
+  locale: Locale;
+  onOpenCookieSettings: () => void;
+}) {
   return (
     <footer className="app-footer">
       <PageContainer>
         <p>{t(locale, "disclaimer")} · By Lesser Lord Kusanali © 2026</p>
+        <button type="button" className="text-button" onClick={onOpenCookieSettings}>
+          {t(locale, "cookieSettingsLink")}
+        </button>
       </PageContainer>
     </footer>
   );

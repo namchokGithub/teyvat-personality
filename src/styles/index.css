@@ -2373,3 +2373,7 @@ html[lang="th"] .hero__copy h1 {
 .cookie-toggle--on .cookie-toggle__thumb {
   transform: translateX(20px);
 }
+.app-footer .text-button {
+  margin-top: 6px;
+  font-size: 12px;
+}

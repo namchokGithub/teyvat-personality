@@ -2,7 +2,9 @@ import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { AppFooter, AppHeader, RouteFocus } from "./components/common";
+import { CookieConsentBanner, CookiePreferencesDialog } from "./components/consent";
 import { t } from "./i18n";
+import { hasDecided, setConsent } from "./lib/consent";
 import { CharacterPage, CharactersPage, LandingPage, MatchingPage, NotFoundPage, QuizPage, ResultPage } from "./pages";
 import type { Locale, Theme } from "./types";
 
@@ -25,6 +27,8 @@ export function App() {
   const [locale, setLocale] = useState<Locale>(() => localStorage.getItem("teyvat-locale") === "en" ? "en" : "th");
   const [theme, setTheme] = useState<Theme>(readInitialTheme);
   const hasExplicitTheme = useRef(readStoredTheme() !== null);
+  const [cookieDialogOpen, setCookieDialogOpen] = useState(false);
+  const [cookieConsentDecided, setCookieConsentDecided] = useState(() => hasDecided());
 
   useEffect(() => {
     localStorage.setItem("teyvat-locale", locale);
@@ -83,7 +87,30 @@ export function App() {
           <Route path="*" element={<NotFoundPage locale={locale} />} />
         </Routes>
       </div>
-      <AppFooter locale={locale} />
+      {!cookieConsentDecided && (
+        <CookieConsentBanner
+          locale={locale}
+          onAcceptAll={() => {
+            setConsent(true);
+            setCookieConsentDecided(true);
+          }}
+          onNecessaryOnly={() => {
+            setConsent(false);
+            setCookieConsentDecided(true);
+          }}
+          onOpenSettings={() => setCookieDialogOpen(true)}
+        />
+      )}
+      <CookiePreferencesDialog
+        locale={locale}
+        open={cookieDialogOpen}
+        onClose={() => setCookieDialogOpen(false)}
+        onSave={(analytics) => {
+          setConsent(analytics);
+          setCookieConsentDecided(true);
+        }}
+      />
+      <AppFooter locale={locale} onOpenCookieSettings={() => setCookieDialogOpen(true)} />
     </div>
   );
 }
