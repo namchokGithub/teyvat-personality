@@ -91,7 +91,11 @@ export const en: Record<keyof typeof th, string> = {
   downloadCard: "Download card",
   shareLinkCreate: "Create shareable link",
   shareLinkCreating: "Creating link...",
+  shareLinkThrottled: "Too many links created. Try again later.",
   loadingSharedResult: "Loading shared result",
+  sharedResultUnsupported: "This result is from an older version",
+  sharedResultUnsupportedBody:
+    "This result was calculated with an older quiz version that's no longer supported. Try taking the quiz again.",
   close: "Close",
   copiedLink: "Link copied",
   copiedSummary: "Summary copied",

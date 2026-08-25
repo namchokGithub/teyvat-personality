@@ -88,7 +88,11 @@ export const th = {
   downloadCard: "ดาวน์โหลดการ์ด",
   shareLinkCreate: "สร้างลิงก์ข้ามอุปกรณ์",
   shareLinkCreating: "กำลังสร้างลิงก์...",
+  shareLinkThrottled: "สร้างลิงก์บ่อยเกินไป ลองใหม่ภายหลัง",
   loadingSharedResult: "กำลังโหลดผลลัพธ์ที่แชร์",
+  sharedResultUnsupported: "ผลลัพธ์นี้มาจากเวอร์ชันเก่า",
+  sharedResultUnsupportedBody:
+    "ผลลัพธ์นี้คำนวณจากแบบทดสอบเวอร์ชันเก่าที่ไม่รองรับแล้ว ลองทำแบบทดสอบใหม่อีกครั้ง",
   close: "ปิด",
   copiedLink: "คัดลอกลิงก์แล้ว",
   copiedSummary: "คัดลอกข้อความแล้ว",

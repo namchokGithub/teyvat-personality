@@ -89,7 +89,13 @@
 - เพิ่มหน้า `SharedResultPage` อ่านผลจาก Firestore ตาม id ใน URL แบบอ่านอย่างเดียว มี loading state และใช้ empty-state เดิม (`invalidResult`) เมื่อไม่พบ document
 - ทดสอบ manual QA จริงกับ production Firestore ผ่าน browser: publish สำเร็จ, เปิดลิงก์ข้ามแท็บอ่านได้ถูกต้องทั้งไทย/อังกฤษ, ลิงก์ปลอมแสดง invalid-result ถูกต้อง, ไม่ error ใน console
 - หมายเหตุ: มี test document ปลอม (ชื่อ "Test Character") ค้างอยู่ใน production `sharedResults` collection จากการทดสอบนี้ 3 รายการ ลบเองไม่ได้ผ่านแอพ (rules ห้าม delete) ต้องเข้า Firebase Console ลบเองถ้าต้องการ
-- ยังไม่ทำ: item 4 (invalid-link/version-mismatch handling แบบละเอียด, ตอนนี้ตกไปที่ empty-state ทั่วไป), item 5 (abuse prevention)
+
+## 25 สิงหาคม 2026 — P2 Shared Result item 4-5 ปิดครบ (P2 เสร็จทั้งหมด)
+
+- `SharedResultPage` เช็ค version เพิ่ม: ถ้า `schemaVersion`/`questionVersion`/`algorithmVersion` ของ document ไม่ตรงกับ `QUESTION_VERSION`/`ALGORITHM_VERSION` ปัจจุบันของ engine จะโชว์ empty-state คนละชุดจากกรณี "ลิงก์ไม่มีอยู่" (copy ใหม่ `sharedResultUnsupported`) แยกจากกันชัดเจนตามที่ backlog ระบุ
+- เพิ่ม client-side rate limit ที่ `src/utils/share-throttle.ts`: จำกัด publish 5 ครั้ง/ชั่วโมง (rolling window) ผ่าน localStorage — ตัดสินใจใช้เป็นมาตรการหลักของ item 5 เลย ไม่ทำ App Check เพิ่มเพราะเป็น fan project เล็กไม่มีเงินเกี่ยวข้อง (**ข้อจำกัด**: กันได้แค่การกดสแปมจากเบราว์เซอร์เดียวกันโดยไม่ตั้งใจ ไม่กัน script ที่ยิง Firestore API ตรงเพราะ create rule ยังเปิดสาธารณะ)
+- ทดสอบ manual QA ผ่าน browser automation: เปิด document เก่าที่มี version ไม่ตรง → ขึ้น "ผลลัพธ์นี้มาจากเวอร์ชันเก่า" ถูกต้อง; seed throttle ให้เต็ม 5 แล้วกด publish → บล็อกทันทีไม่ยิง Firestore, โชว์ "สร้างลิงก์บ่อยเกินไป ลองใหม่ภายหลัง"; publish ปกติหลังเคลียร์ throttle → สำเร็จและบันทึก timestamp ใหม่ถูกต้อง — ไม่ใช่ QA ข้ามอุปกรณ์กายภาพจริง ทำผ่าน browser automation เท่านั้น
+- P2 ปิดครบทั้ง 5 ข้อแล้ว
 
 ## Verification ล่าสุด
 

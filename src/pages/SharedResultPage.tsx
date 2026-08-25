@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { ContentCard, PageContainer } from "../components/common";
 import { CharacterResultCard, VisionCard } from "../components/result";
+import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
 import { t } from "../i18n";
 import { firebaseApp } from "../lib/firebase";
 import type { CharacterMatch, Locale, SharedResultDoc, VisionMatch } from "../types";
@@ -53,6 +54,26 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
             <span className="empty-state__icon">!</span>
             <h1>{t(locale, "invalidResult")}</h1>
             <p>{t(locale, "invalidResultBody")}</p>
+            <Link className="button button--primary" to="/quiz">
+              {t(locale, "start")}
+            </Link>
+          </div>
+        </PageContainer>
+      </main>
+    );
+
+  const isSupportedVersion =
+    sharedDoc.schemaVersion === 1 &&
+    sharedDoc.questionVersion === QUESTION_VERSION &&
+    sharedDoc.algorithmVersion === ALGORITHM_VERSION;
+  if (!isSupportedVersion)
+    return (
+      <main className="result-page">
+        <PageContainer className="result-shell">
+          <div className="empty-state">
+            <span className="empty-state__icon">!</span>
+            <h1>{t(locale, "sharedResultUnsupported")}</h1>
+            <p>{t(locale, "sharedResultUnsupportedBody")}</p>
             <Link className="button button--primary" to="/quiz">
               {t(locale, "start")}
             </Link>

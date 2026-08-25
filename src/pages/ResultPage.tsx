@@ -10,6 +10,7 @@ import { firebaseApp } from "../lib/firebase";
 import type { CharacterMatch, Locale, QuizResult, VisionMatch } from "../types";
 import { loadCharacterById } from "../data/characters/repository";
 import { createCharacterResultPreview } from "../utils/character-preview";
+import { canPublishSharedResult, recordSharedResultPublish } from "../utils/share-throttle";
 import { copyText, downloadShareCard } from "../utils/share-result";
 import { readQuizResult } from "../utils/quiz-result";
 
@@ -29,7 +30,7 @@ export function ResultPage({ locale }: { locale: Locale }) {
   >(undefined);
   const [downloadError, setDownloadError] = useState(false);
   const [shareLinkState, setShareLinkState] = useState<
-    "idle" | "publishing" | "published" | "error"
+    "idle" | "publishing" | "published" | "throttled" | "error"
   >("idle");
   const [sharedUrl, setSharedUrl] = useState<string | null>(null);
   useEffect(() => {
@@ -70,6 +71,10 @@ export function ResultPage({ locale }: { locale: Locale }) {
       setShareLinkState("published");
       return;
     }
+    if (!canPublishSharedResult()) {
+      setShareLinkState("throttled");
+      return;
+    }
     setShareLinkState("publishing");
     try {
       const [{ getFirestore }, { publishSharedResult }] = await Promise.all([
@@ -81,6 +86,7 @@ export function ResultPage({ locale }: { locale: Locale }) {
         questionVersion: quizResult.questionVersion,
         algorithmVersion: quizResult.algorithmVersion,
       });
+      recordSharedResultPublish();
       const url = `${window.location.origin}${window.location.pathname}#/shared/${id}`;
       setSharedUrl(url);
       await copyText(url);
@@ -162,6 +168,11 @@ export function ResultPage({ locale }: { locale: Locale }) {
         {shareLinkState === "published" && (
           <p className="result-action-success" role="status">
             {t(locale, "copiedLink")}
+          </p>
+        )}
+        {shareLinkState === "throttled" && (
+          <p className="result-action-error" role="status">
+            {t(locale, "shareLinkThrottled")}
           </p>
         )}
         {shareLinkState === "error" && (
