@@ -110,6 +110,19 @@ export const th = {
   mockNotice: "หน้าตัวอย่าง UI · ผลลัพธ์นี้ยังไม่ได้คำนวณจาก Matching Engine",
   disclaimer:
     "Fan made เพื่อความบันเทิง ไม่เกี่ยวข้องหรือได้รับการรับรองจาก HoYoverse",
+  cookieBannerBody:
+    "เว็บนี้ใช้ที่เก็บข้อมูลในเบราว์เซอร์เพื่อจำผลลัพธ์และการตั้งค่าของคุณ และอาจใช้ Analytics ในอนาคตเพื่อทำความเข้าใจการใช้งาน",
+  cookieAcceptAll: "ยอมรับทั้งหมด",
+  cookieNecessaryOnly: "เฉพาะที่จำเป็น",
+  cookieCustomize: "ตั้งค่า",
+  cookieDialogTitle: "การตั้งค่าคุกกี้",
+  cookieDialogBody: "เลือกได้ว่าจะอนุญาตให้เว็บนี้ใช้ที่เก็บข้อมูลหมวดใดบ้าง",
+  cookieNecessaryLabel: "จำเป็น",
+  cookieNecessaryDesc: "ใช้เก็บผลแบบทดสอบ ธีม และภาษาที่เลือก จำเป็นต่อการทำงานของเว็บ ปิดไม่ได้",
+  cookieAnalyticsLabel: "Analytics",
+  cookieAnalyticsDesc: "ช่วยให้เข้าใจการใช้งานเว็บ ยังไม่ได้เปิดใช้งานจริงในตอนนี้",
+  cookieSave: "บันทึก",
+  cookieSettingsLink: "ตั้งค่าคุกกี้",
   notFoundBody: "เส้นทางนี้อยู่นอกแผนที่ Teyvat",
   returnHome: "กลับหน้าหลัก",
 } as const;

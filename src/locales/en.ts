@@ -114,6 +114,19 @@ export const en: Record<keyof typeof th, string> = {
     "UI preview · This result is not yet calculated by the Matching Engine",
   disclaimer:
     "An entertainment fan project. Not affiliated with or endorsed by HoYoverse.",
+  cookieBannerBody:
+    "This site uses browser storage to remember your result and preferences, and may use Analytics in the future to understand usage.",
+  cookieAcceptAll: "Accept all",
+  cookieNecessaryOnly: "Necessary only",
+  cookieCustomize: "Customize",
+  cookieDialogTitle: "Cookie settings",
+  cookieDialogBody: "Choose which categories of storage this site is allowed to use.",
+  cookieNecessaryLabel: "Necessary",
+  cookieNecessaryDesc: "Stores your quiz result, theme, and language. Required for the site to work, cannot be turned off.",
+  cookieAnalyticsLabel: "Analytics",
+  cookieAnalyticsDesc: "Helps understand site usage. Not actually active yet.",
+  cookieSave: "Save",
+  cookieSettingsLink: "Cookie settings",
   notFoundBody: "This path has wandered beyond Teyvat.",
   returnHome: "Return home",
 };
