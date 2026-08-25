@@ -1,4 +1,5 @@
-import { BookOpen, Download, RotateCcw, Sparkles } from "lucide-react";
+import { getFirestore } from "firebase/firestore";
+import { BookOpen, Download, Link2, RotateCcw, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
@@ -6,10 +7,12 @@ import { Button, ContentCard, PageContainer } from "../components/common";
 import { CharacterResultCard, VisionCard } from "../components/result";
 import { useQuizProgress } from "../hooks";
 import { t } from "../i18n";
-import type { CharacterMatch, Locale, VisionMatch } from "../types";
+import { firebaseApp } from "../lib/firebase";
+import { publishSharedResult } from "../lib/shared-result";
+import type { CharacterMatch, Locale, QuizResult, VisionMatch } from "../types";
 import { loadCharacterById } from "../data/characters/repository";
 import { createCharacterResultPreview } from "../utils/character-preview";
-import { downloadShareCard } from "../utils/share-result";
+import { copyText, downloadShareCard } from "../utils/share-result";
 import { readQuizResult } from "../utils/quiz-result";
 
 export function ResultPage({ locale }: { locale: Locale }) {
@@ -27,6 +30,10 @@ export function ResultPage({ locale }: { locale: Locale }) {
     | undefined
   >(undefined);
   const [downloadError, setDownloadError] = useState(false);
+  const [shareLinkState, setShareLinkState] = useState<
+    "idle" | "publishing" | "published" | "error"
+  >("idle");
+  const [sharedUrl, setSharedUrl] = useState<string | null>(null);
   useEffect(() => {
     let active = true;
     if (!previewId) {
@@ -56,6 +63,28 @@ export function ResultPage({ locale }: { locale: Locale }) {
       setDownloadError(false);
     } catch {
       setDownloadError(true);
+    }
+  };
+
+  const createShareLink = async (quizResult: QuizResult) => {
+    if (sharedUrl) {
+      await copyText(sharedUrl);
+      setShareLinkState("published");
+      return;
+    }
+    setShareLinkState("publishing");
+    try {
+      const db = getFirestore(firebaseApp);
+      const id = await publishSharedResult(db, character, vision, {
+        questionVersion: quizResult.questionVersion,
+        algorithmVersion: quizResult.algorithmVersion,
+      });
+      const url = `${window.location.origin}${window.location.pathname}#/shared/${id}`;
+      setSharedUrl(url);
+      await copyText(url);
+      setShareLinkState("published");
+    } catch {
+      setShareLinkState("error");
     }
   };
 
@@ -103,6 +132,18 @@ export function ResultPage({ locale }: { locale: Locale }) {
             <BookOpen size={18} />
             {t(locale, "characterDetails")}
           </Link>
+          {!previewId && result && (
+            <Button
+              variant="secondary"
+              onClick={() => void createShareLink(result)}
+              disabled={shareLinkState === "publishing"}
+            >
+              <Link2 size={18} />
+              {shareLinkState === "publishing"
+                ? t(locale, "shareLinkCreating")
+                : t(locale, "shareLinkCreate")}
+            </Button>
+          )}
           {!previewId && (
             <Button
               variant="secondary"
@@ -116,6 +157,16 @@ export function ResultPage({ locale }: { locale: Locale }) {
             </Button>
           )}
         </div>
+        {shareLinkState === "published" && (
+          <p className="result-action-success" role="status">
+            {t(locale, "copiedLink")}
+          </p>
+        )}
+        {shareLinkState === "error" && (
+          <p className="result-action-error" role="status">
+            {t(locale, "error")}
+          </p>
+        )}
         {downloadError && (
           <p className="result-action-error" role="status">
             Unable to download the card. Please try again.
