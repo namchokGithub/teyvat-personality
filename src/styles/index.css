@@ -2383,3 +2383,18 @@ html[lang="th"] .hero__copy h1 {
 .app-shell--consent-pending .app-footer {
   padding-bottom: 100px;
 }
+@media (max-width: 450px) {
+  .cookie-banner__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-banner__actions .button {
+    width: 100%;
+  }
+  .app-shell--consent-pending .vision-effect-picker__trigger {
+    bottom: calc(max(14px, env(safe-area-inset-bottom)) + 350px);
+  }
+  .app-shell--consent-pending .app-footer {
+    padding-bottom: 370px;
+  }
+}
