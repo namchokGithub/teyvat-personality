@@ -36,6 +36,7 @@ export const en: Record<keyof typeof th, string> = {
     "See the traits behind your match and a result card designed for sharing.",
   question: "Question",
   back: "Back",
+  backToTop: "Back to top",
   next: "Next",
   finish: "See my result",
   selectHint: "Choose the answer that feels most like you",

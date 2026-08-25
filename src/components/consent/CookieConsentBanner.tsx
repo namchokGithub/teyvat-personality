@@ -21,11 +21,15 @@ export function CookieConsentBanner({
       role="region"
       aria-label={t(locale, "cookieDialogTitle")}
     >
-      <Cookie size={20} aria-hidden="true" />
-      <p>{t(locale, "cookieBannerBody")}</p>
+      <div className="cookie-banner__copy">
+        <span className="cookie-banner__icon" aria-hidden="true">
+          <Cookie size={18} />
+        </span>
+        <p>{t(locale, "cookieBannerBody")}</p>
+      </div>
       <div className="cookie-banner__actions">
         <Button onClick={onAcceptAll}>{t(locale, "cookieAcceptAll")}</Button>
-        <Button onClick={onNecessaryOnly}>
+        <Button variant="secondary" onClick={onNecessaryOnly}>
           {t(locale, "cookieNecessaryOnly")}
         </Button>
         <Button variant="ghost" onClick={onOpenSettings}>

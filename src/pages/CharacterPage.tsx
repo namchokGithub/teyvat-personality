@@ -2,7 +2,7 @@ import { ArrowLeft, Eye, Sparkles, Star, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { ElementBadge, PageContainer, RegionBadge } from "../components/common";
+import { BackToTopButton, ElementBadge, PageContainer, RegionBadge } from "../components/common";
 import { CharacterResultCard, VisionCard } from "../components/result";
 import { getCharacterArtwork } from "../data/characters/artwork";
 import { loadCharacterById } from "../data/characters/repository";
@@ -125,6 +125,7 @@ export function CharacterPage({ locale }: { locale: Locale }) {
           </div>
         </article>
       </PageContainer>
+      <BackToTopButton locale={locale} />
       {showPreview && preview && (
         <div
           className="dialog-backdrop"

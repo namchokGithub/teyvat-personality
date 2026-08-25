@@ -2,7 +2,7 @@ import { Sparkles, Star } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Button, ElementIcon, PageContainer } from "../components/common";
+import { BackToTopButton, Button, ElementIcon, PageContainer } from "../components/common";
 import { getCharacterArtwork } from "../data/characters/artwork";
 import { loadCharacterSummaries } from "../data/characters/repository";
 import { t } from "../i18n";
@@ -159,6 +159,7 @@ export function CharactersPage({ locale }: { locale: Locale }) {
           </>
         )}
       </PageContainer>
+      <BackToTopButton locale={locale} />
     </main>
   );
 }

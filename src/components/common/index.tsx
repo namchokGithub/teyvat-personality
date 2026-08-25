@@ -1,9 +1,10 @@
 import {
+  useEffect,
   useState,
   type ButtonHTMLAttributes,
   type PropsWithChildren,
 } from "react";
-import { Languages, MapPin, Sparkles } from "lucide-react";
+import { ArrowUp, Languages, MapPin, Sparkles } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 import { t } from "../../i18n";
@@ -59,6 +60,31 @@ export function Button({
       className={`button button--${variant} ${className}`}
       {...props}
     />
+  );
+}
+
+export function BackToTopButton({ locale }: { locale: Locale }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const updateVisibility = () => setIsVisible(window.scrollY > 360);
+    updateVisibility();
+    window.addEventListener("scroll", updateVisibility, { passive: true });
+    return () => window.removeEventListener("scroll", updateVisibility);
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <button
+      className="back-to-top"
+      type="button"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label={t(locale, "backToTop")}
+      title={t(locale, "backToTop")}
+    >
+      <ArrowUp size={20} aria-hidden="true" />
+    </button>
   );
 }
 
