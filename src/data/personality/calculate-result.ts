@@ -7,7 +7,7 @@ import { TRAIT_IDS } from "../../types";
 import type { SharedResultParams } from "../../utils/share-result";
 import { elementProfiles } from "./element-profiles";
 import { loadAllCharacterPersonalities } from "./repository";
-import { resultTitleByDimension, visionInterpretations } from "./result-interpretations";
+import { resultTitleByDimension, traitNarratives, visionInterpretations } from "./result-interpretations";
 import { traitById } from "./traits";
 
 function dominantDimension(dimensions: Record<DimensionId, number>) {
@@ -20,18 +20,23 @@ function traitLabels(ids: TraitId[]): LocalizedText[] {
   return ids.map((id) => traitById.get(id)?.label).filter((label): label is LocalizedText => Boolean(label));
 }
 
-function characterSummary(name: string, traits: LocalizedText[]): LocalizedText {
-  if (!traits.length) {
+function characterSummary(name: string, matchingTraitIds: TraitId[]): LocalizedText {
+  const narratives = matchingTraitIds.slice(0, 2).map((traitId) => traitNarratives[traitId]);
+  if (!narratives.length) {
     return {
       th: `รูปแบบการตัดสินใจและการใช้ชีวิตของคุณมีความใกล้เคียงกับ ${name} มากที่สุด`,
       en: `Your approach to decisions and daily life is closest to ${name}.`,
     };
   }
-  const th = traits.map((trait) => trait.th).join(" และ");
-  const en = traits.map((trait) => trait.en).join(" and ");
+  if (narratives.length === 1) {
+    return {
+      th: `บนเส้นทางที่คล้ายกัน คุณและ ${name} ต่าง${narratives[0].lead.th}`,
+      en: `On similar paths, you and ${name} both ${narratives[0].lead.en}.`,
+    };
+  }
   return {
-    th: `คุณและ ${name} มีลักษณะเด่นร่วมกันด้าน${th} จึงมีรูปแบบบุคลิกที่ใกล้เคียงกัน`,
-    en: `You and ${name} share strengths in ${en}, creating a closely aligned personality pattern.`,
+    th: `บนเส้นทางที่คล้ายกัน คุณและ ${name} ต่าง${narratives[0].lead.th} พร้อมทั้ง${narratives[1].follow.th}`,
+    en: `On similar paths, you and ${name} both ${narratives[0].lead.en}, while also ${narratives[1].follow.en}.`,
   };
 }
 
@@ -54,7 +59,7 @@ export async function calculateQuizResult(answers: Record<string, string>): Prom
       region: character.region ?? "Unknown",
       compatibility: score.compatibility,
       title,
-      summary: characterSummary(character.name, labels),
+      summary: characterSummary(character.name, score.matchingTraitIds),
       matchingTraits: labels,
       matchingTraitIds: score.matchingTraitIds,
       artworkUrl: getCharacterArtwork(character.id, "full")?.url,
@@ -93,7 +98,7 @@ export async function loadSharedQuizResult(params: SharedResultParams): Promise<
     region: character.region ?? "Unknown",
     compatibility: params.compatibility,
     title: resultTitleByDimension[dominantDimension(personality.personality)],
-    summary: characterSummary(character.name, labels),
+    summary: characterSummary(character.name, validTraitIds),
     matchingTraits: labels,
     matchingTraitIds: validTraitIds,
     artworkUrl: getCharacterArtwork(character.id, "full")?.url,
