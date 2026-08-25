@@ -16,12 +16,16 @@ export function CookieConsentBanner({
   onOpenSettings: () => void;
 }) {
   return (
-    <div className="cookie-banner" role="region" aria-label={t(locale, "cookieDialogTitle")}>
+    <div
+      className="cookie-banner"
+      role="region"
+      aria-label={t(locale, "cookieDialogTitle")}
+    >
       <Cookie size={20} aria-hidden="true" />
       <p>{t(locale, "cookieBannerBody")}</p>
       <div className="cookie-banner__actions">
         <Button onClick={onAcceptAll}>{t(locale, "cookieAcceptAll")}</Button>
-        <Button variant="secondary" onClick={onNecessaryOnly}>
+        <Button onClick={onNecessaryOnly}>
           {t(locale, "cookieNecessaryOnly")}
         </Button>
         <Button variant="ghost" onClick={onOpenSettings}>

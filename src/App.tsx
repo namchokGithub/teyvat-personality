@@ -1,11 +1,29 @@
-import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import {
+  lazy,
+  Suspense,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { AppFooter, AppHeader, RouteFocus } from "./components/common";
-import { CookieConsentBanner, CookiePreferencesDialog } from "./components/consent";
+import {
+  CookieConsentBanner,
+  CookiePreferencesDialog,
+} from "./components/consent";
 import { t } from "./i18n";
 import { hasDecided, setConsent } from "./lib/consent";
-import { CharacterPage, CharactersPage, LandingPage, MatchingPage, NotFoundPage, QuizPage, ResultPage } from "./pages";
+import {
+  CharacterPage,
+  CharactersPage,
+  LandingPage,
+  MatchingPage,
+  NotFoundPage,
+  QuizPage,
+  ResultPage,
+} from "./pages";
 import type { Locale, Theme } from "./types";
 
 const THEME_STORAGE_KEY = "teyvat-theme";
@@ -20,15 +38,31 @@ function readStoredTheme(): Theme | null {
 }
 
 function readInitialTheme(): Theme {
-  return readStoredTheme() ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  return (
+    readStoredTheme() ??
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light")
+  );
 }
 
 export function App() {
-  const [locale, setLocale] = useState<Locale>(() => localStorage.getItem("teyvat-locale") === "en" ? "en" : "th");
+  const [locale, setLocale] = useState<Locale>(() =>
+    localStorage.getItem("teyvat-locale") === "en" ? "en" : "th",
+  );
   const [theme, setTheme] = useState<Theme>(readInitialTheme);
   const hasExplicitTheme = useRef(readStoredTheme() !== null);
   const [cookieDialogOpen, setCookieDialogOpen] = useState(false);
-  const [cookieConsentDecided, setCookieConsentDecided] = useState(() => hasDecided());
+  const [cookieConsentDecided, setCookieConsentDecided] = useState(() =>
+    hasDecided(),
+  );
+
+  const closeCookieDialog = useCallback(() => setCookieDialogOpen(false), []);
+  const saveCookieConsent = useCallback((analytics: boolean) => {
+    setConsent(analytics);
+    setCookieConsentDecided(true);
+    document.getElementById("main-content")?.focus();
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("teyvat-locale", locale);
@@ -59,11 +93,17 @@ export function App() {
   };
 
   return (
-    <div className={`app-shell${cookieConsentDecided ? "" : " app-shell--consent-pending"}`}>
-      <a className="skip-link" href="#main-content">{t(locale, "skipContent")}</a>
+    <div
+      className={`app-shell${cookieConsentDecided ? "" : " app-shell--consent-pending"}`}
+    >
+      <a className="skip-link" href="#main-content">
+        {t(locale, "skipContent")}
+      </a>
       <AppHeader
         locale={locale}
-        onToggleLocale={() => setLocale((value) => value === "th" ? "en" : "th")}
+        onToggleLocale={() =>
+          setLocale((value) => (value === "th" ? "en" : "th"))
+        }
         theme={theme}
         onToggleTheme={toggleTheme}
       />
@@ -82,8 +122,14 @@ export function App() {
               </Suspense>
             }
           />
-          <Route path="/characters" element={<CharactersPage locale={locale} />} />
-          <Route path="/characters/:slug" element={<CharacterPage locale={locale} />} />
+          <Route
+            path="/characters"
+            element={<CharactersPage locale={locale} />}
+          />
+          <Route
+            path="/characters/:slug"
+            element={<CharacterPage locale={locale} />}
+          />
           <Route path="*" element={<NotFoundPage locale={locale} />} />
         </Routes>
       </div>
@@ -104,13 +150,13 @@ export function App() {
       <CookiePreferencesDialog
         locale={locale}
         open={cookieDialogOpen}
-        onClose={() => setCookieDialogOpen(false)}
-        onSave={(analytics) => {
-          setConsent(analytics);
-          setCookieConsentDecided(true);
-        }}
+        onClose={closeCookieDialog}
+        onSave={saveCookieConsent}
       />
-      <AppFooter locale={locale} onOpenCookieSettings={() => setCookieDialogOpen(true)} />
+      <AppFooter
+        locale={locale}
+        onOpenCookieSettings={() => setCookieDialogOpen(true)}
+      />
     </div>
   );
 }
