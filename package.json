@@ -8,6 +8,7 @@
     "dev": "vite",
     "validate:data": "node scripts/validate-data.mjs",
     "verify:engine": "node scripts/verify-engine.mjs",
+    "verify:consent": "node scripts/verify-consent.mjs",
     "simulate:balance": "node scripts/simulate-balance.mjs",
     "verify:shared-result": "firebase emulators:exec --project demo-teyvat-personality --only firestore \"node scripts/verify-shared-result.mjs\"",
     "build": "node scripts/validate-data.mjs && tsc -b && vite build",
