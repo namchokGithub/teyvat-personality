@@ -293,7 +293,7 @@ Create `src/components/consent/CookiePreferencesDialog.tsx`:
 
 ```tsx
 import { X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import { Button } from "../common";
 import { useDialogAccessibility } from "../../hooks";
@@ -315,10 +315,12 @@ export function CookiePreferencesDialog({
   const dialogRef = useRef<HTMLDivElement>(null);
   useDialogAccessibility(dialogRef, onClose, open);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
+  const [wasOpen, setWasOpen] = useState(open);
 
-  useEffect(() => {
+  if (open !== wasOpen) {
+    setWasOpen(open);
     if (open) setAnalyticsEnabled(getConsent()?.analytics ?? false);
-  }, [open]);
+  }
 
   if (!open) return null;
 
@@ -549,10 +551,22 @@ Append to `src/styles/index.css`:
 
 - [ ] **Step 3: Wire state and rendering into `App.tsx`**
 
-In `src/App.tsx`, update the imports at the top:
+`src/App.tsx` currently starts with these imports (it already has a `lazy`/`Suspense`-loaded `SharedResultPage` from earlier work — do not remove or restructure that, only add two new import lines to this existing block):
 
 ```tsx
-import { useEffect, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+
+import { AppFooter, AppHeader, RouteFocus } from "./components/common";
+import { t } from "./i18n";
+import { CharacterPage, CharactersPage, LandingPage, MatchingPage, NotFoundPage, QuizPage, ResultPage } from "./pages";
+import type { Locale, Theme } from "./types";
+```
+
+Update it to add a `CookieConsentBanner`/`CookiePreferencesDialog` import and a `consent.ts` import, keeping every existing line (including the `react` line with `lazy, Suspense`) exactly as is:
+
+```tsx
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { AppFooter, AppHeader, RouteFocus } from "./components/common";
