@@ -59,7 +59,7 @@ export function App() {
   };
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell${cookieConsentDecided ? "" : " app-shell--consent-pending"}`}>
       <a className="skip-link" href="#main-content">{t(locale, "skipContent")}</a>
       <AppHeader
         locale={locale}
