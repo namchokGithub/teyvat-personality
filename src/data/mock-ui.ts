@@ -1,4 +1,4 @@
-import type { CharacterMatch, QuizQuestion, VisionMatch } from "../types";
+import { DIMENSION_IDS, type CharacterMatch, type QuizQuestion, type VisionMatch } from "../types";
 import { getCharacterArtwork } from "./characters/artwork";
 
 const placeholderPrompt = {
@@ -8,6 +8,7 @@ const placeholderPrompt = {
 
 export const mockQuestions: QuizQuestion[] = Array.from({ length: 24 }, (_, index) => ({
   id: `question-${index + 1}`,
+  dimensionId: DIMENSION_IDS[index % DIMENSION_IDS.length],
   prompt:
     index === 0
       ? placeholderPrompt

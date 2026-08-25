@@ -9,14 +9,24 @@ const random = () => {
 };
 const increment = (map, key) => map.set(key, (map.get(key) ?? 0) + 1);
 const percentage = (count) => `${((count / SAMPLE_SIZE) * 100).toFixed(2)}%`;
+const pickRandom = (values, count) => {
+  const pool = [...values];
+  const picked = [];
+  for (let index = 0; index < count && pool.length > 0; index += 1) {
+    const target = Math.floor(random() * pool.length);
+    picked.push(pool.splice(target, 1)[0]);
+  }
+  return picked;
+};
 
 const server = await createServer({ root: process.cwd(), appType: "custom", server: { middlewareMode: true, hmr: false }, logLevel: "error" });
 try {
-  const [{ questions }, engine, { loadAllCharacterPersonalities }, { elementProfiles }] = await Promise.all([
+  const [{ questions }, engine, { loadAllCharacterPersonalities }, { elementProfiles }, { DIMENSION_IDS }] = await Promise.all([
     server.ssrLoadModule("/src/data/quiz/questions.ts"),
     server.ssrLoadModule("/src/engine/index.ts"),
     server.ssrLoadModule("/src/data/personality/repository.ts"),
     server.ssrLoadModule("/src/data/personality/element-profiles.ts"),
+    server.ssrLoadModule("/src/types/index.ts"),
   ]);
   const profiles = await loadAllCharacterPersonalities();
   const characterWins = new Map();
@@ -24,11 +34,14 @@ try {
   const visionWins = new Map();
 
   for (let index = 0; index < SAMPLE_SIZE; index += 1) {
-    const answers = Object.fromEntries(questions.map((question) => {
+    const selectedQuestions = DIMENSION_IDS.flatMap((dimensionId) =>
+      pickRandom(questions.filter((question) => question.dimensionId === dimensionId), engine.QUESTIONS_PER_DIMENSION),
+    );
+    const answers = Object.fromEntries(selectedQuestions.map((question) => {
       const selected = question.answers[Math.floor(random() * question.answers.length)];
       return [question.id, selected.id];
     }));
-    const profile = engine.buildUserPersonalityProfile(answers, questions);
+    const profile = engine.buildUserPersonalityProfile(answers, selectedQuestions);
     const characters = engine.rankCharacterMatches(profile, profiles);
     const visions = engine.rankVisionAffinities(profile, elementProfiles);
     increment(characterWins, characters[0].characterId);

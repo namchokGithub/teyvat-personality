@@ -1,6 +1,6 @@
 import { getCharacterArtwork } from "../characters/artwork";
 import { loadCharacterById } from "../characters/repository";
-import { questions } from "../quiz";
+import { questionById } from "../quiz";
 import { ALGORITHM_VERSION, buildUserPersonalityProfile, QUESTION_VERSION, rankCharacterMatches, rankVisionAffinities } from "../../engine";
 import type { CharacterMatch, DimensionId, LocalizedText, QuizResult, TraitId, VisionMatch } from "../../types";
 import { TRAIT_IDS } from "../../types";
@@ -36,7 +36,8 @@ function characterSummary(name: string, traits: LocalizedText[]): LocalizedText 
 }
 
 export async function calculateQuizResult(answers: Record<string, string>): Promise<QuizResult> {
-  const profile = buildUserPersonalityProfile(answers, questions);
+  const answeredQuestions = Object.keys(answers).map((id) => questionById.get(id)!);
+  const profile = buildUserPersonalityProfile(answers, answeredQuestions);
   const personalities = await loadAllCharacterPersonalities();
   const rankedCharacters = rankCharacterMatches(profile, personalities).slice(0, 4);
   const rankedVisions = rankVisionAffinities(profile, elementProfiles);

@@ -11,8 +11,9 @@ import {
   type VisionMatchScore,
 } from "../types";
 
-export const QUESTION_VERSION = "2026-08-21";
+export const QUESTION_VERSION = "2026-08-25";
 export const ALGORITHM_VERSION = "1.0.0";
+export const QUESTIONS_PER_DIMENSION = 4;
 
 const clamp = (value: number, minimum: number, maximum: number) => Math.min(maximum, Math.max(minimum, value));
 const round = (value: number, precision = 4) => Number(value.toFixed(precision));

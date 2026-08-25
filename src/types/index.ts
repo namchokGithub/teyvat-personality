@@ -26,6 +26,7 @@ export interface LocalizedText {
 
 export interface QuizQuestion {
   id: string;
+  dimensionId: DimensionId;
   prompt: LocalizedText;
   answers: Array<{ id: string; label: LocalizedText }>;
 }

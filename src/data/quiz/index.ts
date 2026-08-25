@@ -1,1 +1,1 @@
-export { questionById, questionCount, questions } from "./questions";
+export { questionById, questions } from "./questions";

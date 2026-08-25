@@ -4,7 +4,7 @@ import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import { Button, ContentCard, PageContainer } from "../components/common";
 import { AnswerOption, QuizProgress } from "../components/quiz";
-import { questionById, questionCount } from "../data/quiz";
+import { questionById } from "../data/quiz";
 import { useDialogAccessibility, useQuizProgress } from "../hooks";
 import { t } from "../i18n";
 import type { Locale } from "../types";
@@ -18,6 +18,7 @@ export function QuizPage({ locale }: { locale: Locale }) {
   const questionHeadingRef = useRef<HTMLHeadingElement>(null);
   const closeReset = useCallback(() => setShowReset(false), []);
   useDialogAccessibility(resetDialogRef, closeReset, showReset);
+  const questionCount = state.questionOrder.length;
   const current = Math.min(state.currentQuestionIndex, state.questionOrder.length - 1);
   const question = questionById.get(state.questionOrder[current])!;
   const orderedAnswers = state.answerOrder[question.id].map((answerId) => question.answers.find(({ id }) => id === answerId)!);
