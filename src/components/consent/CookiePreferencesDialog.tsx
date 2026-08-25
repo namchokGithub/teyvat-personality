@@ -47,7 +47,12 @@ export function CookiePreferencesDialog({
         tabIndex={-1}
         onMouseDown={(event) => event.stopPropagation()}
       >
-        <button className="dialog__close" type="button" onClick={onClose} aria-label={t(locale, "close")}>
+        <button
+          className="dialog__close"
+          type="button"
+          onClick={onClose}
+          aria-label={t(locale, "close")}
+        >
           <X size={18} aria-hidden="true" />
         </button>
         <h2 id="cookie-dialog-title">{t(locale, "cookieDialogTitle")}</h2>

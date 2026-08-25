@@ -123,7 +123,11 @@ export function AppFooter({
     <footer className="app-footer">
       <PageContainer>
         <p>{t(locale, "disclaimer")} · By Lesser Lord Kusanali © 2026</p>
-        <button type="button" className="text-button" onClick={onOpenCookieSettings}>
+        <button
+          type="button"
+          className="text-button"
+          onClick={onOpenCookieSettings}
+        >
           {t(locale, "cookieSettingsLink")}
         </button>
       </PageContainer>

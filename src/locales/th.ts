@@ -118,9 +118,11 @@ export const th = {
   cookieDialogTitle: "การตั้งค่าคุกกี้",
   cookieDialogBody: "เลือกได้ว่าจะอนุญาตให้เว็บนี้ใช้ที่เก็บข้อมูลหมวดใดบ้าง",
   cookieNecessaryLabel: "จำเป็น",
-  cookieNecessaryDesc: "ใช้เก็บผลแบบทดสอบ ธีม และภาษาที่เลือก จำเป็นต่อการทำงานของเว็บ ปิดไม่ได้",
+  cookieNecessaryDesc:
+    "ใช้เก็บผลแบบทดสอบ ธีม และภาษาที่เลือก จำเป็นต่อการทำงานของเว็บ ปิดไม่ได้",
   cookieAnalyticsLabel: "Analytics",
-  cookieAnalyticsDesc: "ช่วยให้เข้าใจการใช้งานเว็บ ยังไม่ได้เปิดใช้งานจริงในตอนนี้",
+  cookieAnalyticsDesc:
+    "ช่วยให้เข้าใจการใช้งานเว็บ ยังไม่ได้เปิดใช้งานจริงในตอนนี้",
   cookieSave: "บันทึก",
   cookieSettingsLink: "ตั้งค่าคุกกี้",
   notFoundBody: "เส้นทางนี้อยู่นอกแผนที่ Teyvat",

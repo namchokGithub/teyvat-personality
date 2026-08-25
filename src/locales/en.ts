@@ -120,9 +120,11 @@ export const en: Record<keyof typeof th, string> = {
   cookieNecessaryOnly: "Necessary only",
   cookieCustomize: "Customize",
   cookieDialogTitle: "Cookie settings",
-  cookieDialogBody: "Choose which categories of storage this site is allowed to use.",
+  cookieDialogBody:
+    "Choose which categories of storage this site is allowed to use.",
   cookieNecessaryLabel: "Necessary",
-  cookieNecessaryDesc: "Stores your quiz result, theme, and language. Required for the site to work, cannot be turned off.",
+  cookieNecessaryDesc:
+    "Stores your quiz result, theme, and language. Required for the site to work, cannot be turned off.",
   cookieAnalyticsLabel: "Analytics",
   cookieAnalyticsDesc: "Helps understand site usage. Not actually active yet.",
   cookieSave: "Save",

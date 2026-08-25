@@ -36,7 +36,11 @@ export function hasAnalyticsConsent(): boolean {
 
 export function setConsent(analytics: boolean) {
   try {
-    const value: CookieConsent = { version: 1, analytics, decidedAt: new Date().toISOString() };
+    const value: CookieConsent = {
+      version: 1,
+      analytics,
+      decidedAt: new Date().toISOString(),
+    };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
   } catch {
     // Storage unavailable (private browsing, quota) — fail silently, hasDecided() stays false.
