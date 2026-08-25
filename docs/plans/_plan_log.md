@@ -97,6 +97,15 @@
 - ทดสอบ manual QA ผ่าน browser automation: เปิด document เก่าที่มี version ไม่ตรง → ขึ้น "ผลลัพธ์นี้มาจากเวอร์ชันเก่า" ถูกต้อง; seed throttle ให้เต็ม 5 แล้วกด publish → บล็อกทันทีไม่ยิง Firestore, โชว์ "สร้างลิงก์บ่อยเกินไป ลองใหม่ภายหลัง"; publish ปกติหลังเคลียร์ throttle → สำเร็จและบันทึก timestamp ใหม่ถูกต้อง — ไม่ใช่ QA ข้ามอุปกรณ์กายภาพจริง ทำผ่าน browser automation เท่านั้น
 - P2 ปิดครบทั้ง 5 ข้อแล้ว
 
+## 25 สิงหาคม 2026 — Cookie Consent banner (นอก backlog เดิม)
+
+- เพิ่ม cookie/localStorage consent banner + preferences dialog ตามคำขอนอกรอบ (ไม่ได้อยู่ใน P2/P3 เดิม) spec/plan อยู่ที่ [2026-08-25-cookie-consent-design.md](../superpowers/specs/2026-08-25-cookie-consent-design.md) และ [2026-08-25-cookie-consent.md](../superpowers/plans/2026-08-25-cookie-consent.md)
+- หมวด Necessary (บังคับ ไม่มี toggle) กับ Analytics (opt-in, ยังไม่มี SDK จริงให้ gate) — `hasAnalyticsConsent()` พร้อมให้ analytics งานอนาคตเรียกใช้ได้เลย
+- Banner โชว์เฉพาะยังไม่ตัดสินใจ, มีลิงก์ "ตั้งค่าคุกกี้" ถาวรใน footer ให้เปลี่ยนใจทีหลังได้
+- ไม่ทำ Ads/Marketing category และไม่ย้าย localStorage เดิม (quiz progress/result, theme, locale, share-throttle) มาอยู่หลัง consent gate ตามที่ตัดสินใจไว้ (จัดเป็น Necessary ที่กฎหมายยกเว้นได้)
+- Final review เจอ bug จริง: cookie banner (fixed bottom) บัง vision-effect picker กับ footer บนหน้า Landing แก้แล้วด้วย offset ตาม breakpoint พร้อม verify จริงที่ width 320px (worst case วัดได้ ~315px สูง เผื่อ margin เป็น 350/370px)
+- ทดสอบ manual QA ผ่าน browser ครบ 6 สถานการณ์ (first-visit, accept-all, necessary-only, dialog reflect ทั้ง 2 ทางเข้า, close-without-save, banner reappear ผ่าน dialog path)
+
 ## Verification ล่าสุด
 
 - `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements
