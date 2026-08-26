@@ -15,6 +15,7 @@ import {
 } from "./components/consent";
 import { t } from "./i18n";
 import { hasDecided, setConsent } from "./lib/consent";
+import { safeGetItem, safeSetItem } from "./lib/safe-storage";
 import {
   CharacterPage,
   CharactersPage,
@@ -33,7 +34,7 @@ const SharedResultPage = lazy(async () => {
 });
 
 function readStoredTheme(): Theme | null {
-  const saved = localStorage.getItem(THEME_STORAGE_KEY);
+  const saved = safeGetItem(THEME_STORAGE_KEY);
   return saved === "light" || saved === "dark" ? saved : null;
 }
 
@@ -48,7 +49,7 @@ function readInitialTheme(): Theme {
 
 export function App() {
   const [locale, setLocale] = useState<Locale>(() =>
-    localStorage.getItem("teyvat-locale") === "en" ? "en" : "th",
+    safeGetItem("teyvat-locale") === "en" ? "en" : "th",
   );
   const [theme, setTheme] = useState<Theme>(readInitialTheme);
   const hasExplicitTheme = useRef(readStoredTheme() !== null);
@@ -65,7 +66,7 @@ export function App() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("teyvat-locale", locale);
+    safeSetItem("teyvat-locale", locale);
     document.documentElement.lang = locale;
   }, [locale]);
 
@@ -87,7 +88,7 @@ export function App() {
     hasExplicitTheme.current = true;
     setTheme((value) => {
       const next: Theme = value === "light" ? "dark" : "light";
-      localStorage.setItem(THEME_STORAGE_KEY, next);
+      safeSetItem(THEME_STORAGE_KEY, next);
       return next;
     });
   };

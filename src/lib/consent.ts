@@ -1,3 +1,5 @@
+import { safeGetItem, safeSetItem } from "./safe-storage";
+
 const STORAGE_KEY = "teyvat-cookie-consent-v1";
 
 interface CookieConsent {
@@ -8,7 +10,7 @@ interface CookieConsent {
 
 export function getConsent(): CookieConsent | null {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = safeGetItem(STORAGE_KEY);
     if (!raw) return null;
     const value: unknown = JSON.parse(raw);
     if (
@@ -35,14 +37,10 @@ export function hasAnalyticsConsent(): boolean {
 }
 
 export function setConsent(analytics: boolean) {
-  try {
-    const value: CookieConsent = {
-      version: 1,
-      analytics,
-      decidedAt: new Date().toISOString(),
-    };
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
-  } catch {
-    // Storage unavailable (private browsing, quota) — fail silently, hasDecided() stays false.
-  }
+  const value: CookieConsent = {
+    version: 1,
+    analytics,
+    decidedAt: new Date().toISOString(),
+  };
+  safeSetItem(STORAGE_KEY, JSON.stringify(value));
 }

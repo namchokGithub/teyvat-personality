@@ -20,6 +20,7 @@ import {
   hasSavedQuizProgress,
 } from "../hooks";
 import { t } from "../i18n";
+import { safeGetItem, safeSetItem } from "../lib/safe-storage";
 import type { Locale } from "../types";
 import { readPlayerName, savePlayerName } from "../utils/player-profile";
 
@@ -37,7 +38,7 @@ function renderTextWithBreaks(text: string) {
 const VISION_EFFECT_STORAGE_KEY = "teyvat-vision-effect";
 
 function readVisionEffect(): VisionElement {
-  const savedEffect = localStorage.getItem(VISION_EFFECT_STORAGE_KEY);
+  const savedEffect = safeGetItem(VISION_EFFECT_STORAGE_KEY);
   return isVisionElement(savedEffect) ? savedEffect : VISION_EFFECT_DEFAULT;
 }
 
@@ -62,7 +63,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
   }, [location.pathname, navigate, requestName]);
 
   useEffect(() => {
-    localStorage.setItem(VISION_EFFECT_STORAGE_KEY, visionEffect);
+    safeSetItem(VISION_EFFECT_STORAGE_KEY, visionEffect);
   }, [visionEffect]);
 
   useDialogAccessibility(dialogRef, closeNameDialog, showNameDialog);

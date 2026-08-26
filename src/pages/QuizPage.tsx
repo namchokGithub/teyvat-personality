@@ -5,7 +5,11 @@ import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { Button, ContentCard, PageContainer } from "../components/common";
 import { AnswerOption, QuizProgress } from "../components/quiz";
 import { questionById } from "../data/quiz";
-import { useDialogAccessibility, useQuizProgress } from "../hooks";
+import {
+  useDialogAccessibility,
+  useQuizProgress,
+  useStorageDegraded,
+} from "../hooks";
 import { t } from "../i18n";
 import type { Locale } from "../types";
 
@@ -14,6 +18,7 @@ export function QuizPage({ locale }: { locale: Locale }) {
   const location = useLocation();
   const { state, selectAnswer, goToQuestion, complete, reset } =
     useQuizProgress();
+  const storageDegraded = useStorageDegraded();
   const [showReset, setShowReset] = useState(false);
   const resetDialogRef = useRef<HTMLDivElement>(null);
   const questionHeadingRef = useRef<HTMLHeadingElement>(null);
@@ -65,6 +70,11 @@ export function QuizPage({ locale }: { locale: Locale }) {
           </button>
         </div>
         <QuizProgress current={current + 1} total={questionCount} />
+        {storageDegraded && (
+          <p className="quiz-shell__storage-notice" role="status">
+            {t(locale, "storageDegradedNotice")}
+          </p>
+        )}
         <ContentCard className="question-card">
           <span className="question-card__number" aria-hidden="true">
             {String(current + 1).padStart(2, "0")}

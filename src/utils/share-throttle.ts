@@ -1,3 +1,5 @@
+import { safeGetItem, safeSetItem } from "../lib/safe-storage";
+
 const STORAGE_KEY = "teyvat-share-throttle-v1";
 const WINDOW_MS = 60 * 60 * 1000;
 const MAX_PUBLISHES_PER_WINDOW = 5;
@@ -8,7 +10,7 @@ function isLocalhost() {
 
 function readTimestamps(): number[] {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = safeGetItem(STORAGE_KEY);
     if (!raw) return [];
     const value: unknown = JSON.parse(raw);
     return Array.isArray(value)
@@ -34,5 +36,5 @@ export function recordSharedResultPublish(now = Date.now()) {
   if (isLocalhost()) return;
   const timestamps = pruneTimestamps(readTimestamps(), now);
   timestamps.push(now);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(timestamps));
+  safeSetItem(STORAGE_KEY, JSON.stringify(timestamps));
 }

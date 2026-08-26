@@ -1,24 +1,19 @@
 import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
-import { MatchingError } from "../lib/matching-errors";
+import { safeGetItem, safeRemoveItem, safeSetItem } from "../lib/safe-storage";
 import type { QuizResult } from "../types";
 
 const RESULT_STORAGE_KEY = "teyvat-quiz-result-v1";
 export const QUIZ_RESULT_UPDATED_EVENT = "teyvat:quiz-result-updated";
 
-export function saveQuizResult(result: QuizResult) {
-  try {
-    localStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(result));
-  } catch (error) {
-    throw new MatchingError("storage", "Failed to save the quiz result", {
-      cause: error,
-    });
-  }
-  window.dispatchEvent(new Event(QUIZ_RESULT_UPDATED_EVENT));
+export function saveQuizResult(result: QuizResult): boolean {
+  const saved = safeSetItem(RESULT_STORAGE_KEY, JSON.stringify(result));
+  if (saved) window.dispatchEvent(new Event(QUIZ_RESULT_UPDATED_EVENT));
+  return saved;
 }
 
 export function readQuizResult(): QuizResult | null {
   try {
-    const raw = localStorage.getItem(RESULT_STORAGE_KEY);
+    const raw = safeGetItem(RESULT_STORAGE_KEY);
     if (!raw) return null;
     const value = JSON.parse(raw) as Partial<QuizResult>;
     if (
@@ -37,6 +32,6 @@ export function readQuizResult(): QuizResult | null {
 }
 
 export function clearQuizResult() {
-  localStorage.removeItem(RESULT_STORAGE_KEY);
+  safeRemoveItem(RESULT_STORAGE_KEY);
   window.dispatchEvent(new Event(QUIZ_RESULT_UPDATED_EVENT));
 }

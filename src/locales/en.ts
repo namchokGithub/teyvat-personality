@@ -44,6 +44,8 @@ export const en: Record<keyof typeof th, string> = {
   resetQuiz: "Start over",
   resetTitle: "Start the quiz again?",
   resetBody: "Your saved answers and progress will be cleared.",
+  storageDegradedNotice:
+    "This browser can't save your progress. If you close this page, you may need to start over.",
   cancel: "Cancel",
   confirmReset: "Clear and restart",
   matchingTitle: "Finding your echo...",

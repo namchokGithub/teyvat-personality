@@ -7,7 +7,12 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 import aetherImage from "../assets/images/Aether1.png";
 import { Button, ContentCard, PageContainer } from "../components/common";
@@ -32,9 +37,14 @@ import { readQuizResult } from "../utils/quiz-result";
 
 export function ResultPage({ locale }: { locale: Locale }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchParams] = useSearchParams();
   const { reset } = useQuizProgress();
-  const [result] = useState(() => readQuizResult());
+  const [result] = useState(
+    () =>
+      (location.state as { result?: QuizResult } | null)?.result ??
+      readQuizResult(),
+  );
   const previewId = searchParams.get("preview");
   const [preview, setPreview] = useState<
     | {

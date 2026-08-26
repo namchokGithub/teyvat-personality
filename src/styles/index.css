@@ -857,6 +857,11 @@ html[lang="th"] .hero__copy h1 {
   font-size: 13px;
   font-weight: 650;
 }
+.quiz-shell__storage-notice {
+  margin: 0 0 13px;
+  color: #b34f49;
+  font-size: 13px;
+}
 .text-button {
   padding: 0;
   color: var(--blue);

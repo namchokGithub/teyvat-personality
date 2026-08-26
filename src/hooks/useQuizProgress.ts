@@ -11,6 +11,7 @@ import {
   QUESTIONS_PER_DIMENSION,
 } from "../engine";
 import { questionById, questions } from "../data/quiz";
+import { safeGetItem, safeRemoveItem, safeSetItem } from "../lib/safe-storage";
 
 const EXPECTED_QUESTION_COUNT = DIMENSION_IDS.length * QUESTIONS_PER_DIMENSION;
 
@@ -105,7 +106,7 @@ const isValidQuestionSelection = (
 
 function readStoredState(): QuizProgressState | null {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    const raw = safeGetItem(STORAGE_KEY);
     if (!raw) return null;
     const value = JSON.parse(raw) as Partial<QuizProgressState>;
     if (
@@ -148,7 +149,7 @@ function readStoredState(): QuizProgressState | null {
       (!value.updatedAt ||
         Date.now() - Date.parse(value.updatedAt) > QUIZ_IDLE_TIMEOUT_MS)
     ) {
-      localStorage.removeItem(STORAGE_KEY);
+      safeRemoveItem(STORAGE_KEY);
       return null;
     }
     return value as QuizProgressState;
@@ -167,7 +168,7 @@ export function hasSavedQuizProgress() {
 export function beginQuizFromNavigation() {
   const state = readStoredState();
   if (!state?.completedAt) return;
-  localStorage.removeItem(STORAGE_KEY);
+  safeRemoveItem(STORAGE_KEY);
 }
 
 export function useQuizProgress() {
@@ -176,7 +177,7 @@ export function useQuizProgress() {
   );
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    safeSetItem(STORAGE_KEY, JSON.stringify(state));
   }, [state]);
 
   const selectAnswer = useCallback((questionId: string, answerId: string) => {
@@ -199,14 +200,14 @@ export function useQuizProgress() {
     setState((value) => {
       const now = new Date().toISOString();
       const completed = { ...value, completedAt: now, updatedAt: now };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(completed));
+      safeSetItem(STORAGE_KEY, JSON.stringify(completed));
       return completed;
     });
   }, []);
 
   const reset = useCallback(() => {
     const initial = createInitialState();
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(initial));
+    safeSetItem(STORAGE_KEY, JSON.stringify(initial));
     setState(initial);
   }, []);
 

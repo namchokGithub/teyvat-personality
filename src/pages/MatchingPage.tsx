@@ -63,7 +63,7 @@ export function MatchingPage({ locale }: { locale: Locale }) {
         ]);
         if (!active) return;
         saveQuizResult(result);
-        navigate("/result", { replace: true });
+        navigate("/result", { replace: true, state: { result } });
       } catch (caughtError) {
         if (!active) return;
         setError(
