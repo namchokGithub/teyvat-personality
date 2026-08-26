@@ -25,6 +25,7 @@ class FakeStorage {
 }
 
 globalThis.localStorage = new FakeStorage();
+globalThis.window = new EventTarget();
 
 try {
   const consent = await server.ssrLoadModule("/src/lib/consent.ts");

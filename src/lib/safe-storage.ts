@@ -6,11 +6,19 @@ export function isStorageDegraded() {
   return degraded;
 }
 
+function markDegraded() {
+  if (degraded) return;
+  degraded = true;
+  window.dispatchEvent(new Event(STORAGE_DEGRADED_EVENT));
+}
+
 export function safeGetItem(key: string): string | null {
+  if (memoryStore.has(key)) return memoryStore.get(key)!;
   try {
     return localStorage.getItem(key);
   } catch {
-    return memoryStore.get(key) ?? null;
+    markDegraded();
+    return null;
   }
 }
 
@@ -20,10 +28,7 @@ export function safeSetItem(key: string, value: string): boolean {
     return true;
   } catch {
     memoryStore.set(key, value);
-    if (!degraded) {
-      degraded = true;
-      window.dispatchEvent(new Event(STORAGE_DEGRADED_EVENT));
-    }
+    markDegraded();
     return false;
   }
 }
@@ -33,6 +38,6 @@ export function safeRemoveItem(key: string): void {
   try {
     localStorage.removeItem(key);
   } catch {
-    // Storage unavailable — memory copy already cleared above.
+    markDegraded();
   }
 }

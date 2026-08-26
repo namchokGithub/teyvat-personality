@@ -153,7 +153,18 @@ function MatchingErrorState({
         <p>{t(locale, matchingErrorBodyKeyByCategory[category])}</p>
         <div className="matching-error__actions">
           {category !== "navigation" && (
-            <Button onClick={onRetry}>{t(locale, "matchingErrorRetry")}</Button>
+            <Button
+              onClick={
+                // A dynamic import() rejection is cached by the browser's module
+                // registry for the page's lifetime — recomputing in place can never
+                // re-fetch the failed chunk, so a data-load retry needs a real reload.
+                category === "data-load"
+                  ? () => window.location.reload()
+                  : onRetry
+              }
+            >
+              {t(locale, "matchingErrorRetry")}
+            </Button>
           )}
           <Button variant="secondary" onClick={onBackToQuiz}>
             {t(locale, "matchingErrorBackToQuiz")}

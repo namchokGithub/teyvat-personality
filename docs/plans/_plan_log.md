@@ -112,6 +112,36 @@
 - เพิ่ม QR ใน Share Card หลังมี shared URL แล้ว
 - P3 เสร็จทั้งหมดและย้ายออกจาก Development Plan แล้ว
 
+## 26 สิงหาคม 2026 — P0 หัวข้อ 1: จำแนก matching error และ recovery UI
+
+- เพิ่ม `MatchingError`/`MatchingErrorCategory` (`data-load` | `calculation` | `storage` | `navigation`) ที่ `src/lib/matching-errors.ts` แล้ว wire เข้า `calculateQuizResult`/`saveQuizResult` จริง แยกแต่ละ stage ของการคำนวณด้วย `runMatchingStage` helper
+- `MatchingPage` แสดงหน้า recovery ตาม category (หัวข้อ/ข้อความ/ปุ่มต่างกัน) แทนการ redirect กลับ `/quiz` แบบเงียบๆ — ซ่อนปุ่ม retry เมื่อ category เป็น `navigation`, มีคำแนะนำเปิด browser ภายนอกแบบ generic ที่ไม่ผูก user agent ตามข้อบังคับ P0
+- สร้าง test matrix ที่ [p0-in-app-browser-test-matrix.md](p0-in-app-browser-test-matrix.md) — Facebook/Messenger ต้องผ่านทั้ง Android/iOS, LINE/Instagram/TikTok อย่างน้อยแอปละ 1 platform, แยก 2 scenario ต่อแถว (shared-link vs full-quiz)
+- ยืนยันอุปกรณ์ทดสอบจริง: มี Android 1 เครื่องล็อกอินพร้อมครบ 5 แอป **ไม่มี iOS เลย** — ตัดสินใจเก็บเป็น known gap ไปก่อน ไม่หา iPhone/device cloud มาปิดตอนนี้ (ผลคือ P0 ยังปิดไม่ได้จนกว่าจะมี iOS ทดสอบ Facebook/Messenger)
+
+## 26 สิงหาคม 2026 — P0 หัวข้อ 2: รวมการโหลด personality data เป็น chunk เดียว
+
+- เปลี่ยนจาก dynamic import แยกไฟล์ 125 ไฟล์ผ่าน `Promise.all` (เสี่ยง chunk เดียวพังแล้วทั้งชุดล้ม) เป็น eager-glob bundle เดียว (`src/data/personality/character-personalities-bundle.ts`) เรียกผ่าน dynamic import จุดเดียวใน `repository.ts` — ไฟล์ JSON 125 ไฟล์เดิมไม่แตะเลย
+- ก่อนเขียนโค้ด ส่ง Plan subagent ตรวจสมมติฐาน Vite/Rollup chunking พบว่า design ตั้งต้น (เก็บ per-file glob เดิมไว้คู่กับ eager-glob ใหม่) ใช้ไม่ได้จริงเพราะ Rollup ไม่ inline ไฟล์ที่มี dynamic-import target อื่นอยู่แล้ว จึงย้ายทั้ง `loadCharacterPersonalityById`/`loadAllCharacterPersonalities` มาใช้ bundle เดียวกันตามคำแนะนำ
+- เพิ่ม prefetch ใน `QuizPage` เมื่อเหลือคำถาม ≤2 ข้อ
+- พิสูจน์ด้วย production build จริง: chunk เดิม 125 ไฟล์หายหมด เหลือ chunk เดียว (~9.5KB gzip), request ตอนกดจบจริงเหลือ 1 ครั้ง (จากเดิม 125), asset path ใช้ GitHub Pages base (`/teyvat-personality/`) ถูกต้อง
+
+## 26 สิงหาคม 2026 — P0 หัวข้อ 3: ทำให้ progress/result ทนต่อ Web Storage failure
+
+- เพิ่ม `src/lib/safe-storage.ts` (`safeGetItem`/`safeSetItem`/`safeRemoveItem`) พร้อม in-memory fallback ในตัว ครอบ `localStorage` ทุกจุดในแอป (theme, locale, ชื่อผู้เล่น, vision-effect, quiz progress, quiz result, consent, share-throttle) — ทำ `App.tsx`/`LandingPage.tsx` ก่อนเพราะ severity สูงสุด (พังตั้งแต่ initial render ก่อนเข้าคำถามข้อแรก)
+- เพิ่ม `useStorageDegraded()` hook (custom event แบบเดียวกับ `QUIZ_RESULT_UPDATED_EVENT` เดิม) แสดง notice บน `QuizPage` เมื่อ storage ใช้งานไม่ได้
+- **ตัดสินใจสำคัญ**: ให้ storage พังไม่บล็อกการเห็นผลลัพธ์อีกต่อไป (เป้าหมายหัวข้อ 3) แม้ขัดกับที่หัวข้อ 1 ทำไว้ (`saveQuizResult` เคย throw `MatchingError("storage",...)`) — เปลี่ยน `saveQuizResult` เป็น non-throwing, `MatchingPage` ส่งผลลัพธ์ผ่าน router `state` ไป Result Page เสมอ, `ResultPage` fallback ไป `readQuizResult()` เมื่อไม่มี state (refresh/bookmark) ผลคือ `MatchingErrorCategory: "storage"` ไม่ reachable จาก path นี้แล้ว (เก็บ type ไว้เผื่ออนาคต ไม่ลบ)
+- พิสูจน์ด้วย Playwright จริง: ปิด `localStorage` ทั้งหมดตั้งแต่ init script (ก่อน React render ครั้งแรก) ทำแบบทดสอบเต็ม 24 ข้อจบและเห็นผลลัพธ์ได้ปกติทั้ง session
+
+## 26 สิงหาคม 2026 — P0 หัวข้อ 4: verification — เจอ bug จริง 2 ตัว
+
+- เพิ่ม `scripts/verify-storage-resilience.mjs` (`pnpm verify:storage`) ตาม pattern `verify-*.mjs` เดิม ครอบ read/write(quota)/remove fail และ corrupted JSON
+- **bug #1**: `safeGetItem` เดิมเช็ค memory fallback แค่ตอน `getItem` เอง throw ไม่เช็คตอน `setItem` เคย fail มาก่อน (เคส "เขียนไม่ได้เพราะ quota แต่ยังอ่านได้" ซึ่งเกิดจริงได้บ่อยสุด) — แก้ให้เช็ค memory ก่อนเสมอถ้ามี key นั้น กระทบ `scripts/verify-consent.mjs` เดิมด้วย (ไม่มี `window` global ตอน `dispatchEvent`) แก้โดยเพิ่ม stub ในสคริปต์นั้น ไม่ทำให้ `safe-storage.ts` เอง defensive เกินจำเป็นเพราะแอปจริงมี `window` เสมอ
+- **bug #2**: ปุ่ม retry (recompute ในหน่วยความจำ) ใช้ไม่ได้กับ error category `data-load` เพราะเบราว์เซอร์ cache dynamic-`import()` ที่ fail ไว้ระดับหน้าเว็บ เรียกซ้ำด้วย specifier เดิม reject ทันทีไม่ยิง network ซ้ำ (ยืนยันด้วย network log จริงผ่าน `page.route()`) — แก้ให้ retry ของ category นี้ทำ `window.location.reload()` แทน ตรวจซ้ำด้วยการกดปุ่มจริง คำตอบ 24 ข้อไม่หายหลัง reload
+- ตรวจครบด้วย Playwright: refresh, back/forward, retry ทั้ง 3 category, reduced motion, resume-after-storage-degraded — Character Match และ Vision Affinity ยังคำนวณแยกจากกันจริงในทุกรอบ
+- `pnpm validate:data`/`verify:engine`/`verify:consent`/`verify:storage`/`lint`/`tsc -b`/`build` ผ่านหมด
+- **P0 ยังปิดไม่ได้**: เหลือเฉพาะงานที่ automation ทำแทนไม่ได้ — manual QA บนอุปกรณ์จริงตาม test matrix (Android พร้อมกรอกผลได้แล้ว, iOS ยังไม่มีเลย) ดูงานที่เหลือใน `DEVELOPMENT_PLAN.md`
+
 ## Verification ล่าสุด
 
 - `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements
