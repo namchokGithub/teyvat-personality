@@ -1,6 +1,7 @@
 export const th = {
   brand: "Teyvat Personalities",
   navQuiz: "แบบทดสอบ",
+  navLastResult: "ผลลัพธ์ล่าสุด",
   navCharacters: "ตัวละคร",
   navResult: "ตัวอย่างผลลัพธ์",
   language: "EN",

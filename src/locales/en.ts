@@ -3,6 +3,7 @@ import type { th } from "./th";
 export const en: Record<keyof typeof th, string> = {
   brand: "Teyvat Personalities",
   navQuiz: "Quiz",
+  navLastResult: "Last result",
   navCharacters: "Characters",
   navResult: "Result preview",
   language: "ไทย",

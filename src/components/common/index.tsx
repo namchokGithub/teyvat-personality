@@ -4,12 +4,16 @@ import {
   type ButtonHTMLAttributes,
   type PropsWithChildren,
 } from "react";
-import { ArrowUp, Languages, MapPin, Sparkles } from "lucide-react";
+import { ArrowUp, History, Languages, MapPin, Sparkles } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
 
 import { t } from "../../i18n";
 import { beginQuizFromNavigation } from "../../hooks";
 import type { Locale, Theme } from "../../types";
+import {
+  QUIZ_RESULT_UPDATED_EVENT,
+  readQuizResult,
+} from "../../utils/quiz-result";
 import anemoIcon from "../../assets/images/elements/anemo.png";
 import characterLogo from "../../assets/images/characters.png";
 import cryoIcon from "../../assets/images/elements/cryo.png";
@@ -99,6 +103,20 @@ export function AppHeader({
   theme: Theme;
   onToggleTheme: () => void;
 }) {
+  const [hasLastResult, setHasLastResult] = useState(() =>
+    Boolean(readQuizResult()),
+  );
+
+  useEffect(() => {
+    const updateLastResult = () => setHasLastResult(Boolean(readQuizResult()));
+    window.addEventListener(QUIZ_RESULT_UPDATED_EVENT, updateLastResult);
+    window.addEventListener("storage", updateLastResult);
+    return () => {
+      window.removeEventListener(QUIZ_RESULT_UPDATED_EVENT, updateLastResult);
+      window.removeEventListener("storage", updateLastResult);
+    };
+  }, []);
+
   return (
     <header className="app-header">
       <PageContainer className="app-header__inner">
@@ -113,6 +131,16 @@ export function AppHeader({
             {t(locale, "navQuiz")}
           </NavLink>
           <NavLink to="/characters">{t(locale, "navCharacters")}</NavLink>
+          {hasLastResult && (
+            <NavLink
+              className="app-nav__last-result"
+              to="/result"
+              title={t(locale, "navLastResult")}
+            >
+              <History size={16} aria-hidden="true" />
+              {t(locale, "navLastResult")}
+            </NavLink>
+          )}
           <Button
             variant="ghost"
             className="theme-toggle"

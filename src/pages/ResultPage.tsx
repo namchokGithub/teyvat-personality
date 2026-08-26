@@ -2,8 +2,8 @@ import {
   BookOpen,
   ChevronDown,
   Download,
-  Link2,
   RotateCcw,
+  Share2,
   Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -16,6 +16,7 @@ import {
   CharacterResultCard,
   VisionCard,
 } from "../components/result";
+import { ShareResultDialog } from "../components/share";
 import { useQuizProgress } from "../hooks";
 import { t } from "../i18n";
 import { firebaseApp } from "../lib/firebase";
@@ -26,7 +27,7 @@ import {
   canPublishSharedResult,
   recordSharedResultPublish,
 } from "../utils/share-throttle";
-import { copyText, downloadShareCard } from "../utils/share-result";
+import { downloadShareCard } from "../utils/share-result";
 import { readQuizResult } from "../utils/quiz-result";
 
 export function ResultPage({ locale }: { locale: Locale }) {
@@ -50,6 +51,7 @@ export function ResultPage({ locale }: { locale: Locale }) {
     "idle" | "publishing" | "published" | "throttled" | "error"
   >("idle");
   const [sharedUrl, setSharedUrl] = useState<string | null>(null);
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
   useEffect(() => {
     let active = true;
     if (!previewId) {
@@ -76,24 +78,11 @@ export function ResultPage({ locale }: { locale: Locale }) {
     : (result?.characterMatches.slice(1, 4) ?? []);
   if (!character || !vision) return <InvalidResult locale={locale} />;
 
-  const downloadCard = async () => {
-    try {
-      await downloadShareCard(character, vision, locale);
-      setDownloadError(false);
-    } catch {
-      setDownloadError(true);
-    }
-  };
-
-  const createShareLink = async (quizResult: QuizResult) => {
-    if (sharedUrl) {
-      await copyText(sharedUrl);
-      setShareLinkState("published");
-      return;
-    }
+  const ensureSharedUrl = async (quizResult: QuizResult) => {
+    if (sharedUrl) return sharedUrl;
     if (!canPublishSharedResult()) {
       setShareLinkState("throttled");
-      return;
+      return null;
     }
     setShareLinkState("publishing");
     try {
@@ -101,9 +90,8 @@ export function ResultPage({ locale }: { locale: Locale }) {
         import("firebase/firestore"),
         import("../lib/shared-result"),
       ]);
-      const db = getFirestore(firebaseApp);
       const id = await publishSharedResult(
-        db,
+        getFirestore(firebaseApp),
         character,
         additionalCharacters,
         vision,
@@ -115,11 +103,29 @@ export function ResultPage({ locale }: { locale: Locale }) {
       recordSharedResultPublish();
       const url = `${window.location.origin}${window.location.pathname}#/shared/${id}`;
       setSharedUrl(url);
-      await copyText(url);
-      setShareLinkState("published");
+      setShareLinkState("idle");
+      return url;
     } catch {
       setShareLinkState("error");
+      return null;
     }
+  };
+
+  const downloadCard = async () => {
+    try {
+      const url =
+        !previewId && result ? await ensureSharedUrl(result) : undefined;
+      if (!previewId && !url) return;
+      await downloadShareCard(character, vision, locale, url ?? undefined);
+      setDownloadError(false);
+    } catch {
+      setDownloadError(true);
+    }
+  };
+
+  const openShareDialog = async () => {
+    if (!result) return;
+    if (await ensureSharedUrl(result)) setShareDialogOpen(true);
   };
 
   return (
@@ -181,7 +187,10 @@ export function ResultPage({ locale }: { locale: Locale }) {
           />
         </div>
         <div className="result-actions">
-          <Button onClick={() => void downloadCard()}>
+          <Button
+            onClick={() => void downloadCard()}
+            disabled={shareLinkState === "publishing"}
+          >
             <Download size={18} />
             {t(locale, "downloadCard")}
           </Button>
@@ -195,13 +204,13 @@ export function ResultPage({ locale }: { locale: Locale }) {
           {!previewId && result && (
             <Button
               variant="secondary"
-              onClick={() => void createShareLink(result)}
+              onClick={() => void openShareDialog()}
               disabled={shareLinkState === "publishing"}
             >
-              <Link2 size={18} />
+              <Share2 size={18} />
               {shareLinkState === "publishing"
                 ? t(locale, "shareLinkCreating")
-                : t(locale, "shareLinkCreate")}
+                : t(locale, "share")}
             </Button>
           )}
           {!previewId && (
@@ -217,11 +226,6 @@ export function ResultPage({ locale }: { locale: Locale }) {
             </Button>
           )}
         </div>
-        {shareLinkState === "published" && (
-          <p className="result-action-success" role="status">
-            {t(locale, "copiedLink")}
-          </p>
-        )}
         {shareLinkState === "throttled" && (
           <p className="result-action-error" role="status">
             {t(locale, "shareLinkThrottled")}
@@ -238,6 +242,15 @@ export function ResultPage({ locale }: { locale: Locale }) {
           </p>
         )}
       </PageContainer>
+      {shareDialogOpen && sharedUrl && (
+        <ShareResultDialog
+          character={character}
+          vision={vision}
+          locale={locale}
+          sharedUrl={sharedUrl}
+          onClose={() => setShareDialogOpen(false)}
+        />
+      )}
     </main>
   );
 }
