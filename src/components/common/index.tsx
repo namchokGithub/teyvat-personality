@@ -115,15 +115,19 @@ export function AppHeader({
           <NavLink to="/characters">{t(locale, "navCharacters")}</NavLink>
           <Button
             variant="ghost"
+            className="theme-toggle"
             onClick={onToggleTheme}
-            aria-label="Switch theme"
+            aria-label={t(
+              locale,
+              theme === "dark" ? "themeDark" : "themeLight",
+            )}
+            title={t(locale, theme === "dark" ? "themeDark" : "themeLight")}
           >
             <img
               className="theme-toggle__icon"
               src={theme === "dark" ? nightIcon : dayIcon}
               alt=""
-            />{" "}
-            {t(locale, theme === "dark" ? "themeDark" : "themeLight")}
+            />
           </Button>
           <Button
             variant="ghost"

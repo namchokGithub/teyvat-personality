@@ -33,17 +33,57 @@ const sampleVersions = { questionVersion: "q3", algorithmVersion: "a1" };
 try {
   const sharedResult = await server.ssrLoadModule("/src/lib/shared-result.ts");
 
-  const snapshot = sharedResult.buildSharedResultDoc(sampleCharacter, sampleVision, sampleVersions);
-  assert(snapshot.schemaVersion === 1, "schemaVersion must be 1");
-  assert(snapshot.questionVersion === "q3" && snapshot.algorithmVersion === "a1", "version fields must pass through untouched");
-  assert(snapshot.character.characterId === "kirara" && snapshot.character.compatibility === 87, "character snapshot must carry core fields");
-  assert(snapshot.character.artworkUrl === null, "a missing artworkUrl must coerce to null, not undefined");
-  assert(Array.isArray(snapshot.character.matchingTraits) && snapshot.character.matchingTraits[0].en === "Diligent", "matchingTraits must pass through");
-  assert(snapshot.vision.element === "Dendro" && snapshot.vision.affinity === 91, "vision snapshot must carry core fields");
+  const additionalCharacters = [
+    sampleCharacter,
+    { ...sampleCharacter, characterId: "collei", name: "Collei" },
+    { ...sampleCharacter, characterId: "sucrose", name: "Sucrose" },
+  ];
+  const snapshot = sharedResult.buildSharedResultDoc(
+    sampleCharacter,
+    additionalCharacters,
+    sampleVision,
+    sampleVersions,
+  );
+  assert(snapshot.schemaVersion === 2, "schemaVersion must be 2");
+  assert(
+    snapshot.questionVersion === "q3" && snapshot.algorithmVersion === "a1",
+    "version fields must pass through untouched",
+  );
+  assert(
+    snapshot.character.characterId === "kirara" &&
+      snapshot.character.compatibility === 87,
+    "character snapshot must carry core fields",
+  );
+  assert(
+    snapshot.character.artworkUrl === null,
+    "a missing artworkUrl must coerce to null, not undefined",
+  );
+  assert(
+    Array.isArray(snapshot.character.matchingTraits) &&
+      snapshot.character.matchingTraits[0].en === "Diligent",
+    "matchingTraits must pass through",
+  );
+  assert(
+    snapshot.additionalCharacters.length === 3 &&
+      snapshot.additionalCharacters[1].characterId === "collei",
+    "additional character snapshots must pass through",
+  );
+  assert(
+    snapshot.vision.element === "Dendro" && snapshot.vision.affinity === 91,
+    "vision snapshot must carry core fields",
+  );
 
-  const ids = new Set(Array.from({ length: 50 }, () => sharedResult.createSharedResultId()));
-  assert(ids.size === 50, "createSharedResultId must not collide across 50 calls");
-  assert([...ids].every((id) => /^[A-Za-z0-9_-]{12}$/.test(id)), "createSharedResultId must match the URL-safe 12-character pattern");
+  const ids = new Set(
+    Array.from({ length: 50 }, () => sharedResult.createSharedResultId()),
+  );
+  assert(
+    ids.size === 50,
+    "createSharedResultId must not collide across 50 calls",
+  );
+  assert(
+    [...ids].every((id) => /^[A-Za-z0-9_-]{12}$/.test(id)),
+    "createSharedResultId must match the URL-safe 12-character pattern",
+  );
 
   console.log("Shared result mapper verification passed.");
 } finally {
@@ -55,12 +95,22 @@ const EMULATOR_PORT = 8080;
 const EMULATOR_PROJECT_ID = "demo-teyvat-personality";
 
 const { readFileSync } = await import("node:fs");
-const { initializeTestEnvironment, assertSucceeds, assertFails } = await import("@firebase/rules-unit-testing");
-const { doc, getDoc, getDocs, collection, setDoc, deleteDoc, serverTimestamp, Timestamp } = await import("firebase/firestore");
+const { initializeTestEnvironment, assertSucceeds, assertFails } =
+  await import("@firebase/rules-unit-testing");
+const {
+  doc,
+  getDoc,
+  getDocs,
+  collection,
+  setDoc,
+  deleteDoc,
+  serverTimestamp,
+  Timestamp,
+} = await import("firebase/firestore");
 
 function sampleSharedResultDoc() {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     questionVersion: "q3",
     algorithmVersion: "a1",
     publishedAt: serverTimestamp(),
@@ -75,6 +125,17 @@ function sampleSharedResultDoc() {
       matchingTraits: [{ th: "ขยัน", en: "Diligent" }],
       artworkUrl: null,
     },
+    additionalCharacters: Array.from({ length: 3 }, (_, index) => ({
+      characterId: `character_${index}`,
+      name: `Character ${index}`,
+      element: "Dendro",
+      region: "Inazuma",
+      compatibility: 80,
+      title: { th: "ตัวอย่าง", en: "Example" },
+      summary: { th: "สรุป", en: "Summary" },
+      matchingTraits: [{ th: "ขยัน", en: "Diligent" }],
+      artworkUrl: null,
+    })),
     vision: {
       element: "Dendro",
       affinity: 91,
@@ -96,21 +157,31 @@ try {
   const db = testEnv.unauthenticatedContext().firestore();
   const validId = "sharedRes001";
 
-  await assertSucceeds(setDoc(doc(db, "sharedResults", validId), sampleSharedResultDoc()));
+  await assertSucceeds(
+    setDoc(doc(db, "sharedResults", validId), sampleSharedResultDoc()),
+  );
 
-  await assertFails(setDoc(doc(db, "sharedResults", "tooShort"), sampleSharedResultDoc()));
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "tooShort"), sampleSharedResultDoc()),
+  );
 
   const missingField = sampleSharedResultDoc();
   delete missingField.character.name;
-  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes002"), missingField));
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "sharedRes002"), missingField),
+  );
 
   const outOfRange = sampleSharedResultDoc();
   outOfRange.character.compatibility = 150;
-  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes003"), outOfRange));
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "sharedRes003"), outOfRange),
+  );
 
   const fakeTimestamp = sampleSharedResultDoc();
   fakeTimestamp.publishedAt = Timestamp.fromMillis(0);
-  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes004"), fakeTimestamp));
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "sharedRes004"), fakeTimestamp),
+  );
 
   await assertSucceeds(getDoc(doc(db, "sharedResults", validId)));
 
@@ -124,17 +195,25 @@ try {
 
   const extraField = sampleSharedResultDoc();
   extraField.playerName = "someone";
-  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes005"), extraField));
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "sharedRes005"), extraField),
+  );
 
   const wrongType = sampleSharedResultDoc();
   wrongType.character.name = 42;
-  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes006"), wrongType));
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "sharedRes006"), wrongType),
+  );
 
   const wrongSchemaVersion = sampleSharedResultDoc();
-  wrongSchemaVersion.schemaVersion = 2;
-  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes007"), wrongSchemaVersion));
+  wrongSchemaVersion.schemaVersion = 3;
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "sharedRes007"), wrongSchemaVersion),
+  );
 
-  await assertFails(setDoc(doc(db, "sharedResults", "sharedRes!01"), sampleSharedResultDoc()));
+  await assertFails(
+    setDoc(doc(db, "sharedResults", "sharedRes!01"), sampleSharedResultDoc()),
+  );
 
   console.log("Shared result rules verification passed.");
 } finally {
@@ -150,29 +229,63 @@ const integrationServer = await createServer({
 
 try {
   const { initializeApp } = await import("firebase/app");
-  const { connectFirestoreEmulator, getFirestore, doc, getDoc, setDoc } = await import("firebase/firestore");
+  const { connectFirestoreEmulator, getFirestore, doc, getDoc, setDoc } =
+    await import("firebase/firestore");
 
-  const integrationApp = initializeApp({ projectId: EMULATOR_PROJECT_ID }, "shared-result-integration-test");
+  const integrationApp = initializeApp(
+    { projectId: EMULATOR_PROJECT_ID },
+    "shared-result-integration-test",
+  );
   const integrationDb = getFirestore(integrationApp);
   connectFirestoreEmulator(integrationDb, EMULATOR_HOST, EMULATOR_PORT);
 
-  const sharedResult = await integrationServer.ssrLoadModule("/src/lib/shared-result.ts");
-  const publishedId = await sharedResult.publishSharedResult(integrationDb, sampleCharacter, sampleVision, sampleVersions);
-  assert(/^[A-Za-z0-9_-]{12}$/.test(publishedId), "publishSharedResult must return a 12-character opaque id");
+  const sharedResult = await integrationServer.ssrLoadModule(
+    "/src/lib/shared-result.ts",
+  );
+  const publishedId = await sharedResult.publishSharedResult(
+    integrationDb,
+    sampleCharacter,
+    [sampleCharacter, sampleCharacter, sampleCharacter],
+    sampleVision,
+    sampleVersions,
+  );
+  assert(
+    /^[A-Za-z0-9_-]{12}$/.test(publishedId),
+    "publishSharedResult must return a 12-character opaque id",
+  );
 
   const stored = await getDoc(doc(integrationDb, "sharedResults", publishedId));
-  assert(stored.exists(), "the published document must exist after publishSharedResult resolves");
+  assert(
+    stored.exists(),
+    "the published document must exist after publishSharedResult resolves",
+  );
   const storedData = stored.data();
-  assert(storedData.character.characterId === sampleCharacter.characterId, "stored character snapshot must match the input character");
-  assert(typeof storedData.publishedAt?.toMillis === "function", "publishedAt must be a Firestore Timestamp");
+  assert(
+    storedData.character.characterId === sampleCharacter.characterId,
+    "stored character snapshot must match the input character",
+  );
+  assert(
+    storedData.additionalCharacters.length === 3,
+    "stored additional characters must match the input",
+  );
+  assert(
+    typeof storedData.publishedAt?.toMillis === "function",
+    "publishedAt must be a Firestore Timestamp",
+  );
 
   let secondWriteRejected = false;
   try {
-    await setDoc(doc(integrationDb, "sharedResults", publishedId), { ...storedData, character: { ...storedData.character, compatibility: 1 } });
+    await setDoc(doc(integrationDb, "sharedResults", publishedId), {
+      ...storedData,
+      character: { ...storedData.character, compatibility: 1 },
+    });
   } catch (error) {
     secondWriteRejected = error.code === "permission-denied";
   }
-  assert(secondWriteRejected, "overwriting an already-published document must be rejected by the rules");
+  assert(
+    secondWriteRejected,
+    "overwriting an already-published document must be rejected by the rules",
+  );
 
   console.log("Shared result publish-helper integration verification passed.");
 } finally {

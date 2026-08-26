@@ -1,8 +1,13 @@
-import { ArrowLeft, Eye, Sparkles, Star, X } from "lucide-react";
+import { ArrowLeft, ExternalLink, Eye, Sparkles, Star, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { BackToTopButton, ElementBadge, PageContainer, RegionBadge } from "../components/common";
+import {
+  BackToTopButton,
+  ElementBadge,
+  PageContainer,
+  RegionBadge,
+} from "../components/common";
 import { CharacterResultCard, VisionCard } from "../components/result";
 import {
   getCharacterArtwork,
@@ -15,6 +20,8 @@ import type { CharacterDetail, Locale } from "../types";
 import { createCharacterResultPreview } from "../utils/character-preview";
 
 const show = (value: string | null, fallback: string) => value || fallback;
+const genshinWikiUrl = (name: string) =>
+  `https://genshin-impact.fandom.com/wiki/${encodeURIComponent(name.trim().replaceAll(" ", "_"))}`;
 
 export function CharacterPage({ locale }: { locale: Locale }) {
   const { slug } = useParams();
@@ -115,16 +122,27 @@ export function CharacterPage({ locale }: { locale: Locale }) {
             <h2>{t(locale, "characterAbout")}</h2>
             <p>{description}</p>
             <div className="data-notice">{t(locale, "factualNotice")}</div>
-            {preview && (
-              <button
-                className="button button--primary character-profile__preview"
-                type="button"
-                onClick={() => setShowPreview(true)}
+            <div className="character-profile__actions">
+              <a
+                className="button button--secondary"
+                href={genshinWikiUrl(character.name)}
+                target="_blank"
+                rel="noreferrer"
               >
-                <Eye size={18} />
-                {t(locale, "preview")}
-              </button>
-            )}
+                <ExternalLink size={18} />
+                {t(locale, "openWiki")}
+              </a>
+              {preview && (
+                <button
+                  className="button button--primary"
+                  type="button"
+                  onClick={() => setShowPreview(true)}
+                >
+                  <Eye size={18} />
+                  {t(locale, "preview")}
+                </button>
+              )}
+            </div>
           </div>
         </article>
       </PageContainer>

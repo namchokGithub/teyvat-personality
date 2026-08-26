@@ -55,10 +55,14 @@ export const en: Record<keyof typeof th, string> = {
   resultEyebrow: "The character who reflects you is",
   affinity: "Compatibility",
   sharedTraits: "Shared traits",
+  additionalCharacters: "See more characters that reflect you",
+  additionalCharactersBody:
+    "You are more than one side of yourself — these three characters reflect other strengths and ways of thinking within you.",
   characterDetails: "View character details",
   characterAbout: "About this character",
   factualNotice:
     "This information comes from Character Master Data, separate from fan-made personality interpretation.",
+  openWiki: "Open Genshin Wiki",
   unavailable: "Not available yet",
   unknownCharacter: "Character not found",
   unknownCharacterBody:

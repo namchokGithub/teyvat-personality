@@ -7,23 +7,45 @@ service cloud.firestore {
 
       allow create: if
         id.matches('^[A-Za-z0-9_-]{12}$') &&
-        request.resource.data.keys().hasAll([
-          'schemaVersion', 'questionVersion', 'algorithmVersion',
-          'publishedAt', 'character', 'vision'
-        ]) &&
-        request.resource.data.keys().hasOnly([
-          'schemaVersion', 'questionVersion', 'algorithmVersion',
-          'publishedAt', 'character', 'vision'
-        ]) &&
-        request.resource.data.schemaVersion == 1 &&
-        request.resource.data.questionVersion is string &&
-        request.resource.data.algorithmVersion is string &&
-        request.resource.data.publishedAt == request.time &&
-        isValidCharacter(request.resource.data.character) &&
-        isValidVision(request.resource.data.vision);
+        (isValidVersionOne(request.resource.data) || isValidVersionTwo(request.resource.data));
 
       allow update: if false;
       allow delete: if false;
+    }
+
+    function hasValidCommonFields(data) {
+      return data.keys().hasAll([
+          'schemaVersion', 'questionVersion', 'algorithmVersion',
+          'publishedAt', 'character', 'vision'
+        ]) &&
+        data.questionVersion is string &&
+        data.algorithmVersion is string &&
+        data.publishedAt == request.time &&
+        isValidCharacter(data.character) &&
+        isValidVision(data.vision);
+    }
+
+    function isValidVersionOne(data) {
+      return data.keys().hasOnly([
+          'schemaVersion', 'questionVersion', 'algorithmVersion',
+          'publishedAt', 'character', 'vision'
+        ]) &&
+        data.schemaVersion == 1 &&
+        hasValidCommonFields(data);
+    }
+
+    function isValidVersionTwo(data) {
+      return data.keys().hasOnly([
+          'schemaVersion', 'questionVersion', 'algorithmVersion',
+          'publishedAt', 'character', 'additionalCharacters', 'vision'
+        ]) &&
+        data.schemaVersion == 2 &&
+        data.additionalCharacters is list &&
+        data.additionalCharacters.size() == 3 &&
+        isValidCharacter(data.additionalCharacters[0]) &&
+        isValidCharacter(data.additionalCharacters[1]) &&
+        isValidCharacter(data.additionalCharacters[2]) &&
+        hasValidCommonFields(data);
     }
 
     function isValidCharacter(c) {

@@ -3,15 +3,28 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import aetherImage from "../assets/images/Aether1.png";
+import { ChevronDown, Sparkles } from "lucide-react";
+
 import { ContentCard, PageContainer } from "../components/common";
-import { CharacterResultCard, VisionCard } from "../components/result";
+import {
+  AdditionalCharacterCards,
+  CharacterResultCard,
+  VisionCard,
+} from "../components/result";
 import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
 import { t } from "../i18n";
 import { firebaseApp } from "../lib/firebase";
-import type { CharacterMatch, Locale, SharedResultDoc, VisionMatch } from "../types";
+import type {
+  CharacterMatch,
+  Locale,
+  SharedResultDoc,
+  VisionMatch,
+} from "../types";
 
 export function SharedResultPage({ locale }: { locale: Locale }) {
   const { id } = useParams();
+  const [showAdditionalCharacters, setShowAdditionalCharacters] =
+    useState(false);
   const [loaded, setLoaded] = useState<{
     id: string | undefined;
     value: SharedResultDoc | null;
@@ -23,7 +36,13 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
     const db = getFirestore(firebaseApp);
     getDoc(doc(db, "sharedResults", id))
       .then((snapshot) => {
-        if (active) setLoaded({ id, value: snapshot.exists() ? (snapshot.data() as SharedResultDoc) : null });
+        if (active)
+          setLoaded({
+            id,
+            value: snapshot.exists()
+              ? (snapshot.data() as SharedResultDoc)
+              : null,
+          });
       })
       .catch(() => {
         if (active) setLoaded({ id, value: null });
@@ -37,7 +56,10 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
     return (
       <main className="result-page">
         <PageContainer className="result-shell">
-          <div className="character-skeleton" aria-label={t(locale, "loadingSharedResult")}>
+          <div
+            className="character-skeleton"
+            aria-label={t(locale, "loadingSharedResult")}
+          >
             <span />
             <span />
             <span />
@@ -64,7 +86,7 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
     );
 
   const isSupportedVersion =
-    sharedDoc.schemaVersion === 1 &&
+    (sharedDoc.schemaVersion === 1 || sharedDoc.schemaVersion === 2) &&
     sharedDoc.questionVersion === QUESTION_VERSION &&
     sharedDoc.algorithmVersion === ALGORITHM_VERSION;
   if (!isSupportedVersion)
@@ -88,15 +110,50 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
     artworkUrl: sharedDoc.character.artworkUrl ?? undefined,
   };
   const vision: VisionMatch = sharedDoc.vision;
+  const additionalCharacters: CharacterMatch[] =
+    sharedDoc.schemaVersion === 2
+      ? sharedDoc.additionalCharacters.map((additional) => ({
+          ...additional,
+          artworkUrl: additional.artworkUrl ?? undefined,
+        }))
+      : [];
 
   return (
     <main className="result-page">
       <PageContainer className="result-shell">
         <CharacterResultCard character={character} locale={locale} />
+        {additionalCharacters.length > 0 && (
+          <section className="additional-characters">
+            <button
+              type="button"
+              className="additional-characters__trigger"
+              onClick={() => setShowAdditionalCharacters((value) => !value)}
+              aria-expanded={showAdditionalCharacters}
+              aria-controls="additional-characters"
+            >
+              <span>
+                <Sparkles size={16} />
+                {t(locale, "additionalCharacters")}
+              </span>
+              <ChevronDown size={18} aria-hidden="true" />
+            </button>
+            {showAdditionalCharacters && (
+              <div id="additional-characters">
+                <p>{t(locale, "additionalCharactersBody")}</p>
+                <AdditionalCharacterCards
+                  characters={additionalCharacters}
+                  locale={locale}
+                />
+              </div>
+            )}
+          </section>
+        )}
         <div className="result-details">
           {character.matchingTraits.length > 0 && (
             <ContentCard>
-              <span className="section-kicker">{t(locale, "sharedTraits")}</span>
+              <span className="section-kicker">
+                {t(locale, "sharedTraits")}
+              </span>
               <div className="trait-list">
                 {character.matchingTraits.map((trait) => (
                   <span key={trait.en}>{trait[locale]}</span>
@@ -104,7 +161,11 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
               </div>
             </ContentCard>
           )}
-          <VisionCard vision={vision} locale={locale} title={t(locale, "visionTitle")} />
+          <VisionCard
+            vision={vision}
+            locale={locale}
+            title={t(locale, "visionTitle")}
+          />
         </div>
       </PageContainer>
     </main>

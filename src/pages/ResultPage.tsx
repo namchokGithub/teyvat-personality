@@ -1,17 +1,31 @@
-import { BookOpen, Download, Link2, RotateCcw, Sparkles } from "lucide-react";
+import {
+  BookOpen,
+  ChevronDown,
+  Download,
+  Link2,
+  RotateCcw,
+  Sparkles,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 import aetherImage from "../assets/images/Aether1.png";
 import { Button, ContentCard, PageContainer } from "../components/common";
-import { CharacterResultCard, VisionCard } from "../components/result";
+import {
+  AdditionalCharacterCards,
+  CharacterResultCard,
+  VisionCard,
+} from "../components/result";
 import { useQuizProgress } from "../hooks";
 import { t } from "../i18n";
 import { firebaseApp } from "../lib/firebase";
 import type { CharacterMatch, Locale, QuizResult, VisionMatch } from "../types";
 import { loadCharacterById } from "../data/characters/repository";
 import { createCharacterResultPreview } from "../utils/character-preview";
-import { canPublishSharedResult, recordSharedResultPublish } from "../utils/share-throttle";
+import {
+  canPublishSharedResult,
+  recordSharedResultPublish,
+} from "../utils/share-throttle";
 import { copyText, downloadShareCard } from "../utils/share-result";
 import { readQuizResult } from "../utils/quiz-result";
 
@@ -30,6 +44,8 @@ export function ResultPage({ locale }: { locale: Locale }) {
     | undefined
   >(undefined);
   const [downloadError, setDownloadError] = useState(false);
+  const [showAdditionalCharacters, setShowAdditionalCharacters] =
+    useState(false);
   const [shareLinkState, setShareLinkState] = useState<
     "idle" | "publishing" | "published" | "throttled" | "error"
   >("idle");
@@ -55,6 +71,9 @@ export function ResultPage({ locale }: { locale: Locale }) {
     ? preview?.character
     : result?.characterMatches[0];
   const vision = previewId ? preview?.vision : result?.visionMatches[0];
+  const additionalCharacters = previewId
+    ? []
+    : (result?.characterMatches.slice(1, 4) ?? []);
   if (!character || !vision) return <InvalidResult locale={locale} />;
 
   const downloadCard = async () => {
@@ -83,10 +102,16 @@ export function ResultPage({ locale }: { locale: Locale }) {
         import("../lib/shared-result"),
       ]);
       const db = getFirestore(firebaseApp);
-      const id = await publishSharedResult(db, character, vision, {
-        questionVersion: quizResult.questionVersion,
-        algorithmVersion: quizResult.algorithmVersion,
-      });
+      const id = await publishSharedResult(
+        db,
+        character,
+        additionalCharacters,
+        vision,
+        {
+          questionVersion: quizResult.questionVersion,
+          algorithmVersion: quizResult.algorithmVersion,
+        },
+      );
       recordSharedResultPublish();
       const url = `${window.location.origin}${window.location.pathname}#/shared/${id}`;
       setSharedUrl(url);
@@ -110,6 +135,32 @@ export function ResultPage({ locale }: { locale: Locale }) {
           )}
         </div>
         <CharacterResultCard character={character} locale={locale} />
+        {additionalCharacters.length > 0 && (
+          <section className="additional-characters">
+            <button
+              type="button"
+              className="additional-characters__trigger"
+              onClick={() => setShowAdditionalCharacters((value) => !value)}
+              aria-expanded={showAdditionalCharacters}
+              aria-controls="additional-characters"
+            >
+              <span>
+                <Sparkles size={16} />
+                {t(locale, "additionalCharacters")}
+              </span>
+              <ChevronDown size={18} aria-hidden="true" />
+            </button>
+            {showAdditionalCharacters && (
+              <div id="additional-characters">
+                <p>{t(locale, "additionalCharactersBody")}</p>
+                <AdditionalCharacterCards
+                  characters={additionalCharacters}
+                  locale={locale}
+                />
+              </div>
+            )}
+          </section>
+        )}
         <div className="result-details">
           {character.matchingTraits.length > 0 && (
             <ContentCard>

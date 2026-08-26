@@ -53,10 +53,14 @@ export const th = {
   resultEyebrow: "ตัวละครที่สะท้อนตัวตนของคุณคือ",
   affinity: "ความเข้ากัน",
   sharedTraits: "Trait ที่เหมือนกัน",
+  additionalCharacters: "ดูตัวละครที่สะท้อนอีกหลายมุมของคุณ",
+  additionalCharactersBody:
+    "คุณไม่ได้มีเพียงด้านเดียว — ทั้ง 3 คนนี้สะท้อนพลังและวิธีคิดอีกด้านที่อยู่ในตัวคุณ",
   characterDetails: "ดูข้อมูลตัวละคร",
   characterAbout: "เกี่ยวกับตัวละคร",
   factualNotice:
     "ข้อมูลหน้านี้มาจาก Character Master Data ซึ่งแยกจากการวิเคราะห์บุคลิกแบบ fan-made",
+  openWiki: "เปิด Genshin Wiki",
   unavailable: "ยังไม่มีข้อมูล",
   unknownCharacter: "ไม่พบตัวละครนี้",
   unknownCharacterBody:

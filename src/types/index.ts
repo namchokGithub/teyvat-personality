@@ -4,18 +4,56 @@ export type Locale = "th" | "en";
 
 export type Theme = "light" | "dark";
 
-export const DIMENSION_IDS = ["social", "decision", "lifestyle", "adventure", "responsibility", "expression"] as const;
+export const DIMENSION_IDS = [
+  "social",
+  "decision",
+  "lifestyle",
+  "adventure",
+  "responsibility",
+  "expression",
+] as const;
 export type DimensionId = (typeof DIMENSION_IDS)[number];
 
 export const TRAIT_IDS = [
-  "passion", "enthusiasm", "selfExpression", "determination", "optimism",
-  "ideals", "adaptability", "responsibility", "creativity", "perseverance",
-  "freedom", "acceptance", "sensitivity", "selflessness",
-  "individuality", "independence", "confidence", "nonconformity",
-  "growth", "curiosity", "knowledge", "learning", "selfDevelopment",
-  "innerConflict", "contradiction", "identity", "introspection", "resilience",
-  "resolve", "stability", "discipline", "reliability",
-  "leadership", "empathy", "ambition", "loyalty", "idealism", "humor", "competitiveness",
+  "passion",
+  "enthusiasm",
+  "selfExpression",
+  "determination",
+  "optimism",
+  "ideals",
+  "adaptability",
+  "responsibility",
+  "creativity",
+  "perseverance",
+  "freedom",
+  "acceptance",
+  "sensitivity",
+  "selflessness",
+  "individuality",
+  "independence",
+  "confidence",
+  "nonconformity",
+  "growth",
+  "curiosity",
+  "knowledge",
+  "learning",
+  "selfDevelopment",
+  "innerConflict",
+  "contradiction",
+  "identity",
+  "introspection",
+  "resilience",
+  "resolve",
+  "stability",
+  "discipline",
+  "reliability",
+  "leadership",
+  "empathy",
+  "ambition",
+  "loyalty",
+  "idealism",
+  "humor",
+  "competitiveness",
 ] as const;
 export type TraitId = (typeof TRAIT_IDS)[number];
 
@@ -197,11 +235,20 @@ export interface SharedResultVisionSnapshot {
 }
 
 export interface SharedResultSnapshot extends SharedResultVersion {
+  schemaVersion: 2;
+  character: SharedResultCharacterSnapshot;
+  additionalCharacters: SharedResultCharacterSnapshot[];
+  vision: SharedResultVisionSnapshot;
+}
+
+export interface LegacySharedResultSnapshot extends SharedResultVersion {
   schemaVersion: 1;
   character: SharedResultCharacterSnapshot;
   vision: SharedResultVisionSnapshot;
 }
 
-export interface SharedResultDoc extends SharedResultSnapshot {
+export type SharedResultDoc = (
+  SharedResultSnapshot | LegacySharedResultSnapshot
+) & {
   publishedAt: Timestamp;
-}
+};

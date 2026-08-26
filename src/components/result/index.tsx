@@ -48,9 +48,7 @@ export function CharacterResultCard({
           <ElementBadge element={character.element} />
           <RegionBadge region={character.region} />
         </div>
-        <h1
-          className={hasLongName ? "result-card__name--long" : undefined}
-        >
+        <h1 className={hasLongName ? "result-card__name--long" : undefined}>
           {character.name}
         </h1>
         <p className="result-title">{character.title[locale]}</p>
@@ -90,5 +88,45 @@ export function VisionCard({
       </div>
       <strong>{vision.affinity}%</strong>
     </article>
+  );
+}
+
+export function AdditionalCharacterCards({
+  characters,
+  locale,
+}: {
+  characters: CharacterMatch[];
+  locale: Locale;
+}) {
+  return (
+    <div className="additional-character-cards">
+      {characters.slice(0, 3).map((character, index) => (
+        <article
+          className="additional-character-card"
+          key={character.characterId}
+        >
+          <span className="additional-character-card__rank">0{index + 1}</span>
+          {character.artworkUrl && (
+            <img
+              src={character.artworkUrl}
+              alt=""
+              loading="lazy"
+              style={getCharacterArtworkFramingStyle(character.characterId)}
+            />
+          )}
+          <div>
+            <ElementBadge element={character.element} />
+            <h3>{character.name}</h3>
+            <p>{character.title[locale]}</p>
+            <div className="additional-character-card__traits">
+              {character.matchingTraits.slice(0, 2).map((trait) => (
+                <span key={trait.en}>{trait[locale]}</span>
+              ))}
+            </div>
+          </div>
+          <strong>{character.compatibility}%</strong>
+        </article>
+      ))}
+    </div>
   );
 }
