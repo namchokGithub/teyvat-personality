@@ -106,6 +106,12 @@
 - Final review เจอ bug จริง: cookie banner (fixed bottom) บัง vision-effect picker กับ footer บนหน้า Landing แก้แล้วด้วย offset ตาม breakpoint พร้อม verify จริงที่ width 320px (worst case วัดได้ ~315px สูง เผื่อ margin เป็น 350/370px)
 - ทดสอบ manual QA ผ่าน browser ครบ 6 สถานการณ์ (first-visit, accept-all, necessary-only, dialog reflect ทั้ง 2 ทางเข้า, close-without-save, banner reappear ผ่าน dialog path)
 
+## 26 สิงหาคม 2026 — P3 การนำเสนอและการแชร์ต่อ (ปิดครบ)
+
+- เพิ่มปุ่ม Social Share หลัง P2 เสร็จ เพื่อให้แชร์ immutable shared URL แทนข้อมูลผลใน client
+- เพิ่ม QR ใน Share Card หลังมี shared URL แล้ว
+- P3 เสร็จทั้งหมดและย้ายออกจาก Development Plan แล้ว
+
 ## Verification ล่าสุด
 
 - `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements

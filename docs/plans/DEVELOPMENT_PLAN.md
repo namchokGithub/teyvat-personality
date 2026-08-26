@@ -4,7 +4,45 @@
 
 งานที่เสร็จแล้วอยู่ใน [_plan_log.md](_plan_log.md) ไฟล์นี้เก็บเฉพาะ backlog ที่จะทำต่อ โดยนำรายการจาก `TODO.md` มาจัดลำดับใหม่ตามความเสี่ยงและลำดับพึ่งพา
 
-## P3 — การนำเสนอและการแชร์ต่อ
+## P0 — รองรับ Mobile In-App Browser
 
-1. [x] เพิ่มปุ่ม Social Share หลัง P2 เสร็จ เพื่อให้แชร์ immutable shared URL แทนข้อมูลผลใน client
-2. [x] เพิ่ม QR ใน Share Card หลังมี shared URL แล้ว
+เป้าหมาย: ผู้ใช้ที่เปิดลิงก์ผ่าน in-app browser ของแอป เช่น Facebook, Messenger, LINE, Instagram และ TikTok ต้องทำแบบทดสอบและเห็นผลลัพธ์ได้ โดยระบบต้องไม่ล้มเงียบเมื่อโหลดข้อมูลหรือใช้งาน Web Storage ไม่สำเร็จ ทั้งนี้ Facebook/Messenger เป็นเคสตั้งต้นที่พบปัญหา แต่แนวทางแก้ต้องไม่ผูกกับ user agent หรือ WebView ของแอปใดแอปหนึ่ง
+
+สาเหตุที่ต้องยืนยันระหว่าง implementation:
+
+- ขั้นคำนวณผลเรียก dynamic import ของ personality profile ตัวละครทั้งหมดพร้อมกันผ่าน `Promise.all` หาก chunk ใด chunk หนึ่งโหลดไม่สำเร็จ การคำนวณทั้งชุดจะล้ม
+- การบันทึก progress และ result เรียก `localStorage` โดยตรงหลายตำแหน่ง หาก WebView ปฏิเสธหรือจำกัด storage อาจเกิด exception
+- `MatchingPage` จับ error ทุกประเภทแล้วส่งกลับหน้า quiz โดยไม่แสดงสาเหตุ ทำให้ผู้ใช้เห็นเพียงว่าไม่มีหน้าผลลัพธ์
+- ความเสี่ยงที่สูงกว่าสามข้อข้างบน: `App.tsx` (theme/locale) และ `LandingPage` (ชื่อผู้เล่น, vision-effect preference) อ่าน `localStorage` แบบไม่ guard ตั้งแต่ initial render ของทุกหน้า/หน้า Landing ซึ่งเป็นจุดแรกที่ in-app browser เจอ — ถ้า WebView throw ตรงนี้ แอปจะพังก่อนเข้าคำถามข้อแรกด้วยซ้ำ ไม่ใช่แค่ "ไม่มีหน้าผลลัพธ์" จึงต้อง guard จุดนี้เป็นลำดับแรกในหัวข้อ 3 ไม่ใช่แค่ progress/result
+
+### 1. เก็บหลักฐานและสร้างกรณีทดสอบซ้ำ
+
+1. [x] ตัดสินใจกลไกจำแนก error แล้ว: เพิ่ม `MatchingError` (extends `Error`, field `category`) และ `MatchingErrorCategory` (`as const` union: `data-load` | `calculation` | `storage` | `navigation`) ที่ `src/lib/matching-errors.ts` พร้อม `matchingErrorCategory(error)` helper ที่ default เป็น `"calculation"` เมื่อ error ไม่ใช่ `MatchingError` — เลือกแบบนี้เพราะยังคง throw-based error handling ที่ repository/engine layer ใช้อยู่แล้วทั้งหมด ไม่ต้องเปลี่ยนเป็น discriminated result type ที่กระทบ signature ทุกฟังก์ชัน ยังไม่ได้ wire เข้า repository/engine/`MatchingPage` จริง (เป็นงานข้อ 2)
+2. [x] wire `MatchingError` เข้า matching flow จริงแล้ว: `calculateQuizResult` (`data/personality/calculate-result.ts`) แยก stage ด้วย `runMatchingStage` helper — `buildUserPersonalityProfile` → `navigation` (answers ไม่ครบ/ไม่ตรงกับคำถามปัจจุบัน = state เพี้ยน ไม่ใช่ bug คำนวณ), `loadAllCharacterPersonalities`/`loadCharacterById` → `data-load`, `rankCharacterMatches`/`rankVisionAffinities`/ผลลัพธ์ว่าง → `calculation`; `saveQuizResult` (`utils/quiz-result.ts`) → `storage` เมื่อ `localStorage.setItem` throw ไม่ได้แก้ `MatchingPage.tsx` ในข้อนี้ (ยัง catch-all เหมือนเดิม, ตั้งใจปล่อยให้ข้อ 3 เป็นคนอ่าน category จริง) เพราะไม่มี UI ให้ใช้ category นี้แสดงผลอยู่ตอนนี้ ตรวจแล้วด้วย happy-path + จำลอง incomplete-answers และ storage-failure ผ่าน `vite.ssrLoadModule` ได้ category ตรงตามคาด, `pnpm validate:data`/`verify:engine`/`lint` และ `tsc -b` ผ่านหมด ไม่มี error ใหม่ ไม่แตะ `engine/index.ts` เลยเพื่อลด blast radius กับ `verify-engine.mjs`/`simulate-balance.mjs` ที่พึ่ง throw message เดิม
+3. [x] เพิ่ม error state ใน `MatchingPage.tsx` แล้ว (ทำก่อนหัวข้อ 2/3 ตามที่ user ขอ ไม่ใช่ตามลำดับที่แนะนำไว้เดิม — ดู "หมายเหตุ" ด้านล่าง): เก็บ error ที่จับได้เป็น `MatchingError` ใน state, render `MatchingErrorState` แทนการ `navigate("/quiz")` แบบเงียบ ๆ — หัวข้อ+ข้อความ error ต่างกันตาม `category` (คีย์ i18n ใหม่ `matchingError*` ใน `locales/en.ts`/`th.ts`), ปุ่ม "ลองคำนวณใหม่" (ซ่อนถ้า category เป็น `navigation` เพราะ retry คำตอบเดิมก็จะพังซ้ำ), ปุ่ม "กลับไปทำแบบทดสอบใหม่" เสมอ, และคำแนะนำเปิด browser ภายนอกแบบ generic ที่ไม่ผูกกับ user agent — retry เป็นเพียง `setAttempt((v) => v + 1)` ที่ไป retrigger `useEffect` เดิมทั้งก้อนผ่าน dependency array จึงไม่ผูกกับ mechanism การโหลดข้อมูลภายใน ไม่ต้องรื้อเมื่อหัวข้อ 2 เปลี่ยนวิธีโหลดจริงในอนาคต ตรวจผ่าน dev server จริงด้วย Playwright: จำลอง `navigation` (progress ว่าง) และ `storage` (`localStorage.setItem` ปลอม throw เฉพาะ key ผลลัพธ์) ครบทั้ง 2 ภาษา, ปุ่ม retry หลังแก้ storage แล้วคำนวณสำเร็จและไปหน้า Result จริง, `lint`/`tsc -b`/`build` ผ่านหมด — หมายเหตุ: `pnpm build` เคย fail จาก `node_modules` ไม่ตรงกับ `pnpm-lock.yaml` (`qrcode`/`@types/qrcode` ไม่ได้ติดตั้งจริง) ไม่เกี่ยวกับงานนี้ รัน `pnpm install` แก้ให้แล้ว
+   - **หมายเหตุความเสี่ยงที่ยังเหลืออยู่**: เพราะทำข้อนี้ก่อนหัวข้อ 2 (batch dataset) และ 3 (storage adapter) จริง ๆ ตาม CSS/copy ที่เขียนไว้ยังอิงสมมติฐานว่า data-load ล้มจาก `Promise.all` 125 chunk และ storage ล้มจาก `localStorage` ตรง ๆ อยู่ — retry callback เองไม่ผูกกับ mechanism แล้วก็จริง แต่ข้อความ/หมวดหมู่อาจต้องกลับมาตรวจซ้ำอีกทีหลังหัวข้อ 2/3 เสร็จ ว่ายัง sync กับพฤติกรรมจริงหรือไม่
+4. [x] สร้าง test matrix แล้วที่ [p0-in-app-browser-test-matrix.md](p0-in-app-browser-test-matrix.md) — ครอบคลุม Facebook/Messenger (ต้องผ่านทั้ง Android/iOS), LINE/Instagram/TikTok (อย่างน้อยแอปละ 1 platform), คอลัมน์ App+version, OS, device, WebView/engine, network, error category (ตรงกับ `MatchingErrorCategory` ใน `src/lib/matching-errors.ts`), ผลลัพธ์ (success/recovery-UI/silent-failure) — แยก 2 scenario ต่อแถว (A: เปิด shared-result link ตรง, B: ทำแบบทดสอบเต็มจนถึง Result) เพราะสอง path นี้ชน error-handling คนละชุด เป็น template รอกรอก ยังไม่มีผลทดสอบจริง (รอข้อ 5 เรื่องอุปกรณ์ก่อน)
+5. [x] ยืนยันแล้ว: มี Android จริง 1 เครื่อง ล็อกอินพร้อมทดสอบครบ 5 แอป (Facebook, Messenger, LINE, Instagram, TikTok) **ไม่มี iOS เลย** — ตาม _known gap_ นี้ Facebook/Messenger ยังไม่ครบเกณฑ์ "ต้องผ่านทั้ง Android/iOS" ในหัวข้อ 4 ข้อ 4/6 ได้ (LINE/Instagram/TikTok ผ่านเกณฑ์แล้วเพราะแค่ 1 platform ก็พอ) **ตัดสินใจแล้ว (2026-08-26): เก็บเป็น known gap ไปก่อน ยังไม่หา iPhone/device cloud มาปิดตอนนี้** — หมายความว่า **P0 ยัง block อยู่ที่การปิดเกณฑ์ข้อ 4.6 จนกว่าจะมี iOS มาทดสอบ Facebook/Messenger** เริ่มกรอก matrix ข้อ 4 ด้วย Android ทั้ง 5 แอปได้เลยตอนนี้ (แถว 1,2,5,6,9–14 ในตาราง) ส่วนแถว iOS (3,4,7,8) ค้างไว้จนกว่าจะมีทางเข้าถึง
+
+### 2. ลดความเสี่ยงจากการโหลดข้อมูลจำนวนมาก
+
+1. [ ] เปลี่ยนข้อมูล personality ที่ต้องใช้คำนวณจาก dynamic import รายตัว 125 ไฟล์เป็น calculation dataset ที่โหลดครั้งเดียวหรือแบ่งเป็น batch จำนวนน้อย โดยยังเก็บ factual character data, lore, personality interpretation และ quiz engine แยกขอบเขตกัน
+2. [ ] ให้การคำนวณผลใช้ dataset ที่โหลดสำเร็จครบและผ่าน schema validation ก่อนเริ่ม rank เพื่อไม่คืนผลจากข้อมูลบางส่วนโดยไม่แจ้งเตือน — ตัดสินใจด้วยว่าการรวมไฟล์เป็น batch จะยังคง runtime validation ต่อ profile ไว้เหมือนปัจจุบัน (`characterPersonalityProfileSchema.parse` ต่อไฟล์ใน `loadCharacterPersonalityById`) หรือพึ่ง `validate:data` ที่ build time เพียงอย่างเดียว เพราะสองแบบนี้ป้องกันคนละเคส (runtime กัน chunk เสียหายตอนโหลดจริง, build-time กันข้อมูลผิด schema ตั้งแต่ต้น)
+3. [ ] โหลดข้อมูลคำนวณล่วงหน้าเมื่อผู้ใช้เข้าใกล้คำถามสุดท้าย หากไม่เพิ่ม initial bundle หรือการใช้ข้อมูลเครือข่ายมากเกินจำเป็น
+4. [ ] ตรวจ production build ว่าจำนวน request/chunk ในจังหวะกดจบลดลงตามที่ออกแบบ และ asset path ยังเข้ากันได้กับ GitHub Pages
+
+### 3. ทำให้ progress และ result ทนต่อ Web Storage failure
+
+1. [ ] สร้าง storage adapter กลางสำหรับ quiz progress, quiz result, locale, theme, consent, ชื่อผู้เล่น (`utils/player-profile.ts`), vision-effect preference (`LandingPage.tsx`) และ share-throttle (`utils/share-throttle.ts`) โดยดัก `getItem`, `setItem` และ `removeItem` failure — ครอบ locale/theme (`App.tsx`) และชื่อผู้เล่น/vision-effect (`LandingPage.tsx`) เป็นลำดับแรก เพราะทั้งสองไฟล์นี้อ่าน `localStorage` แบบไม่ guard ตั้งแต่ initial render ก่อนผู้ใช้เข้าคำถามข้อแรก พังจุดนี้กระทบทั้งแอปไม่ใช่แค่ผลลัพธ์
+2. [ ] ใช้ in-memory fallback สำหรับ session ปัจจุบันเมื่อ persistent storage ใช้งานไม่ได้ พร้อมแจ้งผู้ใช้ว่าปิดหน้าแล้วอาจกลับมาทำต่อไม่ได้
+3. [ ] ส่งผลลัพธ์ที่คำนวณแล้วผ่าน navigation state/context ไปยัง Result Page และใช้ persisted result เป็น fallback สำหรับ refresh/resume ไม่ให้ `localStorage` เป็นเส้นทางเดียวในการแสดงผล
+4. [ ] คงเงื่อนไขเดิมว่า player name อยู่ในเครื่องเท่านั้น และห้ามส่งคำตอบดิบหรือชื่อผู้เล่นไป Firebase อัตโนมัติ
+
+### 4. Verification และเกณฑ์ยอมรับ
+
+1. [ ] เพิ่ม deterministic verification สำหรับ storage adapter ในกรณีอ่านไม่ได้ เขียนไม่ได้ quota เต็ม และข้อมูลเสีย โดยไม่เพิ่ม test framework ใหม่ (ตาม pattern `scripts/verify-*.mjs` เดิม เพราะ logic นี้เป็น pure function ทดสอบด้วย Node script ธรรมดาได้)
+2. [ ] ตรวจว่าการโหลด calculation dataset ล้มแล้วแสดง recovery UI และ retry สำเร็จได้ โดยไม่สูญเสียคำตอบที่ทำเสร็จแล้ว — ทำเป็น **manual QA ผ่าน browser** ไม่ใช่ deterministic script เพราะต้องมี DOM/React state จริงถึงจะ mock การโหลดพังแล้วเช็ค UI ได้ และ AGENTS.md ห้ามเพิ่ม test framework ใหม่ ให้รวมเข้ากับ manual flow ในข้อ 4 ด้านล่าง ไม่ใช่แยกเป็น script
+3. [ ] รัน `corepack pnpm validate:data`, `corepack pnpm verify:engine`, `corepack pnpm lint` และ `corepack pnpm build` ให้ผ่าน
+4. [ ] ทำ manual flow ตั้งแต่เริ่ม quiz จนถึง Result Page บน Chrome/Safari ปกติ และ mobile in-app browser ตาม test matrix โดยให้ Facebook/Messenger ซึ่งเป็นเคสตั้งต้นผ่านก่อน และตรวจ LINE, Instagram และ TikTok อย่างน้อยแอปละ 1 platform
+5. [ ] ตรวจ refresh, back/forward, retry, reduced motion และการกลับมาทำ quiz ต่อ โดย Character Match และ Vision Affinity ต้องยังคำนวณแยกจากกัน
+6. [ ] ถือว่า P0 เสร็จเมื่อ in-app browser ตาม test matrix แสดงผลลัพธ์ได้ หรือแสดง recovery UI ที่ใช้งานได้โดยไม่ล้มเงียบ ไม่มี logic ที่แก้เฉพาะ user agent ของแอปใดแอปหนึ่ง และไม่มี regression บน Chrome/Safari ปกติ

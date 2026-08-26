@@ -1,11 +1,18 @@
 import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
+import { MatchingError } from "../lib/matching-errors";
 import type { QuizResult } from "../types";
 
 const RESULT_STORAGE_KEY = "teyvat-quiz-result-v1";
 export const QUIZ_RESULT_UPDATED_EVENT = "teyvat:quiz-result-updated";
 
 export function saveQuizResult(result: QuizResult) {
-  localStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(result));
+  try {
+    localStorage.setItem(RESULT_STORAGE_KEY, JSON.stringify(result));
+  } catch (error) {
+    throw new MatchingError("storage", "Failed to save the quiz result", {
+      cause: error,
+    });
+  }
   window.dispatchEvent(new Event(QUIZ_RESULT_UPDATED_EVENT));
 }
 

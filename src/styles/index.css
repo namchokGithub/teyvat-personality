@@ -1310,6 +1310,20 @@ html[lang="th"] .hero__copy h1 {
   transform: none;
   animation: matching-complete 0.25s ease-out both;
 }
+.matching-error {
+  max-width: 560px;
+}
+.matching-error__actions {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.matching-error__hint {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
 @keyframes orbit {
   to {
     transform: rotate(360deg);

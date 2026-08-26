@@ -51,6 +51,19 @@ export const th = {
   matchingCharacter: "กำลังค้นหา Character Match ที่ใกล้เคียงที่สุด",
   matchingVision: "กำลังค้นหา Vision Affinity ของคุณ",
   matchingReady: "ผลลัพธ์ของคุณพร้อมแล้ว",
+  matchingErrorTitle: "คำนวณผลลัพธ์ไม่สำเร็จ",
+  matchingErrorDataLoad:
+    "โหลดข้อมูลที่ใช้คำนวณไม่สำเร็จ อาจเกิดจากสัญญาณอินเทอร์เน็ตไม่เสถียร",
+  matchingErrorCalculation:
+    "เกิดข้อผิดพลาดขณะคำนวณผลลัพธ์ ขออภัยในความไม่สะดวก",
+  matchingErrorStorage:
+    "บันทึกผลลัพธ์ไม่สำเร็จ เบราว์เซอร์นี้อาจปิดกั้นการเก็บข้อมูล",
+  matchingErrorNavigation:
+    "คำตอบของคุณไม่ครบหรือไม่ตรงกับแบบทดสอบชุดปัจจุบัน กรุณาทำแบบทดสอบใหม่",
+  matchingErrorRetry: "ลองคำนวณใหม่",
+  matchingErrorBackToQuiz: "กลับไปทำแบบทดสอบใหม่",
+  matchingErrorOpenBrowserHint:
+    "ถ้ายังไม่สำเร็จ ลองเปิดลิงก์นี้ในเบราว์เซอร์ เช่น Chrome หรือ Safari แทนแอปแชท",
   resultEyebrow: "ตัวละครที่สะท้อนตัวตนของคุณคือ",
   affinity: "ความเข้ากัน",
   sharedTraits: "Trait ที่เหมือนกัน",

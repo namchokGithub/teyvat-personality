@@ -53,6 +53,19 @@ export const en: Record<keyof typeof th, string> = {
   matchingCharacter: "Finding your closest Character Match.",
   matchingVision: "Discovering your Vision Affinity.",
   matchingReady: "Your result is ready.",
+  matchingErrorTitle: "We couldn't calculate your result",
+  matchingErrorDataLoad:
+    "Loading the data needed for your result failed. This can happen with an unstable connection.",
+  matchingErrorCalculation:
+    "Something went wrong while calculating your result. Sorry about that.",
+  matchingErrorStorage:
+    "Saving your result failed. This browser may be blocking storage.",
+  matchingErrorNavigation:
+    "Your answers don't match the current quiz. Please take the quiz again.",
+  matchingErrorRetry: "Try again",
+  matchingErrorBackToQuiz: "Go back to the quiz",
+  matchingErrorOpenBrowserHint:
+    "If this keeps happening, try opening this link in a browser like Chrome or Safari instead of a chat app.",
   resultEyebrow: "The character who reflects you is",
   affinity: "Compatibility",
   sharedTraits: "Shared traits",
