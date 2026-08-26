@@ -2,6 +2,7 @@ import { Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import qiqiErrorImage from "../assets/images/qiqi-01.png";
 import { Button } from "../components/common";
 import { t, type MessageKey } from "../i18n";
 import { useQuizProgress } from "../hooks";
@@ -149,30 +150,37 @@ function MatchingErrorState({
   return (
     <main className="matching-page">
       <div className="empty-state matching-error" role="alert">
-        <h1>{t(locale, "matchingErrorTitle")}</h1>
-        <p>{t(locale, matchingErrorBodyKeyByCategory[category])}</p>
-        <div className="matching-error__actions">
-          {category !== "navigation" && (
-            <Button
-              onClick={
-                // A dynamic import() rejection is cached by the browser's module
-                // registry for the page's lifetime — recomputing in place can never
-                // re-fetch the failed chunk, so a data-load retry needs a real reload.
-                category === "data-load"
-                  ? () => window.location.reload()
-                  : onRetry
-              }
-            >
-              {t(locale, "matchingErrorRetry")}
-            </Button>
-          )}
-          <Button variant="secondary" onClick={onBackToQuiz}>
-            {t(locale, "matchingErrorBackToQuiz")}
-          </Button>
+        <div className="matching-error__art" aria-hidden="true">
+          <img src={qiqiErrorImage} alt="" />
         </div>
-        <p className="matching-error__hint">
-          {t(locale, "matchingErrorOpenBrowserHint")}
-        </p>
+        <div className="matching-error__content">
+          <h1>{t(locale, "matchingErrorTitle")}</h1>
+          <p className="matching-error__body">
+            {t(locale, matchingErrorBodyKeyByCategory[category])}
+          </p>
+          <div className="matching-error__actions">
+            {category !== "navigation" && (
+              <Button
+                onClick={
+                  // A dynamic import() rejection is cached by the browser's module
+                  // registry for the page's lifetime — recomputing in place can never
+                  // re-fetch the failed chunk, so a data-load retry needs a real reload.
+                  category === "data-load"
+                    ? () => window.location.reload()
+                    : onRetry
+                }
+              >
+                {t(locale, "matchingErrorRetry")}
+              </Button>
+            )}
+            <Button variant="secondary" onClick={onBackToQuiz}>
+              {t(locale, "matchingErrorBackToQuiz")}
+            </Button>
+          </div>
+          <p className="matching-error__hint">
+            {t(locale, "matchingErrorOpenBrowserHint")}
+          </p>
+        </div>
       </div>
     </main>
   );
