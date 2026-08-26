@@ -69,7 +69,18 @@ export interface QuizQuestion {
   answers: Array<{ id: string; label: LocalizedText }>;
 }
 
-export interface ScoredQuizQuestion extends QuizQuestion {
+export interface ScoredPrompt {
+  id: string;
+  answers: Array<{
+    id: string;
+    scores: {
+      dimensions: Partial<Record<DimensionId, number>>;
+      traits: Partial<Record<TraitId, number>>;
+    };
+  }>;
+}
+
+export interface ScoredQuizQuestion extends QuizQuestion, ScoredPrompt {
   answers: Array<{
     id: string;
     label: LocalizedText;
@@ -170,6 +181,69 @@ export interface QuizResult {
   characterMatches: CharacterMatch[];
   visionMatches: VisionMatch[];
   completedAt: string;
+}
+
+export type StoryNodeType = "story" | "choice" | "ending";
+
+export interface StoryChoice {
+  id: string;
+  text: LocalizedText;
+  nextNodeId: string;
+  scores: {
+    dimensions: Partial<Record<DimensionId, number>>;
+    traits: Partial<Record<TraitId, number>>;
+  };
+}
+
+export interface StoryNode {
+  id: string;
+  type: StoryNodeType;
+  content: LocalizedText;
+  speaker?: LocalizedText;
+  background?: string;
+  characterImage?: string;
+  music?: string;
+  choices?: StoryChoice[];
+  nextNodeId?: string;
+}
+
+export interface StoryEnding {
+  id: string;
+  title: LocalizedText;
+  epilogue: LocalizedText;
+}
+
+export interface StoryChapter {
+  id: string;
+  title: LocalizedText;
+  description: LocalizedText;
+  startNodeId: string;
+  nodes: StoryNode[];
+  endings: StoryEnding[];
+}
+
+export interface StoryProgressState {
+  version: 1;
+  storyVersion: string;
+  algorithmVersion: string;
+  currentNodeId: string;
+  visitedNodeIds: string[];
+  choices: Record<string, string>;
+  startedAt: string;
+  updatedAt: string;
+  completedAt: string | null;
+}
+
+export interface StoryResult {
+  version: 1;
+  storyVersion: string;
+  algorithmVersion: string;
+  profile: UserPersonalityProfile;
+  characterMatches: CharacterMatch[];
+  visionMatches: VisionMatch[];
+  completedAt: string;
+  storyEndingId: string;
+  visitedNodeIds: string[];
 }
 
 export interface CharacterDetail {

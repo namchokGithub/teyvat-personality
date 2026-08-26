@@ -66,7 +66,7 @@ C. ล่อศัตรูให้ออกไปจากบริเวณ�
 D. มองหาคนอื่นเพื่อขอความช่วยเหลือ
 ```
 
-ตัวเลือกแต่ละข้อจะเพิ่มหรือลดคะแนน Trait และ Vision Affinity เช่นเดียวกับ Quiz เดิม
+ตัวเลือกแต่ละข้อจะเพิ่มหรือลดคะแนน Dimension และ Trait เช่นเดียวกับ Quiz เดิม (Vision Affinity คำนวณจาก Trait อัตโนมัติ ไม่มีคะแนนแยก — ดู [Story Data Model](#story-data-model))
 
 ```
 {
@@ -79,13 +79,8 @@ D. มองหาคนอื่นเพื่อขอความช่ว�
         "en": "Help the child immediately"
       },
       "scores": {
-        "empathy": 3,
-        "courage": 2,
-        "caution": -1
-      },
-      "visionScores": {
-        "pyro": 1,
-        "hydro": 1
+        "dimensions": { "responsibility": 2, "adventure": 1 },
+        "traits": { "empathy": 0.3, "determination": 0.2 }
       },
       "nextNodeId": "forest-02-rescue"
     }
@@ -133,22 +128,18 @@ Story Mode ──────┘
 
 ## Story Data Model
 
+> **อัปเดต (2026-08-26):** ตัด `visionScores` ออกจาก `StoryChoice` — engine จริง (`buildUserPersonalityProfile`) ไม่มี path รับ vision score ตรงๆ, vision affinity มาจาก trait เท่านั้น (`rankVisionAffinities` เทียบ `user.traits` กับ `element.personalityTheme.traits`). `StoryChoice.scores` จึงใช้ shape เดียวกับ `answer.scores` ของ Quiz เป๊ะ (มาจาก `ScoredPrompt`/`ScoredQuizQuestion` ใน `src/types/index.ts` — ดู [Session Model](#session-model))
+
 ```
-type AssessmentMode = "quiz" | "story";
-
 type StoryNodeType = "story" | "choice" | "ending";
-
-interface LocalizedText {
-  th: string;
-  en: string;
-}
 
 interface StoryChapter {
   id: string;
   title: LocalizedText;
-  description?: LocalizedText;
+  description: LocalizedText;
   startNodeId: string;
   nodes: StoryNode[];
+  endings: StoryEnding[];
 }
 
 interface StoryNode {
@@ -161,42 +152,68 @@ interface StoryNode {
   music?: string;
   choices?: StoryChoice[];
   nextNodeId?: string;
-  endingId?: string;
 }
 
 interface StoryChoice {
   id: string;
   text: LocalizedText;
   nextNodeId: string;
-  scores: Partial<Record<PersonalityTrait, number>>;
-  visionScores?: Partial<Record<VisionElement, number>>;
+  scores: {
+    dimensions: Partial<Record<DimensionId, number>>;
+    traits: Partial<Record<TraitId, number>>;
+  };
+}
+
+interface StoryEnding {
+  id: string;
+  title: LocalizedText;
+  epilogue: LocalizedText;
 }
 ```
+
+`node.type === "ending"` เป็นแค่ terminal node ทั่วไป (ฉากปิดเรื่องกลางๆ ไม่มี `nextNodeId`) **ไม่มี `endingId` ชี้ไปยัง ending ที่แน่นอน** — เพราะ ending ตัดสินจาก final trait/vision score ไม่ใช่จาก node ที่เดินถึง (ดู [Session Model](#session-model)) `StoryChapter.endings: StoryEnding[]` เก็บ epilogue ทั้งหมดไว้ต่างหาก แล้วเลือกหลังคำนวณคะแนนเสร็จ
+
+`LocalizedText`, `DimensionId`, `TraitId` ใช้ของเดิมจาก `src/types/index.ts` ไม่ประกาศซ้ำ
 
 ## Session Model
 
-ระบบ Session ไม่ควรผูกกับคำถาม 24 ข้อเท่านั้น ควรรองรับทั้ง Quiz และ Story
+> **อัปเดต (2026-08-26):** ไม่รวมเป็น `AssessmentSession` กลางแบบเดิม — resume logic ของ Quiz (รายการคำถามคงที่ทีละข้อ, ต้อง shuffle answer order) กับ Story (graph traversal ผ่าน branch แล้วบรรจบ) ต่างกันเกินกว่าจะยัด interface เดียวตอนนี้ได้อย่างสมเหตุผล จึงแยก `StoryProgressState` เป็น type ของตัวเอง คู่กับ `QuizProgressState` เดิม (`src/types/index.ts`) — ทั้งสองจบที่จุดเดียวกันคือส่ง `answers`/`choices` เข้า `buildUserPersonalityProfile` (`src/engine/index.ts`) เหมือนกัน
+
+`QuizProgressState` เดิม (อ้างอิง):
 
 ```
-interface AssessmentSession {
-  id: string;
-  mode: AssessmentMode;
-  traitScores: TraitScores;
-  visionScores: VisionScores;
-  currentStep: string;
-  history: SessionHistoryItem[];
+interface QuizProgressState {
+  version: 3;
+  questionVersion: string;
+  algorithmVersion: string;
+  seed: number;
+  questionOrder: string[];
+  answerOrder: Record<string, string[]>;
+  currentQuestionIndex: number;
+  answers: Record<string, string>;
   startedAt: string;
-  completedAt?: string;
-}
-
-interface SessionHistoryItem {
-  nodeId: string;
-  choiceId?: string;
-  answeredAt: string;
+  updatedAt: string;
+  completedAt: string | null;
 }
 ```
 
-สำหรับ Quiz Mode ค่า `<span>currentStep</span>` อาจเป็น Question ID ส่วน Story Mode จะเป็น Story node ID
+`StoryProgressState` ใหม่ (mirror รูปแบบเดียวกัน แต่สลับกลไก linear index → graph traversal):
+
+```
+interface StoryProgressState {
+  version: 1;
+  storyVersion: string;
+  algorithmVersion: string;
+  currentNodeId: string;
+  visitedNodeIds: string[];
+  choices: Record<string, string>;
+  startedAt: string;
+  updatedAt: string;
+  completedAt: string | null;
+}
+```
+
+ไม่มี `seed`/`answerOrder` เพราะ Story ไม่มี pool-selection หรือ shuffle เนื้อหา (เนื้อเรื่องคงที่ตาม Chapter) — `visitedNodeIds` ใช้ทั้ง validate resume และสรุป "เส้นทางที่เลือก" ใน Result ทีหลัง
 
 ## Story Mode Levels
 
@@ -216,7 +233,7 @@ Scene 1 → Scene 2 → Scene 3 → Scene 4 → Result
 - ใช้เนื้อหาและภาพไม่มากเกินไป
 - ลดความเสี่ยงของเส้นทางที่ไปไม่ถึง Ending
 
-เหมาะสำหรับ Story Mode รุ่นแรก
+เหมาะกับต้นแบบที่เรียบง่ายที่สุด (Story Mode รุ่นแรกเลือกเริ่มที่ Level 2 แทน — ดูหมายเหตุด้านล่าง)
 
 ### Level 2: Limited Branching
 
@@ -233,6 +250,8 @@ Scene 1 → Scene 2 → Scene 3 → Scene 4 → Result
 - ผู้เล่นรู้สึกว่าการตัดสินใจมีผล
 - เนื้อหาไม่เพิ่มขึ้นแบบทวีคูณ
 - สามารถเล่นซ้ำเพื่อดูฉากอื่นได้
+
+> **อัปเดต (2026-08-26):** Story Mode รุ่นแรกตัดสินใจเริ่มที่ Level 2 นี้เลย ไม่ผ่าน Level 1 ก่อน — branch 2 จุด (ลดจาก 2–3), converge กลับเส้นหลักทุกจุด (ไม่มีเส้นทางแยกค้าง), Ending ตัดสินจาก final trait/vision score หลังจบเรื่อง ไม่ผูกกับเส้นทางที่เลือก ดูตัวเลขเต็มที่ [Recommended Story Scope](#recommended-story-scope)
 
 ### Level 3: Full Branching Story
 
@@ -255,17 +274,17 @@ Scene 1 → Scene 2 → Scene 3 → Scene 4 → Result
 
 ## Recommended Story Scope
 
-สำหรับ Story Mode รุ่นแรก:
+สำหรับ Story Mode รุ่นแรก (อัปเดต 2026-08-26 — ปรับให้เวลาเล่นใกล้เคียง Quiz Mode):
 
 - 1 Chapter
-- 12–16 เหตุการณ์
-- 8–10 เหตุการณ์ที่มีตัวเลือก
+- 6–8 เหตุการณ์
+- 5–6 เหตุการณ์ที่มีตัวเลือก
 - ตัวเลือกประมาณ 3–4 ข้อต่อเหตุการณ์
-- Branch สำคัญประมาณ 2 จุด
-- Ending ประมาณ 2–3 แบบ
-- ใช้เวลาเล่นประมาณ 8–12 นาที
+- Branch สำคัญ 2 จุด (converge กลับเส้นหลักทุกจุด ไม่มีเส้นทางที่แยกค้างไม่กลับมา)
+- Ending 2 แบบ — ตัดสินจาก final trait/vision score หลังจบเรื่อง (เหมือน Character Match ปัจจุบัน) ไม่ผูกกับ branch ที่เลือก
+- ใช้เวลาเล่นประมาณ 3–5 นาที
 
-ก่อนสร้างฉบับเต็ม ควรทำ Prototype จำนวน 5 เหตุการณ์เพื่อทดสอบระบบและความสมดุลของคะแนน
+ก่อนสร้างฉบับเต็ม ควรทำ Prototype จำนวน 3–4 เหตุการณ์ (รวม branch point อย่างน้อย 1 จุด) เพื่อทดสอบระบบและความสมดุลของคะแนน
 
 ## Mode Selection Page
 
@@ -283,7 +302,7 @@ Choose your journey
 │ Story Adventure         │
 │ ออกเดินทางและเลือก      │
 │ การตัดสินใจของคุณ       │
-│ ใช้เวลาประมาณ 8–12 นาที│
+│ ใช้เวลาประมาณ 3–5 นาที │
 └─────────────────────────┘
 ```
 
@@ -313,20 +332,25 @@ Story Page สามารถประกอบด้วย:
 
 ## Shared Result
 
-Quiz และ Story ควรใช้ Result model และ Result Page ร่วมกัน
+> **อัปเดต (2026-08-26):** แยก type แต่ share component — ตรงข้ามกับ Session: `QuizResult`/`StoryResult` มี provenance ต่างกัน (มาจาก quiz answer array vs story node traversal) เลยแยก type ตามแนวทางเดียวกับ Session, แต่ **Result Page เป็น display layer ล้วนๆ ไม่มี resume-logic ต่างกัน** จึง share component เดียวได้ — field หลัก (`profile`, `characterMatches`, `visionMatches`, `completedAt`) เหมือนกันทั้งคู่ ส่วน Story-only render เพิ่มแบบ optional เมื่อมี `storyEndingId`
+
+`StoryResult` (คู่กับ `QuizResult` เดิมใน `src/types/index.ts`):
 
 ```
-interface AssessmentResult {
-  mode: AssessmentMode;
-  primaryMatch: CharacterMatch;
-  secondaryMatches: CharacterMatch[];
-  traitScores: TraitScores;
-  visionScores: VisionScores;
-  visionAffinity: VisionElement;
+interface StoryResult {
+  version: 1;
+  storyVersion: string;
+  algorithmVersion: string;
+  profile: UserPersonalityProfile;
+  characterMatches: CharacterMatch[];
+  visionMatches: VisionMatch[];
   completedAt: string;
-  storyEndingId?: string;
+  storyEndingId: string;
+  visitedNodeIds: string[];
 }
 ```
+
+`<ResultPage>` รับ `characterMatches`/`visionMatches`/`profile` ร่วมกันทั้งสอง mode, รับ `storyEndingId`/`visitedNodeIds` เป็น optional prop สำหรับ Story เท่านั้น — ไม่ต้องมี `mode` field แยก เพราะเรียกใช้ type ไหนก็บอกอยู่แล้วว่าเป็น mode ไหน
 
 สำหรับ Story Mode สามารถเพิ่มข้อมูลพิเศษใน Result Page เช่น:
 
@@ -348,7 +372,7 @@ interface AssessmentResult {
 - Choice node ต้องมีตัวเลือก
 - Ending node ไม่ควรมี `<span>nextNodeId</span>`
 - Story node ต้องไปยัง Node ถัดไปหรือเป็น Ending
-- Trait และ Vision keys ต้องเป็นค่าที่ระบบรองรับ
+- Dimension และ Trait keys ต้องเป็นค่าที่ระบบรองรับ (`DimensionId`/`TraitId` จาก `src/types/index.ts` — ไม่มี Vision key แยกแล้ว)
 - Score ต้องเป็นตัวเลขที่อยู่ในช่วงที่กำหนด
 - เนื้อหามีทั้งภาษาไทยและอังกฤษตามข้อกำหนดของระบบ
 
@@ -357,7 +381,7 @@ interface AssessmentResult {
 ### Unit Tests
 
 - ตัวเลือกเพิ่ม Trait scores ถูกต้อง
-- ตัวเลือกเพิ่ม Vision scores ถูกต้อง
+- ตัวเลือกเพิ่ม Dimension scores ถูกต้อง
 - เปลี่ยนไปยัง `<span>nextNodeId</span>` ถูกต้อง
 - ย้อนกลับหรือ Resume แล้วคะแนนไม่ถูกเพิ่มซ้ำ
 - Story และ Quiz ส่งข้อมูลเข้า Matching Engine ในรูปแบบเดียวกัน
@@ -387,45 +411,38 @@ interface AssessmentResult {
 
 แม้ยังไม่พัฒนา Story Mode ควรเตรียม Architecture ดังนี้:
 
-1. แยก Matching Engine ออกจาก Quiz UI
-2. อย่าให้ Matching Engine อ่าน Question data โดยตรง
-3. ให้ Matching Engine รับ `<span>traitScores</span>` และ `<span>visionScores</span>`
-4. เพิ่ม `<span>mode: "quiz" | "story"</span>` ใน Session และ Result
-5. อย่าผูก `<span>localStorage</span>` กับ Question index เพียงอย่างเดียว
-6. ใช้ ID สำหรับอ้างอิง Question, Story node และ Choice
-7. เก็บข้อความแบบ `<span>th</span>` และ `<span>en</span>`
-8. แยก Score collection ออกจาก Score calculation
-9. ทำ Result Page ให้ไม่ขึ้นกับโครงสร้างของ Quiz answer
-10. เตรียม Version ใน Saved Session เผื่อ Story data มีการแก้ไข
+1. แยก Matching Engine ออกจาก Quiz UI — ✅ ทำแล้ว (`rankCharacterMatches`/`rankVisionAffinities` รับแค่ `UserPersonalityProfile`)
+2. อย่าให้ Matching Engine อ่าน Question data โดยตรง — ✅ ส่วน `rank*` ทำแล้ว, `buildUserPersonalityProfile` จะ genericize param เป็น `ScoredPrompt[]` (ดู [Session Model](#session-model))
+3. ให้ Matching Engine รับ profile ที่ normalize แล้ว (`UserPersonalityProfile`) ไม่ใช่ raw score object — ✅ ทำแล้ว
+4. ~~เพิ่ม `mode: "quiz" | "story"` ใน Session และ Result~~ — **อัปเดต:** ไม่ต้องแล้ว เพราะแยก type ต่างหาก (`StoryProgressState`/`StoryResult` คู่กับ `QuizProgressState`/`QuizResult`) type ที่เรียกใช้บอกอยู่แล้วว่าเป็น mode ไหน
+5. อย่าผูก `<span>localStorage</span>` กับ Question index เพียงอย่างเดียว — ✅ ทำแล้ว (`questionOrder` เป็น ID array)
+6. ใช้ ID สำหรับอ้างอิง Question, Story node และ Choice — ✅ ทำแล้วฝั่ง Quiz, Story ใช้แนวเดียวกัน (`currentNodeId`/`nextNodeId`)
+7. เก็บข้อความแบบ `<span>th</span>` และ `<span>en</span>` — ✅ ทำแล้ว (`LocalizedText`)
+8. แยก Score collection ออกจาก Score calculation — ✅ ทำแล้ว (`QuizProgressState.answers` เก็บ raw, `buildUserPersonalityProfile` คำนวณตอนจบเท่านั้น)
+9. ทำ Result Page ให้ไม่ขึ้นกับโครงสร้างของ Quiz answer — **อัปเดต:** share `<ResultPage>` ระหว่าง `QuizResult`/`StoryResult` ผ่าน field หลักร่วม (ดู [Shared Result](#shared-result))
+10. เตรียม Version ใน Saved Session เผื่อ Story data มีการแก้ไข — ✅ ทำแล้วฝั่ง Quiz (`version`/`questionVersion`/`algorithmVersion`), `StoryProgressState` mirror แบบเดียวกันด้วย `storyVersion`
 
 ## Suggested Folder Structure
 
+> **อัปเดต (2026-08-26):** ไม่ reorg เป็น domain-feature folder ตามที่เสนอเดิม — โค้ดจริงจัดตาม layer อยู่แล้ว (`src/data/`, `src/engine/`, `src/hooks/`, `src/pages/`, `src/components/`, `src/schemas/`) reorg ใหญ่เสี่ยงพัง Quiz ที่ทำงานอยู่โดยไม่ได้ประโยชน์เพิ่ม แทนที่ด้วยการเพิ่มไฟล์ Story ขนานไปกับของ Quiz ในโครงเดิม:
+
 ```
 src/
-├── assessment/
-│   ├── types.ts
-│   ├── session.ts
-│   └── score-collector.ts
-├── quiz/
-│   ├── components/
-│   ├── data/
-│   └── quiz-session.ts
-├── story/
-│   ├── components/
-│   ├── data/
-│   ├── schemas/
-│   ├── story-engine.ts
-│   └── story-session.ts
-├── matching/
-│   ├── character-matcher.ts
-│   ├── vision-matcher.ts
-│   └── normalize-scores.ts
-└── result/
-    ├── components/
-    └── result-page.tsx
+├── data/
+│   ├── quiz/            (เดิม)
+│   └── story/            (ใหม่ — chapter/node/choice content)
+├── engine/                (เดิม, ใช้ร่วมกัน — genericize param เป็น ScoredPrompt[])
+├── hooks/
+│   ├── useQuizProgress.ts    (เดิม)
+│   └── useStoryProgress.ts   (ใหม่)
+├── pages/
+│   ├── QuizPage.tsx      (เดิม)
+│   └── StoryPage.tsx     (ใหม่)
+├── schemas/
+│   └── story.ts           (ใหม่ — แยกไฟล์จาก schemas/index.ts เดิม)
+└── components/
+    └── result/            (เดิม, share ระหว่าง Quiz/Story)
 ```
-
-ควรปรับตามโครงสร้างจริงของโปรเจกต์ ไม่จำเป็นต้องย้ายไฟล์เดิมทั้งหมดทันที
 
 ## Development Roadmap
 
@@ -434,29 +451,29 @@ src/
 - ทำ Quiz Mode ปัจจุบันให้สมบูรณ์
 - ตรวจสอบ Matching Engine
 - เพิ่ม Unit tests
-- ปรับ Result Page ให้ใช้ Result model กลาง
+- ปรับ `<ResultPage>` ให้รับ field หลัก (`profile`/`characterMatches`/`visionMatches`) แบบ share ได้ เตรียมรับ `StoryResult`
 
 ### Phase 2: Prepare Shared Architecture
 
-- เพิ่ม Assessment mode
-- แยก Session model กลาง
-- แยก Score collector
-- ปรับ Matching Engine ให้รับเฉพาะคะแนน
-- เตรียม Story schemas
+> **อัปเดต (2026-08-26):** ตัด "เพิ่ม Assessment mode" กับ "แยก Session model กลาง" ออก — ตัดสินใจแล้วว่าไม่ทำ generic session/mode field (ดู [Session Model](#session-model)) แทนที่ด้วยงานจริงที่ต้องทำ:
+
+- Rename engine param เป็น `ScoredPrompt[]` (base type ของ `ScoredQuizQuestion`) ใน `buildUserPersonalityProfile`
+- สร้าง `StoryProgressState` type คู่กับ `QuizProgressState`
+- สร้าง `StoryResult` type คู่กับ `QuizResult`
+- เตรียม Story schemas (Zod)
 
 ### Phase 3: Story Prototype
 
 - สร้าง Story engine ขั้นพื้นฐาน
-- สร้าง Story จำนวน 5 เหตุการณ์
+- สร้าง Story จำนวน 3–4 เหตุการณ์ (รวม branch point อย่างน้อย 1 จุด)
 - รองรับ Choice และ `<span>nextNodeId</span>`
 - บันทึก Session ลง `<span>localStorage</span>`
 - เชื่อม Matching Engine เดิม
 
 ### Phase 4: Story MVP
 
-- ขยายเป็น 12–16 เหตุการณ์
-- เพิ่ม 2 จุดแตกแขนง
-- เพิ่ม 2–3 Endings
+- ขยายเป็น 6–8 เหตุการณ์ ครบ 2 branch point ตามที่ออกแบบ
+- เพิ่ม Ending ให้ครบ 2 แบบ
 - เพิ่ม Background และ Character art
 - เพิ่ม Animation เล็กน้อย
 - รองรับภาษาไทยและอังกฤษ
@@ -473,7 +490,7 @@ src/
 
 ### Content Growth
 
-Branching ทุกจุดจะทำให้จำนวนเนื้อหาเพิ่มขึ้นอย่างรวดเร็ว จึงควรเริ่มจาก Linear Story และมี Branch เฉพาะเหตุการณ์สำคัญ
+Branching ทุกจุดจะทำให้จำนวนเนื้อหาเพิ่มขึ้นอย่างรวดเร็ว รุ่นแรกจึงจำกัดไว้ที่ 2 branch point และบังคับให้ทุก branch converge กลับเส้นหลักเสมอ (ไม่มีเส้นทางแยกค้าง) เพื่อคุมจำนวนเนื้อหาให้อยู่ในช่วง 6–8 เหตุการณ์
 
 ### Score Balance
 
@@ -495,15 +512,14 @@ Story Mode ควรเปิดตัวหลัง Quiz Mode และ Matchi
 
 1. ทำ Quiz Mode ให้สมบูรณ์
 2. แยก Matching Engine ออกจาก UI
-3. เพิ่ม Shared Assessment Session
-4. เพิ่ม `<span>quiz | story</span>` mode
-5. สร้าง Story data schema
-6. สร้าง Story prototype 5 เหตุการณ์
-7. เชื่อมคะแนนกับ Matching Engine
-8. ตรวจสอบความสมดุลของผลลัพธ์
-9. ขยายเป็น 12–16 เหตุการณ์
-10. เพิ่ม Limited Branching และ Endings
-11. เพิ่ม Artwork, Animation และเสียงภายหลัง
+3. Rename engine param เป็น `ScoredPrompt[]`, สร้าง `StoryProgressState`/`StoryResult` คู่กับของ Quiz
+4. สร้าง Story data schema
+5. สร้าง Story prototype 3–4 เหตุการณ์ (มี branch point อย่างน้อย 1 จุด)
+6. เชื่อมคะแนนกับ Matching Engine
+7. ตรวจสอบความสมดุลของผลลัพธ์
+8. ขยายเป็น 6–8 เหตุการณ์ ครบ 2 branch point
+9. เพิ่ม Ending ให้ครบ 2 แบบ และปรับสมดุลคะแนน
+10. เพิ่ม Artwork, Animation และเสียงภายหลัง
 
 ## Conclusion
 
@@ -515,4 +531,4 @@ Matching Engine = วิเคราะห์คะแนน
 Result Page = แสดงผลลัพธ์ร่วมกัน
 ```
 
-แนวทางที่เหมาะสมที่สุดคือทำ Quiz Mode ปัจจุบันให้เสถียรก่อน จากนั้นสร้าง Story Prototype แบบ Linear จำนวน 5 เหตุการณ์ แล้วค่อยขยายเป็นเนื้อเรื่องเต็มและเพิ่ม Branch สำคัญในภายหลัง
+แนวทางที่เหมาะสมที่สุดคือทำ Quiz Mode ปัจจุบันให้เสถียรก่อน จากนั้นสร้าง Story Prototype แบบ Limited Branching (branch 2 จุด, converge กลับเส้นหลัก) จำนวน 3–4 เหตุการณ์ แล้วค่อยขยายเป็นเนื้อเรื่องเต็ม 6–8 เหตุการณ์ ใช้เวลาเล่นประมาณ 3–5 นาที

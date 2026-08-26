@@ -5,7 +5,7 @@ import {
   type CharacterPersonalityProfile,
   type DimensionId,
   type ElementPersonalityProfile,
-  type ScoredQuizQuestion,
+  type ScoredPrompt,
   type TraitId,
   type UserPersonalityProfile,
   type VisionMatchScore,
@@ -18,7 +18,7 @@ export const QUESTIONS_PER_DIMENSION = 4;
 const clamp = (value: number, minimum: number, maximum: number) => Math.min(maximum, Math.max(minimum, value));
 const round = (value: number, precision = 4) => Number(value.toFixed(precision));
 
-function selectedAnswers(answers: Record<string, string>, questions: ScoredQuizQuestion[]) {
+function selectedAnswers(answers: Record<string, string>, questions: ScoredPrompt[]) {
   if (Object.keys(answers).length !== questions.length) throw new Error("Quiz answers are incomplete");
   return questions.map((question) => {
     const answerId = answers[question.id];
@@ -30,7 +30,7 @@ function selectedAnswers(answers: Record<string, string>, questions: ScoredQuizQ
 
 export function buildUserPersonalityProfile(
   answers: Record<string, string>,
-  questions: ScoredQuizQuestion[],
+  questions: ScoredPrompt[],
 ): UserPersonalityProfile {
   const selected = selectedAnswers(answers, questions);
   const dimensions = {} as Record<DimensionId, number>;
