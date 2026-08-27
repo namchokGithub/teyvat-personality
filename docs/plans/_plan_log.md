@@ -154,6 +154,18 @@
 - เปลี่ยนตัวเลือกเป็น trigger เดียวกับ portal popover, รองรับ keyboard/focus handling, reduced motion, persistence และ invalid-value fallback; แก้ mobile stacking และ viewport safeguards
 - การตรวจ data, engine, consent, storage, lint และ production build ผ่าน; manual QA ของแผนครบแล้ว จึงย้ายสถานะปิดจากแผน implementation นี้
 
+## 27 สิงหาคม 2026 — UX issue fixes จาก `docs/issue_logs.md` ปิดครบ 5 ข้อ
+
+- แก้ UX-03: ปุ่ม Back หลังจบ Quiz ย้อนกลับเข้า flow เดิมได้ — เพิ่มเงื่อนไข `state.completedAt` ใน `QuizPage` ให้ redirect กลับ `/result` แทนการ render คำถามที่ตอบครบแล้วซ้ำ
+- แก้ UX-04: ปุ่มกลับจาก Character Detail ไม่พากลับ Result — ส่ง origin state (`from: "result"`) ผ่าน router ตอน navigate จาก Result แล้วให้ Character Detail เลือกปลายทางตาม origin นั้น, fallback เป็น `/characters` เมื่อไม่มี state (refresh/direct URL) ตามเดิม
+- แก้ UX-01: เริ่มรอบใหม่แล้ว dialog กรอกชื่อยังโชว์ชื่อเดิม — เพิ่ม `clearPlayerName()` เรียกเมื่อ navigate ด้วย `requestName: true`; resume flow ไม่ถูกกระทบเพราะไม่ผ่าน state นี้
+- แก้ UX-05: ชื่อตัวละครล้นในภาพ Share Card ที่ดาวน์โหลด — เพิ่ม `drawFittedName()` ลดขนาดฟอนต์จาก 92px ลงถึงขั้นต่ำ 44px ตาม `measureText()` ก่อน fallback เป็น truncate ellipsis; ตรวจจริงกับ `neuvillette`, `yumemizuki_mizuki`, `sangonomiya_kokomi` ตามที่ issue ระบุ (ยังไม่ได้ตรวจ Traveler variants ที่ชื่อยาวมีวงเล็บ แต่กลไก generic ควรรองรับได้เหมือนกัน)
+- แก้ UX-02: ความสูง Quiz panel เปลี่ยนตามเนื้อหาคำถาม — เพิ่ม `min-height` ให้ `.question-card` บน desktop/tablet และ `min-height: auto` บน mobile (≤780px เดิม); เริ่มจากประมาณการ 620px ตามแผน แล้ววัดจริงทุกคำถามพบว่าคำถามภาษาอังกฤษที่ยาวที่สุดสูงถึง 661.76px จึงปรับเป็น **670px** ตามข้อมูลจริงแทนตัวเลขตั้งต้น — **ข้อจำกัด**: ที่ 768px (tablet-portrait) ยังตกอยู่ใน mobile branch จึงยัง jump ได้ที่ความกว้างนี้โดยเฉพาะ
+- Final whole-branch review เจอ bug จริงเพิ่มอีก 1 ตัวที่แผนเดิมไม่ได้ครอบคลุม: redirect ของ UX-03 วนลูปไม่รู้จบถ้า `completedAt` ถูกตั้งไว้แต่ผลลัพธ์ยังไม่ถูกบันทึกจริง (กด Back ระหว่าง matching animation ~1.2 วิ ก่อน `saveQuizResult()` ทำงาน หรือกดปุ่ม "กลับไป Quiz" จาก matching error หมวด `navigation`) — แก้โดยเพิ่มเงื่อนไข `readQuizResult()` ต้องมีผลจริงด้วยจึงจะ redirect; พิสูจน์ด้วยการ seed localStorage จำลอง race นี้ตรงๆ แล้ว toggle โค้ดเก่า/ใหม่ผ่าน Vite HMR เทียบกันสด ๆ
+- ตรวจทุกจุดด้วย browser จริงผ่าน chrome-devtools MCP tools (ไม่ใช่แค่อ่านโค้ดแล้วสรุปว่าน่าจะถูก) ทั้ง `pnpm lint`/`pnpm build` ผ่านหมด — repo นี้ยังไม่มี automated test framework
+- ปิดสถานะทั้ง 5 ข้อเป็น `ปิด` ใน `docs/issue_logs.md` พร้อมบันทึกข้อจำกัดของ UX-02 และ UX-05 ไว้ในไฟล์นั้นแล้ว
+- หมายเหตุนอกขอบเขต (ยังไม่ได้แก้รอบนี้): `package.json` pin `"prettier": "latest"` ทำให้ระหว่างแก้ UX-04 ตอนรัน `pnpm format` ครั้งหนึ่งพยายาม reformat ไฟล์ทั้ง repo ถึง 151 ไฟล์ (ตรวจพบและไม่ได้ commit เข้าไปนอกเหนือไฟล์ที่ตั้งใจแก้) — แนะนำ pin เวอร์ชัน Prettier ให้ตายตัวกันปัญหานี้เกิดซ้ำในอนาคต
+
 ## Verification ล่าสุด
 
 - `corepack pnpm validate:data` ผ่าน: 36 questions, 39 traits, 125 characters, 7 elements
