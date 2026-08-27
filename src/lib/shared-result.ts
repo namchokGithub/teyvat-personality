@@ -1,7 +1,6 @@
 import { customAlphabet } from "nanoid";
 import {
   doc,
-  getDoc,
   serverTimestamp,
   setDoc,
   type Firestore,
@@ -73,7 +72,6 @@ export function buildSharedResultDoc(
   };
 }
 
-const MAX_SHARED_RESULT_ID_ATTEMPTS = 5;
 const SHARED_RESULT_WRITE_TIMEOUT_MS = 12_000;
 
 export async function publishSharedResult(
@@ -83,35 +81,19 @@ export async function publishSharedResult(
   vision: VisionMatch,
   versions: SharedResultVersion,
 ): Promise<string> {
-  for (let attempt = 0; attempt < MAX_SHARED_RESULT_ID_ATTEMPTS; attempt += 1) {
-    const id = createSharedResultId();
-    const ref = doc(db, "sharedResults", id);
-    if (
-      (
-        await withTimeout(
-          getDoc(ref),
-          SHARED_RESULT_WRITE_TIMEOUT_MS,
-          "checking the shared result ID",
-        )
-      ).exists()
-    )
-      continue;
-    await withTimeout(
-      setDoc(ref, {
-        ...buildSharedResultDoc(
-          character,
-          additionalCharacters,
-          vision,
-          versions,
-        ),
-        publishedAt: serverTimestamp(),
-      }),
-      SHARED_RESULT_WRITE_TIMEOUT_MS,
-      "publishing the shared result",
-    );
-    return id;
-  }
-  throw new Error(
-    `Could not generate a unique shared result id after ${MAX_SHARED_RESULT_ID_ATTEMPTS} attempts`,
+  const id = createSharedResultId();
+  await withTimeout(
+    setDoc(doc(db, "sharedResults", id), {
+      ...buildSharedResultDoc(
+        character,
+        additionalCharacters,
+        vision,
+        versions,
+      ),
+      publishedAt: serverTimestamp(),
+    }),
+    SHARED_RESULT_WRITE_TIMEOUT_MS,
+    "publishing the shared result",
   );
+  return id;
 }
