@@ -1517,6 +1517,11 @@ html[lang="th"] .hero__copy h1 {
   height: 100%;
   object-fit: cover;
   object-position: var(--artwork-focus-x, 50%) var(--artwork-focus-y, 18%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.result-portrait > img.is-loaded {
+  opacity: 1;
 }
 .result-portrait::after {
   content: "";

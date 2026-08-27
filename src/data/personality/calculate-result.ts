@@ -12,6 +12,7 @@ import {
   MatchingError,
   type MatchingErrorCategory,
 } from "../../lib/matching-errors";
+import { withTimeout } from "../../lib/timeout";
 import type {
   CharacterMatch,
   CharacterPersonalityProfile,
@@ -72,13 +73,18 @@ function characterSummary(
   };
 }
 
+const MATCHING_STAGE_TIMEOUT_MS = 20_000;
+
 async function runMatchingStage<T>(
   category: MatchingErrorCategory,
   message: string,
   run: () => T | Promise<T>,
 ): Promise<T> {
   try {
-    return await run();
+    return await withTimeout(
+      Promise.resolve().then(run),
+      MATCHING_STAGE_TIMEOUT_MS,
+    );
   } catch (error) {
     if (error instanceof MatchingError) throw error;
     throw new MatchingError(category, message, { cause: error });

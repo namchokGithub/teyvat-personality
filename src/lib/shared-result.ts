@@ -15,6 +15,7 @@ import type {
   SharedResultVisionSnapshot,
   VisionMatch,
 } from "../types";
+import { withTimeout } from "./timeout";
 
 const SHARED_RESULT_ID_ALPHABET =
   "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-";
@@ -73,6 +74,7 @@ export function buildSharedResultDoc(
 }
 
 const MAX_SHARED_RESULT_ID_ATTEMPTS = 5;
+const SHARED_RESULT_WRITE_TIMEOUT_MS = 12_000;
 
 export async function publishSharedResult(
   db: Firestore,
@@ -84,16 +86,22 @@ export async function publishSharedResult(
   for (let attempt = 0; attempt < MAX_SHARED_RESULT_ID_ATTEMPTS; attempt += 1) {
     const id = createSharedResultId();
     const ref = doc(db, "sharedResults", id);
-    if ((await getDoc(ref)).exists()) continue;
-    await setDoc(ref, {
-      ...buildSharedResultDoc(
-        character,
-        additionalCharacters,
-        vision,
-        versions,
-      ),
-      publishedAt: serverTimestamp(),
-    });
+    if (
+      (await withTimeout(getDoc(ref), SHARED_RESULT_WRITE_TIMEOUT_MS)).exists()
+    )
+      continue;
+    await withTimeout(
+      setDoc(ref, {
+        ...buildSharedResultDoc(
+          character,
+          additionalCharacters,
+          vision,
+          versions,
+        ),
+        publishedAt: serverTimestamp(),
+      }),
+      SHARED_RESULT_WRITE_TIMEOUT_MS,
+    );
     return id;
   }
   throw new Error(

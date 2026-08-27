@@ -12,8 +12,18 @@ export function CharacterResultCard({
   character: CharacterMatch;
   locale: Locale;
 }) {
-  const [imageFailed, setImageFailed] = useState(false);
-  const showArtwork = Boolean(character.artworkUrl && !imageFailed);
+  const [trackedArtworkUrl, setTrackedArtworkUrl] = useState(
+    character.artworkUrl,
+  );
+  const [imageStatus, setImageStatus] = useState<
+    "loading" | "loaded" | "error"
+  >("loading");
+  if (character.artworkUrl !== trackedArtworkUrl) {
+    setTrackedArtworkUrl(character.artworkUrl);
+    setImageStatus("loading");
+  }
+  const showArtwork = Boolean(character.artworkUrl) && imageStatus !== "error";
+  const showFallback = imageStatus !== "loaded";
   const hasLongName = character.name.replaceAll(" ", "").length >= 10;
   return (
     <article
@@ -26,14 +36,16 @@ export function CharacterResultCard({
       >
         {showArtwork && (
           <img
+            className={imageStatus === "loaded" ? "is-loaded" : undefined}
             src={character.artworkUrl}
             alt=""
             loading="eager"
             decoding="async"
-            onError={() => setImageFailed(true)}
+            onLoad={() => setImageStatus("loaded")}
+            onError={() => setImageStatus("error")}
           />
         )}
-        {!showArtwork && (
+        {showFallback && (
           <>
             <span className="result-portrait__halo" />
             <Leaf size={72} strokeWidth={1.1} />
@@ -101,32 +113,51 @@ export function AdditionalCharacterCards({
   return (
     <div className="additional-character-cards">
       {characters.slice(0, 3).map((character, index) => (
-        <article
-          className="additional-character-card"
+        <AdditionalCharacterCard
           key={character.characterId}
-        >
-          <span className="additional-character-card__rank">0{index + 1}</span>
-          {character.artworkUrl && (
-            <img
-              src={character.artworkUrl}
-              alt=""
-              loading="lazy"
-              style={getCharacterArtworkFramingStyle(character.characterId)}
-            />
-          )}
-          <div>
-            <ElementBadge element={character.element} />
-            <h3>{character.name}</h3>
-            <p>{character.title[locale]}</p>
-            <div className="additional-character-card__traits">
-              {character.matchingTraits.slice(0, 2).map((trait) => (
-                <span key={trait.en}>{trait[locale]}</span>
-              ))}
-            </div>
-          </div>
-          <strong>{character.compatibility}%</strong>
-        </article>
+          character={character}
+          rank={index + 1}
+          locale={locale}
+        />
       ))}
     </div>
+  );
+}
+
+function AdditionalCharacterCard({
+  character,
+  rank,
+  locale,
+}: {
+  character: CharacterMatch;
+  rank: number;
+  locale: Locale;
+}) {
+  const [imageFailed, setImageFailed] = useState(false);
+  const showArtwork = Boolean(character.artworkUrl) && !imageFailed;
+  return (
+    <article className="additional-character-card">
+      <span className="additional-character-card__rank">0{rank}</span>
+      {showArtwork && (
+        <img
+          src={character.artworkUrl}
+          alt=""
+          loading="lazy"
+          style={getCharacterArtworkFramingStyle(character.characterId)}
+          onError={() => setImageFailed(true)}
+        />
+      )}
+      <div>
+        <ElementBadge element={character.element} />
+        <h3>{character.name}</h3>
+        <p>{character.title[locale]}</p>
+        <div className="additional-character-card__traits">
+          {character.matchingTraits.slice(0, 2).map((trait) => (
+            <span key={trait.en}>{trait[locale]}</span>
+          ))}
+        </div>
+      </div>
+      <strong>{character.compatibility}%</strong>
+    </article>
   );
 }
