@@ -207,6 +207,7 @@ export function ResultPage({ locale }: { locale: Locale }) {
           <Link
             className="button button--secondary"
             to={`/characters/${character.characterId}`}
+            state={{ from: "result" }}
           >
             <BookOpen size={18} />
             {t(locale, "characterDetails")}

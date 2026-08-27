@@ -1,6 +1,6 @@
 import { ArrowLeft, ExternalLink, Eye, Sparkles, Star, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 import {
   BackToTopButton,
@@ -25,6 +25,9 @@ const genshinWikiUrl = (name: string) =>
 
 export function CharacterPage({ locale }: { locale: Locale }) {
   const { slug } = useParams();
+  const location = useLocation();
+  const cameFromResult =
+    (location.state as { from?: string } | null)?.from === "result";
   const [loaded, setLoaded] = useState<{
     slug: string | undefined;
     value: CharacterDetail | null;
@@ -86,7 +89,7 @@ export function CharacterPage({ locale }: { locale: Locale }) {
   return (
     <main className="character-page">
       <PageContainer className="character-shell">
-        <Link className="back-link" to="/characters">
+        <Link className="back-link" to={cameFromResult ? "/result" : "/characters"}>
           <ArrowLeft size={17} />
           {t(locale, "back")}
         </Link>
