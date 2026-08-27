@@ -87,7 +87,13 @@ export async function publishSharedResult(
     const id = createSharedResultId();
     const ref = doc(db, "sharedResults", id);
     if (
-      (await withTimeout(getDoc(ref), SHARED_RESULT_WRITE_TIMEOUT_MS)).exists()
+      (
+        await withTimeout(
+          getDoc(ref),
+          SHARED_RESULT_WRITE_TIMEOUT_MS,
+          "checking the shared result ID",
+        )
+      ).exists()
     )
       continue;
     await withTimeout(
@@ -101,6 +107,7 @@ export async function publishSharedResult(
         publishedAt: serverTimestamp(),
       }),
       SHARED_RESULT_WRITE_TIMEOUT_MS,
+      "publishing the shared result",
     );
     return id;
   }

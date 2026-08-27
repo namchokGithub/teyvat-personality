@@ -1,4 +1,4 @@
-import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -13,7 +13,7 @@ import {
 } from "../components/result";
 import { ALGORITHM_VERSION, QUESTION_VERSION } from "../engine";
 import { t } from "../i18n";
-import { firebaseApp } from "../lib/firebase";
+import { firestore } from "../lib/firebase";
 import type {
   CharacterMatch,
   Locale,
@@ -33,8 +33,7 @@ export function SharedResultPage({ locale }: { locale: Locale }) {
   useEffect(() => {
     if (!id) return;
     let active = true;
-    const db = getFirestore(firebaseApp);
-    getDoc(doc(db, "sharedResults", id))
+    getDoc(doc(firestore, "sharedResults", id))
       .then((snapshot) => {
         if (active)
           setLoaded({

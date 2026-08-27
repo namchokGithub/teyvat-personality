@@ -24,7 +24,7 @@ import {
 import { ShareResultDialog } from "../components/share";
 import { useQuizProgress } from "../hooks";
 import { t } from "../i18n";
-import { firebaseApp } from "../lib/firebase";
+import { firestore } from "../lib/firebase";
 import { reportShareFailure } from "../lib/share-error-reporting";
 import type { CharacterMatch, Locale, QuizResult, VisionMatch } from "../types";
 import { loadCharacterById } from "../data/characters/repository";
@@ -97,12 +97,9 @@ export function ResultPage({ locale }: { locale: Locale }) {
     }
     setShareLinkState("publishing");
     try {
-      const [{ getFirestore }, { publishSharedResult }] = await Promise.all([
-        import("firebase/firestore"),
-        import("../lib/shared-result"),
-      ]);
+      const { publishSharedResult } = await import("../lib/shared-result");
       const id = await publishSharedResult(
-        getFirestore(firebaseApp),
+        firestore,
         character,
         additionalCharacters,
         vision,

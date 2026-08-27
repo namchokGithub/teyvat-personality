@@ -1,4 +1,5 @@
 import { getApp, getApps, initializeApp } from "firebase/app";
+import { initializeFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -12,3 +13,10 @@ const firebaseConfig = {
 export const firebaseApp = getApps().length
   ? getApp()
   : initializeApp(firebaseConfig);
+
+// Some networks buffer Firestore's streaming WebChannel responses indefinitely.
+// Closing each long-poll response after it has data avoids that failure mode at
+// the small cost of additional requests.
+export const firestore = initializeFirestore(firebaseApp, {
+  experimentalForceLongPolling: true,
+});
