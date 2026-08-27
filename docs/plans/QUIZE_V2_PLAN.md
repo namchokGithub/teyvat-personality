@@ -1,5 +1,7 @@
 # Teyvat Personalities — Story Mode Plan
 
+> **Status (27 August 2026): Not ready to close.** The shared Story data model, schema, and first chapter exist, but the app still lacks the Story route, player UI, progress flow, and result integration described by this plan.
+
 เอกสารนี้เป็นแผนสำหรับเพิ่มโหมดเนื้อเรื่องในอนาคต โดยให้ระบบรองรับทั้งแบบสอบถามบุคลิกภาพเดิมและการผจญภัยแบบเลือกคำตอบ พร้อมใช้ Matching Engine และหน้าผลลัพธ์ร่วมกัน
 
 ## แนวคิดหลัก

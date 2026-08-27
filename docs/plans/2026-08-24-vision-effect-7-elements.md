@@ -1,5 +1,7 @@
 # Vision Effect 7-Element Expansion Implementation Plan
 
+> **Status (27 August 2026): Complete.** The implementation, automated verification, and manual QA have passed; the completion record is in [_plan_log.md](_plan_log.md). This file remains as the detailed implementation record.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Extend the Landing Page "Vision Effect" particle background from 3 elements (Pyro, Cryo, Dendro) to all 7 Genshin elements, replace the always-visible multi-button switcher with a single trigger + portal popover, and fix the root cause of the floating control being covered by cards on mobile.

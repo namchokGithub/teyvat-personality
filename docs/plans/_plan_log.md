@@ -142,9 +142,21 @@
 - `pnpm validate:data`/`verify:engine`/`verify:consent`/`verify:storage`/`lint`/`tsc -b`/`build` ผ่านหมด
 - **P0 ยังปิดไม่ได้**: เหลือเฉพาะงานที่ automation ทำแทนไม่ได้ — manual QA บนอุปกรณ์จริงตาม test matrix (Android พร้อมกรอกผลได้แล้ว, iOS ยังไม่มีเลย) ดูงานที่เหลือใน `DEVELOPMENT_PLAN.md`
 
+## 27 สิงหาคม 2026 — P0 Mobile In-App Browser ปิดครบ
+
+- ผู้ใช้ยืนยันว่า manual flow ตามเกณฑ์ P0 หัวข้อ 4 ผ่านครบแล้ว: เริ่มทำแบบทดสอบจนถึงหน้า Result บน mobile in-app browser แสดงผลลัพธ์ได้ หรือมี recovery UI ที่ใช้งานได้โดยไม่ล้มเงียบ ตาม coverage ที่กำหนดไว้สำหรับ Facebook, Messenger, LINE, Instagram และ TikTok
+- ปิด known gap เดิมของการทดสอบอุปกรณ์จริง รวมถึงเกณฑ์ Facebook/Messenger ที่ต้องครอบคลุม Android และ iOS
+- P0 ปิดครบทั้ง implementation, automation และ manual acceptance; ย้ายออกจาก `DEVELOPMENT_PLAN.md`
+
+## 27 สิงหาคม 2026 — Vision Effect ครบ 7 ธาตุ ปิดครบ
+
+- เพิ่ม particle effects สำหรับ Anemo, Electro, Geo และ Hydro พร้อมของเดิม Pyro, Cryo และ Dendro; `VisionEffectOverlay` และ config กลางรองรับครบทั้ง 7 ธาตุ
+- เปลี่ยนตัวเลือกเป็น trigger เดียวกับ portal popover, รองรับ keyboard/focus handling, reduced motion, persistence และ invalid-value fallback; แก้ mobile stacking และ viewport safeguards
+- การตรวจ data, engine, consent, storage, lint และ production build ผ่าน; manual QA ของแผนครบแล้ว จึงย้ายสถานะปิดจากแผน implementation นี้
+
 ## Verification ล่าสุด
 
-- `corepack pnpm validate:data` ผ่าน: 24 questions, 39 traits, 125 characters, 7 elements
+- `corepack pnpm validate:data` ผ่าน: 36 questions, 39 traits, 125 characters, 7 elements
 - `corepack pnpm verify:engine` ผ่าน: 4 deterministic answer sets
 - `corepack pnpm lint` ผ่าน
 - `corepack pnpm build` ผ่าน
