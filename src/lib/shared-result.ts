@@ -4,7 +4,7 @@ import {
   serverTimestamp,
   setDoc,
   type Firestore,
-} from "firebase/firestore";
+} from "firebase/firestore/lite";
 
 import type {
   CharacterMatch,
