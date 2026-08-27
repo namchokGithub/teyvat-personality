@@ -5,6 +5,8 @@ import type { CharacterMatch, Locale, VisionMatch } from "../types";
 const CANVAS_DISPLAY_FONT =
   '"Teyvat ZHCN", "Bree Serif", "Mitr", Georgia, serif';
 const CANVAS_TEXT_FONT = '"Prompt", "Noto Sans Thai", Tahoma, sans-serif';
+const SHARE_CARD_NAME_BASE_FONT_SIZE = 92;
+const SHARE_CARD_NAME_MIN_FONT_SIZE = 44;
 
 export interface ShareResultPayload {
   title: string;
@@ -167,8 +169,7 @@ export async function downloadShareCard(
   context.font = `700 24px ${CANVAS_TEXT_FONT}`;
   context.fillText("TEYVAT PERSONALITIES", 555, 170);
   context.fillStyle = "#252a32";
-  context.font = `92px ${CANVAS_DISPLAY_FONT}`;
-  context.fillText(character.name, 555, 290);
+  drawFittedName(context, character.name, 555, 290, 375);
   context.fillStyle = palette.accent;
   context.font = `600 30px ${CANVAS_TEXT_FONT}`;
   context.fillText(character.title[locale], 555, 345);
@@ -259,6 +260,29 @@ async function loadShareCardFonts(character: CharacterMatch, locale: Locale) {
     document.fonts.load('92px "Teyvat ZHCN"', character.name),
   ]);
   await document.fonts.ready;
+}
+
+function drawFittedName(
+  context: CanvasRenderingContext2D,
+  name: string,
+  x: number,
+  y: number,
+  maximumWidth: number,
+) {
+  let fontSize = SHARE_CARD_NAME_BASE_FONT_SIZE;
+  context.font = `${fontSize}px ${CANVAS_DISPLAY_FONT}`;
+  while (
+    context.measureText(name).width > maximumWidth &&
+    fontSize > SHARE_CARD_NAME_MIN_FONT_SIZE
+  ) {
+    fontSize -= 2;
+    context.font = `${fontSize}px ${CANVAS_DISPLAY_FONT}`;
+  }
+  const text =
+    context.measureText(name).width <= maximumWidth
+      ? name
+      : truncateCanvasText(context, name, maximumWidth);
+  context.fillText(text, x, y);
 }
 
 function drawWrappedText(
