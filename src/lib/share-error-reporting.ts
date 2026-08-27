@@ -1,8 +1,5 @@
 export type ShareStage =
-  | "create_share_link"
-  | "copy_link"
-  | "native_share"
-  | "generate_card";
+  "create_share_link" | "copy_link" | "native_share" | "generate_card";
 
 function normalizeErrorCode(error: unknown): string {
   if (
@@ -28,7 +25,7 @@ function normalizeErrorCode(error: unknown): string {
  * backend for this yet.
  */
 export function reportShareFailure(stage: ShareStage, error: unknown) {
-  if (import.meta.env.DEV) {
-    console.error(`[share:${stage}]`, normalizeErrorCode(error), error);
-  }
+  // if (import.meta.env.DEV) {
+  console.error(`[share:${stage}]`, normalizeErrorCode(error), error);
+  // }
 }
