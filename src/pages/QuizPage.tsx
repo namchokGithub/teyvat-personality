@@ -45,6 +45,7 @@ export function QuizPage({ locale }: { locale: Locale }) {
       void import("../data/personality/character-personalities-bundle");
     }
   }, [current, state.questionOrder.length]);
+  if (state.completedAt) return <Navigate to="/result" replace />;
   if (!hasProgress)
     return <Navigate to="/" replace state={{ requestName: true }} />;
   const advance = () => {
