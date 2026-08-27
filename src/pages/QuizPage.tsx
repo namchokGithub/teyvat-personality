@@ -12,6 +12,7 @@ import {
 } from "../hooks";
 import { t } from "../i18n";
 import type { Locale } from "../types";
+import { readQuizResult } from "../utils/quiz-result";
 
 export function QuizPage({ locale }: { locale: Locale }) {
   const navigate = useNavigate();
@@ -45,7 +46,8 @@ export function QuizPage({ locale }: { locale: Locale }) {
       void import("../data/personality/character-personalities-bundle");
     }
   }, [current, state.questionOrder.length]);
-  if (state.completedAt) return <Navigate to="/result" replace />;
+  if (state.completedAt && readQuizResult())
+    return <Navigate to="/result" replace />;
   if (!hasProgress)
     return <Navigate to="/" replace state={{ requestName: true }} />;
   const advance = () => {

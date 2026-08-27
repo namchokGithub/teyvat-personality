@@ -89,7 +89,10 @@ export function CharacterPage({ locale }: { locale: Locale }) {
   return (
     <main className="character-page">
       <PageContainer className="character-shell">
-        <Link className="back-link" to={cameFromResult ? "/result" : "/characters"}>
+        <Link
+          className="back-link"
+          to={cameFromResult ? "/result" : "/characters"}
+        >
           <ArrowLeft size={17} />
           {t(locale, "back")}
         </Link>
