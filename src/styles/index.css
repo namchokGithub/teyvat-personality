@@ -890,6 +890,7 @@ html[lang="th"] .hero__copy h1 {
   position: relative;
   margin-top: 26px;
   padding: 52px;
+  min-height: 670px;
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
@@ -2506,6 +2507,7 @@ html[lang="th"] .hero__copy h1 {
   }
   .question-card {
     padding: 34px 22px 24px;
+    min-height: auto;
   }
   .question-card__number {
     font-size: 58px;
