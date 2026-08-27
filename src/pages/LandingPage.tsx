@@ -22,7 +22,11 @@ import {
 import { t } from "../i18n";
 import { safeGetItem, safeSetItem } from "../lib/safe-storage";
 import type { Locale } from "../types";
-import { readPlayerName, savePlayerName } from "../utils/player-profile";
+import {
+  clearPlayerName,
+  readPlayerName,
+  savePlayerName,
+} from "../utils/player-profile";
 
 function renderTextWithBreaks(text: string) {
   const lines = text.split(/<br\s*\/?\s*>/i);
@@ -50,7 +54,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
   );
   const [canResume] = useState(hasSavedQuizProgress);
   const [showNameDialog, setShowNameDialog] = useState(() => requestName);
-  const [name, setName] = useState(readPlayerName);
+  const [name, setName] = useState(() => (requestName ? "" : readPlayerName()));
   const [visionEffect, setVisionEffect] =
     useState<VisionElement>(readVisionEffect);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -58,6 +62,7 @@ export function LandingPage({ locale }: { locale: Locale }) {
 
   useEffect(() => {
     if (requestName) {
+      clearPlayerName();
       navigate(location.pathname, { replace: true, state: null });
     }
   }, [location.pathname, navigate, requestName]);
