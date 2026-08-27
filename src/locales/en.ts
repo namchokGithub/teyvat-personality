@@ -122,7 +122,11 @@ export const en: Record<keyof typeof th, string> = {
   copiedSummary: "Summary copied",
   shared: "Share menu opened",
   downloaded: "Card downloaded",
-  error: "That action did not work. Please try again.",
+  shareErrorCreateLink: "Couldn't create the share link. Please try again.",
+  shareErrorCopyLink: "Couldn't copy the link. Please try again.",
+  shareErrorNativeShare: "Couldn't open the share sheet. Please try again.",
+  shareErrorGenerateCard:
+    "Couldn't generate the result card. Please try again.",
   sharePreview: "Result card preview",
   shareSvgNotice:
     "This prototype downloads a 1080 × 1080 PNG and uses the result's artwork when available.",

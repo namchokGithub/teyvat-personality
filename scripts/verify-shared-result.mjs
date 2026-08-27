@@ -211,6 +211,48 @@ try {
     setDoc(doc(db, "sharedResults", "sharedRes007"), wrongSchemaVersion),
   );
 
+  // A quiz result can legitimately rank fewer than 4 characters (e.g. one
+  // ranked character's detail data fails to load), leaving fewer than 3
+  // additional characters. That must still be publishable.
+  const fewerAdditionalCharacters = sampleSharedResultDoc();
+  fewerAdditionalCharacters.additionalCharacters =
+    fewerAdditionalCharacters.additionalCharacters.slice(0, 1);
+  await assertSucceeds(
+    setDoc(
+      doc(db, "sharedResults", "sharedRes008"),
+      fewerAdditionalCharacters,
+    ),
+  );
+
+  const noAdditionalCharacters = sampleSharedResultDoc();
+  noAdditionalCharacters.additionalCharacters = [];
+  await assertSucceeds(
+    setDoc(doc(db, "sharedResults", "sharedRes009"), noAdditionalCharacters),
+  );
+
+  const tooManyAdditionalCharacters = sampleSharedResultDoc();
+  tooManyAdditionalCharacters.additionalCharacters = [
+    ...tooManyAdditionalCharacters.additionalCharacters,
+    tooManyAdditionalCharacters.additionalCharacters[0],
+  ];
+  await assertFails(
+    setDoc(
+      doc(db, "sharedResults", "sharedRes010"),
+      tooManyAdditionalCharacters,
+    ),
+  );
+
+  const malformedAdditionalCharacter = sampleSharedResultDoc();
+  malformedAdditionalCharacter.additionalCharacters =
+    malformedAdditionalCharacter.additionalCharacters.slice(0, 1);
+  malformedAdditionalCharacter.additionalCharacters[0].compatibility = 150;
+  await assertFails(
+    setDoc(
+      doc(db, "sharedResults", "sharedRes011"),
+      malformedAdditionalCharacter,
+    ),
+  );
+
   await assertFails(
     setDoc(doc(db, "sharedResults", "sharedRes!01"), sampleSharedResultDoc()),
   );

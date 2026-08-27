@@ -25,6 +25,7 @@ import { ShareResultDialog } from "../components/share";
 import { useQuizProgress } from "../hooks";
 import { t } from "../i18n";
 import { firebaseApp } from "../lib/firebase";
+import { reportShareFailure } from "../lib/share-error-reporting";
 import type { CharacterMatch, Locale, QuizResult, VisionMatch } from "../types";
 import { loadCharacterById } from "../data/characters/repository";
 import { createCharacterResultPreview } from "../utils/character-preview";
@@ -115,7 +116,8 @@ export function ResultPage({ locale }: { locale: Locale }) {
       setSharedUrl(url);
       setShareLinkState("idle");
       return url;
-    } catch {
+    } catch (error) {
+      reportShareFailure("create_share_link", error);
       setShareLinkState("error");
       return null;
     }
@@ -128,7 +130,8 @@ export function ResultPage({ locale }: { locale: Locale }) {
       if (!previewId && !url) return;
       await downloadShareCard(character, vision, locale, url ?? undefined);
       setDownloadError(false);
-    } catch {
+    } catch (error) {
+      reportShareFailure("generate_card", error);
       setDownloadError(true);
     }
   };
@@ -243,12 +246,12 @@ export function ResultPage({ locale }: { locale: Locale }) {
         )}
         {shareLinkState === "error" && (
           <p className="result-action-error" role="status">
-            {t(locale, "error")}
+            {t(locale, "shareErrorCreateLink")}
           </p>
         )}
         {downloadError && (
           <p className="result-action-error" role="status">
-            Unable to download the card. Please try again.
+            {t(locale, "shareErrorGenerateCard")}
           </p>
         )}
       </PageContainer>

@@ -11,6 +11,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useDialogAccessibility } from "../../hooks";
 import { getCharacterArtworkFramingStyle } from "../../data/characters/artwork";
 import { t } from "../../i18n";
+import {
+  reportShareFailure,
+  type ShareStage,
+} from "../../lib/share-error-reporting";
 import type { CharacterMatch, Locale, VisionMatch } from "../../types";
 import {
   copyText,
@@ -21,7 +25,14 @@ import {
 import { Button, ElementIcon } from "../common";
 
 type Feedback =
-  "idle" | "copiedLink" | "copiedSummary" | "shared" | "downloaded" | "error";
+  | "idle"
+  | "copiedLink"
+  | "copiedSummary"
+  | "shared"
+  | "downloaded"
+  | "shareErrorCopyLink"
+  | "shareErrorNativeShare"
+  | "shareErrorGenerateCard";
 
 export function ShareResultDialog({
   character,
@@ -42,6 +53,7 @@ export function ShareResultDialog({
   );
   const dialogRef = useRef<HTMLDivElement>(null);
   const [feedback, setFeedback] = useState<Feedback>("idle");
+  const [pendingStage, setPendingStage] = useState<ShareStage | null>(null);
   const [qrCode, setQrCode] = useState<string | null>(null);
   useDialogAccessibility(dialogRef, onClose);
 
@@ -62,16 +74,26 @@ export function ShareResultDialog({
   const nativeShare = (
     navigator as unknown as { share?: (data: ShareData) => Promise<void> }
   ).share;
-  const run = async (action: () => void | Promise<void>, success: Feedback) => {
+  const run = async (
+    stage: ShareStage,
+    action: () => void | Promise<void>,
+    success: Feedback,
+    errorFeedback: Feedback,
+  ) => {
+    setPendingStage(stage);
     try {
       await action();
       setFeedback(success);
-    } catch {
-      setFeedback("error");
+    } catch (error) {
+      reportShareFailure(stage, error);
+      setFeedback(errorFeedback);
+    } finally {
+      setPendingStage(null);
     }
   };
   const share = () =>
     run(
+      "native_share",
       async () => {
         if (nativeShare) {
           await nativeShare.call(navigator, payload);
@@ -80,6 +102,7 @@ export function ShareResultDialog({
         await copyText(payload.url);
       },
       nativeShare ? "shared" : "copiedLink",
+      "shareErrorNativeShare",
     );
 
   return (
@@ -113,23 +136,34 @@ export function ShareResultDialog({
           qrCode={qrCode}
         />
         <div className="share-actions">
-          <Button onClick={share}>
+          <Button onClick={share} disabled={pendingStage !== null}>
             <Share2 size={18} aria-hidden="true" />
             {t(locale, "shareDevice")}
           </Button>
           <Button
             variant="secondary"
-            onClick={() => run(() => copyText(payload.url), "copiedLink")}
+            disabled={pendingStage !== null}
+            onClick={() =>
+              run(
+                "copy_link",
+                () => copyText(payload.url),
+                "copiedLink",
+                "shareErrorCopyLink",
+              )
+            }
           >
             <LinkIcon size={18} aria-hidden="true" />
             {t(locale, "copyLink")}
           </Button>
           <Button
             variant="secondary"
+            disabled={pendingStage !== null}
             onClick={() =>
               run(
+                "copy_link",
                 () => copyText(`${payload.text}\n${payload.url}`),
                 "copiedSummary",
+                "shareErrorCopyLink",
               )
             }
           >
@@ -138,10 +172,13 @@ export function ShareResultDialog({
           </Button>
           <Button
             variant="secondary"
+            disabled={pendingStage !== null}
             onClick={() =>
               run(
+                "generate_card",
                 () => downloadShareCard(character, vision, locale, sharedUrl),
                 "downloaded",
+                "shareErrorGenerateCard",
               )
             }
           >
@@ -150,7 +187,7 @@ export function ShareResultDialog({
           </Button>
         </div>
         <div
-          className={`share-feedback ${feedback === "error" ? "share-feedback--error" : ""}`}
+          className={`share-feedback ${feedback.startsWith("shareError") ? "share-feedback--error" : ""}`}
           aria-live="polite"
         >
           {feedback !== "idle" && (

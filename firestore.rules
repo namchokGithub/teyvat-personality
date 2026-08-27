@@ -41,10 +41,10 @@ service cloud.firestore {
         ]) &&
         data.schemaVersion == 2 &&
         data.additionalCharacters is list &&
-        data.additionalCharacters.size() == 3 &&
-        isValidCharacter(data.additionalCharacters[0]) &&
-        isValidCharacter(data.additionalCharacters[1]) &&
-        isValidCharacter(data.additionalCharacters[2]) &&
+        data.additionalCharacters.size() <= 3 &&
+        (data.additionalCharacters.size() < 1 || isValidCharacter(data.additionalCharacters[0])) &&
+        (data.additionalCharacters.size() < 2 || isValidCharacter(data.additionalCharacters[1])) &&
+        (data.additionalCharacters.size() < 3 || isValidCharacter(data.additionalCharacters[2])) &&
         hasValidCommonFields(data);
     }
 
